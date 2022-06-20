@@ -1,0 +1,35 @@
+mixin Title(One, Two)
+    h1.title #{One} #[span #{Two}]
+
+mixin SectionLeft(img, Title, button)
+    .Section
+        .left 
+            img(src=`../Images/${img}`, alt="Image")
+        .right 
+            h1 #{Title}
+            p Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Incidunt Id Repellendus Numquam. Maxime Veritatis Consequatur Nobis Architecto Incidunt Rem Esse?
+            a.Style(href="#") #{button} 
+
+mixin SectionRight(img, Title, button)
+    .Section
+        .right 
+            h1 #{Title}
+            p Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Incidunt Id Repellendus Numquam. Maxime Veritatis Consequatur Nobis Architecto Incidunt Rem Esse?
+            a.Style(href="#") #{button} 
+        .left 
+            img(src=`../Images/${img}`, alt="Image")
+
+mixin Box(img, title)
+    .box
+        img(src=`../Images/${img}`, alt="Image")
+        h1 #{title}
+        p Lorem, Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Exercitationem, Delectus!
+        a.Style(href="#") Read More 
+
+mixin WorksBox(img)
+    .box
+        img(src=img, alt="Image")
+        .Icons 
+            i.fas.fa-heart
+            i.fas.fa-eye
+            i.fas.fa-shopping-cart

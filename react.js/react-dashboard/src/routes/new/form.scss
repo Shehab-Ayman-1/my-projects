@@ -1,0 +1,95 @@
+@use "../../scss/helpers/mixins" as *;
+.add-user {
+	@include absolute(tr, 0, 0);
+	width: calc(100% - 250px);
+	margin-top: 100px;
+	padding: 2rem;
+	@include width(lg) {
+		width: 100%;
+	}
+	@include width(xsm) {
+		padding: 1rem;
+		margin-top: 50px;
+	}
+	.add-user-container {
+		box-shadow: get(box-shadow);
+		padding-top: 20px;
+		@include width(xsm) {
+			font-size: 3rem;
+			box-shadow: none;
+		}
+		.section-title {
+			color: get(main-color);
+			text-align: center;
+			font-size: 4rem;
+			font-weight: 500;
+			@include width(xsm) {
+				font-size: 2rem;
+				margin-bottom: 20px;
+			}
+		}
+		.text-field {
+			@include flex(space-between, flex-start);
+			padding: 2rem;
+			gap: 4rem;
+			@include width(md) {
+				flex-direction: column-reverse;
+				align-items: center;
+			}
+			@include width(xsm) {
+				padding: 0;
+				gap: 2rem;
+			}
+			.right-section {
+				flex: 1;
+				.MuiAvatar-root {
+					@include width(xsm) {
+						width: 100px;
+						height: 100px;
+					}
+				}
+			}
+			.left-section {
+				@include flex(space-between, center);
+				flex-wrap: wrap;
+				flex: 6;
+				padding: 0 2rem;
+				@include width(xsm) {
+					padding: 0.2rem;
+				}
+				.field-wrapper {
+					width: calc(100% / 2);
+					font-size: 1.8rem;
+					padding-right: 20px;
+					@include width(xsm) {
+						width: 100%;
+						padding-right: 10px;
+					}
+					input {
+						background-color: get(mode-bg);
+						color: get(light-text);
+						width: 100%;
+						padding: 15px 20px;
+						margin-block: 10px;
+						font-size: 1.6rem;
+						display: block;
+						border-radius: 5px;
+						box-shadow: inset get(box-shadow);
+						&::placeholder {
+							color: #5b5a5a;
+						}
+					}
+				}
+				.submit-btn {
+					width: 50%;
+					font-size: 2rem;
+					margin: 20px auto;
+					@include width(md) {
+						width: 100%;
+						margin: 20px auto;
+					}
+				}
+			}
+		}
+	}
+}

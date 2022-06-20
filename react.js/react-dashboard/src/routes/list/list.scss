@@ -1,0 +1,28 @@
+@use "../../scss/helpers/mixins" as *;
+.list-page {
+	@include flex(space-between, center);
+	.list-container {
+		@include absolute(tr, 0, 0);
+		width: calc(100% - 250px);
+		font-size: 20px;
+		padding: 2rem;
+		margin-top: 55px;
+		@include width(lg) {
+			width: 100%;
+		}
+		.list-data-table {
+			margin: 2rem;
+			box-shadow: get(box-shadow);
+			.data-table {
+				padding-bottom: 80px;
+				margin-bottom: 0;
+			}
+			.table-header {
+				font-size: 3rem;
+				@include width(sm) {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween</title>
+    <link rel="stylesheet" href="style.CSS">
+    <!-- CDN FontAwasome For Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <!-- Swipper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- AOS Animate -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+
+<body>
+    <!-- =========================================== NaveBar ============================================= -->
+    <header id="Header">
+        <div class="logo">
+            <i class="fa fa-ghost"></i>
+            <p>Logo</p>
+        </div>
+        <nav class="Navebar">
+            <a href="#Home">Home</a>
+            <a href="#Products">Products</a>
+            <a href="#About">About</a>
+            <a href="#Arrivals">Arrivals</a>
+            <a href="#Contact">Contact</a>
+            <a href="#Blogs">Blogs</a>
+        </nav>
+        <div class="icons">
+            <i class="fa fa-bars" id="MenuBar"></i>
+            <i class="fa fa-search" class="SearchBtn" id="Search"></i>
+            <i class="fa fa-shopping-cart"></i>
+            <i class="fa fa-user"></i>
+        </div>
+        <form action="#" class="Search-Form">
+            <input type="search" placeholder="Search" id="search">
+            <label class="fa fa-search" for="search"></label>
+        </form>
+    </header>
+
+    <!-- ============================================= Home ============================================= -->
+    <section class="Home" id="Home">
+        <div class="swiper slides">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box" style="background:url(Images/home-slider-1.jpg)">
+                    <div class="Content">
+                        <h1>Happy Halloween</h1>
+                        <p>Special Discount</p>
+                        <button class="Button-Style">Shop Now</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box" style="background:url(Images/home-slider-2.jpg)">
+                    <div class="Content">
+                        <h1>Up To 30% Off</h1>
+                        <p>On All Costumes</p>
+                        <button class="Button-Style">Shop Now</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box" style="background:url(Images/home-slider-3.jpg)">
+                    <div class="Content">
+                        <h1>Limited Offer</h1>
+                        <p>Don't Miss It</p>
+                        <button class="Button-Style">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- ============================================= Home ============================================= -->
+    <section class="Products" id="Products">
+        <div class="title">
+            <h1>Our <span>Products</span></h1>
+        </div>
+
+        <div class="swiper Catagory" data-aos="flip-left">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <div class="Icons">
+                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share"></i>
+                    </div>
+                    <div class="Image">
+                        <img src="Images/product-1.jpg">
+                    </div>
+                    <div class="Content">
+                        <h3>Latest Product</h3>
+                        <h4>$19.99 <span>$35.99</span></h4>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="Icons">
+                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share"></i>
+                    </div>
+                    <div class="Image">
+                        <img src="Images/product-2.jpg">
+                    </div>
+                    <div class="Content">
+                        <h3>Latest Product</h3>
+                        <h4>$29.99 <span>$105.99</span></h4>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="Icons">
+                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share"></i>
+                    </div>
+                    <div class="Image">
+                        <img src="Images/product-3.jpg">
+                    </div>
+                    <div class="Content">
+                        <h3>Latest Product</h3>
+                        <h4>$39.99 <span>$115.99</span></h4>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="Icons">
+                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share"></i>
+                    </div>
+                    <div class="Image">
+                        <img src="Images/product-4.jpg">
+                    </div>
+                    <div class="Content">
+                        <h3>Latest Product</h3>
+                        <h4>$49.99 <span>$125.99</span></h4>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="Icons">
+                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share"></i>
+                    </div>
+                    <div class="Image">
+                        <img src="Images/product-5.jpg">
+                    </div>
+                    <div class="Content">
+                        <h3>Latest Product</h3>
+                        <h4>$59.99 <span> $135.99</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= About ============================================= -->
+    <section class="About" id="About">
+        <div data-aos="fade-right">
+            <h1>About Us</h1>
+            <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Magni, Adipisci Neque! Veritatis Laboriosam Odio
+                Corporis, Quo Fugit Architecto. Veritatis In Dicta Qui Odit Soluta Sequi Ipsam Facere Eum Numquam!
+                Obcaecati.</p>
+            <button class="Button-Style">Read More</button>
+        </div>
+    </section>
+
+    <!-- ============================================= Arrivals ========================================== -->
+    <section class="Arrivals" id="Arrivals">
+        <div class="title">
+            <h1>New <span>Arrivals</span></h1>
+        </div>
+        <div class="Catagory" id="Catagory">
+            <div class="box" data-aos="zoom-in-right">
+                <div class="Icons">
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-eye"></i>
+                    <i class="fa fa-share"></i>
+                </div>
+                <div class="Image">
+                    <img src="Images/arrival-1.jpg">
+                </div>
+                <div class="Content">
+                    <h3>Latest Product</h3>
+                    <h4>$19.99 <span>$35.99</span></h4>
+                </div>
+            </div>
+            <div class="box" data-aos="zoom-in-left">
+                <div class="Icons">
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-eye"></i>
+                    <i class="fa fa-share"></i>
+                </div>
+                <div class="Image">
+                    <img src="Images/arrival-2.jpg">
+                </div>
+                <div class="Content">
+                    <h3>Latest Product</h3>
+                    <h4>$29.99 <span>$45.99</span></h4>
+                </div>
+            </div>
+            <div class="box" data-aos="zoom-in-right">
+                <div class="Icons">
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-eye"></i>
+                    <i class="fa fa-share"></i>
+                </div>
+                <div class="Image">
+                    <img src="Images/arrival-3.gif">
+                </div>
+                <div class="Content">
+                    <h3>Latest Product</h3>
+                    <h4>$39.99 <span>$55.99</span></h4>
+                </div>
+            </div>
+            <div class="box" data-aos="zoom-in-left">
+                <div class="Icons">
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-eye"></i>
+                    <i class="fa fa-share"></i>
+                </div>
+                <div class="Image">
+                    <img src="Images/arrival-4.jpg">
+                </div>
+                <div class="Content">
+                    <h3>Latest Product</h3>
+                    <h4>$49.99 <span>$65.99</span></h4>
+                </div>
+            </div>
+            <div class="box" data-aos="zoom-in-right">
+                <div class="Icons">
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-eye"></i>
+                    <i class="fa fa-share"></i>
+                </div>
+                <div class="Image">
+                    <img src="Images/arrival-5.jpg">
+                </div>
+                <div class="Content">
+                    <h3>Latest Product</h3>
+                    <h4>$59.99 <span>$75.99</span></h4>
+                </div>
+            </div>
+            <div class="box" data-aos="zoom-in-left">
+                <div class="Icons">
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-eye"></i>
+                    <i class="fa fa-share"></i>
+                </div>
+                <div class="Image">
+                    <img src="Images/arrival-6.gif">
+                </div>
+                <div class="Content">
+                    <h3>Latest Product</h3>
+                    <h4>$69.99 <span>$85.99</span></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= Contact =========================================== -->
+    <section class="Contact" id="Contact">
+        <div class="title">
+            <h1><span>Contact</span> Us</h1>
+        </div>
+
+        <div class="Slides">
+            <div class="left">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13651.431412873415!2d29.91622705!3d31.19695445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1635769765352!5m2!1sen!2seg"
+                    width="500" height="550" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="right">
+                <form action="#">
+                    <h1>Tell Us Something</h1>
+                    <input class="input" type="text" placeholder="Your Name" data-aos="zoom-in-down">
+                    <input class="input" type="email" placeholder="Your Email" data-aos="zoom-in-down">
+                    <input class="input" type="number" placeholder="Your Number" data-aos="zoom-in-down">
+                    <textarea class="input" placeholder="Your Message" style="height: 150px;"
+                        data-aos="zoom-in-down"></textarea>
+                    <button type="submit" class="Button-Style" data-aos="zoom-in-down">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= Blogs ============================================= -->
+    <section class="Blogs" id="Blogs">
+        <div class="box" data-aos="fade-up">
+            <div class="Image">
+                <img src="Images/blog-1.jpg">
+            </div>
+            <div class="Content">
+                <h1>Believe In The Magic Of Halloween.</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, molestias?</p>
+                <button class="Button-Style">Read More</button>
+            </div>
+            <div class="footer">
+                <a href="#" class="fa fa-calendar">
+                    <span>1<sup>st</sup> May, 2021</span>
+                </a>
+                <a href="#" class="fa fa-user">
+                    <span>By Admin</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-down">
+            <div class="Image">
+                <img src="Images/blog-2.jpg">
+            </div>
+            <div class="Content">
+                <h1>Believe In The Magic Of Halloween.</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, molestias?</p>
+                <button class="Button-Style">Read More</button>
+            </div>
+            <div class="footer">
+                <a href="#" class="fa fa-calendar">
+                    <span>1<sup>st</sup> May, 2021</span>
+                </a>
+                <a href="#" class="fa fa-user">
+                    <span>By Admin</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-right" data-aos-easing="ease-in-sine">
+            <div class="Image">
+                <img src="Images/blog-3.jpg">
+            </div>
+            <div class="Content">
+                <h1>Believe In The Magic Of Halloween.</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, molestias?</p>
+                <button class="Button-Style">Read More</button>
+            </div>
+            <div class="footer">
+                <a href="#" class="fa fa-calendar">
+                    <span>1<sup>st</sup> May, 2021</span>
+                </a>
+                <a href="#" class="fa fa-user">
+                    <span>By Admin</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= Footer ============================================ -->
+    <footer>
+        <div class="Links">
+            <div class="column" data-aos="fade-left">
+                <h3>Our Branches</h3>
+                <ul>
+                    <li class="fa fa-map-marker-alt"><a href="#">Egypt</a></li>
+                    <li class="fa fa-map-marker-alt"><a href="#">USA</a></li>
+                    <li class="fa fa-map-marker-alt"><a href="#">Russia</a></li>
+                    <li class="fa fa-map-marker-alt"><a href="#">France</a></li>
+                    <li class="fa fa-map-marker-alt"><a href="#">Japan</a></li>
+                </ul>
+            </div>
+            <div class="column" data-aos="fade-up">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li class="fa fa-arrow-right"><a href="#">Home</a></li>
+                    <li class="fa fa-arrow-right"><a href="#">Products</a></li>
+                    <li class="fa fa-arrow-right"><a href="#">About</a></li>
+                    <li class="fa fa-arrow-right"><a href="#">Arrivals</a></li>
+                    <li class="fa fa-arrow-right"><a href="#">Contact</a></li>
+                    <li class="fa fa-arrow-right"><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+            <div class="column" data-aos="fade-right">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li class="fa fa-phone"><a href="#">+20 1067421381</a></li>
+                    <li class="fa fa-envelope"><a href="#"
+                            style="text-transform: lowercase">shehabayman365@gmail.com</a></li>
+                    <li class="fa fa-map-marked-alt"><a href="#">Alexandria, Egypt</a></li>
+                </ul>
+            </div>
+            <div class="column" data-aos="fade-up">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li class="fab fa-facebook-f"><a href="#">Facebook</a></li>
+                    <li class="fab fa-twitter"><a href="#">Twitter</a></li>
+                    <li class="fab fa-instagram"><a href="#">Instagram</a></li>
+                    <li class="fab fa-linkedin-in"><a href="#">Linkedin</a></li>
+                    <li class="fab fa-pinterest-p"><a href="#">Pinterest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="Description">
+            <h3>Created By <span>Mr. Shehab Ayman</span> | All Rights Reserved</h3>
+        </div>
+    </footer>
+
+    <!-- Swipper Link Script -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- AOS Animate -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            delay: 50,
+            duration: 800
+        });
+    </script>
+
+    <!-- JavaScript Link -->
+    <script src="script.JS"></script>
+
+</body>
+
+</html>

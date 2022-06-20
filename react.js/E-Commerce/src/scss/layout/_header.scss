@@ -1,0 +1,116 @@
+header {
+	@include Flex(space-around, center);
+	background: var(--blue);
+	color: var(--white);
+	width: 100%;
+	padding: 20px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 100000000;
+	.logo {
+		@include Flex(space-between, center);
+		color: var(--white);
+		white-space: nowrap;
+		a.A-Link {
+			color: var(--white);
+			font-size: 25px;
+			font-weight: bold;
+			i {
+				color: var(--gold) !important;
+			}
+			@include Width800 {
+				font-size: 20px;
+			}
+		}
+	}
+	nav {
+		position: relative;
+		a {
+			color: var(--white);
+			font-size: 18px;
+			font-weight: bold;
+			padding: 0 10px;
+			&.active {
+				color: rgba(#ffd700, 1);
+			}
+			&:hover {
+				color: rgba(#ffd700, 0.6);
+			}
+		}
+		@include Width800 {
+			@include PositionLeft(100%, 0);
+			background: var(--blue);
+			width: 100%;
+			padding: 20px;
+			z-index: 100000;
+			transform: translate(0, 0);
+			clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+			a {
+				display: block;
+				padding: 20px;
+			}
+			&.Active {
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+			}
+		}
+	}
+	.Icons {
+		i {
+			color: var(--white);
+			&.fa-bars {
+				display: none;
+			}
+			&:hover {
+				color: var(--gold);
+			}
+		}
+		a {
+			color: var(--white);
+			font-size: 22px;
+			padding: 0 5px;
+			&:hover {
+				color: var(--gold);
+			}
+			@include Width800 {
+				font-size: 18px;
+			}
+			@include Width600 {
+				font-size: 16px;
+			}
+		}
+		@include Width800 {
+			i.fa-bars {
+				display: initial;
+			}
+		}
+	}
+	.Search-Form {
+		@include PositionRight(130%, 20px);
+		@include Flex(space-between, center);
+		background: var(--white);
+		width: 90%;
+		padding: 0px 20px;
+		border-radius: 5px;
+		transform: translate(0, 0);
+		border: var(--border);
+		clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+		&.Active {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		}
+		input {
+			width: 100%;
+			padding: 15px;
+			font-size: 20px;
+			font-weight: bold;
+			@include Width600 {
+				padding: 10px;
+			}
+		}
+		i {
+			@include Width600 {
+				font-size: 22px;
+			}
+		}
+	}
+}

@@ -1,0 +1,99 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+footer.footer-section {
+	.footer-header {
+		@include Flex(space-between, center);
+		background: url("./bg-images/footer-bg.jpg") no-repeat;
+		padding: 3% 7%;
+		border-bottom: get(border);
+		border-color: #3e3e3e;
+		@include Width(xsm) {
+			flex-direction: column;
+		}
+		img {
+			display: block;
+			@include Width(md) {
+				width: 120px;
+			}
+		}
+		.nav-bar {
+			.link {
+				color: get(light-color);
+				font-size: 1.5rem;
+				display: inline-block;
+				padding-inline: get(p2);
+				&:hover {
+					color: get(main-color);
+				}
+				@include Width(md) {
+					font-size: 1.2rem;
+				}
+				@include Width(xsm) {
+					margin-top: get(m2);
+					padding-inline: get(p1);
+				}
+			}
+		}
+	}
+	.footer-body {
+		@include Flex(space-between, center);
+		background: url("./bg-images/footer-bg.jpg") no-repeat;
+		padding: 3% 7%;
+		@include Width(xsm) {
+			flex-direction: column;
+		}
+		.left-section {
+			p {
+				color: get(light-color);
+				display: inline-block;
+				font-size: 1.4rem;
+				font-weight: bold;
+				padding-inline: get(p2);
+				cursor: pointer;
+				&:hover {
+					color: get(main-color);
+				}
+				@include Width(xsm) {
+					font-size: 1.2rem;
+					padding-inline: get(p1);
+				}
+			}
+		}
+		.right-section {
+			i {
+				background-color: get(dark-color);
+				color: get(light-color);
+				padding: get(p2);
+				margin: get(m2);
+				font-size: 1.4rem;
+				border-radius: get(circle);
+				&:hover {
+					color: get(main-color);
+				}
+				@include Width(xsm) {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+	.footer-footer {
+		@include Flex(space-between, center);
+		padding: get(p3) 7%;
+		@include Width(xsm) {
+			flex-direction: column;
+		}
+		p {
+			color: get(light-color);
+			font-size: 1.4rem;
+			font-weight: bold;
+		}
+		img {
+			display: block;
+			@include Width(md) {
+				width: 200px;
+				margin-top: get(m2);
+			}
+		}
+	}
+}

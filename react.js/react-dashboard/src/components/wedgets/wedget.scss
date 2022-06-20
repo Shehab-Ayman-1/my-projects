@@ -1,0 +1,59 @@
+@use "../../scss/helpers/mixins" as *;
+.wedget {
+	@include flex(space-between, initial);
+	background-color: get(mode-bg);
+	flex: 1;
+	padding: 2rem;
+	border-radius: 10px;
+	box-shadow: get(box-shadow);
+	.wedget-left {
+		@include flex(space-between, initial);
+		flex-direction: column;
+		.wedget-title {
+			color: get(light-text);
+			font-size: 2rem;
+			font-weight: 400;
+		}
+		.wedget-counter {
+			color: get(second-color);
+			display: block;
+			padding-bottom: 20px;
+			font-size: 3.5rem;
+			font-weight: bold;
+			white-space: nowrap;
+		}
+		.wedget-link {
+			@extend .wedget-title;
+			font-size: 1.8rem;
+			cursor: pointer;
+			white-space: nowrap;
+			border-bottom: get(border);
+			&:hover {
+				color: get(dark-text);
+			}
+		}
+	}
+	.wedget-right {
+		@include flex(space-between, flex-end);
+		flex-direction: column;
+		.icon {
+			font-size: 3rem;
+			padding: 4px;
+			border-radius: 5px;
+		}
+		.percent-tag {
+			@include flex(flex-end, center);
+			font-size: 1.8rem;
+			font-weight: 500;
+			&.negative {
+				color: green;
+			}
+			&.positive {
+				color: red;
+			}
+			.icon {
+				font-weight: bold;
+			}
+		}
+	}
+}

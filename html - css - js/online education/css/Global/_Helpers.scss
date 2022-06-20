@@ -1,0 +1,35 @@
+@mixin Grid($value) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($value, 1fr));
+    gap: 1rem;
+}
+@mixin Flex($Justify, $Align) {
+    display: flex;
+    justify-content: $Justify;
+    align-items: $Align;
+}
+@mixin Position-Left($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+@mixin Position-right($position, $top, $right) {
+    position: $position;
+    top: $top;
+    right: $right;
+}
+@mixin Media400() {
+    @media (max-width: 400px) {
+        @content;
+    }
+}
+@mixin Media768() {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin Media800() {
+    @media (max-width: 800px) {
+        @content;
+    }
+}

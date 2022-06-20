@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burber Website</title>
+    <link rel="stylesheet" href="style.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+
+<body>
+    <!-- ========================================== NaveBar ============================================ -->
+    <header>
+        <div class="menu">
+            <img src="Images/menu.png" onclick="Open()">
+        </div>
+
+        <nav id="Menu">
+            <img src="Images/close.png" onclick="Close()">
+            <ul>
+                <li><a href="#Home">HOME</a> </li>
+                <li><a href="#ABOUT">ABOUT</a> </li>
+                <li><a href="#SERVICES">SERVICES</a> </li>
+                <li><a href="#TESTMONIALS">TESTMONIALS</a> </li>
+                <li><a href="#MEET US">MEET US</a> </li>
+            </ul>
+        </nav>
+
+        <div class="logo">
+            <img src="Images/logo.png">
+        </div>
+
+        <div class="paragraph" id="Home">
+            <h1>Hair Studio</h1>
+            <p>Style your Hair is style your life</p>
+            <button class="btn-style">Find Out</button>
+            <button class="btn-style">Read More</button>
+        </div>
+
+        <script>
+            var Navebar = document.getElementById("Menu")
+            function Open() {
+                Navebar.style.right = "0"
+            }
+            function Close() {
+                Navebar.style.right = "-15rem"
+            }
+        </script>
+
+    </header>
+
+    <!-- ========================================= Choose Us =========================================== -->
+    <section class="Choose-Us" id="About">
+        <div class="title">
+            <p>FUTURES</p>
+            <h1>Why Choose Us</h1>
+        </div>
+
+        <div class="Choose">
+            <div class="right-side">
+                <img src="Images/barber-man.jpg">
+            </div>
+
+            <div class="left-side">
+                <div>
+                    <h3>Experieced Staff</h3>
+                    <div class="div">
+                        <div><i class="fas fa-shield-alt"></i></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, praesentium!</p>
+                    </div>
+                </div>
+                <div>
+                    <h3>Pre Booking Online</h3>
+                    <div class="div">
+                        <div><i class="far fa-check-square"></i></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, praesentium!</p>
+                    </div>
+                </div>
+                <div>
+                    <h3>Affordable Cast</h3>
+                    <div class="div">
+                        <div><i class="fa fa-dollar-sign"></i></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, praesentium!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= Provide =========================================== -->
+    <section class="Provide" id="SERVICES">
+        <div class="title">
+            <p>SERVICES</p>
+            <h1>We Provide Better</h1>
+        </div>
+
+        <div class="Catagory">
+            <div class="box">
+                <img src="Images/pic-1.jpg">
+                <div class="description">
+                    <div class="layer">
+                        <h4>Hair Styleing</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, praesentium!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="Images/pic-2.jpg">
+                <div class="description">
+                    <div class="layer">
+                        <h4>Hair Styleing</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, praesentium!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="Images/pic-3.jpg">
+                <div class="description">
+                    <div class="layer">
+                        <h4>Hair Styleing</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, praesentium!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="Images/pic-4.jpg">
+                <div class="description">
+                    <div class="layer">
+                        <h4>Hair Styleing</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, praesentium!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= Users ============================================= -->
+    <section class="Users" id="TESTMONIALS">
+        <div class="title">
+            <p>TESTIMONIAL</p>
+            <h1>What Client Says</h1>
+        </div>
+
+        <div class="Slides">
+            <div class="box">
+                <div class="up">
+                    <div class="img">
+                        <img src="Images/img-1.jpg">
+                    </div>
+
+                    <div class="parag">
+                        <h5>KEN NORMAN</h5>
+                        <i class="fab fa-twitter"></i>
+                        <p>@kennorman</p>
+                    </div>
+                </div>
+
+                <div class="down">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quis soluta molestiae delectus
+                        tempore molestias, itaque numquam quos.</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="up">
+                    <div class="img">
+                        <img src="Images/img-2.jpg">
+                    </div>
+                    <div class="parag">
+                        <h5>Liara Karian</h5>
+                        <i class="fab fa-twitter"></i>
+                        <p>@LiaraKarian</p>
+                    </div>
+                </div>
+
+                <div class="down">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quis soluta molestiae delectus
+                        tempore molestias, itaque numquam quos.</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="up">
+                    <div class="img">
+                        <img src="Images/img-3.jpg">
+                    </div>
+                    <div class="parag">
+                        <h5>Ricky Danial</h5>
+                        <i class="fab fa-twitter"></i>
+                        <p>@RickyDanial</p>
+                    </div>
+                </div>
+
+                <div class="down">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quis soluta molestiae delectus
+                        tempore molestias, itaque numquam quos.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================= Footer ============================================ -->
+    <footer id="MEET US">
+        <div class="title">
+            <p>Contact Us</p>
+            <h1>Visit Our Today</h1>
+        </div>
+
+        <div class="logo">
+            <img src="Images/footer-img.png">
+        </div>
+
+        <div class="details">
+            <div class="column">
+                <h2>Opening Hours</h2>
+                <div>
+                    <i class="fa fa-clock"></i>
+                    <p>Monday to Friday - 9am to 9pm</p>
+                </div>
+                <div>
+                    <i class="fa fa-clock"></i>
+                    <p>Saturday And Sunday - 8am to 11pm</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <h2>Get In Touch</h2>
+
+                <div class="row">
+                    <i class="fa fa-map-marker-alt"></i>
+                    <p>30 abc Alexandria xyz Egypt In</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-paper-plane"></i>
+                    <p style="text-transform: lowercase;">shehabayman365@gmail.com</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+20 1067421381</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="social">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-youtube"></i>
+            <div>
+                <p>Copyrighter By: Mr.Shehab Ayman 2021</p>
+                <p>Email: <span style="text-transform: lowercase;">shehabayman365@gmail.com</span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

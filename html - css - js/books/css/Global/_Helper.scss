@@ -1,0 +1,41 @@
+@mixin Flex($Justify, $align) {
+	display: flex;
+	justify-content: $Justify;
+	align-items: $align;
+}
+@mixin Grid($Value) {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax($Value, 1fr));
+	gap: 1rem;
+}
+@mixin Position-left($type, $top, $left) {
+	position: $type;
+	top: $top;
+	left: $left;
+}
+@mixin Position-right($type, $top, $right) {
+	position: $type;
+	top: $top;
+	right: $right;
+}
+@mixin Width600() {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
+@mixin Width460() {
+	@media (max-width: 460px) {
+		@content;
+	}
+}
+@mixin Width380() {
+	@media (max-width: 380px) {
+		@content;
+	}
+}
+@media (max-width: 786px) {
+	nav.Active {
+		top: initial;
+		bottom: 0;
+	}
+}

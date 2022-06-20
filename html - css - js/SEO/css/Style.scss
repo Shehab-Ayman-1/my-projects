@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+@import "./Helpers";
+
+:root {
+	--red: #fa4f09;
+	--black: #333;
+	--white: #fff;
+	--lightColor: #666;
+	--lightBG: #eee;
+	--border: 1px solid rgba(102, 102, 102, 0.5);
+}
+
+html {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	body {
+		background: var(--white);
+		&.Active {
+			--red: #fa4f09;
+			--black: #fff;
+			--white: #000;
+			--lightColor: #aaa;
+			--lightBG: #222;
+			--border: 1px solid rgba(102, 102, 102, 0.5);
+			background: black;
+		}
+	}
+	* {
+		font-family: "Poppins", sans-serif;
+		padding: 0;
+		margin: 0;
+		border: none;
+		outline: none;
+		box-sizing: border-box;
+		text-decoration: none;
+		text-transform: capitalize;
+		transition: all 0.2s linear;
+	}
+	&::-webkit-scrollbar {
+		width: 0.7rem;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--red);
+	}
+	&::-webkit-scrollbar-track {
+		background-color: var(--white);
+	}
+	::selection {
+		background-color: var(--red);
+		color: var(--white);
+		text-shadow: 15px 15px 10px rgba(black, 0.5);
+	}
+	i {
+		color: var(--black);
+		font-size: 25px;
+		padding: 0 10px;
+		cursor: pointer;
+		&:hover {
+			color: var(--red);
+		}
+	}
+	.title {
+		color: var(--black);
+		text-align: center;
+		font-size: 45px;
+		margin-bottom: 50px;
+		span {
+			color: var(--red);
+		}
+	}
+	.Style {
+		background-color: var(--lightBG);
+		color: var(--lightColor);
+		font-size: 20px;
+		padding: 5px 30px;
+		margin-top: 10px;
+		display: inline-block;
+		border: var(--border);
+		border-radius: 5px;
+		&:hover {
+			background-color: var(--red);
+			color: var(--white);
+		}
+	}
+	section {
+		padding: 5rem 9%;
+	}
+	.Catagory {
+		@include Grid(22rem);
+		.box {
+			background: var(--lightBG);
+			text-align: center;
+			padding: 20px;
+			line-height: 2;
+			border-radius: 5px;
+			h1 {
+				color: var(--black);
+			}
+			p {
+				color: var(--lightColor);
+			}
+			img {
+				height: 9rem;
+			}
+		}
+	}
+}
+
+// =============================================== Active ================================================
+
+header nav.Active {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+// =============================================== Header ================================================
+header {
+	@include Flex(space-around, center);
+	background: var(--lightBG);
+	width: 100%;
+	padding: 20px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 10000000000;
+	.logo {
+		a {
+			color: var(--black);
+			font-size: 28px;
+			font-weight: 500;
+		}
+		i {
+			color: var(--red);
+			font-size: 28px;
+			padding: 0;
+		}
+	}
+	nav {
+		a {
+			color: var(--lightColor);
+			font-size: 22px;
+			font-weight: 500;
+			padding: 0 10px;
+			&:hover {
+				color: var(--red);
+			}
+			&.Active {
+				color: #fa4d09a4;
+			}
+		}
+	}
+	.Progress {
+		background: var(--red);
+		height: 5px;
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+	@include Width800 {
+		.fa-bars {
+			display: initial !important;
+		}
+		nav {
+			background: var(--lightBG);
+			color: var(--white);
+			width: 100%;
+			position: absolute;
+			top: 100%;
+			padding: 20px;
+			clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+			a {
+				display: block;
+				padding: 15px;
+			}
+		}
+	}
+}
+
+// =============================================== Home ==================================================
+.Home {
+	.Section {
+		@include Grid(20rem);
+		margin-top: 5rem 0;
+		line-height: 2;
+		.left {
+			img {
+				width: 100%;
+			}
+		}
+		.right {
+			@include Flex(center, flex-start);
+			flex-direction: column;
+			h1 {
+				color: var(--black);
+				font-size: 40px;
+			}
+			p {
+				color: var(--lightColor);
+			}
+		}
+	}
+}
+
+// =============================================== Works =================================================
+.Works {
+	.Works-Catagory {
+		columns: 3 23rem;
+		gap: 2rem;
+		.box {
+			margin-bottom: 2rem;
+			position: relative;
+			overflow: hidden;
+			img {
+				width: 100%;
+				border-radius: 0.5rem;
+			}
+			.Icons {
+				@include Flex(center, center);
+				background-color: rgba(102, 102, 102, 0.5);
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: -100%;
+				left: 0;
+				i {
+					background-color: var(--black);
+					color: var(--white);
+					padding: 20px;
+					margin: 10px;
+					&:hover {
+						background: var(--red);
+						color: var(--white);
+					}
+				}
+			}
+			&:hover {
+				.Icons {
+					top: 0;
+				}
+			}
+		}
+	}
+}
+
+// =============================================== Pricing ===============================================
+.Pricing {
+	.Catagory {
+		.box {
+			background: var(--white) !important;
+			padding: 40px 20px !important;
+			.Type {
+				background: var(--red);
+				color: var(--white);
+				width: fit-content;
+				padding: 0 20px;
+				margin: auto;
+				font-weight: normal;
+				border-radius: 5px;
+			}
+			.price {
+				color: var(--black);
+				font-size: 30px;
+				span {
+					font-size: 50px;
+				}
+			}
+			.Content {
+				text-align: left;
+				padding-left: 30px;
+				line-height: 3;
+				i {
+					color: var(--red);
+				}
+			}
+
+			&:nth-child(2) {
+				background: var(--lightBG) !important;
+				.Style {
+					background: var(--red);
+					color: white;
+					&:hover {
+						background: rgba(var(--red), 0.8);
+					}
+				}
+			}
+		}
+	}
+}
+
+// =============================================== Reviews =================================================
+.Reviews {
+	.box {
+		background-color: var(--white) !important;
+		.Up {
+			@include Flex(flex-start, center);
+			padding: 15px 0;
+			.img {
+				width: 80px;
+				height: 80px;
+				img {
+					width: 100%;
+					height: 100%;
+					border-radius: 50%;
+				}
+			}
+			.Content {
+				padding-left: 20px;
+				text-align: left;
+				i {
+					color: var(--red);
+					padding: 2px;
+					font-size: 18px;
+				}
+			}
+		}
+		.Down {
+			background-color: var(--lightBG);
+			text-align: left;
+			padding: 30px;
+			margin-top: 20px;
+			border-radius: 10px;
+			position: relative;
+			z-index: 1;
+
+			&::before {
+				content: "";
+				background: var(--lightBG);
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: -10px;
+				left: 20px;
+				z-index: -1;
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+// =============================================== Contact ===============================================
+.Contact {
+	.ContactUs {
+		@include Grid(20rem);
+		gap: 1rem;
+		.left {
+			width: 100%;
+			.box {
+				background: var(--lightBG);
+				color: var(--lightColor);
+				padding: 20px;
+				margin-bottom: 30px;
+				font-size: 18px;
+				line-height: 2.5;
+				h2 {
+					color: var(--black);
+				}
+				i {
+					color: var(--red);
+				}
+				span {
+					color: var(--red);
+					font-weight: 500;
+				}
+			}
+		}
+		form {
+			width: 100%;
+			background: var(--lightBG);
+			height: fit-content;
+			padding: 20px;
+			border-radius: 10px;
+			h1 {
+				color: var(--black);
+				font-size: 35px;
+				padding-bottom: 15px;
+			}
+			input {
+				background: var(--white);
+				color: var(--black);
+				display: block;
+				width: 100%;
+				padding: 10px;
+				margin-bottom: 20px;
+				font-size: 20px;
+				border-radius: 10px;
+			}
+			textarea {
+				@extend input;
+				height: 180px;
+			}
+			.Style {
+				text-align: center;
+				font-size: 25px;
+				font-weight: 500;
+				width: 100%;
+			}
+		}
+	}
+}
+
+// =============================================== Footer ================================================
+footer {
+	.NaveBar {
+		@extend header;
+		background: var(--black);
+		.logo a {
+			color: var(--white);
+		}
+		i {
+			color: var(--white);
+		}
+	}
+	.CopyRight {
+		@include Flex(space-around, center);
+		background: var(--lightBG);
+		color: var(--black);
+		padding: 20px;
+		text-align: center;
+		span {
+			color: var(--red);
+		}
+	}
+}

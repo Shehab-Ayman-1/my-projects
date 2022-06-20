@@ -1,0 +1,627 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap";
+:root {
+	--white: #fff;
+	--black: #130f40;
+	--yellow: orange;
+	--light-yellow: #ffb01c;
+	--light-color: #666;
+	--light-bg: #999;
+	--box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+	--border: 5px solid rgba(0, 0, 0, 0.1);
+}
+body {
+	background: #eee;
+}
+* {
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	text-transform: capitalize;
+	transition: 0.2s linear;
+}
+html {
+	overflow-x: hidden;
+	scroll-padding-top: 7rem;
+	scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+	width: 0.7rem;
+}
+html::-webkit-scrollbar-thumb {
+	background: var(--black);
+	border-radius: 10px;
+}
+html::-webkit-scrollbar-track {
+	background: var(--light-bg);
+	box-shadow: var(--box-shadow) inset;
+}
+::selection {
+	background: var(--light-yellow);
+	color: var(--black);
+}
+
+/* ========================================== FrameWork ========================================== */
+section {
+	padding: 5rem 9%;
+}
+.Style {
+	background: var(--light-yellow);
+	color: var(--black);
+	padding: 10px 30px;
+	margin: 5px;
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 7px;
+	cursor: pointer;
+}
+i.fa {
+	background: var(--light-yellow);
+	color: var(--black);
+	font-size: 23px;
+	padding: 13px;
+	margin: 5px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+i.fas {
+	background: var(--light-yellow);
+	color: var(--black);
+	font-size: 23px;
+	padding: 13px;
+	margin: 5px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+i.fab {
+	background: var(--light-yellow);
+	color: var(--black);
+	font-size: 23px;
+	padding: 13px;
+	margin: 5px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.title {
+	text-align: center;
+	color: var(--black);
+	font-size: 40px;
+}
+.title span {
+	color: var(--yellow);
+}
+i.fa:hover {
+	background: var(--yellow);
+}
+i.fas:hover {
+	background: var(--yellow);
+}
+i.fab:hover {
+	background: var(--yellow);
+}
+.Style:hover {
+	background: var(--yellow);
+}
+
+/* ================= Actives ================= */
+body.Active {
+	--white: #333;
+	--black: #777;
+	--yellow: #ffee80;
+	--light-yellow: #f9d806;
+	--light-color: #666;
+	--light-bg: #222;
+	--box-shadow: 0 5px 5px rgba(255, 255, 255, 0.3);
+	--border: 5px solid rgba(255, 255, 255, 0.3);
+	background: #111;
+}
+header.Active {
+	box-shadow: var(--box-shadow);
+}
+header nav a.Active {
+	color: var(--yellow);
+}
+header nav.Active {
+	clip-path: polygon(0 100%, 100% 100%, 100% 0%, 0% 0%);
+}
+body.Active .Vehicles .swiper-pagination-bullet {
+	background: var(--swiper-pagination-bullet-inactive-color, var(--yellow));
+}
+body.Active .Featured .swiper-pagination-bullet {
+	background: var(--swiper-pagination-bullet-inactive-color, var(--yellow));
+}
+body.Active .Reviews .swiper-pagination-bullet {
+	background: var(--swiper-pagination-bullet-inactive-color, var(--yellow));
+}
+
+/* ========================================== Header ============================================= */
+header {
+	background: var(--white);
+	color: var(--black);
+	width: 100%;
+	position: sticky;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 20px;
+	z-index: 100000;
+}
+header .logo img {
+	width: 5rem;
+	transform: translateY(1rem);
+}
+header nav a {
+	color: var(--black);
+	padding: 0 15px;
+	font-weight: 500;
+}
+header .Form i.fa-bars {
+	display: none;
+}
+header .Form i.fa-user {
+	display: none;
+}
+header nav a:hover {
+	color: var(--yellow);
+}
+@media (max-width: 800px) {
+	header .Form button {
+		display: none;
+	}
+	header .Form i.fa-bars,
+	header .Form i.fa-user {
+		display: initial;
+	}
+	header nav {
+		background: var(--white);
+		width: 100%;
+		position: absolute;
+		top: 100%;
+		clip-path: polygon(0 0%, 100% 100%, 0 0%, 0 0);
+	}
+	header nav a {
+		display: block;
+	}
+}
+@media (max-width: 400px) {
+	header {
+		justify-content: space-between;
+	}
+	header .logo {
+		font-size: 80%;
+	}
+	header .Form i {
+		font-size: 15px;
+		padding: 7px;
+		margin: 2px;
+	}
+}
+
+/* ========================================== Home =============================================== */
+.Home {
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.Home img {
+	width: 100%;
+}
+.Home h1 {
+	color: var(--black);
+	text-transform: uppercase;
+	font-size: 100px;
+	transform: translate(0, -20%);
+	z-index: -1;
+}
+@media (max-width: 900px) {
+	.Home h1 {
+		font-size: 70px;
+		transform: translate(0, 0);
+	}
+}
+@media (max-width: 600px) {
+	.Home h1 {
+		font-size: 60px;
+	}
+}
+@media (max-width: 400px) {
+	.Home h1 {
+		font-size: 50px;
+	}
+	header {
+		justify-content: space-between;
+	}
+	header .logo {
+		font-size: 80%;
+	}
+	header .Form i {
+		font-size: 15px;
+		padding: 7px;
+		margin: 2px;
+	}
+}
+
+/* ========================================== About ============================================== */
+.About {
+	background: var(--light-bg);
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+	padding: 5rem 9%;
+}
+.About .box i.fa {
+	border-radius: 50%;
+	padding: 20px;
+	font-size: 30px;
+}
+.About .box i.fas {
+	border-radius: 50%;
+	padding: 20px;
+	font-size: 30px;
+}
+.About .box {
+	background: var(--white);
+	padding: 20px;
+	box-shadow: var(--box-shadow);
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+}
+.About .box .Content {
+	padding-left: 20px;
+}
+.About .box .Content h2 {
+	color: var(--yellow);
+}
+.About .box .Content p {
+	color: var(--light-color);
+}
+.About .box:hover {
+	background: var(--black);
+}
+
+/* ========================================== Vehicles =========================================== */
+.Vehicles {
+	color: var(--black);
+	text-align: center;
+	line-height: 2;
+}
+.Vehicles .swiper-wrapper {
+	margin-bottom: 2rem;
+}
+.Vehicles .box span {
+	font-size: 25px;
+}
+.Vehicles .box .img {
+	width: 100%;
+}
+.Vehicles .box .img img {
+	width: 100%;
+}
+.Vehicles .box .Tags {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.Vehicles .box .Tags i.fa {
+	background: none;
+	color: var(--yellow);
+	font-size: 15px;
+	padding: 5px;
+	margin-left: 20px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.Vehicles .box:hover .img img {
+	transform: scale(1.1);
+}
+/* =========== Swipper Setting =========== */
+.Vehicles .swiper-slide {
+	opacity: 0.5;
+	transform: scale(0.7);
+}
+.Vehicles .swiper-slide .Content {
+	opacity: 0;
+}
+.Vehicles .swiper-slide-active {
+	opacity: 1;
+	transform: scale(1);
+}
+.Vehicles .swiper-slide-active .Content {
+	opacity: 1;
+}
+.Vehicles .swiper-pagination-bullet-active {
+	background: var(--yellow);
+}
+
+/* ========================================== Services =========================================== */
+.Services .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+}
+.Services .Catagory .box {
+	background: var(--light-bg);
+	color: var(--black);
+	text-align: center;
+	padding: 2rem 1rem;
+	box-shadow: var(--box-shadow);
+	line-height: 2;
+}
+.Services .Catagory .box i.fas {
+	background: var(--yellow);
+	border-radius: 50%;
+	font-size: 35px;
+	padding: 23px;
+}
+.Services .Catagory .box:hover {
+	background: var(--black);
+	color: var(--white);
+}
+
+/* ========================================== Featured =========================================== */
+.Featured .Galory h1 {
+	text-align: center;
+	color: var(--black);
+	font-size: 40px;
+	margin: 40px 0;
+}
+.Featured .Galory .box {
+	background: var(--white);
+	color: var(--black);
+	text-align: center;
+	padding: 30px 20px;
+	border-top-left-radius: 100px;
+	border-bottom-right-radius: 100px;
+}
+.Featured .swiper-wrapper {
+	margin-bottom: 2rem;
+}
+.Featured .Galory .box .img {
+	height: 10rem;
+}
+.Featured .Galory .box .Content h3 {
+	font-size: 30px;
+}
+.Featured .Galory .box .Content i.fa {
+	background: none;
+	color: orangered;
+	padding: 0;
+	margin: 15px 0;
+}
+.Featured .Galory .box .Content p {
+	color: var(--black);
+	font-size: 25px;
+	font-weight: 500;
+}
+.Featured .Galory .box .img:hover img {
+	transform: scale(0.9);
+}
+.Featured .swiper-pagination-bullet-active {
+	background: var(--yellow);
+}
+
+/* ========================================== SubScribe ============================================ */
+.SubScribe {
+	background: url(../Images/letter-bg.png);
+	background-position: center;
+	background-size: cover;
+	color: var(--black);
+	text-align: center;
+	width: 100%;
+	min-height: 400px;
+	line-height: 2;
+}
+.SubScribe form {
+	background: var(--white);
+	max-width: 50rem;
+	margin: 30px auto;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	border-radius: 30px;
+}
+.SubScribe form input {
+	width: 100%;
+	padding: 20px;
+	font-size: 25px;
+}
+.SubScribe form button {
+	transform: scale(1.2);
+}
+@media (max-width: 600px) {
+	.SubScribe form {
+		display: initial;
+		max-width: 50rem;
+		text-align: center;
+		border-radius: 20px;
+	}
+	.SubScribe form input {
+		padding: 10px;
+		font-size: 20px;
+		display: block;
+		margin: auto;
+	}
+	.SubScribe form button {
+		transform: scale(1);
+		width: 80%;
+		display: block;
+		margin: 20px auto 0;
+	}
+}
+
+/* ========================================== Reviews ============================================ */
+.Reviews .Catagory-2 .box {
+	background: var(--white);
+	color: var(--black);
+	text-align: center;
+	padding: 20px;
+	line-height: 2;
+	box-shadow: var(--box-shadow);
+	border-top-left-radius: 100px;
+	border-bottom-right-radius: 100px;
+}
+.Reviews .swiper-wrapper {
+	margin-bottom: 50px;
+}
+.Reviews .Catagory-2 .box .img {
+	width: 100px;
+	margin: auto;
+}
+.Reviews .Catagory-2 .box .img img {
+	width: 100%;
+	border-radius: 50%;
+}
+.Reviews .Catagory-2 .box .Content h3 {
+	font-size: 28px;
+}
+.Reviews .Catagory-2 .box .Content i.fa {
+	background: none;
+	color: orangered;
+	padding: 0;
+	margin: 15px 0;
+}
+.Reviews .Catagory-2 .box .Content p {
+	color: var(--light-color);
+}
+.Reviews .Catagory-2 .swiper-pagination-bullet-active {
+	background: var(--swiper-pagination-bullet-inactive-opacity, var(--yellow));
+}
+.Reviews .Catagory-2 .swiper-slide {
+	opacity: 0.5;
+	transform: scale(0.9);
+	box-shadow: none;
+}
+.Reviews .Catagory-2 .swiper-slide-active {
+	opacity: 1;
+	transform: scale(1);
+	box-shadow: var(--box-shadow);
+}
+
+/* ========================================== Contact ============================================ */
+.Contact .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+	margin-top: 30px;
+}
+.Contact .Catagory iframe {
+	background: var(--light-bg);
+	width: 100%;
+	height: 100%;
+	border: var(--border);
+	box-shadow: var(--box-shadow);
+}
+.Contact .Catagory form {
+	background: var(--light-bg);
+	padding: 50px 20px;
+	text-align: center;
+	border: var(--border);
+	box-shadow: var(--box-shadow) inset;
+}
+.Contact .Catagory form input {
+	background: var(--white);
+	color: var(--black);
+	display: block;
+	width: 100%;
+	padding: 15px;
+	margin: 15px 0;
+	border-radius: 10px;
+}
+.Contact .Catagory form textarea {
+	background: var(--white);
+	color: var(--black);
+	width: 100%;
+	height: 150px;
+	display: block;
+	padding: 15px;
+	margin: 15px 0;
+	border-radius: 10px;
+}
+.Contact .Catagory form button {
+	width: 80%;
+	margin: auto;
+	padding-top: 20px;
+}
+
+/* ========================================== Footer ============================================= */
+footer {
+	padding: 5rem 9% 0;
+	background: var(--light-bg);
+}
+footer .Links {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+	color: var(--black);
+}
+footer .Links .box .row {
+	width: fit-content;
+	align-items: center;
+	display: flex;
+	cursor: pointer;
+}
+footer .Links .box .row a {
+	color: var(--black);
+}
+footer .Links .box .row i.fa {
+	background: none;
+	color: var(--light-yellow);
+}
+footer .Links .box .row i.fab {
+	background: none;
+	color: var(--light-yellow);
+}
+footer .Links .box .row:hover a {
+	color: var(--light-yellow);
+	padding-left: 20px;
+}
+footer .Links .box .row:hover p {
+	color: var(--light-yellow);
+	padding-left: 20px;
+}
+footer .Links .box .row:hover i.fa {
+	color: var(--black);
+}
+footer .Links .box .row:hover i.fab {
+	color: var(--black);
+}
+footer .Copy h2 {
+	color: var(--black);
+	text-align: center;
+	padding: 3rem 0 1rem;
+	border-top: var(--border);
+}
+footer .Copy span {
+	color: var(--yellow);
+}
+
+/* ========================================== Loading ============================================= */
+.Loading {
+	background: var(--white);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9000000000;
+}
+.Loading.Active {
+	display: none;
+}
+.Loading img {
+	width: 20rem;
+}

@@ -1,0 +1,114 @@
+include Helpers.pug 
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title SEO Website 
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
+        link(rel="stylesheet", href="../css/Style.css")
+        link(rel="stylesheet", href="../css/Swipper.css")
+    body
+        // =============================================== Header ================================================
+        header 
+            include Header/Header.pug
+            span.Progress
+
+        // =============================================== Home =================================================
+        section.Home#Home 
+            +SectionLeft("../Images/home-img-1.png", "SEO Tools For Your Business", "Read More")
+            +SectionRight("../Images/home-img-2.png", "Unique Business Solutions", "Read More")
+            +SectionLeft("../Images/home-img-3.png", "Everything You Need Is Here!", "Read More")
+
+        // =============================================== Services ==============================================
+        section.Services#Services
+            +Title("Our", "Services")
+            .Catagory
+                - let img = ["serv-1.png","serv-2.png","serv-3.png","serv-4.png","serv-5.png","serv-6.png",]
+                - let Title = ["Result Guarantee","Reasonable Price","No Missing Deadlines","Quick Feedback","Individual Approach","Dedicated Team",]
+                - for (i = 0; i < img.length; i++)
+                    +Box(img[i], Title[i])
+
+        // =============================================== Works =================================================
+        section.Works#Works
+            +Title("Our", "Works")
+            .Works-Catagory
+                - let image = ["../Images/work-1.png", "../Images/work-2.png", "../Images/work-3.png", "../Images/work-4.png", "../Images/work-5.png", "../Images/work-6.png", "../Images/work-7.png", "../Images/work-8.png", "../Images/work-9.png"]
+                - for (x = 0; x < img.length; x++)
+                    +WorksBox(image[x])
+
+        // =============================================== Pricing ===============================================
+        section.Pricing#Pricing
+            +Title("Choose Your ", "Plan")
+            .Catagory
+                - let title = ["Basic", "Standard", "Premium"]
+                - let Price = ["150", "250", "650"]
+                - let Type = [["check", "check", "times", "times", "times"],["check", "check", "check", "times", "times"],["check", "check", "check", "check", "check"]]
+                - let Parag = ["Content Quality Check", "Getting Indexed", "Keywords", "SEO Analytics", "Maintainence"]
+                - for (z = 0; z < title.length; z++)
+                    .box
+                        h1.Type #{title[z]}
+                        h1.price $#[span #{Price[z]}]/Mo
+                        - for (s = 0; s <= Parag.length; s++)
+                            .Content 
+                                p #[i(class=`fas fa-${Type[z][s]}`)] #{Parag[s]} 
+                        a.Style(href="#") Choose Plan
+
+        // =============================================== Reviews ===============================================
+        section.Reviews#Reviews
+            +Title("Clients ", "Reviews")
+            .Catagory
+                - let boxImage = ["../Images/pic-1.png", "../Images/pic-2.png", "../Images/pic-3.png"]
+                - let boxName = ["Shehab Ayman", "Aya Mahmoud", "Hesham Mohamed"]
+                - for (box = 0; box < boxImage.length; box++)
+                    .box
+                        .Up 
+                            .img 
+                                img(src=boxImage[box], alt="Image")
+                            .Content
+                                h1 #{boxName[box]}
+                                i.fa.fa-star
+                                i.fa.fa-star
+                                i.fa.fa-star
+                                i.fa.fa-star
+                                i.fa.fa-star-half
+                        .Down 
+                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sequi reiciendis et error voluptatibus quaerat ducimus! Atque, laboriosam. Repellendus fugit accusantium modi libero laboriosam quasi omnis non, quae accusamus iusto?
+
+        // =============================================== Contact ===============================================
+        section.Contact#Contact
+            +Title("Contact", "Us")
+            .ContactUs
+                .left
+                    .box
+                        h2 Contact Info
+                        p #[i.fas.fa-map-marked] Alexandria, Egypt
+                        p #[i.fas.fa-envelope] shehabayman365@gmail.com
+                        p #[i.fas.fa-phone] +20 1067421381
+                    .box
+                        h2 Opening Hours
+                        p #[span Monday : ] 07:00Am - 10:00Pm
+                        p #[span Tuesday : ] 07:00Am - 10:00Pm
+                        p #[span Wednesday : ] 07:00Am - 10:00Pm
+                        p #[span Thurday : ] 07:00Am - 10:00Pm
+                        p #[span Friday : ] 07:00Am - 10:00Pm
+                        p #[span Sunday : ] Closed
+                form(action="#") 
+                    h1 Send Us A Message
+                    input(type="text" placeholder="Your Name")
+                    input(type="email" placeholder="Your Email")
+                    input(type="number" placeholder="Your number")
+                    input(type="text" placeholder="Your Subject")
+                    textarea(placeholder="Your Message")
+                    a.Style(href="#") Send Message
+
+        // =============================================== Footer ================================================
+        footer 
+            include Footer/Footer.pug
+
+
+
+        // =============================================== Scripts ===============================================
+        script(src="../js/Swipper.js") 
+        script(src="../js/Script.js") 

@@ -1,0 +1,152 @@
+.Home {
+	.Home-Banner {
+		background: var(--white);
+		min-height: 100vh;
+		.Catagory {
+			width: 100%;
+			padding: 5rem 9%;
+		}
+		.box {
+			@include Grid(20rem);
+			line-height: 2;
+			@include Width600 {
+				@include Grid(15rem);
+			}
+			.img {
+				@include Flex(center, flex-end);
+				width: 400px;
+				height: 100%;
+				margin: auto;
+				img {
+					width: 100%;
+				}
+				@include Width600 {
+					width: 100%;
+				}
+			}
+			.Content {
+				@include Flex(center, flex-start);
+				flex-direction: column;
+				width: 100%;
+				height: 100%;
+				@include Width800 {
+					align-items: center;
+				}
+				h1 {
+					font-size: 40px;
+				}
+				span {
+					color: var(--blue);
+					font-size: 25px;
+				}
+			}
+		}
+	}
+
+	.Labels {
+		@include Grid(20rem);
+		background: var(--light-bg);
+		padding: 5rem 9%;
+		@include Width600 {
+			@include Grid(15rem);
+		}
+		.box {
+			min-height: 20rem;
+			padding: 20px;
+			position: relative;
+			overflow: hidden;
+			border: var(--border);
+			box-shadow: var(--Shadow);
+
+			&:hover {
+				transform: var(--BoxHover1);
+				box-shadow: var(--BoxHover2);
+				img {
+					transform: scale(1.1);
+				}
+			}
+			.img {
+				@include PositionLeft(0, 0);
+				width: 100%;
+				height: 100%;
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.Content {
+				@include PositionLeft(50%, 30px);
+				z-index: 11;
+				// transform: rotate(40deg);
+				transform: translateY(-50%) rotate(40deg);
+				span {
+					color: var(--blue);
+				}
+			}
+		}
+	}
+
+	.Arrivals {
+		background: var(--light-bg);
+		padding: 0 9% 5rem;
+		.Catagory {
+			@include Grid(20rem);
+			@include Width600 {
+				@include Grid(15rem);
+			}
+			.box {
+				@include Flex(space-around, center);
+				background: var(--white);
+				flex-wrap: wrap;
+				padding: 20px 0;
+				border: var(--border);
+				box-shadow: var(--Shadow);
+				.img {
+					width: 40%;
+					height: 100%;
+					img {
+						width: 100%;
+						height: 100%;
+						animation: fadeIn 0.3s ease-in-out;
+						&.Hover-Image {
+							display: none;
+						}
+					}
+				}
+				.Content {
+					padding: 5px;
+					.product-name {
+						@include Width400 {
+							font-size: 16px;
+						}
+					}
+					.price {
+						font-weight: bold;
+						.Del {
+							color: var(--blue);
+							padding-left: 5px;
+							font-size: 15px;
+							font-weight: normal;
+						}
+					}
+					.Icons i {
+						color: var(--gold);
+						font-size: 14px;
+					}
+				}
+				&:hover {
+					transform: var(--BoxHover1);
+					box-shadow: var(--BoxHover2);
+					.img {
+						img.Main-Image {
+							display: none;
+						}
+						img.Hover-Image {
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}
+	}
+}

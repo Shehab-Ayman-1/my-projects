@@ -1,0 +1,15 @@
+- let Switches = ["Home", "Services", "Works", "Pricing", "Reviews", "Contact"]
+.NaveBar 
+    .logo 
+        a(href="#") Se #[i.fas.fa-search-dollar]
+    nav 
+        each link in Switches 
+            a(href=`#${link}`) #{link}
+            
+.CopyRight 
+    h2 Created By #[span Mr - Shehab Ayman] | All Rights Reserved!
+    .Icons 
+        i.fab.fa-facebook-f
+        i.fab.fa-twitter 
+        i.fab.fa-instagram 
+        i.fab.fa-github

@@ -1,0 +1,427 @@
+@use "../helpers/" as *;
+main.home-page {
+	section.bg-section {
+		@include Background("./bg-images/hero-bg.jpg", 100% 100%, fixed);
+		@include Flex(center, flex-start);
+		width: 100%;
+		height: 100vh;
+		flex-direction: column;
+		padding-left: 8%;
+		.intro {
+			.phrase {
+				color: get(main-color);
+				font-size: 2.5rem;
+				font-weight: bold;
+				padding-bottom: get(p3);
+				@include Width(lg) {
+					font-size: 2.2rem;
+				}
+				@include Width(xmd) {
+					font-size: 2rem;
+				}
+			}
+			.head {
+				font-size: 6rem;
+				@include Width(lg) {
+					font-size: 5rem;
+				}
+				@include Width(xsm) {
+					font-size: 4rem;
+				}
+				@include Width(sm) {
+					font-size: 2.8rem;
+				}
+			}
+		}
+		.additions {
+			@include Flex(space-between, center);
+			width: fit-content;
+			margin-block: get(m6);
+			flex-wrap: wrap;
+			gap: 2rem;
+			@include Width(md) {
+				width: 80%;
+			}
+			@include Width(sm) {
+				width: 80%;
+			}
+			.labels {
+				@include Flex(space-between, center);
+				width: fit-content;
+				gap: 1rem;
+				p {
+					padding: gutter(p1, p2);
+					padding-block: 2px;
+					font-size: 1.2rem;
+					font-weight: bold;
+					border-radius: get(r1);
+					&:nth-child(1) {
+						background-color: get(white);
+						color: get(black);
+					}
+					&:nth-child(2) {
+						padding-inline: get(p3);
+						padding-block: 0;
+						border: get(border);
+						border-width: 3px;
+					}
+				}
+			}
+			.more-links {
+				padding-inline: get(p4);
+				@include Width(md) {
+					padding-inline: get(p0);
+				}
+				a {
+					color: get(white);
+					font-size: 1.4rem;
+					padding-right: get(p2);
+				}
+			}
+			.date {
+				@include Flex(space-between, center);
+				gap: 1.5rem;
+				i {
+					color: get(main-color);
+					font-size: 1.6rem;
+				}
+			}
+		}
+		.mybtn {
+			i {
+				font-size: 1.5rem;
+			}
+		}
+	}
+	section.streaming-section {
+		@include Background("./bg-images/upcoming-bg.png", cover, initial);
+		padding: 9%;
+		.header {
+			@include Flex(space-between, center);
+			padding-bottom: get(p6);
+			@include Width(xmd) {
+				flex-direction: column;
+				text-align: center;
+			}
+			.left-section {
+				.main-color {
+					font-size: 1.8rem;
+					font-weight: 500;
+					@include Width(sm) {
+						font-size: 1.5rem;
+					}
+				}
+				.title {
+					padding: 0;
+					font-weight: 500;
+				}
+			}
+			.right-section {
+				@include Flex(space-between, center);
+				.mybtn {
+					background-color: #222;
+					border-color: get(dark-bg);
+					white-space: nowrap;
+					@include Width(md) {
+						font-size: 1.2rem;
+					}
+					@include Width(sm) {
+						padding: gutter(p1, p2);
+					}
+				}
+			}
+		}
+		.movies {
+			@include Grid(25rem);
+			gap: 2rem;
+			.card {
+				color: get(white);
+				cursor: pointer;
+				&:hover {
+					filter: brightness(1.1);
+				}
+				.card-img {
+					width: 100%;
+					height: 500px;
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.card-footer {
+					min-height: 135px;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+
+					.name {
+						@include Flex(space-between, center);
+						font-size: 1.5rem;
+						padding-block: get(p6);
+						.date {
+							color: get(main-color);
+							padding-left: get(p6);
+							font-weight: bold;
+						}
+					}
+					.config {
+						@include Flex(space-between, center);
+						p {
+							color: get(main-color);
+							width: fit-content;
+							padding: gutter(p0, p2);
+							padding-block: 2px;
+							font-weight: bold;
+							border: get(border);
+							border-width: 3px;
+						}
+						.data {
+							@include Flex(space-between, center);
+							gap: 1rem;
+							i {
+								color: get(main-color);
+								font-size: 1.4rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	section.services-section {
+		@include Flex(space-between, center);
+		background-color: #222;
+		flex-wrap: wrap;
+		padding: 9%;
+		@include Width(xmd) {
+			flex-direction: column;
+		}
+		.left-section {
+			max-width: 50%;
+			@include Width(xmd) {
+				max-width: 70%;
+			}
+			@include Width(xsm) {
+				max-width: 100%;
+			}
+			img {
+				width: 100%;
+			}
+		}
+		.right-section {
+			width: 50%;
+			padding: get(p6);
+			@include Width(xmd) {
+				width: 100%;
+				padding: get(p0);
+			}
+			.card-header {
+				@include Width(xmd) {
+					padding-top: get(p4);
+					text-align: center;
+				}
+				@include Width(sm) {
+					text-align: left;
+				}
+				.sub-title {
+					padding-left: 50px;
+					font-size: 15px;
+					font-weight: bold;
+					position: relative;
+					@include Width(xsm) {
+						padding-left: 35px;
+					}
+					&::before,
+					&::after {
+						@include Absolute(tl, 50%, 15px);
+						background-color: get(main-color);
+						content: "";
+						width: 40px;
+						height: 3px;
+						transform: translate(-50%, -50%);
+						@include Width(xsm) {
+							width: 20px;
+						}
+					}
+					&::after {
+						@include Absolute(tl, 50%, calc(100% + 35px));
+						@include Width(xsm) {
+							left: calc(100% + 20px);
+						}
+					}
+				}
+				.head-title {
+					color: get(main-color);
+					font-size: 4rem;
+					padding-top: get(p1);
+					text-align: left;
+					@include Width(lg) {
+						font-size: 3.5rem;
+					}
+					@include Width(md) {
+						font-size: 3rem;
+					}
+					@include Width(sm) {
+						font-size: 2rem;
+					}
+				}
+				.head-description {
+					color: get(light-color);
+					font-size: 1.4rem;
+					text-align: left;
+					padding-bottom: get(p4);
+					@include Width(sm) {
+						font-size: 1rem;
+					}
+				}
+			}
+			.card-body {
+				.serve {
+					@include Flex(flex-start, center);
+					padding-bottom: get(p5);
+					@include Width(xsm) {
+						flex-direction: column;
+					}
+					.left-side {
+						padding: get(p5);
+						cursor: pointer;
+						border: 1px dashed get(main-color);
+						border-radius: 50%;
+						&:hover {
+							background-color: get(main-color);
+							i {
+								color: get(black);
+							}
+						}
+						i {
+							font-size: 3rem;
+							@include Width(xsm) {
+								font-size: 2rem;
+							}
+						}
+						@include Width(xsm) {
+							padding: get(p3);
+						}
+					}
+					.right-side {
+						padding-left: get(p3);
+						@include Width(xsm) {
+							padding-top: get(p4);
+							padding-left: get(p0);
+							text-align: center;
+						}
+						.serve-title {
+							font-size: 1.6rem;
+						}
+						.serve-content {
+							color: get(light-color);
+							width: 80%;
+							font-size: 1.4rem;
+							@include Width(xsm) {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	section.rating-section {
+		@extend .streaming-section;
+		.header {
+			flex-direction: column;
+			.left-section {
+				margin-inline: auto;
+				text-align: center;
+			}
+			.right-section {
+				button {
+					background-color: black !important;
+					padding: gutter(p0, p6);
+					border: {
+						top: 0;
+						bottom: 0;
+						right: get(border);
+						left: get(border);
+						color: get(black) !important;
+						radius: 0;
+					}
+					&:focus {
+						border-color: get(main-color) !important;
+					}
+				}
+			}
+		}
+		.movies {
+			.card-footer {
+				min-height: auto !important;
+				.name {
+					padding-block: get(p3);
+				}
+			}
+		}
+	}
+	section.tv-show-section {
+		@extend .rating-section;
+	}
+	section.offer-section {
+		@include Flex(space-between, center);
+		background-color: get(main-color);
+		color: get(dark-color);
+		padding: 3% 9%;
+		@include Width(xmd) {
+			flex-direction: column;
+		}
+		.left-section {
+			.offer-title {
+				font-size: 3.3rem;
+				@include Width(md) {
+					font-size: 3rem;
+				}
+				@include Width(xsm) {
+					font-size: 2.5rem;
+				}
+				@include Width(sm) {
+					font-size: 2rem;
+				}
+			}
+			.offer-description {
+				font-size: 1.4rem;
+				font-weight: 500;
+			}
+		}
+		.right-section {
+			@include Flex(space-between, center);
+			background-color: get(white);
+			width: 45%;
+			padding: get(p1);
+			@include Width(xmd) {
+				width: 100%;
+				margin-top: get(m3);
+			}
+			input {
+				width: 100% !important;
+				padding-inline: get(p3);
+				@include Width(md) {
+					padding-inline: get(p1);
+				}
+			}
+			.offer-btn {
+				background-color: get(black);
+				color: get(white);
+				display: block;
+				padding: gutter(p3, p6);
+				font-size: 1.6rem;
+				white-space: nowrap;
+				@include Width(md) {
+					padding: gutter(p2, p4);
+					font-size: 1.4rem;
+				}
+				@include Width(sm) {
+					padding: gutter(p1, p2);
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+}

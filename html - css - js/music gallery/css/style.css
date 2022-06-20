@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  text-transform: capitalize;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: 0.2s ease-in-out;
+}
+
+html {
+  background-color: #111;
+  color: #f5f5f5;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+html::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #16a085;
+  border: 2px solid #16a085;
+  border-radius: 10px;
+}
+
+::-moz-selection {
+  background-color: #16a085;
+  color: #f5f5f5;
+}
+
+::selection {
+  background-color: #16a085;
+  color: #f5f5f5;
+}
+
+i {
+  background-color: #f5f5f5;
+  color: #16a085;
+  border-radius: 50%;
+  font-size: 35px;
+  cursor: pointer;
+}
+i:hover {
+  background-color: #16a085;
+  color: #f5f5f5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  padding: 30px 50px;
+  position: relative;
+  box-shadow: 3px 3px 10px #16a085;
+}
+header .logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+header nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: #333;
+  width: 20rem;
+  height: 100%;
+  padding-top: 50px;
+}
+header nav .fa-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  padding: 10px;
+  font-size: 30px;
+}
+header nav .fa-close:hover {
+  transform: rotate(360deg);
+}
+header nav a {
+  color: whitesmoke;
+  padding: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  display: block;
+}
+header nav a:hover {
+  color: #16a085;
+}
+header .fa-bars {
+  background: none;
+}
+
+.Music .Catagory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 3rem;
+  padding: 5rem 9%;
+}
+.Music .Catagory .box {
+  background: #333;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #16a085;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #16a085;
+}
+.Music .Catagory .box .img {
+  width: 95%;
+  height: 93%;
+  overflow: hidden;
+  margin: auto;
+}
+.Music .Catagory .box .img img {
+  image-rendering: crisp-edges;
+  width: 100%;
+  height: 100%;
+  height: 30rem;
+}
+.Music .Catagory .box .icon {
+  position: absolute;
+  top: -100%;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 93%;
+}
+.Music .Catagory .box .icon i {
+  font-size: 40px;
+  padding: 20px;
+  opacity: 0.8;
+}
+.Music .Catagory .box .Content {
+  color: #f5f5f5;
+  text-align: center;
+}
+.Music .Catagory .box:hover .icon {
+  top: 0;
+  z-index: 1;
+}
+.Music .Catagory .box:hover img {
+  transform: scale(1.1);
+  z-index: -1;
+}
+.Music .FitchAudio {
+  position: -webkit-sticky;
+  position: sticky;
+  top: auto;
+  right: 0;
+  background-color: #333;
+  width: 100%;
+  bottom: 0%;
+  left: 0;
+  display: none;
+  z-index: 10000000000;
+}
+.Music .FitchAudio i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+}
+.Music .FitchAudio h1 {
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #16a085;
+}
+.Music .FitchAudio audio {
+  background: #333;
+  color: #333;
+  width: 100%;
+}
+.Music .FitchAudio audio::-webkit-media-controls-enclosure {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.Music .FitchAudio.Active {
+  display: block;
+}/*# sourceMappingURL=style.css.map */

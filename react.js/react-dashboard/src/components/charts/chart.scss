@@ -1,0 +1,30 @@
+@use "../../scss/helpers/mixins" as *;
+.chart {
+	background-color: get(mode-bg);
+	flex: 1.8;
+	box-shadow: get(box-shadow);
+	@include width(md) {
+		width: 90%;
+		margin-inline: 20px;
+	}
+	.chart-title {
+		color: get(second-color);
+		font-size: 3rem;
+		margin-block: 20px 30px;
+		text-align: center;
+		@include width(md) {
+			font-size: 2rem;
+		}
+	}
+	.chart-art {
+		margin: 10 30 0 0;
+		min-width: 400px;
+		@include width(md) {
+			min-width: initial;
+			margin-inline: auto;
+		}
+		.chard-grid {
+			stroke: get(light-text);
+		}
+	}
+}

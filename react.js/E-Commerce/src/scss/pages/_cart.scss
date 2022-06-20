@@ -1,0 +1,64 @@
+.Shopping-Cart {
+	background: var(--light-bg);
+	min-height: 70vh;
+	padding: 0 9% 5rem;
+	.Cart {
+		@include Grid(20rem);
+		.box {
+			background: var(--white);
+			width: 20rem;
+			padding: 15px;
+			position: relative;
+			border: var(--border);
+			.fa-times {
+				@include PositionRight(5px, 15px);
+				color: var(--blue);
+				&:hover {
+					color: crimson;
+				}
+			}
+			.img {
+				width: 100%;
+				height: 20rem;
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.Contact {
+				background: var(--white);
+				text-align: center;
+				padding: 10px;
+				line-height: 2;
+				h1 {
+					font-size: 30px;
+					color: var(--blue);
+				}
+				p {
+					font-size: 20px;
+				}
+				input {
+					background: var(--light-bg);
+					width: 80px;
+					padding: 10px;
+					font-size: 20px;
+					border: var(--border);
+				}
+			}
+		}
+	}
+	.Total-Price {
+		font-size: 30px;
+		padding: 10px 0;
+		margin-top: 20px;
+		border-top: var(--border);
+	}
+	.Style {
+		width: 100%;
+		display: block;
+		padding: 20px 30px;
+		font-size: 22px;
+		font-weight: bold;
+		cursor: pointer;
+	}
+}

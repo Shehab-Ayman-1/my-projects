@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+:root {
+  --red: #fa4f09;
+  --black: #333;
+  --white: #fff;
+  --lightColor: #666;
+  --lightBG: #eee;
+  --border: 1px solid rgba(102, 102, 102, 0.5);
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+html body {
+  background: var(--white);
+}
+html body.Active {
+  --red: #fa4f09;
+  --black: #fff;
+  --white: #000;
+  --lightColor: #aaa;
+  --lightBG: #222;
+  --border: 1px solid rgba(102, 102, 102, 0.5);
+  background: black;
+}
+html * {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+html::-webkit-scrollbar {
+  width: 0.7rem;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+}
+html::-webkit-scrollbar-track {
+  background-color: var(--white);
+}
+html ::-moz-selection {
+  background-color: var(--red);
+  color: var(--white);
+  text-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+}
+html ::selection {
+  background-color: var(--red);
+  color: var(--white);
+  text-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+}
+html i {
+  color: var(--black);
+  font-size: 25px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+html i:hover {
+  color: var(--red);
+}
+html .title {
+  color: var(--black);
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 50px;
+}
+html .title span {
+  color: var(--red);
+}
+html .Style {
+  background-color: var(--lightBG);
+  color: var(--lightColor);
+  font-size: 20px;
+  padding: 5px 30px;
+  margin-top: 10px;
+  display: inline-block;
+  border: var(--border);
+  border-radius: 5px;
+}
+html .Style:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+html section {
+  padding: 5rem 9%;
+}
+html .Catagory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 1rem;
+}
+html .Catagory .box {
+  background: var(--lightBG);
+  text-align: center;
+  padding: 20px;
+  line-height: 2;
+  border-radius: 5px;
+}
+html .Catagory .box h1 {
+  color: var(--black);
+}
+html .Catagory .box p {
+  color: var(--lightColor);
+}
+html .Catagory .box img {
+  height: 9rem;
+}
+
+header nav.Active, footer .NaveBar nav.Active {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+header, footer .NaveBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--lightBG);
+  width: 100%;
+  padding: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10000000000;
+}
+header .logo a, footer .NaveBar .logo a {
+  color: var(--black);
+  font-size: 28px;
+  font-weight: 500;
+}
+header .logo i, footer .NaveBar .logo i {
+  color: var(--red);
+  font-size: 28px;
+  padding: 0;
+}
+header nav a, footer .NaveBar nav a {
+  color: var(--lightColor);
+  font-size: 22px;
+  font-weight: 500;
+  padding: 0 10px;
+}
+header nav a:hover, footer .NaveBar nav a:hover {
+  color: var(--red);
+}
+header nav a.Active, footer .NaveBar nav a.Active {
+  color: rgba(250, 77, 9, 0.6431372549);
+}
+header .Progress, footer .NaveBar .Progress {
+  background: var(--red);
+  height: 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+@media (max-width: 800px) {
+  header .fa-bars, footer .NaveBar .fa-bars {
+    display: initial !important;
+  }
+  header nav, footer .NaveBar nav {
+    background: var(--lightBG);
+    color: var(--white);
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    padding: 20px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  header nav a, footer .NaveBar nav a {
+    display: block;
+    padding: 15px;
+  }
+}
+
+.Home .Section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  margin-top: 5rem 0;
+  line-height: 2;
+}
+.Home .Section .left img {
+  width: 100%;
+}
+.Home .Section .right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.Home .Section .right h1 {
+  color: var(--black);
+  font-size: 40px;
+}
+.Home .Section .right p {
+  color: var(--lightColor);
+}
+
+.Works .Works-Catagory {
+  -moz-columns: 3 23rem;
+       columns: 3 23rem;
+  gap: 2rem;
+}
+.Works .Works-Catagory .box {
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.Works .Works-Catagory .box img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.Works .Works-Catagory .box .Icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(102, 102, 102, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -100%;
+  left: 0;
+}
+.Works .Works-Catagory .box .Icons i {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 20px;
+  margin: 10px;
+}
+.Works .Works-Catagory .box .Icons i:hover {
+  background: var(--red);
+  color: var(--white);
+}
+.Works .Works-Catagory .box:hover .Icons {
+  top: 0;
+}
+
+.Pricing .Catagory .box {
+  background: var(--white) !important;
+  padding: 40px 20px !important;
+}
+.Pricing .Catagory .box .Type {
+  background: var(--red);
+  color: var(--white);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 20px;
+  margin: auto;
+  font-weight: normal;
+  border-radius: 5px;
+}
+.Pricing .Catagory .box .price {
+  color: var(--black);
+  font-size: 30px;
+}
+.Pricing .Catagory .box .price span {
+  font-size: 50px;
+}
+.Pricing .Catagory .box .Content {
+  text-align: left;
+  padding-left: 30px;
+  line-height: 3;
+}
+.Pricing .Catagory .box .Content i {
+  color: var(--red);
+}
+.Pricing .Catagory .box:nth-child(2) {
+  background: var(--lightBG) !important;
+}
+.Pricing .Catagory .box:nth-child(2) .Style {
+  background: var(--red);
+  color: white;
+}
+.Pricing .Catagory .box:nth-child(2) .Style:hover {
+  background: rgba(var(--red), 0.8);
+}
+
+.Reviews .box {
+  background-color: var(--white) !important;
+}
+.Reviews .box .Up {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 0;
+}
+.Reviews .box .Up .img {
+  width: 80px;
+  height: 80px;
+}
+.Reviews .box .Up .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.Reviews .box .Up .Content {
+  padding-left: 20px;
+  text-align: left;
+}
+.Reviews .box .Up .Content i {
+  color: var(--red);
+  padding: 2px;
+  font-size: 18px;
+}
+.Reviews .box .Down {
+  background-color: var(--lightBG);
+  text-align: left;
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+.Reviews .box .Down::before {
+  content: "";
+  background: var(--lightBG);
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  z-index: -1;
+  transform: rotate(45deg);
+}
+
+.Contact .ContactUs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  gap: 1rem;
+}
+.Contact .ContactUs .left {
+  width: 100%;
+}
+.Contact .ContactUs .left .box {
+  background: var(--lightBG);
+  color: var(--lightColor);
+  padding: 20px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 2.5;
+}
+.Contact .ContactUs .left .box h2 {
+  color: var(--black);
+}
+.Contact .ContactUs .left .box i {
+  color: var(--red);
+}
+.Contact .ContactUs .left .box span {
+  color: var(--red);
+  font-weight: 500;
+}
+.Contact .ContactUs form {
+  width: 100%;
+  background: var(--lightBG);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+}
+.Contact .ContactUs form h1 {
+  color: var(--black);
+  font-size: 35px;
+  padding-bottom: 15px;
+}
+.Contact .ContactUs form input, .Contact .ContactUs form textarea {
+  background: var(--white);
+  color: var(--black);
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.Contact .ContactUs form textarea {
+  height: 180px;
+}
+.Contact .ContactUs form .Style {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  width: 100%;
+}
+
+footer .NaveBar {
+  background: var(--black);
+}
+footer .NaveBar .logo a {
+  color: var(--white);
+}
+footer .NaveBar i {
+  color: var(--white);
+}
+footer .CopyRight {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--lightBG);
+  color: var(--black);
+  padding: 20px;
+  text-align: center;
+}
+footer .CopyRight span {
+  color: var(--red);
+}/*# sourceMappingURL=Style.css.map */

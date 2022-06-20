@@ -1,0 +1,533 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap";
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	text-transform: capitalize;
+	text-decoration: none;
+	outline: none;
+	border: none;
+	transition: 0.2s linear;
+}
+:root {
+	--black: #141215;
+	--orange: #ef7819;
+}
+body {
+	background: var(--black);
+}
+html {
+	width: 100%;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	scroll-padding-top: 7rem;
+}
+html::-webkit-scrollbar {
+	width: 0.7rem;
+}
+html::-webkit-scrollbar-track {
+	background: var(--black);
+}
+html::-webkit-scrollbar-thumb {
+	background: var(--orange);
+}
+::selection {
+	background: #555;
+}
+
+/* ============================================= FrameWork ============================================= */
+section {
+	padding: 2rem 9%;
+}
+.Button-Style {
+	background: white;
+	padding: 8px 40px;
+	margin: 20px 0;
+	font-size: 25px;
+	cursor: pointer;
+}
+.Button-Style:hover {
+	background: var(--orange);
+	color: white;
+	letter-spacing: 2px;
+}
+.title {
+	text-align: center;
+	color: white;
+	font-size: 35px;
+}
+span {
+	color: var(--orange);
+}
+
+/* ============================================= Header ============================================= */
+header {
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	width: 100%;
+	position: sticky;
+	top: 0;
+	left: 0;
+	padding: 30px 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	z-index: 1000;
+}
+header.Active {
+	background: #222;
+}
+header .logo {
+	font-size: 25px;
+	display: flex;
+	padding-left: 2rem;
+}
+header .logo i {
+	font-size: 30px;
+	padding-right: 1rem;
+	color: var(--orange);
+	animation: floating 3s linear infinite;
+}
+
+/* =============================== */
+header nav a {
+	padding: 0 20px;
+	color: white;
+}
+header nav a.Active {
+	color: var(--orange);
+}
+header nav a:hover {
+	color: var(--orange);
+}
+
+/* =============================== */
+header .icons i {
+	font-size: 30px;
+	padding: 0 10px;
+	cursor: pointer;
+}
+header .icons i:hover {
+	color: var(--orange);
+}
+header .icons i.fa-bars {
+	display: none;
+}
+
+/* =============================== */
+header .Search-Form {
+	background: white;
+	display: none;
+	position: absolute;
+	top: 100%;
+	right: -100%;
+	padding: 0.5rem;
+}
+header .Search-Form input {
+	width: 20rem;
+	text-transform: initial;
+}
+header .Search-Form label {
+	color: black;
+	font-size: 25px;
+	padding-right: 10px;
+	cursor: pointer;
+}
+header .Search-Form label:hover {
+	color: var(--orange);
+}
+header form.Active {
+	right: 5%;
+	display: initial;
+}
+
+/* =============================== */
+@keyframes floating {
+	0%,
+	100% {
+		transform: translateY(-0.5rem);
+	}
+	50% {
+		transform: translateY(0.5rem);
+	}
+}
+
+@media (max-width: 800px) {
+	header {
+		justify-content: space-between;
+	}
+	header nav {
+		background: #222;
+		width: 100%;
+		padding: 20px 20px;
+		position: absolute;
+		top: 115%;
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+	header nav.MenuActive {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+	header nav a {
+		display: block;
+		padding-top: 0.7rem;
+		font-size: 25px;
+	}
+	header .icons i.fa-bars {
+		display: inline-block;
+	}
+}
+
+/* ============================================= Home ============================================= */
+.Home {
+	width: 100%;
+	height: 88vh;
+	padding: 0;
+}
+.Home .slides {
+	width: 100%;
+	height: 100%;
+}
+.Home .slides .box {
+	background-size: cover !important;
+	background-position: center !important;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.Home .Content {
+	color: white;
+	text-align: center;
+	font-size: 40px;
+	line-height: 2;
+	letter-spacing: 2px;
+	opacity: 0;
+	z-index: 2;
+	transform: translatey(40px);
+}
+.Home .Content p {
+	font-size: 30px;
+}
+.Home .swiper-button-next:hover,
+.Home .swiper-button-prev:hover {
+	color: var(--orange);
+}
+.Home .slides .swiper-slide-active .Content {
+	transform: translatey(0);
+	opacity: 1;
+}
+
+/* =============================== */
+@media (max-width: 1010px) {
+	.Home .Content {
+		font-size: 30px;
+	}
+	.Home .Content p {
+		font-size: 30px;
+	}
+	.Home .swiper-button-next,
+	.Home .swiper-button-prev {
+		display: none;
+	}
+}
+
+/* ============================================= Products ============================================= */
+.Products .Catagory {
+	width: 100%;
+}
+.Products .Catagory .box {
+	width: fit-content;
+	position: relative;
+	overflow: hidden;
+}
+.Products .Catagory .box .Image {
+	width: 100%;
+	height: 20rem;
+	overflow: hidden;
+}
+.Products .Catagory .box .Image img {
+	width: 100%;
+	height: 100%;
+}
+.Products .Catagory .box .Icons {
+	text-align: center;
+	position: absolute;
+	top: 0;
+	right: -60px;
+	z-index: 2;
+}
+.Products .Catagory .box .Icons i {
+	background: white;
+	width: 60px;
+	height: 60px;
+	font-size: 25px;
+	border-radius: 50%;
+	margin-top: 15px;
+	display: block;
+	cursor: pointer;
+	line-height: 60px;
+}
+.Products .Catagory .box .Content {
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	line-height: 2;
+	letter-spacing: 1px;
+}
+.Products .Catagory .box .Content span {
+	text-decoration: line-through;
+	font-size: 19px;
+	padding-left: 5px;
+}
+.Products .Catagory .box:hover .Icons {
+	right: 20px;
+}
+.Products .Catagory .box .Icons i:hover {
+	background: var(--orange);
+	color: white;
+}
+.Products .Catagory .box:hover .Image img {
+	transform: scale(1.2);
+}
+
+/* ============================================= About ================================================ */
+.About {
+	background: url(Images/about-bt.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 95vh;
+}
+.About h1 {
+	color: var(--orange);
+	font-size: 35px;
+	margin-top: 7%;
+}
+.About p {
+	width: 60%;
+	color: white;
+	line-height: 2;
+}
+
+/* =============================== */
+@media (max-width: 1010px) {
+	.About p {
+		width: 80%;
+	}
+}
+
+/* ============================================= Arrivals ================================================ */
+.Arrivals .Catagory {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+body:nth-child(2) .Arrivals .Catagory .box {
+	flex: 0 1 18rem;
+	margin: 20px auto;
+	position: relative;
+	overflow: hidden;
+	text-transform: none;
+}
+.Arrivals .Catagory .box .Image {
+	width: 100%;
+	height: 30rem;
+	overflow: hidden;
+}
+.Arrivals .Catagory .box .Image img {
+	width: 100%;
+	height: 100%;
+}
+.Arrivals .Catagory .box .Icons {
+	text-align: center;
+	position: absolute;
+	top: 0;
+	right: -60px;
+	z-index: 2;
+}
+.Arrivals .Catagory .box .Icons i {
+	background: white;
+	width: 60px;
+	height: 60px;
+	font-size: 25px;
+	border-radius: 50%;
+	margin-top: 15px;
+	display: block;
+	cursor: pointer;
+	line-height: 60px;
+}
+.Arrivals .Catagory .box .Content {
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	line-height: 2;
+	letter-spacing: 1px;
+}
+.Arrivals .Catagory .box .Content span {
+	text-decoration: line-through;
+	font-size: 19px;
+	padding-left: 5px;
+}
+.Arrivals .Catagory .box:hover .Icons {
+	right: 20px;
+}
+.Arrivals .Catagory .box .Icons i:hover {
+	background: var(--orange);
+	color: white;
+}
+.Arrivals .Catagory .box:hover .Image img {
+	transform: scale(1.2);
+}
+@media (max-width: 1010px) {
+	.Arrivals .Catagory .box .Image {
+		height: 20rem;
+	}
+}
+
+/* ============================================= Contact ================================================ */
+.Contact .Slides {
+	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.Contact .Slides .left {
+	flex: 1 1 18rem;
+	width: 100%;
+}
+.Contact .Slides .left iframe {
+	width: 100%;
+	height: 100%;
+}
+.Contact .Slides .right {
+	background: #222;
+	flex: 1 1 22rem;
+	width: 100%;
+	padding: 30px;
+	text-align: center;
+}
+.Contact .Slides .right h1 {
+	color: var(--orange);
+	font-size: 35px;
+	text-align: center;
+	margin: 30px 0 20px;
+}
+.Contact .Slides .right .input {
+	background: var(--black);
+	color: white;
+	width: 100%;
+	font-size: 20px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.Contact .Slides .right button {
+	width: 80%;
+}
+
+/* ============================================= Blogs ================================================= */
+.Blogs {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+	gap: 2rem;
+}
+.Blogs .box {
+	background: #222;
+}
+.Blogs .box .Image {
+	width: 100%;
+	height: 18rem;
+	overflow: hidden;
+}
+.Blogs .box .Image img {
+	width: 100%;
+	height: 100%;
+}
+.Blogs .box .Content {
+	padding: 20px;
+	color: var(--orange);
+}
+.Blogs .box .Content p {
+	color: white;
+	line-height: 2;
+}
+.Blogs .box .Content button {
+	padding: 8px 40px;
+}
+.Blogs .box .footer {
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+.Blogs .box .footer a {
+	color: var(--orange);
+	padding-right: 10px;
+}
+.Blogs .box .footer a span {
+	padding-left: 10px;
+}
+.Blogs .box:nth-child(3) {
+	flex: 0.3 1 17rem;
+}
+.Blogs .box .footer::before {
+	content: "";
+	background: rgba(255, 255, 255, 0.3);
+	width: 90%;
+	height: 1px;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.Blogs .box .footer a:hover,
+.Blogs .box .footer a span:hover {
+	color: white;
+}
+.Blogs .box .Image:hover img {
+	transform: scale(1.2);
+}
+/* ============================================= Footer ================================================= */
+footer {
+	background: black;
+	padding: 20px 9%;
+}
+footer .Links h3 {
+	color: white;
+	font-size: 25px;
+}
+footer .Links {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+	gap: 1.5rem;
+}
+footer .Links .column {
+	padding: 10px;
+	margin: 20px;
+	font-size: 17px;
+}
+footer .Links .column li {
+	width: fit-content;
+	color: var(--orange);
+	padding: 15px 0;
+	display: block;
+}
+footer .Links .column a {
+	color: #aaa;
+	padding-left: 15px;
+}
+footer .Links .column li:hover a {
+	color: var(--orange);
+	padding-left: 25px;
+}
+footer .Links .column li:hover {
+	color: white;
+}
+footer .Description h3 {
+	width: 90%;
+	margin: auto;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	border-top: 1px solid rgba(170, 170, 170, 0.5);
+}

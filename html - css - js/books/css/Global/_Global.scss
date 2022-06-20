@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+@import "./Helper";
+
+// =============================================== Global ===============================================
+$White: #fff;
+$Black: #000;
+$Green: #27ae60;
+$DarkGreen: #219150;
+$Dark: #333;
+$LightColor: #666;
+$BackgroundColor: #eee;
+$Border: 1px solid $Black;
+$BoxShadow: 0 0 10px $Green;
+$TextShadow: 1px 2px 0 $Black;
+* {
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	text-transform: capitalize;
+	transition: 0.2s linear;
+}
+html {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	scroll-padding-top: 5rem;
+}
+html::-webkit-scrollbar {
+	width: 0.7rem;
+}
+html::-webkit-scrollbar-thumb {
+	background: $Black;
+}
+html::-webkit-scrollbar-track {
+	background: transparent;
+}
+::selection {
+	background: $Dark;
+	color: $White;
+	text-shadow: 2px 2px 5px $Black;
+}
+
+// ============================================= FrameWork ============================================
+section {
+	padding: 5rem 9%;
+}
+span {
+	color: $Green;
+}
+button {
+	background: $Green;
+	color: $White;
+	font-size: 18px;
+	border-radius: 10px;
+	padding: 8px 30px;
+	margin-top: 20px;
+	cursor: pointer;
+	&:hover {
+		background: $DarkGreen;
+	}
+}
+i {
+	color: $Dark;
+	font-size: 25px;
+	cursor: pointer;
+	padding: 0 10px;
+	&:hover {
+		color: $Green;
+	}
+}
+.left {
+	line-height: 2;
+	h1 {
+		color: $Dark;
+		font-size: 50px;
+	}
+	p {
+		color: $LightColor;
+	}
+}
+.title {
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	h1 {
+		background: linear-gradient($LightColor, $Dark);
+		color: $White;
+		width: fit-content;
+		font-size: 35px;
+		padding: 3px 20px;
+		margin: auto;
+		border: $Border;
+		text-shadow: 5px 5px 0 $Black;
+		&::before {
+			@include Position-left(absolute, 50%, 50%);
+			background: $LightColor;
+			content: "";
+			width: 100%;
+			height: 0.5px;
+			z-index: -1;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+// =============================================== Active =============================================
+header nav.Active {
+	@include Position-left(fixed, 0, 0);
+	box-shadow: $BoxShadow;
+}
+header .Header .SearchForm.Active {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}

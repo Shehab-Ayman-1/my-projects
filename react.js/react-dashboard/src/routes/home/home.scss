@@ -1,0 +1,39 @@
+@use "../../scss/helpers/mixins" as *;
+.home-page {
+	@include flex(space-between, center);
+	.home-page-container {
+		@include absolute(tr, 0, 0);
+		width: calc(100% - 250px);
+		min-height: 100vh;
+		font-size: 20px;
+		@include width(lg) {
+			width: 100%;
+		}
+		.wedgets {
+			@include flex(space-between, center);
+			flex-wrap: wrap;
+			padding: 2rem;
+			margin-top: 70px;
+			gap: 20px;
+			@include width(sm) {
+				width: 90%;
+				justify-content: center;
+				margin-inline: auto;
+			}
+		}
+		.charts {
+			@extend .wedgets;
+			align-items: flex-start;
+			margin-top: 0;
+			@include width(sm) {
+				width: 100%;
+			}
+		}
+		.data-table-container {
+			width: calc(100% - 4rem);
+			margin: 2rem;
+			padding: 1px 0;
+			box-shadow: get(box-shadow);
+		}
+	}
+}

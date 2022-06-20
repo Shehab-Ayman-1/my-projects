@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+html {
+  width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 0.7rem;
+}
+html::-webkit-scrollbar-thumb {
+  background: #ff1493;
+}
+html::-webkit-scrollbar-track {
+  background: white;
+}
+html ::-moz-selection {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-shadow: 5px 5px 10px #130f40;
+}
+html ::selection {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-shadow: 5px 5px 10px #130f40;
+}
+html * {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  text-decoration: none !important;
+  text-transform: capitalize;
+  box-sizing: border-box;
+  transition: 0.2s linear;
+}
+html i {
+  font-size: 30px;
+}
+html i:hover {
+  color: #130f40;
+  cursor: pointer;
+}
+html .title h1 {
+  background: 0.2rem solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 40px;
+  padding: 0.5rem 1.5rem;
+  margin: auto auto 50px;
+  border: 0.2rem solid rgba(255, 255, 255, 0.1);
+  border-top: 0.2rem solid rgba(255, 255, 255, 0.3);
+  border-left: 0.2rem solid rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+html .btn {
+  padding: 10px 30px;
+  margin-top: 20px;
+  transition: 0.2s linear;
+}
+html .btn:hover {
+  letter-spacing: 2px !important;
+}
+
+.Grediant {
+  background: linear-gradient(darkviolet, deeppink);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.Grediant span {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  display: block;
+  pointer-events: none;
+  border-radius: 0.5rem;
+  -webkit-animation: Animate 3s linear infinite;
+          animation: Animate 3s linear infinite;
+}
+
+@-webkit-keyframes Animate {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(-200%) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translateY(-500%) rotate(360deg);
+  }
+}
+
+@keyframes Animate {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(-200%) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translateY(-500%) rotate(360deg);
+  }
+}
+header {
+  background: transparent;
+  width: 100%;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  z-index: 122222222222222220000000000;
+  border: 0.2rem solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+}
+header .logo {
+  color: #fff !important;
+}
+header ul a {
+  color: #fff !important;
+  font-size: 20px;
+  padding-left: 10px;
+}
+header ul a:hover {
+  color: #130f40 !important;
+}
+header ul .ULDropDown {
+  background: rgba(255, 255, 255, 0.1);
+}
+header .bars-icon {
+  filter: invert(1);
+}
+
+.Home {
+  background: transparent;
+  color: white;
+  width: 100%;
+  min-height: 50vh;
+  position: relative;
+}
+.Home .Content {
+  background: transparent;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Home .Content h1 {
+  width: 100%;
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 5px 5px 10px #130f40;
+}
+@media (max-width: 600px) {
+  .Home .Content h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .Home .Content p {
+    font-size: 10px;
+  }
+}
+
+.Courses {
+  text-align: center;
+}
+.Courses .Catagory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+.Courses .Catagory .card {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  color: white;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.Courses .Catagory .card:hover {
+  border-top: 0.2rem solid rgba(255, 255, 255, 0.3);
+  border-left: 0.2rem solid rgba(255, 255, 255, 0.3);
+}
+.Courses .Catagory .card .card-title {
+  background: transparent;
+  font-size: 25px;
+}
+.Courses .Catagory .card img {
+  width: 100%;
+  height: 20rem;
+}
+.Courses .Catagory .card .foot {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 20px;
+  border-top: 0.2rem solid rgba(255, 255, 255, 0.1);
+}
+.Courses .Catagory .card .foot i {
+  font-size: 18px;
+}
+
+.Teacher {
+  padding: 50px;
+  text-align: center;
+}
+.Teacher img {
+  width: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.Teacher .Catagory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+.Teacher .Catagory .card {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  color: white;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.Teacher .Catagory .card:hover {
+  border-top: 0.2rem solid rgba(255, 255, 255, 0.3);
+  border-left: 0.2rem solid rgba(255, 255, 255, 0.3);
+}
+.Teacher .Catagory .card .card-title {
+  background: transparent;
+  font-size: 25px;
+}
+.Teacher .Catagory .card .card-text {
+  color: #130f40;
+}
+.Teacher .Catagory .card img {
+  width: 50%;
+}
+.Teacher .Catagory .card .icons {
+  width: 100%;
+  padding: 10px;
+}
+.Teacher .Catagory .card .icons i {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 15px;
+  margin-right: 10px;
+}
+.Teacher .Catagory .card .icons i:hover {
+  color: #130f40;
+}
+
+.Plans {
+  padding-bottom: 50px;
+}
+.Plans .Catagory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+.Plans .card {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  color: #fff;
+  line-height: 2;
+  padding: 20px;
+}
+.Plans .card i {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  font-size: 70px;
+  padding: 30px;
+}
+.Plans .card h3 {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #130f40;
+  padding: 10px;
+  font-size: 30px;
+}
+.Plans .card p {
+  font-size: 20px;
+  font-size: 300;
+}
+
+.Reviews {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.Reviews .Catagory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1rem;
+}
+.Reviews .Catagory .card {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+}
+.Reviews .Catagory .card .row img {
+  width: 100px;
+  height: 90px;
+  margin: auto;
+  border-radius: 50%;
+}
+.Reviews .Catagory .card .row i {
+  color: rgba(19, 15, 64, 0.5);
+  font-size: 60px;
+}
+.Reviews .Catagory .card .Content {
+  line-height: 2;
+}
+.Reviews .Catagory .card .Content .S1 {
+  color: #130f40;
+  font-size: 18px;
+  font-weight: 400;
+}
+.Reviews .Catagory .card .Content i {
+  font-size: 20px;
+  color: #130f40;
+}
+
+.Contact {
+  padding-bottom: 50px;
+}
+.Contact form {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  color: #fff;
+  width: 50%;
+  padding: 20px;
+  margin: auto;
+}
+@media (max-width: 600px) {
+  .Contact form {
+    width: 90%;
+  }
+}
+.Contact form input,
+.Contact form textarea {
+  background-color: transparent;
+}
+.Contact form input::-moz-placeholder, .Contact form textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.Contact form input:-ms-input-placeholder, .Contact form textarea:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.Contact form input::placeholder,
+.Contact form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  border-top: 0.2rem solid rgba(255, 255, 255, 0.1);
+}
+footer .Icons {
+  padding: 10px;
+  padding: 20px;
+}
+footer .Icons i {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 15px;
+  margin-right: 10px;
+}
+footer .Icons i:hover {
+  color: #130f40;
+}
+footer .CopyRight {
+  font-size: 30px;
+  padding: 30px;
+  border-top: 0.2rem solid rgba(255, 255, 255, 0.3);
+}
+footer .CopyRight span {
+  color: #130f40;
+}/*# sourceMappingURL=style.css.map */

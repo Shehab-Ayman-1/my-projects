@@ -1,0 +1,9 @@
+- let Links = ["Home", "Services", "Works", "Pricing", "Reviews", "Contact"]
+.logo 
+    a(href="#") Se #[i.fas.fa-search-dollar]
+nav 
+    each link in Links 
+        a(href=`#${link}`) #{link}
+.Icons 
+    i.fa.fa-bars(style="display: none")
+    i.far.fa-moon.NightMood

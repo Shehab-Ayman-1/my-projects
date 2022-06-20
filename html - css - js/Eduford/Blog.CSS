@@ -1,0 +1,242 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+body{overflow-x: hidden; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+::selection{background-color: gray; color: white;}
+
+/* ========================================= FrameWork ========================================= */
+.button-style{
+    background-color: transparent;
+    color: white;
+    padding: 15px 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+.button-style::before{
+    content: "";
+    background-color: white;
+    width: 45px;
+    height: 2px;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 25px;
+    left: 250px;
+}
+.button-style::after{
+    content: "";
+    background-color: white;
+    width: 45px;
+    height: 2px;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 25px;
+    right: 250px;
+}
+.button-style:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.4) , crimson);
+}
+
+/* ========================================== Banner =========================================== */
+header{
+    background-image: linear-gradient(rgba(4,9,30,0.7) , rgba(4,9,30,0.7)) , url(Images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    width: 100%;
+    height: 60vh;
+    text-align: center;
+}
+header nav{
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+header nav .logo{
+    width: 150px;
+    margin-left: 70px;
+}
+header nav .logo img{
+    width: 100%;
+}
+header nav .links ul{
+    list-style-type: none;
+    display: flex;
+    margin-right: 70px;
+}
+header nav .links ul li{
+    padding-left: 30px;
+    transition: 0.4s ease-in-out;
+    position: relative;
+}
+header nav .links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.7s ease-in-out;
+}
+header nav .links ul li::before{
+    content: "";
+    background-color: crimson;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 30px;
+    transition: 0.7s ease-in-out;
+    opacity: 0;
+}
+header nav .links ul li:hover::before{
+    width: 100%;
+    opacity: 1;
+}
+header nav .links ul li a:hover{
+    color: #ccc;
+}
+header .banner{
+    transform: translatey(35%);
+}
+header .banner h1{
+    font-size: 60px;
+    padding: 40px;
+}
+/* ================= Media Query ================= */
+@media (max-width:700px){
+    header nav .logo{
+        width: 100px;
+        margin-left: 20px;
+    }
+    header nav .links ul{
+        margin-right: 0px;
+    }
+    header nav .links ul li{
+        padding-left: 10px;
+    }
+    header nav .links ul li a{
+        font-size: 12px;
+    }
+    header .banner h1{
+        font-size: 30px;
+        padding: 40px;
+    }
+    header .banner p{
+        line-height: 1.7;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+}
+
+/* ========================================== Courses =========================================== */
+.Certificate{
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.Certificate .right-side{
+    width: 35%;
+}
+.Certificate .right-side h1{
+    background-color: crimson;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+.Certificate .right-side table .row .name{
+    width: 99%;
+    padding: 10px;
+}
+.Certificate .left-side{
+    width: 65%;
+    padding-right: 20px;
+}
+.Certificate .left-side img{
+    width: 100%;
+    padding-bottom: 30px;
+}
+.Certificate .left-side p{
+    color: rgba(0,0,0,0.5);
+    padding-top: 20px;
+}
+.Certificate form{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px 0 black;
+    margin: 80px 0;
+    border-radius: 5px;
+}
+.Certificate form .input{
+    background-color: #ddd;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+}
+.Certificate form textarea{
+    height: 150px;
+}
+.Certificate form .button-style{
+    color: black;
+    border: 1px solid black;
+    width: fit-content;
+    margin: auto;
+}
+.Certificate form .button-style::after{
+    background-color: rgba(4,9,30,0.7);
+    right: 230px;
+}
+.Certificate form .button-style::before{
+    background-color: rgba(4,9,30,0.7);
+    left: 230px;
+
+}
+/* ================= Media Query ================= */
+@media (max-width:700px){
+    .Certificate{
+        flex-direction: column;
+        align-items: center;
+    }
+    .Certificate .right-side{
+        width: 90%;
+    }
+    .Certificate .left-side{
+        width: 100%;
+        margin-top: 50px;
+        padding-right: 0px;
+    }
+}
+
+/* ========================================= Footer ============================================ */
+footer{
+    width: 100%;
+    margin: 100px 0 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+footer p{
+    text-align: center;
+    width: 80%;
+    padding: 20px 0;
+    line-height: 1.5;
+}
+footer i{
+    padding: 0 20px;
+    color: crimson;
+    cursor: pointer;
+}
+/* ================= Media Query ================= */
+@media (max-width:700px){
+    footer p{
+        font-size: 13px;
+    }
+}

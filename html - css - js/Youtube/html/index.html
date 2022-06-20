@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>youtube</title>
+		<link rel="stylesheet" href="../scss/style/style.css" />
+		<link rel="stylesheet" href="../scss/libs/fontAwasome.css" />
+		<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+	</head>
+	<body data-theme="light-red-blue-theme">
+		<!-- =========================================== Header =============================================== -->
+		<header class="header">
+			<div class="left-section">
+				<i class="fa fa-bars"></i>
+				<img src="../assests/youtube-logo.png" alt="youtube-logo" />
+			</div>
+			<div class="mid-section">
+				<input type="search" id="search-box" placeholder="Search..." />
+				<label class="fa fa-search" for="search-box" data-empty></label>
+				<i class="fas fa-microphone-alt"></i>
+			</div>
+			<div class="right-section">
+				<i class="fa fa-search" data-empty></i>
+				<i class="fas fa-video" data-empty></i>
+				<i class="far fa-moon"></i>
+				<i class="fas fa-border-none"></i>
+				<i class="far fa-bell"></i>
+				<img src="../assests/profile-pic.png" alt="account-logo" />
+			</div>
+			<div class="dropdown-menus">
+				<div class="notifications-menu hide-scale">
+					<div class="noti-header">
+						<h4>Notifications</h4>
+						<i class="far fa-bell"></i>
+					</div>
+					<div class="noti-body">
+						<div class="link">
+							<i class="far fa-envelope"> </i>
+							<p class="content">You Got Email From......</p>
+						</div>
+						<div class="link">
+							<i class="far fa-money-bill-alt money-icon green"></i>
+							<p class="content">You Got Money From......</p>
+						</div>
+						<div class="link">
+							<i class="far fa-thumbs-up"> </i>
+							<p class="content">You Got Like From......</p>
+						</div>
+						<div class="link">
+							<i class="far fa-envelope"> </i>
+							<p class="content">You Got Email From......</p>
+						</div>
+						<div class="link">
+							<i class="far fa-money-bill-alt money-icon green"></i>
+							<p class="content">You Got Money From......</p>
+						</div>
+						<div class="link">
+							<i class="far fa-thumbs-up"> </i>
+							<p class="content">You Got Like From......</p>
+						</div>
+					</div>
+					<div class="noti-footer">
+						<h4>View All Notifications</h4>
+					</div>
+				</div>
+				<div class="mega-menu hide-scale">
+					<div class="mega-header">
+						<div class="name">S</div>
+						<div class="content">
+							<h4>Shehab Ayman</h4>
+							<span>Manage Your Google Account</span>
+						</div>
+					</div>
+					<div class="mega-body">
+						<div class="link">
+							<i class="far fa-user-circle"></i>
+							<span>Your Channel</span>
+						</div>
+						<div class="link">
+							<i class="fas fa-dollar-sign" data-empty></i>
+							<span>Purchuses & MemberShips</span>
+						</div>
+						<div class="link">
+							<i class="fas fa-cog"></i>
+							<span>Youtube Studio</span>
+						</div>
+						<div class="link">
+							<i class="far fa-address-book"></i>
+							<span>Switch Account</span>
+							<i class="fas fa-angle-right"></i>
+						</div>
+						<div class="link signup">
+							<i class="fas fa-sign-out-alt"></i>
+							<span>Sign Out</span>
+						</div>
+						<div class="link">
+							<i class="far fa-moon"></i>
+							<span>Apperance Dark</span>
+							<i class="fas fa-angle-right"></i>
+						</div>
+						<div class="link">
+							<i class="fas fa-language" data-empty></i>
+							<span>Language English</span>
+							<i class="fas fa-angle-right"></i>
+						</div>
+						<div class="link">
+							<i class="fas fa-globe-americas"></i>
+							<span>Location Egypt</span>
+							<i class="fas fa-angle-right"></i>
+						</div>
+						<div class="link">
+							<i class="fas fa-cog"></i>
+							<span>Settings</span>
+						</div>
+						<div class="link">
+							<i class="far fa-question-circle"></i>
+							<span>Your Data In Youtube</span>
+						</div>
+						<div class="link">
+							<i class="far fa-user-circle"></i>
+							<span>Help</span>
+						</div>
+						<div class="link">
+							<i class="far fa-comment-alt"></i>
+							<span>Send Feedback</span>
+						</div>
+						<div class="link">
+							<i class="far fa-keyboard"></i>
+							<span>Keyboard Shorcuts</span>
+						</div>
+					</div>
+					<div class="mega-footer">
+						<span>Restricted Mode</span>
+						<i class="fas fa-angle-right"></i>
+					</div>
+				</div>
+				<div class="app-menu hide-scale">
+					<div class="app-header">
+						<h4>YouTube Apps</h4>
+					</div>
+					<div class="app-body">
+						<div class="link">
+							<i class="fab fa-youtube"></i>
+							<span>Youtube Tv</span>
+						</div>
+						<div class="link">
+							<i class="fab fa-youtube"></i>
+							<span>Youtube Music</span>
+						</div>
+						<div class="link">
+							<i class="fab fa-youtube"></i>
+							<span>Youtube Kids</span>
+						</div>
+						<div class="link">
+							<i class="fab fa-youtube"></i>
+							<span>Youtube For Artists</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- ========================================== Main Page ============================================= -->
+		<main>
+			<nav class="nav-bar menu-nav">
+				<div class="links-container default-links">
+					<a href="https://www.youtube.com/" class="link" target="_blank">
+						<i class="fas fa-home"></i>
+						<span>Home</span>
+					</a>
+					<a href="https://www.youtube.com/feed/explore" class="link" target="_blank">
+						<i class="far fa-compass"></i>
+						<span>Explore</span>
+					</a>
+					<a href="https://www.youtube.com/shorts/D2hgNnBZStA" class="link" target="_blank">
+						<i class="fab fa-affiliatetheme"></i>
+						<span>Shorts</span>
+					</a>
+					<a href="https://www.youtube.com/feed/subscriptions" class="link" target="_blank">
+						<i class="fab fa-blackberry"></i>
+						<span>Subscriptions</span>
+					</a>
+				</div>
+				<div class="links-container assests-links">
+					<a class="link" target="_blank" href="https://www.youtube.com/feed/library">
+						<i class="fas fa-photo-video"></i>
+						<span>Library</span>
+					</a>
+					<div class="link">
+						<i class="fas fa-history"></i>
+						<span>History</span>
+					</div>
+					<div class="link">
+						<i class="far fa-play-circle"></i>
+						<span>Your Videos</span>
+					</div>
+					<div class="link">
+						<i class="far fa-clock"></i>
+						<span>Watch Later</span>
+					</div>
+					<div class="link">
+						<i class="far fa-thumbs-up"></i>
+						<span>Liked Videos</span>
+					</div>
+				</div>
+				<div class="links-container subscriptions">
+					<h5>SUBSCRIPTIONS</h5>
+					<a href="https://www.youtube.com/c/ElzeroInfo" class="user-channel" target="_blank">
+						<img src="../assests/elzero.png" alt="user-avatar" />
+						<span>Elzero Web School</span>
+					</a>
+					<a href="https://www.youtube.com/c/Codezilla" class="user-channel" target="_blank">
+						<img src="../assests/channel-logo.jpg" alt="user-avatar" />
+						<span>Codezilla</span>
+					</a>
+					<a href="https://www.youtube.com/c/DroosOnline4u" class="user-channel" target="_blank">
+						<img src="../assests/droosOnline.jpg" alt="user-avatar" />
+						<span>Droos Online</span>
+					</a>
+					<a
+						href="https://www.youtube.com/playlist?list=PLRCzrSHS5u_HQuXr15gOMCIK-E-57A5vd"
+						class="user-channel"
+						target="_blank"
+					>
+						<img src="../assests/elDaheh.jpg" alt="user-avatar" />
+						<span>El Daheh</span>
+					</a>
+					<a href="https://www.youtube.com/c/MetwallyLabs" class="user-channel" target="_blank">
+						<img src="../assests/metwally.jpg" alt="user-avatar" />
+						<span>Metwally Lab</span>
+					</a>
+					<a href="https://www.youtube.com/c/CodingArtist" class="user-channel" target="_blank">
+						<img src="../assests/coding.jpg" alt="user-avatar" />
+						<span>Coding Artist</span>
+					</a>
+					<a href="https://www.youtube.com/c/Bedimcode" class="user-channel" target="_blank">
+						<img src="../assests/bad.jpg" alt="user-avatar" />
+						<span>Bedimcode</span>
+					</a>
+					<a href="https://www.youtube.com/c/MrWebDesignerAnas" class="user-channel" target="_blank">
+						<img src="../assests/webdesing.jpg" alt="user-avatar" />
+						<span>Mr Web Designer</span>
+					</a>
+					<a href="https://www.youtube.com/c/TaherART" class="user-channel" target="_blank">
+						<img src="../assests/art.jpg" alt="user-avatar" />
+						<span>Taher ART World</span>
+					</a>
+					<a href="https://www.youtube.com/c/WEBCIFAROfficial" class="user-channel" target="_blank">
+						<img src="../assests/cif.jpg" alt="user-avatar" />
+						<span>WEB CIFARO</span>
+					</a>
+				</div>
+				<div class="links-container more-from-youtube">
+					<h5>MORE FROM YOUTUBE</h5>
+					<div class="link">
+						<i class="fab fa-youtube"></i>
+						<span>YouTube Premium</span>
+					</div>
+					<div class="link">
+						<i class="fab fa-reddit-alien"></i>
+						<span>Gaming</span>
+					</div>
+					<div class="link">
+						<i class="fas fa-praying-hands"></i>
+						<span>Live</span>
+					</div>
+					<div class="link">
+						<i class="fas fa-running"></i>
+						<span>Sports</span>
+					</div>
+				</div>
+				<div class="links-container more-from-youtube">
+					<div class="link">
+						<i class="fas fa-cog"></i>
+						<span>Settings</span>
+					</div>
+					<div class="link">
+						<i class="far fa-flag"></i>
+						<span>Reports History</span>
+					</div>
+					<div class="link">
+						<i class="far fa-question-circle"></i>
+						<span>Help</span>
+					</div>
+					<div class="link">
+						<i class="far fa-comment-alt"></i>
+						<span>Send Feedback</span>
+					</div>
+				</div>
+				<div class="links-container about-youtube">
+					<p>
+						<span>About</span> <span>Press</span> <span>Copyright</span> <span>Contact</span> <span>us</span>
+						<span>Creators</span> <span>Advertise</span> <span>Developers</span>
+					</p>
+					<p>
+						<span>Terms</span> <span>Privacy</span> <span>Policy</span> <span>&</span> <span>Safety</span>
+						<span>How</span> <span>YouTube</span> <span>works</span> <span>Test</span> <span>new</span>
+						<span>features</span>
+					</p>
+				</div>
+			</nav>
+
+			<nav class="sub-nav hide-left-clip">
+				<a href="https://www.youtube.com/" class="link" target="_blank">
+					<i class="fas fa-home"></i>
+					<span>Home</span>
+				</a>
+				<a href="https://www.youtube.com/feed/explore" class="link" target="_blank">
+					<i class="far fa-compass"></i>
+					<span>Explore</span>
+				</a>
+				<a href="https://www.youtube.com/shorts/D2hgNnBZStA" class="link" target="_blank">
+					<i class="fab fa-affiliatetheme"></i>
+					<span>Shorts</span>
+				</a>
+				<a href="https://www.youtube.com/feed/library" class="link" target="_blank">
+					<i class="fas fa-photo-video"></i>
+					<span>Library</span>
+				</a>
+				<a href="https://www.youtube.com/feed/subscriptions" class="link" target="_blank">
+					<i class="fab fa-blackberry"></i>
+					<span>Subscriptions</span>
+				</a>
+			</nav>
+
+			<div class="videos-container">
+				<div class="swiper suggest-icons">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<input type="checkbox" id="all" />
+							<label for="all">All</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Computer-Science" />
+							<label for="Computer-Science">Computer Science</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="JavaScript" />
+							<label for="JavaScript">JavaScript</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Web-Design" />
+							<label for="Web-Design">Web-Design</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Graphic-Design" />
+							<label for="Graphic-Design">Graphic Design</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Web-Developement" />
+							<label for="Web-Developement">Web Developement</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Fontend-end" />
+							<label for="Fontend-end">Fontend end</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Backend-end" />
+							<label for="Backend-end">Backend end</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="FullStack-Developer" />
+							<label for="FullStack-Developer">FullStack Developer</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="all2" />
+							<label for="all2">All</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Computer-Science2" />
+							<label for="Computer-Science2">Computer Science</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="JavaScript2" />
+							<label for="JavaScript2">JavaScript</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Web-Design2" />
+							<label for="Web-Design2">Web-Design</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Graphic-Design2" />
+							<label for="Graphic-Design2">Graphic Design</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Web-Developement2" />
+							<label for="Web-Developement2">Web Developement</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Fontend-end2" />
+							<label for="Fontend-end2">Fontend end</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="Backend-end2" />
+							<label for="Backend-end2">Backend end</label>
+						</div>
+
+						<div class="swiper-slide">
+							<input type="checkbox" id="FullStack Developer2" />
+							<label for="FullStack Developer2">FullStack Developer</label>
+						</div>
+					</div>
+				</div>
+				<div class="video">
+					<a href="https://www.youtube.com/watch?v=Gjh3AsIW35Q" target="_blank">
+						<div class="cover-img">
+							<img src="../assests/aboZaid.webp" alt="video avatar" />
+						</div>
+						<div class="content">
+							<div class="channel-img">
+								<img src="../assests/aboZaid.webp" alt="channel-logo" />
+							</div>
+							<div class="video-details">
+								<h4 class="video-title">Why You Are Sad !!!</h4>
+								<p class="channel-name">Droos Online</p>
+								<div class="target">
+									<span class="views">15M</span>
+									<span class="ago">2 Years Ago</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</main>
+
+		<!-- ========================================== JavaScript =========================================== -->
+		<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+		<script type="module" src="../js/script.js" defer></script>
+	</body>
+</html>

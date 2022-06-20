@@ -1,0 +1,14 @@
+@import "../helpers/mixins";
+@import "../helpers/global";
+
+@import "../layout/header";
+@import "../layout/footer";
+
+@import "../pages/home";
+@import "../pages/about";
+@import "../pages/cart";
+@import "../pages/contact";
+@import "../pages/products";
+
+@import "../pages/signin/login";
+@import "../pages/signin/register";

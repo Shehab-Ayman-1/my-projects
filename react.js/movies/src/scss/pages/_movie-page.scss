@@ -1,0 +1,269 @@
+@use "../helpers/" as *;
+.movie-section {
+	.movie-info {
+		@include Flex(space-between, center);
+		width: 100%;
+		min-height: 100vh;
+		padding: 5%;
+		gap: 2rem;
+		@include Width(md) {
+			flex-wrap: wrap;
+		}
+		.movie-banner {
+			@include Absolute(tl, 0, 0);
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			opacity: 0.1;
+			object-fit: 100% 100%;
+		}
+		.left-section {
+			width: 300px;
+			cursor: pointer;
+			position: relative;
+			@include Width(md) {
+				margin: auto;
+				margin-top: 50px;
+			}
+			&:hover {
+				.play-icon {
+					filter: brightness(1.5);
+				}
+				.movie-img {
+					filter: brightness(0.7);
+				}
+			}
+			.movie-img {
+				width: 100%;
+				height: 100%;
+				@include Width(xsm) {
+					width: 100%;
+				}
+			}
+			.play-icon {
+				@include Absolute(tl, 50%, 50%);
+				transform: translate(-50%, -50%);
+				font-size: 10rem;
+				opacity: 0.7;
+			}
+		}
+		.mid-section {
+			width: calc(100% - 400px);
+			@include Width(md) {
+				width: 100%;
+			}
+			.info-title {
+				.info-sub-title {
+					color: get(main-color);
+					font-size: 2rem;
+				}
+				.info-main-title {
+					color: get(white);
+					font-size: 3rem;
+				}
+			}
+			.info-labels {
+				@include Flex(flex-start, center);
+				width: fit-content;
+				padding-right: get(p4);
+				margin-block: get(m6);
+				flex-wrap: wrap;
+				gap: 2rem;
+				@include Width(md) {
+					margin-block: get(m2);
+				}
+				.label {
+					padding: gutter(p1, p2);
+					padding-block: 2px;
+					font-size: 1.2rem;
+					font-weight: bold;
+					border-radius: get(r1);
+					&:nth-child(1) {
+						background-color: get(white);
+						color: get(black);
+					}
+					&:nth-child(2) {
+						padding-inline: get(p3);
+						padding-block: 0;
+						border: get(border);
+						border-width: 3px;
+					}
+				}
+				.bread-crumbs {
+					line-height: 3;
+					@include Width(md) {
+						padding-inline: get(p0);
+					}
+					.crumb {
+						color: get(white);
+						font-size: 1.2rem;
+						padding-right: get(p2);
+						white-space: nowrap;
+						@include Width(sm) {
+							white-space: initial;
+						}
+						&:hover {
+							color: get(light-color);
+						}
+						i {
+							color: get(main-color);
+						}
+					}
+				}
+			}
+			.info-content {
+				color: get(light-color);
+				font-size: 1.4rem;
+				line-height: 2;
+				@include Width(xmd) {
+					font-size: 1.2rem;
+				}
+				@include Width(md) {
+					font-size: 1.4rem;
+				}
+			}
+			.info-addition {
+				@include Flex(space-between, center);
+				background-color: #242c38;
+				max-width: 600px;
+				padding: get(p3);
+				margin-top: get(m5);
+				@include Width(xmd) {
+					padding: gutter(p0, p3);
+				}
+				@include Width(md) {
+					max-width: 100%;
+				}
+				@include Width(sm) {
+					flex-wrap: wrap;
+					gap: 1rem;
+				}
+				.left-part {
+					text-align: center;
+					.share-icon {
+						font-size: 3rem;
+						display: block;
+						@include Width(xmd) {
+							font-size: 2rem;
+						}
+					}
+					.share-name {
+						color: get(light-color);
+						font-size: 1.3rem;
+						@include Width(xmd) {
+							font-size: 1rem;
+						}
+					}
+				}
+				.mid-part {
+					text-align: center;
+					.video-prime {
+						color: get(main-color);
+						font-size: 2rem;
+						@include Width(xmd) {
+							font-size: 1.5rem;
+						}
+					}
+					.video-type {
+						font-size: 1.5rem;
+						@include Width(xmd) {
+							font-size: 1.3rem;
+						}
+					}
+				}
+				.right-part {
+					.mybtn {
+						border: get(border);
+						border-color: get(main-color);
+						@include Width(xmd) {
+							font-size: 1rem;
+						}
+						i {
+							padding-right: 15px;
+							@include Width(xmd) {
+								font-size: 1rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.suggestion-movies {
+		.header {
+			@include Flex(center, center);
+			padding-bottom: get(p6);
+			text-align: center;
+			@include Width(xmd) {
+				flex-direction: column;
+				text-align: center;
+			}
+			.left-section {
+				.main-color {
+					font-size: 1.8rem;
+					font-weight: 500;
+					@include Width(sm) {
+						font-size: 1.5rem;
+					}
+				}
+				.title {
+					padding: 0;
+					font-weight: 500;
+				}
+			}
+		}
+		.movies {
+			@include Grid(25rem);
+			padding-inline: 5%;
+			gap: 2rem;
+			.card {
+				color: get(white);
+				cursor: pointer;
+				&:hover {
+					filter: brightness(1.1);
+				}
+				.card-img {
+					width: 100%;
+					height: 500px;
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.card-footer {
+					min-height: 135px;
+					.name {
+						@include Flex(space-between, center);
+						font-size: 1.5rem;
+						padding-block: get(p6);
+						.date {
+							color: get(main-color);
+							padding-left: get(p6);
+							font-weight: bold;
+						}
+					}
+					.config {
+						@include Flex(space-between, center);
+						p {
+							color: get(main-color);
+							width: fit-content;
+							padding: gutter(p0, p2);
+							padding-block: 2px;
+							font-weight: bold;
+							border: get(border);
+							border-width: 3px;
+						}
+						.data {
+							@include Flex(space-between, center);
+							gap: 1rem;
+							i {
+								color: get(main-color);
+								font-size: 1.4rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

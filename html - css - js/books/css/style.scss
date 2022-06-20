@@ -1,0 +1,390 @@
+@import "./Global/Global";
+@import "./Global/Helper";
+
+// ============================================== Header =============================================
+header {
+	.Header {
+		@include Flex(space-around, center);
+		background-color: $White;
+		width: 100%;
+		padding: 20px;
+		position: relative;
+		z-index: 100000000;
+		.logo {
+			@include Flex(space-around, center);
+			gap: 0.5rem;
+			.fa-book {
+				color: $Green;
+				font-size: 30px;
+			}
+		}
+		.SearchForm {
+			background-color: $White;
+			max-width: 30rem;
+			align-items: center;
+			padding: 0 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border: $Border;
+			border-radius: 40px;
+			overflow: hidden;
+			clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+			input {
+				width: 100%;
+				padding: 10px;
+				font-size: 18px;
+			}
+			label {
+				@extend .fa-book;
+				font-size: 25px;
+				cursor: pointer;
+				&:hover {
+					color: $Green;
+				}
+			}
+			@include Width600() {
+				position: absolute;
+				top: 220%;
+				right: 2%;
+			}
+		}
+		.Icons .fa-search {
+			display: none;
+			@include Width600() {
+				display: initial;
+			}
+		}
+	}
+
+	nav {
+		background-color: $Green;
+		width: 100%;
+		height: fit-content;
+		padding: 10px;
+		display: inline-block;
+		text-align: center;
+		z-index: 100000000;
+		a {
+			color: $White;
+			padding: 10px 20px;
+			font-size: 20px;
+			font-weight: 500;
+			&:hover {
+				background-color: $DarkGreen;
+			}
+		}
+	}
+}
+
+// ============================================== Home ===============================================
+.Home {
+	background: url(../Images/banner-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	.Catagory {
+		@include Grid(20rem);
+		.left {
+			h1 {
+				@include Width380() {
+					font-size: 28px;
+				}
+			}
+		}
+		.right {
+			width: 100%;
+			overflow: hidden;
+			.Shilf {
+				width: 100%;
+			}
+			.swiper-wrapper {
+				width: 100%;
+				height: 15rem;
+				img {
+					width: 100%;
+					height: 100%;
+					cursor: pointer;
+					&:hover {
+						transform: scale(0.9);
+					}
+				}
+			}
+		}
+	}
+	.Labels {
+		@include Grid(15rem);
+		.box {
+			@include Flex(space-around, center);
+			background: $White;
+			color: $Dark;
+			padding: 20px;
+			cursor: pointer;
+			i {
+				color: $Green;
+			}
+		}
+	}
+}
+
+// ============================================== Featured ===========================================
+.Featured {
+	padding: 5rem 0;
+	.Catagory2 {
+		margin: 5rem 9%;
+		.swiper-wrapper {
+			.box {
+				text-align: center;
+				position: relative;
+				cursor: pointer;
+				.img {
+					width: 100%;
+					height: 20rem;
+					img {
+						background: linear-gradient(15deg, #eee 30%, #fff 30.1%);
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.Content {
+					background: $BackgroundColor;
+					padding: 20px;
+					line-height: 2;
+					clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+					p {
+						font-size: 20px;
+						font-weight: 500;
+					}
+					span {
+						font-size: 18px;
+						text-decoration: line-through;
+					}
+				}
+
+				&:hover {
+					.img {
+						transform: translateY(50px);
+					}
+				}
+			}
+		}
+	}
+	.Banner {
+		background: url(../Images/letter-bg.jpg);
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+		padding: 7rem 9%;
+		margin: 5rem auto;
+		text-align: right;
+		h1 {
+			color: $White;
+			font-size: 35px;
+		}
+		input {
+			width: 30rem;
+			padding: 10px;
+			font-size: 20px;
+			border: $Green;
+			border-radius: 10px;
+			@include Width600 {
+				width: 100%;
+			}
+		}
+		@include Width600 {
+			text-align: center;
+			padding: 7rem 4%;
+		}
+	}
+}
+
+// ============================================== Arrivals ===========================================
+.Arrivals {
+	padding: 0;
+	.Catagory3 {
+		margin: 0 9%;
+		.box {
+			@include Flex(space-between, center);
+			padding: 20px;
+			h3 {
+				font-size: 25px;
+				color: $Dark;
+			}
+			i {
+				color: $Green;
+				font-size: 15px;
+				padding: 0;
+			}
+			.img {
+				width: 8rem;
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.Offers {
+		@include Grid(20rem);
+		background: #f3f3f3;
+		width: 100%;
+		padding: 5rem 9%;
+		.img {
+			width: 100%;
+			img {
+				width: 100%;
+			}
+		}
+		.Content {
+			@include Flex(center, flex-start);
+			flex-direction: column;
+			line-height: 2;
+			h1 {
+				color: $Dark;
+				font-size: 50px;
+			}
+			h2 {
+				color: $Green;
+			}
+			p {
+				color: $LightColor;
+			}
+			@include Width600 {
+				h1 {
+					color: $Dark;
+					font-size: 30px;
+				}
+			}
+		}
+	}
+}
+
+// ============================================== Reviews ============================================
+.Reviews {
+	.Catagory4 {
+		padding-top: 2rem;
+	}
+	.box {
+		padding: 20px;
+		&:hover {
+			border: $Border;
+		}
+		.img {
+			text-align: center;
+			width: 100%;
+			height: 6rem;
+			img {
+				height: 100%;
+				border-radius: 50%;
+			}
+		}
+		.Content {
+			text-align: center;
+			h3 {
+				font-size: 28px;
+				color: $Green;
+				text-shadow: $TextShadow;
+			}
+			p {
+				color: $LightColor;
+				text-align: left;
+			}
+			i {
+				color: $Green;
+				font-size: 15px;
+				padding: 0;
+				cursor: inherit;
+			}
+		}
+	}
+}
+
+// ============================================== Blogs ==============================================
+.Blogs {
+	.Catagory5 {
+		padding-top: 2rem;
+		.box {
+			width: 100%;
+			border: $Border;
+			.img {
+				width: 100%;
+				height: 15rem;
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.Content {
+				padding: 20px;
+				p {
+					color: $LightColor;
+					font-size: 18px;
+				}
+			}
+			&:hover {
+				border: $Border;
+			}
+		}
+	}
+}
+
+// ============================================== Footer =============================================
+footer {
+	background-color: $BackgroundColor;
+	padding: 5rem 9% 1rem;
+	.Catagory {
+		@include Grid(15rem);
+		.box {
+			padding: 10px;
+			h1 {
+				font-size: 28px;
+				color: $Dark;
+			}
+			.row {
+				@include Flex(auto, center);
+				width: fit-content;
+				padding: 10px 0;
+				i {
+					color: $Green;
+					font-size: 18px;
+				}
+				p,
+				a {
+					color: $Dark;
+					cursor: pointer;
+				}
+				&:hover {
+					i {
+						color: $Dark;
+					}
+					p,
+					a {
+						color: $Green;
+						padding-left: 10px;
+					}
+				}
+			}
+		}
+	}
+	.Social {
+		text-align: center;
+		padding: 20px 0;
+		i {
+			background-color: $Green;
+			color: $White;
+			font-size: 25px;
+			padding: 15px;
+			margin: 0 10px;
+			border-radius: 50%;
+			text-shadow: $TextShadow;
+			&:hover {
+				background-color: $Dark;
+				color: $Green;
+				transform: rotate(360deg);
+			}
+		}
+	}
+	.CopyRight {
+		text-align: center;
+		border-top: $Border;
+		color: $Dark;
+	}
+}

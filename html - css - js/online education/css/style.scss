@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+@import "Global/Global";
+@import "Global/Helpers";
+@import "Components/Header";
+@import "Components/footer";
+
+// ============================================ Home ============================================
+.Home {
+    padding: 5rem 9%;
+    .Labels {
+        @include Grid(12rem);
+        text-align: center;
+        margin: 80px 0;
+        .box {
+            background-color: $light-bg;
+            color: $black;
+            padding: 20px;
+            cursor: pointer;
+        }
+        img {
+            height: 5rem;
+        }
+    }
+}
+
+// ============================================ About ===========================================
+.About {
+    .Intro {
+        padding: 5rem 9%;
+    }
+}
+
+// ============================================ Course-1 ===========================================
+.Course-1 {
+    .Catagory {
+        @include Grid(20rem);
+        padding: 5rem 9%;
+        .box {
+            background: $light-bg;
+            color: $black;
+            padding: 20px;
+            text-align: center;
+            line-height: 1.8;
+            img {
+                width: 5rem;
+            }
+            p {
+                color: $lightColor;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+// ============================================ Course-2 ===========================================
+.Course-2 {
+    .Catagory2 {
+        @include Grid(20rem);
+        padding: 5rem 9%;
+        .box {
+            background: $light-bg;
+            color: $black;
+            padding: 20px;
+            line-height: 1.7;
+            img {
+                width: 80%;
+                height: 15rem;
+                margin: auto;
+            }
+            span {
+                background: $lightPink;
+                width: fit-content;
+                padding: 5px;
+                display: block;
+                border-radius: 5px;
+            }
+            h2 {
+                padding-top: 20px;
+            }
+            p {
+                color: $lightColor;
+            }
+            .Footer {
+                @include Flex(space-between, center);
+                padding: 30px 0 10px;
+                i {
+                    font-size: 20px;
+                    color: $pink;
+                }
+                p {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+// ============================================ Course-3 ===========================================
+.Course-3 {
+    .Catagory3 {
+        @include Grid(18rem);
+        padding: 5rem 9%;
+        .box {
+            margin-top: 30px;
+            .Video {
+                width: 100%;
+                height: 20rem;
+                overflow: hidden;
+                border-radius: 1rem;
+                position: relative;
+                video {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+                i {
+                    @include Position-Left(absolute, 50%, 50%);
+                    background: $white;
+                    border-radius: 50%;
+                    padding: 15px;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
+                }
+                &:hover {
+                    video {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+            .Content {
+                color: $black;
+                text-align: center;
+                p {
+                    color: $lightColor;
+                }
+            }
+        }
+    }
+    .FitchVideo {
+        @include Position-Left(fixed, 0, 0);
+        background: rgba(black, 0.85);
+        width: 100%;
+        height: 100%;
+        z-index: 1000000000000;
+        display: none;
+        video {
+            @include Position-Left(absolute, 50%, 50%);
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+            border: 10px solid $white;
+            border-radius: 20px;
+            transform: translate(-50%, -50%);
+        }
+        i {
+            @include Position-right(absolute, 1rem, 2rem);
+            color: $white;
+            font-size: 40px;
+        }
+    }
+}
+
+// ============================================ Teachers ===========================================
+.Teachers {
+    .Catagory4 {
+        @include Grid(20rem);
+        padding: 5rem 9%;
+        .box {
+            text-align: center;
+            img {
+                width: 100%;
+                height: 22rem;
+            }
+            h3 {
+                color: $black;
+                font-size: 28px;
+            }
+            p {
+                color: $lightColor;
+            }
+        }
+    }
+}
+
+// ============================================ Blogs ==============================================
+.Blogs {
+    .Catagory5 {
+        @include Grid(20rem);
+        padding: 5rem 9%;
+        .box {
+            background-color: $light-bg;
+            img {
+                width: 100%;
+            }
+            .footer {
+                padding: 20px;
+                @include Flex(space-between, center);
+                i {
+                    font-size: 18px;
+                    color: $pink;
+                }
+                p {
+                    display: inline-block;
+                }
+            }
+            .Content {
+                padding: 20px;
+                color: $black;
+                p {
+                    color: $lightColor;
+                }
+            }
+        }
+    }
+}
+
+// ============================================ Contact ============================================
+.Contact {
+    .Labels {
+        @include Grid(15rem);
+        padding: 5rem 9%;
+        .box {
+            background-color: $light-bg;
+            color: $black;
+            padding: 20px;
+            text-align: center;
+            line-height: 2;
+            i {
+                background-color: $lightBlue;
+                color: $blue;
+                padding: 20px;
+                border-radius: 50%;
+            }
+            p {
+                color: $lightColor;
+                font-size: 15px;
+            }
+        }
+    }
+    .Catagory6 {
+        @include Grid(20rem);
+        padding: 5rem 9%;
+        .right {
+            width: 100%;
+            height: 100%;
+        }
+        .left {
+            background-color: $light-bg;
+            padding: 20px;
+            border: $border;
+            h1 {
+                color: $black;
+                font-size: 35px;
+                text-align: center;
+            }
+            input {
+                color: $black;
+                width: 100%;
+                font-size: 18px;
+                padding: 10px;
+                margin: 20px 0;
+                display: block;
+            }
+            textarea {
+                @extend input;
+                height: 150px;
+            }
+            button {
+                margin-top: 0px;
+            }
+        }
+    }
+}
