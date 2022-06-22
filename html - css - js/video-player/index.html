@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons" />
+		<link rel="stylesheet" href="./style.css" />
+		<title>Video Player</title>
+	</head>
+	<body>
+		<!-- =========================================== Main Page ============================================ -->
+		<section class="section-container">
+			<div class="video-player paused" id="video-player">
+				<video id="main-video" src="./assets/song.mp4" poster="./assets/poster.png"></video>
+
+				<div class="video-controls">
+					<div class="progress-area">
+						<span class="progress-timeline">00:00</span>
+						<input class="progress-bar" type="range" min="0" max="100000" value="0" />
+						<span class="progress-watched"></span>
+					</div>
+					<div class="left-controls">
+						<span class="icon">
+							<i class="material-icons replay" title="replay 10"> replay_10 </i>
+						</span>
+						<span class="icon">
+							<i class="material-icons play" title="play"> play_arrow </i>
+						</span>
+						<span class="icon">
+							<i class="material-icons forward" title="forward 10"> forward_10 </i>
+						</span>
+						<div class="icon volume-icon">
+							<i class="material-icons volume" title="volume"> volume_up </i>
+							<input type="range" id="volume-range" min="0" max="100" />
+						</div>
+						<div class="timer">
+							<span class="current">00:00</span>
+							<span> , </span>
+							<span class="duration">00:00</span>
+						</div>
+					</div>
+					<div class="right-controls">
+						<span class="icon">
+							<i class="material-icons auto-play" title="repeat off">repeat</i>
+						</span>
+						<span class="icon">
+							<i class="material-icons settings" title="settings"> settings </i>
+						</span>
+						<span class="icon picture-in-picture-alt">
+							<i class="material-icons picture" title="picture_in_picture_alt"> picture_in_picture_alt </i>
+						</span>
+						<div class="icon">
+							<i class="material-icons fullscreen" title="fullscreen"> fullscreen </i>
+						</div>
+					</div>
+				</div>
+
+				<div class="video-settings">
+					<span class="playback-speed-title">playback speed</span>
+					<ul class="settings-list">
+						<li class="list-option" data-speed="0.25">0,25</li>
+						<li class="list-option" data-speed="0.50">0,50</li>
+						<li class="list-option" data-speed="0.75">0,75</li>
+						<li class="list-option active" data-speed="1.00">Normal</li>
+						<li class="list-option" data-speed="1.25">1,25</li>
+						<li class="list-option" data-speed="1.50">1,50</li>
+						<li class="list-option" data-speed="1.75">1,75</li>
+						<li class="list-option" data-speed="2.00">2,00</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- =========================================== Javascript =========================================== -->
+		<script src="./script.js"></script>
+	</body>
+</html>
