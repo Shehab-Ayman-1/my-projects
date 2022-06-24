@@ -20,17 +20,17 @@
 				opacity: 1;
 			}
 			&::-webkit-scrollbar-thumb {
-				background-color: get(main-color);
+				background: get(main-color);
 			}
 		}
 		&::-webkit-scrollbar {
 			width: 3px;
 		}
 		&::-webkit-scrollbar-thumb {
-			background-color: get(white);
+			background: get(white);
 		}
 		&::-webkit-scrollbar-track {
-			background-color: get(white);
+			background: get(white);
 		}
 	}
 	.header-sidebar {
@@ -113,12 +113,12 @@
 	.footer-sidebar {
 		@include flex(flex-start, center);
 		flex-wrap: wrap;
-		padding-top: 10px;
-		padding-left: 10px;
+		padding: 10px 0 0 10px;
 		gap: 10px;
 		.theme-option {
 			width: 30px;
 			height: 30px;
+			cursor: pointer;
 			border: get(border);
 			border-radius: 5px;
 			&[data-theme="RED"] {

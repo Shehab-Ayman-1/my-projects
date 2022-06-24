@@ -1,20 +1,26 @@
+// React
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./single.scss";
-import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
+
+// Components
 import Sidebar from "../../layout/sidebar/sidebar";
 import Navbar from "../../layout/navbar/navbar";
 import Chart from "../../components/charts/chart";
-import { productsRows, productsColumns } from "../../components/data-table/data/dataTable";
-import DataTable from "../../components/data-table/data-table";
+import DataTable from "../../components/table/table";
+import { productsRows, productsColumns } from "../../data/products-tables";
+
+// Material UI
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 
 const Single = ({ rows }) => {
 	const [card, setCard] = useState({});
 	const { id } = useParams();
+
 	useEffect(() => {
 		const card = rows.find((card) => card.id === +id);
 		setCard(card ? card : {});
-	});
+	}, [card, rows, id]);
 
 	return (
 		<section className="single-page">

@@ -1,14 +1,19 @@
+// React
 import React, { useState, useContext, useEffect } from "react";
 import "./navbar.scss";
 
+// Material Icons
 import { SearchOutlined, LanguageOutlined, NotificationsActive, ChatBubbleOutlineOutlined } from "@mui/icons-material";
 import { PersonAdd, Settings, Logout, FormatListBulletedOutlined } from "@mui/icons-material";
 
+// Material UI
 import { Avatar, Badge, FormControlLabel, List, ListItem, ListItemAvatar, ListItemText, Switch } from "@mui/material";
 import { Menu, MenuItem, Divider, IconButton, styled } from "@mui/material";
 
+// Context
 import { Context } from "../../context/createContext";
 import { TOGGLE_MODE } from "../../context/actions";
+import { Link } from "react-router-dom";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 	width: 62,
@@ -53,7 +58,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 	"& .MuiSwitch-track": {
 		opacity: 1,
 		backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
-		borderRadius: 20 / 2,
+		borderRadius: 10,
 	},
 }));
 
@@ -526,17 +531,19 @@ const Navbar = () => {
 
 						<Divider variant="middle" component="hr" sx={{ m: "0 !important" }} />
 
-						<MenuItem
-							sx={{
-								bgcolor: "var(--mode-bg)",
-								color: "var(--light-text)",
-								fontSize: "1.5rem",
-								cursor: "pointer",
-								"&:hover": { bgcolor: "#795efd33", color: "black" },
-							}}>
-							<Logout sx={{ fontSize: "30px", pr: "10px" }} />
-							Logout
-						</MenuItem>
+						<Link to="/login">
+							<MenuItem
+								sx={{
+									bgcolor: "var(--mode-bg)",
+									color: "var(--light-text)",
+									fontSize: "1.5rem",
+									cursor: "pointer",
+									"&:hover": { bgcolor: "#795efd33", color: "black" },
+								}}>
+								<Logout sx={{ fontSize: "30px", paddingRight: "10px" }} />
+								Logout
+							</MenuItem>
+						</Link>
 					</Menu>
 				</div>
 			</div>

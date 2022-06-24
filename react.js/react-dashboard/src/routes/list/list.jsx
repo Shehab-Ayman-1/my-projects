@@ -1,11 +1,13 @@
+// React
 import React from "react";
 import "./list.scss";
 
+// Components
 import Sidebar from "../../layout/sidebar/sidebar";
 import Navbar from "../../layout/navbar/navbar";
-import DataTable from "../../components/data-table/data-table";
+import DataTable from "../../components/table/table";
 
-const list = ({ row, column }) => {
+const List = ({ row, column }) => {
 	return (
 		<div className="list-page">
 			<Sidebar />
@@ -19,4 +21,4 @@ const list = ({ row, column }) => {
 	);
 };
 
-export default list;
+export default List;

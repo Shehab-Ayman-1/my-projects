@@ -1,4 +1,4 @@
-export const addUser = [
+export const addUser_Form = [
 	{
 		id: 1,
 		classname: "username",
@@ -43,7 +43,7 @@ export const addUser = [
 	},
 ];
 
-export const addProduct = [
+export const addProduct_Form = [
 	{
 		id: 1,
 		classname: "title",

@@ -1,9 +1,13 @@
+// React
 import React, { useState } from "react";
 import "./form.scss";
-import { Avatar, Button, Input } from "@mui/material";
 
+// Components
 import Sidebar from "../../layout/sidebar/sidebar";
 import Navbar from "../../layout/navbar/navbar";
+
+// Material UI
+import { Avatar, Button, Input } from "@mui/material";
 
 const FormValidation = (props) => {
 	const [file, setFile] = useState(false);

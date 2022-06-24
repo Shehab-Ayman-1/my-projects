@@ -1,10 +1,14 @@
+// React
 import React, { useState } from "react";
 import "./featured.scss";
 
+// Circular Progressbar
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-import { KeyboardArrowUpOutlined, KeyboardArrowDownOutlined, MoreVert, Edit, FileCopy, Archive, MoreHoriz } from "@mui/icons-material";
+// Material UI
+import { KeyboardArrowUpOutlined, KeyboardArrowDownOutlined } from "@mui/icons-material";
+import { MoreVert, Edit, FileCopy, Archive, MoreHoriz } from "@mui/icons-material";
 import { Divider, IconButton, Menu, MenuItem } from "@mui/material";
 
 const Featured = () => {
@@ -15,6 +19,7 @@ const Featured = () => {
 	const handleOpenDropdownMenu = (event) => {
 		setDropdownMenu(event.currentTarget);
 	};
+
 	const handleCloseDropdownMenu = () => {
 		setDropdownMenu(null);
 	};

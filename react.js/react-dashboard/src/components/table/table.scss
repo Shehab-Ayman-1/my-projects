@@ -1,4 +1,5 @@
 @use "../../scss/helpers/mixins" as *;
+
 .data-table {
 	height: 650px !important;
 	padding: 20px;
@@ -16,14 +17,14 @@
 		}
 		.new-btn {
 			background-color: get(main-color);
-			color: gray;
+			color: black;
 			height: fit-content;
 			padding: 10px 20px;
 			font-size: 1.8rem;
 			font-weight: bold;
 			border-radius: 5px;
 			&:hover {
-				background-color: get(second-color);
+				background: get(second-color);
 			}
 		}
 		.btn {
@@ -44,7 +45,7 @@
 		::-webkit-scrollbar {
 			height: 5px;
 		}
-		.css-1jbbcbn-MuiDataGrid-columnHeaderTitle {
+		.MuiDataGrid-columnHeadersInner {
 			color: get(dark-text);
 			font-weight: bold;
 		}
@@ -92,10 +93,11 @@
 						color: rgb(255, 0, 0);
 					}
 				}
-				.btns-container {
+				.actions-btns {
 					gap: 1rem;
 					.btn {
 						font-size: 1.5rem;
+						opacity: 0.8;
 					}
 				}
 			}

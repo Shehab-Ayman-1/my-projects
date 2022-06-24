@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./sidebar.scss";
 
 import { AccountCircleOutlined, NotificationsActive, MedicationLiquid } from "@mui/icons-material/";
-import { LoginOutlined, LocalShipping, AddBusiness, Psychology, CreditCard } from "@mui/icons-material/";
-import { Close, Dashboard, BarChart, PeopleOutlined, Settings } from "@mui/icons-material";
+import { LoginOutlined, AddBusiness, Psychology, Settings } from "@mui/icons-material/";
+import { Close, Dashboard, BarChart, PeopleOutlined } from "@mui/icons-material";
 
 import { Context } from "../../context/createContext";
 import { RED, BLUE, GREEN, PURPLE, SILVER, YELLOW, DARK_BLUE } from "../../context/actions";
@@ -73,30 +73,26 @@ const Sidebar = () => {
 				<ul className="main-list">
 					<h4 className="link-title">Main</h4>
 					<li>
-						<div className="link-content">
+						<Link to="/" className="link-content">
 							<Dashboard className="icon" />
-							<Link to="/" className="link">
-								Dashboard
-							</Link>
-						</div>
+							<span>Dashboard</span>
+						</Link>
 					</li>
+
 					<h4 className="link-title">Lists</h4>
 					<li>
-						<div className="link-content">
+						<Link to="/users" className="link-content">
 							<PeopleOutlined className="icon" />
-							<Link to="/users" className="link">
-								Users
-							</Link>
-						</div>
+							<span>Users</span>
+						</Link>
 					</li>
 					<li>
-						<div className="link-content">
+						<Link className="link-content" to="/products">
 							<AddBusiness className="icon" />
-							<Link to="/products" className="link">
-								Products
-							</Link>
-						</div>
+							<span>Products</span>
+						</Link>
 					</li>
+
 					<h4 className="link-title">UseFull</h4>
 					<li>
 						<div className="link-content">
@@ -110,6 +106,7 @@ const Sidebar = () => {
 							<span>Notifications</span>
 						</div>
 					</li>
+
 					<h4 className="link-title">Services</h4>
 					<li>
 						<div className="link-content">
@@ -129,6 +126,7 @@ const Sidebar = () => {
 							<span>Settings</span>
 						</div>
 					</li>
+
 					<h4 className="link-title">User</h4>
 					<li>
 						<div className="link-content">
@@ -137,10 +135,10 @@ const Sidebar = () => {
 						</div>
 					</li>
 					<li>
-						<div className="link-content">
+						<Link to="/login" className="link-content">
 							<LoginOutlined className="icon" />
 							<span>Logout</span>
-						</div>
+						</Link>
 					</li>
 				</ul>
 			</div>

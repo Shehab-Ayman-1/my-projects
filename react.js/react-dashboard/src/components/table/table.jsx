@@ -1,8 +1,11 @@
+// React
 import React from "react";
-import "./data-table.scss";
+import "./table.scss";
+import { Link } from "react-router-dom";
+
+// Material UI
 import { DataGrid } from "@mui/x-data-grid";
 import { Stack } from "@mui/material";
-import { Link } from "react-router-dom";
 
 const DataTable = ({ rows, columns }) => {
 	let renderBtn = () => {
