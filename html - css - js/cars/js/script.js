@@ -7,7 +7,7 @@ Bars.onclick = function () {
 
 // ============= Header =============
 let header = document.querySelector("header");
-let Sections = document.querySelectorAll("section");
+let allSections = document.querySelectorAll("section");
 let Links = document.querySelectorAll("header nav a");
 window.onscroll = function () {
 	if (window.scrollY > 0) {
@@ -15,10 +15,10 @@ window.onscroll = function () {
 	} else {
 		header.classList.remove("Active");
 	}
-	Sections.forEach((event) => {
+	allSections.forEach((section) => {
 		let Scroll = window.scrollY;
-		let OffsetTop = event.offsetTop - 200;
-		let ID = event.getAttribute("id");
+		let OffsetTop = section.offsetTop - 200;
+		let ID = section.getAttribute("id");
 		if (Scroll >= OffsetTop) {
 			Links.forEach((el) => {
 				el.classList.remove("Active");
