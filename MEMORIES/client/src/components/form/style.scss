@@ -1,0 +1,64 @@
+@use "../../scss/mixins" as *;
+
+.form-section {
+	form {
+		padding: 10px;
+		box-shadow: 5px 5px 10px 1px black !important;
+		.form-header {
+			font-size: 30px;
+			font-weight: bold;
+			text-align: center;
+			@include width(md) {
+				font-size: 25px;
+			}
+			@include width(sm) {
+				font-size: 20px;
+			}
+		}
+		.form-body {
+			// Input & Label Container
+			.MuiFormControl-root {
+				margin-block: 10px;
+				// Label
+				.MuiInputLabel-root {
+					font-size: 14px;
+				}
+				// Input Outline
+				.MuiOutlinedInput-root {
+					padding: 10px 5px;
+					// Input
+					input {
+						font-size: 16px;
+					}
+				}
+			}
+
+			.file-input {
+				@include flex(space-between, center);
+				flex-direction: row-reverse;
+				img {
+					width: 50px;
+					height: 50px;
+					border-radius: 5px;
+					@include width(md) {
+						height: 40px;
+					}
+					@include width(sm) {
+						height: 30px;
+					}
+				}
+			}
+		}
+		.form-footer {
+			button {
+				margin-block: 10px;
+				@include width(md) {
+					font-size: 14px;
+				}
+				@include width(sm) {
+					font-size: 13px;
+				}
+			}
+		}
+	}
+}

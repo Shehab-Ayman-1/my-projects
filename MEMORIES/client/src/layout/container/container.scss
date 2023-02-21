@@ -1,0 +1,10 @@
+@use "../../scss/mixins" as *;
+
+.app-container {
+	.grid-container {
+		@include flex(space-between, stretch);
+		@include width(xsm) {
+			flex-direction: column-reverse;
+		}
+	}
+}

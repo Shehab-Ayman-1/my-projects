@@ -1,0 +1,83 @@
+@use "../../assets/scss/mixins" as *;
+
+.subscribes {
+	width: 100%;
+	color: white;
+	text-align: center;
+	margin-block: 50px;
+	.properties-header {
+		font-weight: bold !important;
+		margin-bottom: 10px;
+	}
+
+	.subscribe-top {
+		background-color: #021e4a;
+		.title {
+			padding-block: 40px 0px;
+			font-weight: bold;
+			letter-spacing: 1px;
+		}
+		.description {
+			padding-bottom: 10px;
+		}
+		.text-field {
+			@include flex(center, center);
+			max-width: 600px;
+			padding-block: 40px;
+			margin: auto;
+			@include width(md) {
+				padding: 40px;
+			}
+			@include width(sm) {
+				padding: 20px;
+				flex-direction: column;
+				gap: 20px;
+			}
+			.MuiInputLabel-root {
+				color: #999;
+				top: -10px;
+			}
+			fieldset {
+				top: -10px;
+				padding-block: 20px;
+				border-color: #999;
+			}
+			input {
+				color: white;
+				font-size: 18px;
+			}
+			.submit-btn {
+				@include width(sm) {
+					width: 100%;
+				}
+			}
+		}
+		.MuiFormControlLabel-root {
+			& > span:nth-child(1) {
+				color: white;
+				&.Mui-checked {
+					color: #1565c0;
+				}
+				.MuiSvgIcon-root {
+					width: 0.8em;
+					height: 0.8em;
+				}
+			}
+			& > span:nth-child(2) {
+				@include width(md) {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	.subscribe-bottom {
+		background-color: #0d47a1;
+		padding: 20px;
+		.services {
+			padding-top: 15px;
+			margin-top: 15px;
+			border-top: 1px solid white;
+		}
+	}
+}

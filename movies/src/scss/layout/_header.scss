@@ -1,0 +1,135 @@
+@use "../helpers/" as *;
+header.header#header {
+	@include Flex(space-around, center);
+	@include Fixed(tl, 0, 0);
+	background-color: get(dark-color);
+	color: get(white);
+	width: 100vw;
+	padding: get(p3);
+	z-index: 1000;
+	transition: all 0.5s ease-in-out;
+	&.active {
+		background-color: transparent;
+		padding: gutter(p6, p3);
+	}
+	.logo {
+		@include Width(xmd) {
+			width: 120px;
+		}
+		@include Width(xsm) {
+			width: 100px;
+		}
+	}
+	.nav-bar {
+		@include Flex(space-between, center);
+		gap: 2.5rem;
+		font-size: 1.6rem;
+		font-weight: bold;
+		.link {
+			color: get(white);
+			cursor: pointer;
+			&:hover {
+				color: get(main-color);
+			}
+			&.active {
+				color: get(main-color);
+			}
+		}
+		.header {
+			display: none;
+			.fa-times {
+				color: get(main-color);
+				box-shadow: 0 0px 5px get(main-color);
+			}
+		}
+		.footer {
+			display: none;
+		}
+		.mobile-signin {
+			display: none;
+			@include Width(md) {
+				display: block;
+			}
+		}
+		@include Width(md) {
+			@include Fixed(tr, 0%, 0%);
+			@include Flex(flex-start, flex-start);
+			background-color: get(dark-color);
+			max-width: 300px;
+			height: 100vh;
+			padding: get(p6);
+			flex-direction: column;
+			transition: all 0.4s ease-in-out;
+			clip-path: polygon(50% 0%, 100% 0, 100% 100%, 100% 100%, 100% 0);
+			.link {
+				width: 240px;
+				display: block;
+				padding-top: get(p1);
+				border-bottom: get(border);
+				border-color: get(dark-bg);
+			}
+			.header {
+				@include Flex(space-between, center);
+				width: 100%;
+				img {
+					width: 150px;
+				}
+				.fa-times {
+					color: get(main-color);
+					box-shadow: 0 0px 5px get(main-color);
+				}
+			}
+			.footer {
+				@include Flex(space-between, center);
+				width: 100%;
+			}
+		}
+	}
+	.addition {
+		@include Flex(space-between, center);
+		i {
+			cursor: pointer;
+			&.fa-globe {
+				color: get(main-color);
+				padding-inline-start: get(p5);
+				@include Width(sm) {
+					padding-inline-start: get(p1);
+				}
+			}
+		}
+		select {
+			background-color: transparent;
+			color: get(white);
+			margin-right: get(m2);
+			cursor: pointer;
+			option {
+				color: get(black);
+			}
+		}
+		.mybtn {
+			@include Width(xmd) {
+				display: none;
+			}
+		}
+		.fa-bars {
+			display: none;
+			@include Width(md) {
+				display: block;
+			}
+		}
+	}
+	.scroll-up {
+		@include Fixed(br, 30px, 30px);
+		background-color: get(main-color);
+		font-size: 1.2rem;
+		padding: get(p3) get(p2);
+		cursor: pointer;
+		border-radius: get(circle);
+		i {
+			color: get(dark-color);
+		}
+		&:hover {
+			filter: brightness(1.5);
+		}
+	}
+}

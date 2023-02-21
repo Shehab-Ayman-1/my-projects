@@ -1,0 +1,89 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+$themes: light-red-theme, light-blue-theme, light-purple-theme, light-yellow-theme, light-green-theme, light-red-blue-theme,
+	light-silver-theme, light-darkBlue-theme, dark-mode;
+
+@each $theme in $themes {
+	body[data-theme="#{$theme}"] {
+		@if $theme == "light-red-theme" {
+			--main-color: #dc143c;
+			--second-color: #e91e63;
+			--box-shadow: 2px 4px 10px 1px var(--light-bg);
+			[alt="logo"] {
+				filter: invert(1) contrast(27) !important;
+			}
+		}
+		@if $theme == "light-blue-theme" {
+			--main-color: #00a8ff;
+			--second-color: #0097e6;
+			--box-shadow: 2px 4px 10px 1px var(--light-bg);
+		}
+		@if $theme == "light-red-blue-theme" {
+			--main-color: #00a8ff;
+			--second-color: #e84118;
+			--box-shadow: 2px 4px 10px 1px var(--light-bg);
+		}
+		@if $theme == "light-purple-theme" {
+			--main-color: #795efd;
+			--second-color: #8c7ae6;
+			--box-shadow: 2px 4px 10px 1px var(--light-bg);
+			[alt="logo"] {
+				filter: invert(1) hue-rotate(230deg) !important;
+			}
+		}
+		@if $theme == "light-yellow-theme" {
+			--main-color: #fbc531;
+			--second-color: #e1b12c;
+			--box-shadow: 2px 4px 10px 1px var(--light-bg);
+			[alt="logo"] {
+				filter: invert(0.9) brightness(1.6) !important;
+			}
+		}
+		@if $theme == "light-green-theme" {
+			--main-color: #4cd137;
+			--second-color: #44bd32;
+			--box-shadow: 2px 4px 10px 1px var(--light-bg);
+			[alt="logo"] {
+				filter: invert(1) hue-rotate(90deg) !important;
+			}
+		}
+		@if $theme == "light-silver-theme" {
+			--main-color: #7f8fa6;
+			--second-color: #718093;
+			--box-shadow: 2px 4px 10px 1px var(--light-bg);
+			[alt="logo"] {
+				filter: grayscale(1) !important;
+			}
+		}
+		@if $theme == "light-darkBlue-theme" {
+			--main-color: #273c75;
+			--second-color: #192a56;
+			--box-shadow: 2px 4px 10px 1px var(--light-bg);
+			[alt="logo"] {
+				filter: brightness(0.5) !important;
+			}
+		}
+	}
+
+	body[data-mode="#{$theme}"] {
+		@if $theme == "dark-mode" {
+			--white: #222;
+			--black: #fff;
+			--light-text: #999;
+			--dark-text: #ddd;
+			--mode-bg: #111;
+			--light-bg: #111;
+			--dark-bg: #999;
+			--box-shadow: 4px 6px 10px 1px #444;
+
+			background-color: get(white);
+			.swiper-pagination-bullet {
+				background: get(dark-bg);
+			}
+			.swiper-pagination-bullet-active {
+				background: get(second-color);
+			}
+		}
+	}
+}

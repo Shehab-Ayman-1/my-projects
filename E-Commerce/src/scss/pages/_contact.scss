@@ -1,0 +1,95 @@
+.Contact {
+	background: var(--light-bg);
+	padding: 5rem 9%;
+	.Labels {
+		@include Grid(15rem);
+		.box {
+			background: var(--white);
+			color: var(--black);
+			text-align: center;
+			padding: 40px 20px;
+			border: var(--border);
+			box-shadow: var(--Shadow);
+			cursor: pointer;
+			i {
+				background: var(--blue);
+				color: var(--white);
+				padding: 25px;
+				font-size: 25px;
+				border-radius: 50%;
+			}
+			h1 {
+				color: var(--black);
+				padding-top: 10px;
+			}
+			p {
+				color: var(--light-color);
+				font-size: 20px;
+				padding-top: 10px;
+			}
+			&:hover {
+				transform: var(--BoxHover1);
+				box-shadow: var(--BoxHover2);
+			}
+		}
+	}
+
+	.Form {
+		@include Grid(25rem);
+		padding: 50px 0;
+		line-height: 2;
+		@include Width600 {
+			@include Grid(20rem);
+		}
+		@include Width400 {
+			@include Grid(15rem);
+		}
+		.map {
+			width: 100%;
+			min-height: 400px;
+			border: var(--border);
+		}
+		form {
+			padding: 20px;
+			border: var(--border);
+			h1 {
+				color: var(--black);
+				font-size: 40px;
+				@include Width600 {
+					font-size: 30px;
+				}
+			}
+			p {
+				color: var(--light-color);
+				font-size: 15px;
+				padding-bottom: 15px;
+				@include Width600 {
+					font-size: 12px;
+				}
+			}
+			input {
+				color: var(--light-color);
+				width: 100%;
+				padding: 10px;
+				margin-bottom: 20px;
+				font-size: 20px;
+				display: block;
+				border: var(--border);
+				border-radius: 10px;
+				@include Width600 {
+					font-size: 16px;
+					padding: 5px 10px;
+					margin-bottom: 15px;
+				}
+			}
+			textarea {
+				@extend input;
+				height: 180px;
+			}
+			.Style {
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+}

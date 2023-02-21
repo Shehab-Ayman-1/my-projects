@@ -1,0 +1,52 @@
+@use "../../scss/mixins" as *;
+
+header.header {
+	@include flex(space-between, center);
+	flex-direction: row;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 30px 0;
+	.left-section {
+		@include flex(space-between, center);
+		.header-title {
+			color: get(main-color);
+			font-size: 50px;
+			@include width(md) {
+				font-size: 38px;
+			}
+			@include width(sm) {
+				font-size: 30px;
+			}
+		}
+		.header-logo {
+			height: 60px;
+			margin-left: 15px;
+			@include width(md) {
+				height: 50px;
+			}
+			@include width(sm) {
+				height: 40px;
+			}
+		}
+	}
+}
+.MuiModal-root {
+	.user-profile {
+		@include flex(space-between, center);
+		gap: 1rem;
+		cursor: pointer;
+		.user-info {
+			text-align: center;
+			.info-username {
+				color: orangered;
+				font-size: 22px;
+				display: block;
+			}
+			.info-email {
+				color: #777;
+				font-size: 14px;
+				display: block;
+			}
+		}
+	}
+}

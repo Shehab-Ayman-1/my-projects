@@ -1,0 +1,31 @@
+@use "../../assets/scss/mixins" as *;
+
+.row {
+	@include flex(flex-start, center);
+	color: #0d47a1;
+	cursor: pointer;
+	&:hover {
+		color: #555;
+		.icon {
+			margin-right: 15px;
+		}
+	}
+	.icon {
+		transform: rotate(90deg);
+		margin-right: 10px;
+		transition: 0.2s ease-in-out !important;
+	}
+}
+
+.copyright {
+	margin-top: 20px;
+	text-align: center;
+	.externet-login {
+		color: #0d47a1;
+		margin-top: 20px;
+	}
+	.copy {
+		color: #555;
+		margin-block: 20px;
+	}
+}

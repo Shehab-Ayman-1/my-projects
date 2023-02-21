@@ -1,0 +1,57 @@
+@use "../../assets/scss/mixins" as *;
+
+.slider {
+	@include fixed(tl, 0, 0);
+	width: 100%;
+	height: 100vh;
+	z-index: 1000;
+	.avatar-container {
+		@include flex(center, center);
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		.overlay {
+			@include absolute(tl, 0, 0);
+			background-color: rgba(black, 0.4);
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
+		.avatar {
+			width: 80%;
+			height: 80%;
+			z-index: 2;
+			border-radius: 10px !important;
+		}
+	}
+	.icons-container {
+		.close-icon {
+			@include absolute(tr, 20px, 20px);
+			background-color: white;
+			font-size: 70px;
+			cursor: pointer;
+			border-radius: 50%;
+			&:hover {
+				filter: brightness(2);
+				box-shadow: 2px 5px 10px 1px rgba(white, 0.4);
+			}
+			@include width(md) {
+				font-size: 50px;
+			}
+		}
+		.right-arrow {
+			@extend .close-icon;
+			top: 50%;
+			transform: translateY(-50%);
+			opacity: 1;
+			&.disabled {
+				opacity: 0.5;
+			}
+		}
+		.left-arrow {
+			@extend .right-arrow;
+			left: 20px;
+			right: initial;
+		}
+	}
+}

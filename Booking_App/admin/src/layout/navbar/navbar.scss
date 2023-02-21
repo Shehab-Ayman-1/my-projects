@@ -1,0 +1,119 @@
+@use "../../assets/scss/mixins" as *;
+
+.navbar {
+	@include flex(space-between, center);
+	@include fixed(tr, 0, 0);
+	background-color: get(mode-bg);
+	width: calc(100% - 250px);
+	padding: 10px 20px;
+	z-index: 1000;
+	box-shadow: get(box-shadow);
+	@include width(lg) {
+		width: 100%;
+	}
+	.left-section {
+		@include flex(space-between, center);
+		gap: 2rem;
+		position: relative;
+		.icon {
+			color: get(light-text);
+			font-size: 25px;
+			cursor: pointer;
+			@include width(sm) {
+				font-size: 2rem;
+			}
+			&.bars,
+			&.search {
+				display: none;
+				@include width(lg) {
+					display: block;
+				}
+			}
+		}
+		.search-bar {
+			@include flex(space-between, center);
+			background: get(white);
+			padding-inline: 5px;
+			border: get(border);
+			border-radius: 5px;
+			box-shadow: inset get(box-shadow);
+			@include width(lg) {
+				@include absolute(tl, 50px, 0);
+				display: none;
+				width: 400px;
+				&.show {
+					display: flex;
+				}
+			}
+			.input-field {
+				background-color: transparent;
+				color: get(light-text);
+				width: 100%;
+				padding: 15px 20px;
+				font-size: 1.6rem;
+				display: block;
+				border-radius: 5px;
+				&::placeholder {
+					color: #5b5a5a;
+				}
+				@include width(lg) {
+					width: 100%;
+					display: block;
+				}
+			}
+		}
+	}
+	.right-section {
+		@include flex(space-between, center);
+		gap: 1rem;
+		@include width(sm) {
+			gap: 0;
+		}
+		.item {
+			position: relative;
+			&.user {
+				.avatar {
+					@include width(xsm) {
+						width: 28px;
+						height: 28px;
+					}
+				}
+				.username {
+					color: get(black);
+					font-size: 16px;
+					font-weight: bold;
+					@include width(xsm) {
+						display: none;
+					}
+				}
+			}
+			.icon {
+				color: get(light-text);
+				font-size: 2.5rem;
+				cursor: pointer;
+				@include width(sm) {
+					font-size: 2rem;
+				}
+			}
+			.MuiFormControlLabel-root {
+				@include width(xsm) {
+					transform: scale(0.7);
+				}
+			}
+		}
+	}
+}
+
+.MuiMenuItem-root {
+	background: get(mode-bg) !important;
+	color: get(light-text) !important;
+	padding: 10px 20px !important;
+	font-size: 14px !important;
+	&:hover {
+		background-color: #795efd33 !important;
+	}
+}
+
+.MuiDivider-root {
+	margin-block: 0 !important;
+}

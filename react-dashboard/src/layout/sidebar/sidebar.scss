@@ -1,0 +1,147 @@
+@use "../../scss/helpers/mixins" as *;
+.sidebar {
+	@include fixed(tl, 0, 0);
+	background-color: get(mode-bg);
+	width: 250px;
+	height: 100vh;
+	padding: 12px 20px;
+	overflow-y: auto;
+	box-shadow: get(box-shadow);
+	z-index: 1001;
+	@include width(lg) {
+		clip-path: polygon(0 0, 0 50%, 0 100%, 0 100%, 0 0);
+	}
+	@include width(sm) {
+		width: 100%;
+	}
+	& {
+		&:hover {
+			&::-webkit-scrollbar {
+				opacity: 1;
+			}
+			&::-webkit-scrollbar-thumb {
+				background: get(main-color);
+			}
+		}
+		&::-webkit-scrollbar {
+			width: 3px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: get(white);
+		}
+		&::-webkit-scrollbar-track {
+			background: get(white);
+		}
+	}
+	.header-sidebar {
+		.cross {
+			@include absolute(tl, 20px, 25px);
+			background-color: get(main-color);
+			color: black;
+			font-size: 2.3rem;
+			border-radius: 5px;
+			display: none;
+			cursor: pointer;
+			@include width(lg) {
+				display: block;
+			}
+		}
+		.title {
+			color: get(main-color);
+			padding-bottom: 20px;
+			font-size: 2.1rem;
+			font-weight: bold;
+			display: block;
+			text-align: center;
+			margin-top: 30px;
+			white-space: nowrap;
+			[alt="logo"] {
+				width: 25px;
+				height: 25px;
+				margin-right: 15px;
+			}
+		}
+	}
+	.body-sidebar {
+		border-bottom: get(border);
+		padding-bottom: 20px;
+		.main-list {
+			.link-title {
+				color: get(light-text);
+				font-size: 1.4rem;
+				text-transform: uppercase !important;
+				padding-top: 10px;
+			}
+			li {
+				&:hover {
+					background: #795efd33;
+					box-shadow: get(box-shadow);
+				}
+				.link-content {
+					@include flex(flex-start, center);
+					padding-left: 10px;
+					padding-top: 10px;
+					cursor: pointer;
+
+					&:hover {
+						.icon {
+							color: get(main-color);
+							margin-right: 20px;
+						}
+						span {
+							color: get(main-color);
+							font-weight: bold;
+						}
+					}
+					.icon {
+						color: get(main-color);
+						font-size: 2.5rem;
+						margin-right: 10px;
+					}
+					span {
+						color: var(--dark-text);
+						font-size: 1.5rem;
+						font-weight: 400;
+					}
+					.link {
+						@extend span;
+					}
+				}
+			}
+		}
+	}
+	.footer-sidebar {
+		@include flex(flex-start, center);
+		flex-wrap: wrap;
+		padding: 10px 0 0 10px;
+		gap: 10px;
+		.theme-option {
+			width: 30px;
+			height: 30px;
+			cursor: pointer;
+			border: get(border);
+			border-radius: 5px;
+			&[data-theme="RED"] {
+				background: #dc143c;
+			}
+			&[data-theme="BLUE"] {
+				background: #00a8ff;
+			}
+			&[data-theme="GREEN"] {
+				background: #4cd137;
+			}
+			&[data-theme="PURPLE"] {
+				background: #795efd;
+			}
+			&[data-theme="SILVER"] {
+				background: #7f8fa6;
+			}
+			&[data-theme="YELLOW"] {
+				background: #fbc531;
+			}
+			&[data-theme="DARK_BLUE"] {
+				background: #273c75;
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+@use "../../scss/mixins" as *;
+
+.auth-container {
+	height: 100vh;
+	.navigate-back {
+		width: fit-content;
+		cursor: pointer;
+		border-radius: 50%;
+		&:hover {
+			box-shadow: 2px 5px 5px 1px #999;
+		}
+	}
+	.auth-icon {
+		background: get(second-color);
+		color: white;
+		margin-inline: auto;
+	}
+	.auth-title {
+		color: get(main-color);
+		text-align: center;
+		font-size: 30px;
+		margin-block: 10px;
+	}
+	.paper {
+		position: relative;
+		top: 10%;
+		padding: 20px;
+		.paper-body {
+			.is-sign-up {
+				color: get(main-color);
+				text-align: center;
+				font-size: 20px;
+				font-weight: bold;
+				cursor: pointer;
+				&:hover {
+					text-decoration: underline !important;
+				}
+			}
+			input {
+				height: initial;
+				text-transform: initial !important;
+			}
+		}
+	}
+}

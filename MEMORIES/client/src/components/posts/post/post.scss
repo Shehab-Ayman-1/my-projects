@@ -1,0 +1,67 @@
+@use "../../../scss/mixins" as *;
+
+.Card-Container {
+	position: relative;
+	border-radius: 15px;
+	box-shadow: 5px 5px 10px 1px black !important;
+	.card-header {
+		img {
+			height: 200px;
+			object-fit: initial;
+		}
+		.header-overlay {
+			@include flex(space-between, center);
+			@include absolute(tl, 0, 0);
+			color: get(white);
+			width: 100%;
+			padding: 20px;
+			.heading {
+				.creator {
+					font-size: 14px;
+					font-weight: bold;
+				}
+				.createdAt {
+					font-size: 12px;
+				}
+			}
+			.dropdown button {
+				color: white;
+			}
+		}
+		.menus {
+			position: absolute;
+		}
+	}
+	.card-body {
+		.tages {
+			font-weight: 16px;
+			.tag {
+				color: get(main-color);
+				padding-right: 10px;
+				&:hover {
+					text-decoration: underline !important;
+				}
+			}
+		}
+		.message {
+			color: get(light-text);
+			font-size: 14px;
+		}
+	}
+	.card-footer {
+		@include flex(space-between, center);
+		width: 100%;
+	}
+}
+
+.model {
+	.model-box {
+		@include absolute(tl, 50%, 50%);
+		background: get(white);
+		width: 400px;
+		padding: 10px;
+		border: get(border);
+		transform: translate(-50%, -50%);
+		box-shadow: 5px 5px 10px 1px black !important;
+	}
+}

@@ -1,0 +1,9 @@
+@use "../../assets/scss/mixins" as *;
+
+.hotel-page {
+	.hotel-container {
+		.right-section {
+			padding-left: 35px;
+		}
+	}
+}

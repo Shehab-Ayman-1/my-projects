@@ -1,0 +1,111 @@
+@use "../../assets/scss/mixins" as *;
+
+.Navbar {
+	@include sticky(tl, 0, 0);
+	z-index: 1000;
+	.header {
+		@include width(md) {
+			padding: 16px 0 !important;
+		}
+		.header-top {
+			.left-section {
+				white-space: nowrap;
+				@include width(xmd) {
+					font-size: 25px;
+				}
+				@include width(sm) {
+					font-size: 14px;
+					.icon {
+						font-size: 16px;
+					}
+				}
+			}
+
+			.right-section {
+				color: white;
+				width: 250px;
+				z-index: 1000;
+				.properties {
+					@include width(xmd) {
+						display: block;
+					}
+				}
+				.togglers {
+					display: none;
+					@include width(xmd) {
+						display: block;
+					}
+				}
+				.auth {
+					@include flex(space-between, center);
+					gap: 10px;
+					.btn {
+						white-space: nowrap;
+						background-color: white;
+						color: black;
+						border-color: black;
+						&:hover {
+							background-color: #0d47a1;
+							color: white;
+						}
+					}
+				}
+			}
+		}
+		.header-bottom {
+			padding-top: 30px;
+			@include width(xmd) {
+				@include fixed(tl, 0, 0);
+				background-color: #1a237e;
+				color: white;
+				width: 250px;
+				height: 100vh;
+				z-index: 1000;
+				display: none;
+			}
+			@include width(sm) {
+				width: 100%;
+			}
+			&.hidden {
+				display: none;
+			}
+			.cross-icon {
+				display: none;
+				@include width(xmd) {
+					@include absolute(tr, 5px, 10px);
+					display: block;
+					color: white;
+				}
+			}
+			.MuiToggleButtonGroup-root {
+				@include width(xmd) {
+					display: block;
+				}
+				.MuiToggleButtonGroup-grouped {
+					color: white;
+					padding-inline: 20px;
+					margin-right: 10px;
+					border-radius: 50px !important;
+					@include width(xmd) {
+						width: 100%;
+						justify-content: flex-start;
+						flex-direction: row;
+						margin-block: 10px;
+					}
+					&:hover {
+						background-color: rgba(#1a237e, 0.3);
+					}
+					&.Mui-selected {
+						border-color: white !important;
+						background-color: rgba(#1a237e, 0.7);
+					}
+					.icon {
+						@include width(xmd) {
+							margin-right: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

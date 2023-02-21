@@ -1,0 +1,38 @@
+@use "../../assets/scss/mixins" as *;
+
+.home-page {
+	.front-container {
+		position: relative;
+		.home-banner {
+			.home-searchbar {
+				@include absolute(tl, 100%, 50%);
+				width: 80%;
+				margin-top: 30px;
+				transform: translate(-50%, -100%);
+				@include width(lg) {
+					margin-top: 55px;
+				}
+				@include width(xsm) {
+					width: 96%;
+					margin: auto;
+					margin-top: 135px;
+				}
+			}
+		}
+	}
+	.page-container {
+		.home-features {
+			margin-top: 150px;
+		}
+		.home-properties {
+			margin-top: 50px;
+			.properties-header {
+				font-weight: bold !important;
+				margin-bottom: 10px;
+			}
+		}
+		.home-guests {
+			@extend .home-properties;
+		}
+	}
+}

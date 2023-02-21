@@ -1,0 +1,23 @@
+@use "../../assets/scss/mixins" as *;
+
+.property-box {
+	height: 200px;
+	overflow: hidden;
+	border-radius: 15px;
+	box-shadow: 2px 1px 10px 1px rgba(black, 0.5);
+	.avatar {
+		width: 100%;
+		height: calc(100% - 65px);
+		border-radius: 15px;
+	}
+	.box-content {
+		padding: 10px;
+		.title {
+			font-size: 18px;
+			font-weight: bold;
+		}
+		.description {
+			font-size: 14px;
+		}
+	}
+}

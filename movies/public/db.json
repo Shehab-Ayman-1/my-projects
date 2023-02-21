@@ -1,0 +1,382 @@
+[
+	{
+		"type": "stream",
+		"branches": [
+			{
+				"id": 5624021596526003,
+				"img": "upcoming-1.png",
+				"name": {
+					"title": "The Northman",
+					"date": 2022
+				},
+				"config": {
+					"hd": "HD",
+					"data": {
+						"min": 147,
+						"target": 5.5
+					}
+				}
+			},
+			{
+				"id": 3491465188033247,
+				"img": "upcoming-2.png",
+				"name": {
+					"title": "Doctor Strange in the Multiverse of Madness",
+					"date": 2022
+				},
+				"config": {
+					"hd": "3K",
+					"data": {
+						"min": 127,
+						"target": 8.5
+					}
+				}
+			},
+			{
+				"id": 3521773474686465,
+				"img": "upcoming-3.png",
+				"name": {
+					"title": "Memory",
+					"date": 2021
+				},
+				"config": {
+					"hd": "4K",
+					"data": {
+						"min": 117,
+						"target": 9.5
+					}
+				}
+			},
+			{
+				"id": 5015839877608933,
+				"img": "upcoming-4.png",
+				"name": {
+					"title": "The Unbearable Weight of Massive Talent",
+					"date": 2022
+				},
+				"config": {
+					"hd": "2K",
+					"data": {
+						"min": 147,
+						"target": 9.3
+					}
+				}
+			},
+			{
+				"id": 7835486468122297,
+				"img": "upcoming-2.png",
+				"name": {
+					"title": "Doctor Strange in the Multiverse of Madness",
+					"date": 2022
+				},
+				"config": {
+					"hd": "3K",
+					"data": {
+						"min": 127,
+						"target": 8.5
+					}
+				}
+			},
+			{
+				"id": 6690437004342593,
+				"img": "upcoming-1.png",
+				"name": {
+					"title": "The Northman",
+					"date": 2022
+				},
+				"config": {
+					"hd": "HD",
+					"data": {
+						"min": 147,
+						"target": 5.5
+					}
+				}
+			},
+			{
+				"id": 3204239414792927,
+				"img": "upcoming-4.png",
+				"name": {
+					"title": "The Unbearable Weight of Massive Talent",
+					"date": 2022
+				},
+				"config": {
+					"hd": "2K",
+					"data": {
+						"min": 147,
+						"target": 9.3
+					}
+				}
+			},
+			{
+				"id": 4941948462618941,
+				"img": "upcoming-3.png",
+				"name": {
+					"title": "Memory",
+					"date": 2021
+				},
+				"config": {
+					"hd": "4K",
+					"data": {
+						"min": 117,
+						"target": 9.5
+					}
+				}
+			}
+		]
+	},
+	{
+		"type": "services",
+		"branches": [
+			{
+				"id": 8224459630781149,
+				"img": "movie-1.png",
+				"name": {
+					"title": "Sonic the Hedgehog 2",
+					"date": 2022
+				},
+				"config": {
+					"hd": "2K",
+					"data": {
+						"min": 122,
+						"target": 7.8
+					}
+				}
+			},
+			{
+				"id": 8224459630782149,
+				"img": "movie-2.png",
+				"name": {
+					"title": "Morbius",
+					"date": 2022
+				},
+				"config": {
+					"hd": "HD",
+					"data": {
+						"min": 104,
+						"target": 5.9
+					}
+				}
+			},
+			{
+				"id": 4557239598544671,
+				"img": "movie-3.png",
+				"name": {
+					"title": "The Adam Project",
+					"date": 2022
+				},
+				"config": {
+					"hd": "4K",
+					"data": {
+						"min": 108,
+						"target": 7.0
+					}
+				}
+			},
+			{
+				"id": 7859258407745771,
+				"img": "movie-4.png",
+				"name": {
+					"title": "Free Guy",
+					"date": 2021
+				},
+				"config": {
+					"hd": "4K",
+					"data": {
+						"min": 119,
+						"target": 7.7
+					}
+				}
+			},
+			{
+				"id": 8728994831130543,
+				"img": "movie-5.png",
+				"name": {
+					"title": "The Batman",
+					"date": 2022
+				},
+				"config": {
+					"hd": "HD",
+					"data": {
+						"min": 176,
+						"target": 7.9
+					}
+				}
+			},
+			{
+				"id": 1112203127170471,
+				"img": "movie-6.png",
+				"name": {
+					"title": "Uncharted",
+					"date": 2022
+				},
+				"config": {
+					"hd": "2K",
+					"data": {
+						"min": 116,
+						"target": 7.0
+					}
+				}
+			},
+			{
+				"id": 4584997187372285,
+				"img": "movie-7.png",
+				"name": {
+					"title": "Death on the Nile",
+					"date": 2021
+				},
+				"config": {
+					"hd": "2K",
+					"data": {
+						"min": 127,
+						"target": 6.5
+					}
+				}
+			},
+			{
+				"id": 6351923475948477,
+				"img": "movie-8.png",
+				"name": {
+					"title": "The King's Man",
+					"date": 2021
+				},
+				"config": {
+					"hd": "2K",
+					"data": {
+						"min": 131,
+						"target": 7.0
+					}
+				}
+			}
+		]
+	},
+	{
+		"type": "TvShow",
+		"branches": [
+			{
+				"id": 8297731286631809,
+				"img": "series-1.png",
+				"name": {
+					"title": "Moon Knight",
+					"date": 2022
+				},
+				"config": {
+					"hd": "2K",
+					"data": {
+						"min": 47,
+						"target": 8.6
+					}
+				}
+			},
+			{
+				"id": 2661752360209163,
+				"img": "series-2.png",
+				"name": {
+					"title": "Halo",
+					"date": 2022
+				},
+				"config": {
+					"hd": "4K",
+					"data": {
+						"min": 59,
+						"target": 8.8
+					}
+				}
+			},
+			{
+				"id": 8835094233870977,
+				"img": "series-3.png",
+				"name": {
+					"title": "Vikings: Valhalla",
+					"date": 2022
+				},
+				"config": {
+					"hd": "3K",
+					"data": {
+						"min": 51,
+						"target": 8.3
+					}
+				}
+			},
+			{
+				"id": 2433068307636587,
+				"img": "series-4.png",
+				"name": {
+					"title": "Money Heist",
+					"date": 2017
+				},
+				"config": {
+					"hd": "4K",
+					"data": {
+						"min": 70,
+						"target": 8.3
+					}
+				}
+			}
+		]
+	},
+	{
+		"type": "suggestion",
+		"branches": [
+			{
+				"id": 8297731286631809,
+				"img": "series-1.png",
+				"name": {
+					"title": "Moon Knight",
+					"date": 2022
+				},
+				"config": {
+					"hd": "2K",
+					"data": {
+						"min": 47,
+						"target": 8.6
+					}
+				}
+			},
+			{
+				"id": 2661752360209163,
+				"img": "series-2.png",
+				"name": {
+					"title": "Halo",
+					"date": 2022
+				},
+				"config": {
+					"hd": "4K",
+					"data": {
+						"min": 59,
+						"target": 8.8
+					}
+				}
+			},
+			{
+				"id": 8835094233870977,
+				"img": "series-3.png",
+				"name": {
+					"title": "Vikings: Valhalla",
+					"date": 2022
+				},
+				"config": {
+					"hd": "3K",
+					"data": {
+						"min": 51,
+						"target": 8.3
+					}
+				}
+			},
+			{
+				"id": 2433068307636587,
+				"img": "series-4.png",
+				"name": {
+					"title": "Money Heist",
+					"date": 2017
+				},
+				"config": {
+					"hd": "4K",
+					"data": {
+						"min": 70,
+						"target": 8.3
+					}
+				}
+			}
+		]
+	}
+]

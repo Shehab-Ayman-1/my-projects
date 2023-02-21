@@ -1,0 +1,68 @@
+@use "../../assets/scss/mixins" as *;
+
+.search-bar {
+	background: white;
+	cursor: pointer;
+	box-shadow: 2px 10px 25px 1px #999;
+	@include width(md) {
+		margin-left: -8px !important;
+	}
+	.MuiInput-underline {
+		&::before {
+			border: 0;
+		}
+		&:hover::before {
+			border: 0 !important;
+		}
+	}
+	.section {
+		@include flex(flex-start, center);
+		color: get(dark-text);
+		width: 100%;
+		&.left-section {
+			.MuiInputLabel-formControl {
+				top: -10px;
+			}
+			input {
+				width: 100%;
+				font-size: 14px;
+				border: none;
+				outline: none;
+				&::placeholder {
+					font-size: 14px;
+				}
+				@include width(md) {
+					font-size: 12px;
+				}
+			}
+		}
+		&.meddle-section {
+			.date-to-date {
+				color: #777;
+				@include width(md) {
+					font-size: 14px;
+				}
+			}
+		}
+		&.right-section {
+			.right-option {
+				@include flex(space-around, center);
+				width: 100%;
+				span {
+					color: #777;
+					@include width(md) {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+	.submit-btn {
+		padding: 0 !important;
+		.btn {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+	}
+}

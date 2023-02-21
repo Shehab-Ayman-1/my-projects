@@ -1,0 +1,59 @@
+.Login {
+	@include Flex(center, center);
+	background: var(--light-bg);
+	min-height: 80vh;
+	form {
+		background: var(--white);
+		width: 400px;
+		padding: 20px;
+		margin: 20px;
+		line-height: 2;
+		border: var(--border);
+		input {
+			color: var(--light-color);
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			font-size: 20px;
+			display: block;
+			border: var(--border);
+			border-radius: 10px;
+			@include Width600 {
+				font-size: 16px;
+				padding: 5px 10px;
+				margin-bottom: 15px;
+			}
+		}
+		.row {
+			#Check {
+				width: 15px;
+				height: 15px;
+				display: inline-block;
+				cursor: pointer;
+			}
+			label {
+				display: inline-block;
+				padding-left: 10px;
+				cursor: pointer;
+				&:hover {
+					color: var(--light-color);
+				}
+			}
+		}
+		p {
+			text-align: center;
+		}
+		.Style {
+			padding: 5px 30px;
+			display: block;
+			text-align: center;
+		}
+		.RegisterBTN {
+			background: var(--black);
+			color: var(--white);
+			&:hover {
+				background-color: #111;
+			}
+		}
+	}
+}

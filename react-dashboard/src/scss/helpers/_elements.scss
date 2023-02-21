@@ -1,0 +1,38 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+// Default Elements Style
+a {
+	color: get(black);
+	list-style: none !important;
+}
+
+p {
+	margin-bottom: 0;
+}
+
+i {
+	color: get(white);
+	font-size: 2rem;
+	padding: 0 5px;
+	cursor: pointer;
+	&:hover {
+		color: get(main-color);
+	}
+	&[data-empty="light"] {
+		color: get(white);
+		-webkit-text-stroke: 1px get(black);
+	}
+	&[data-empty="dark"] {
+		color: get(black);
+		-webkit-text-stroke: 1px get(white);
+	}
+}
+
+ul {
+	padding: 0 !important;
+	margin: 0;
+	li {
+		list-style: none;
+	}
+}

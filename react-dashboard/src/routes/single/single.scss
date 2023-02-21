@@ -1,0 +1,77 @@
+@use "../../scss/helpers/mixins" as *;
+.single-page {
+	@include absolute(tr, 0, 0);
+	width: calc(100% - 250px);
+	margin-top: 55px;
+	padding: 4rem;
+	@include width(lg) {
+		width: 100%;
+	}
+	.user-info {
+		@include flex(space-between, flex-start);
+		flex-wrap: wrap;
+		gap: 4rem;
+		font-size: 2rem;
+		.card-container {
+			background: get(mode-bg);
+			min-width: 350px;
+			flex: 1;
+			overflow: hidden;
+			border-radius: 5px;
+			box-shadow: get(box-shadow);
+			.MuiPaper-root {
+				background-color: get(mode-bg);
+				.card {
+					padding: 10px;
+					.MuiCardMedia-root {
+						width: 150px;
+						height: 150px;
+						margin: auto;
+						margin-top: 30px;
+						border-radius: get(circle);
+						object-fit: initial;
+					}
+					.MuiCardContent-root {
+						background-color: get(mode-bg);
+						.card-header {
+							color: get(main-color);
+							font-size: 3rem;
+							font-weight: bold;
+						}
+						.card-body {
+							color: get(light-text);
+							font-size: 1.5rem;
+							white-space: nowrap;
+							line-height: 2;
+							h3 {
+								color: get(dark-text);
+								font-size: 18px;
+								font-weight: bold;
+								span {
+									color: get(light-text);
+									font-size: 16px;
+									font-weight: 500;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.chart {
+			flex: 1.6;
+		}
+	}
+	.user-transactions {
+		margin-top: 4rem;
+		border: none;
+		padding: 1px;
+		box-shadow: get(box-shadow);
+		.table-header {
+			font-size: 2.8rem;
+			@include width(sm) {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}

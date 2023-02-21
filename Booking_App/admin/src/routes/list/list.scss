@@ -1,0 +1,100 @@
+@use "../../assets/scss/mixins" as *;
+
+.list-page {
+	@include flex(space-between, center);
+	.list-container {
+		@include absolute(tr, 0, 0);
+		width: calc(100% - 250px);
+		font-size: 20px;
+		padding: 2rem;
+		margin-top: 55px;
+		@include width(lg) {
+			width: 100%;
+		}
+		.list-data-table {
+			margin: 2rem;
+			box-shadow: get(box-shadow);
+			.data-table {
+				padding-bottom: 80px;
+				margin-bottom: 0;
+			}
+			.table-header {
+				font-size: 3rem;
+				@include width(sm) {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}
+
+.updated-modal {
+	.paper {
+		@include absolute(tl, 50%, 50%);
+		background-color: get(mode-bg);
+		color: get(black);
+		width: 400px;
+		max-height: 90vh;
+		padding: 20px;
+		overflow-y: auto;
+		transform: translate(-50%, -50%);
+		.alert {
+			color: white;
+			font-size: 14px;
+			&.success {
+				background-color: green;
+			}
+			&.error {
+				background-color: red;
+			}
+			svg {
+				color: white;
+			}
+		}
+		.photos-grid {
+			@include flex(center, center);
+		}
+		.MuiFormControl-root {
+			width: 100%;
+			margin-top: 20px;
+			.MuiInputLabel-root {
+				color: get(light-text);
+				font-size: 16px;
+				top: -5px;
+			}
+			.MuiInput-root {
+				&::before,
+				&:after {
+					border-color: get(main-color) !important;
+				}
+			}
+			.Mui-focused {
+				color: get(main-color);
+			}
+			input {
+				color: get(light-text);
+				font-size: 16px;
+			}
+		}
+		.avatar-grid {
+			position: relative;
+			.avatar {
+				margin: auto;
+				width: 100px;
+				height: 100px;
+			}
+			input[type="file"] {
+				@include absolute(tl, 10px, 50%);
+				width: 120px;
+				height: 120px;
+				opacity: 0;
+				cursor: pointer;
+				transform: translateX(-50%);
+			}
+		}
+		.submit-btn {
+			font-size: 16px;
+			margin-top: 20px;
+		}
+	}
+}

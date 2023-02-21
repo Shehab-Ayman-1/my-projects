@@ -1,0 +1,91 @@
+footer {
+	background: var(--white);
+	.footer {
+		@include Flex(space-around, center);
+		background-color: var(--black);
+		padding: 10px;
+		.logo {
+			@include Flex(space-between, center);
+			color: var(--white);
+			a.A-Link {
+				color: var(--white);
+				font-size: 25px;
+				font-weight: bold;
+				i {
+					color: var(--gold) !important;
+				}
+			}
+		}
+		nav {
+			position: relative;
+			a {
+				color: var(--white);
+				font-size: 18px;
+				font-weight: 400;
+				padding: 0 10px;
+				&:hover {
+					color: var(--gold);
+					opacity: 0.6;
+				}
+				&.active {
+					color: var(--gold);
+					font-weight: bold;
+				}
+			}
+			@include Width800 {
+				@include PositionLeft(100%, 0);
+				background: var(--blue);
+				width: 100%;
+				padding: 20px;
+				z-index: 100000;
+				transform: translate(0, 0);
+				clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+				a {
+					display: block;
+					padding: 20px;
+				}
+				&.Active {
+					clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+				}
+			}
+		}
+		.Icons {
+			i,
+			a {
+				color: var(--white);
+				&.fa-bars {
+					display: none;
+				}
+				&:hover {
+					color: var(--gold);
+				}
+			}
+			@include Width800 {
+				i.fa-bars {
+					display: initial;
+				}
+			}
+		}
+	}
+	.reserved {
+		@include Flex(space-around, center);
+		color: var(--black);
+		padding: 20px;
+		@include Width800 {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1rem;
+		}
+		@include Width600 {
+			font-size: 14px;
+		}
+		span {
+			color: var(--blue);
+		}
+		img {
+			@include Width800 {
+				width: 200px;
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+@use "../../assets/scss/mixins" as *;
+
+.home-banner {
+	color: white;
+	padding-left: 20px;
+	margin-bottom: 60px;
+	@include width(md) {
+		padding-left: 0;
+	}
+	.heading {
+		padding-block: 20px;
+		@include width(xmd) {
+			font-size: 40px;
+		}
+		@include width(md) {
+			font-size: 30px;
+			text-align: center;
+		}
+		@include width(sm) {
+			font-size: 16px;
+		}
+	}
+	.content {
+		padding-bottom: 50px;
+		@include width(xmd) {
+			font-size: 16px;
+			padding-bottom: 30px;
+		}
+		@include width(md) {
+			font-size: 14px;
+			padding-bottom: 22px;
+			text-align: center;
+		}
+		@include width(sm) {
+			font-size: 10px;
+		}
+	}
+	.button {
+		@include width(md) {
+			text-align: center;
+		}
+		button {
+			@include width(sm) {
+				font-size: 13px !important;
+			}
+		}
+	}
+}

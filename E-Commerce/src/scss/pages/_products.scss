@@ -1,0 +1,174 @@
+.Products {
+	background: var(--light-bg);
+	padding: 0 9%;
+	.Labels {
+		@include Grid(10rem);
+		padding-bottom: 5rem;
+		.box {
+			background: var(--white);
+			padding: 10px;
+			text-align: center;
+			cursor: pointer;
+			border: var(--border);
+			box-shadow: var(--Shadow);
+			.img {
+				width: 100%;
+				img {
+					width: 80%;
+					margin-bottom: 20px;
+				}
+			}
+			&:hover {
+				background: var(--black);
+				color: var(--white);
+				transform: var(--BoxHover1);
+				box-shadow: var(--BoxHover2);
+			}
+		}
+	}
+
+	.Caragory {
+		@include Grid(20rem);
+		@include Width600 {
+			@include Grid(15rem);
+		}
+		.box {
+			background: var(--white);
+			text-align: center;
+			padding: 20px;
+			line-height: 2;
+			overflow: hidden;
+			position: relative;
+			box-shadow: var(--Shadow);
+			h1 {
+				color: var(--blue);
+				font-size: 35px;
+			}
+			.img {
+				height: 25rem;
+				img {
+					width: 100%;
+					height: 100%;
+					animation: fadeIn 0.2s ease-in-out;
+				}
+				img.Hover-img {
+					display: none;
+				}
+			}
+
+			.Content {
+				.Price {
+					font-size: 25px;
+					del {
+						color: var(--blue);
+						font-size: 18px;
+						font-weight: normal;
+						text-decoration: line-through;
+					}
+				}
+
+				.Stars i {
+					color: var(--gold);
+					font-size: 18px;
+					padding: 0 0 0 5px;
+				}
+				.Icons {
+					@include PositionLeft(20px, -100%);
+					transform: translate(0, 0);
+					animation: fadeIn 0.2s ease-in-out;
+					i {
+						background: var(--black);
+						color: var(--white);
+						padding: 15px;
+						margin: 20px 10px;
+						font-size: 25px;
+						display: block;
+						border-radius: 50%;
+						&:hover {
+							background: var(--blue);
+							color: black;
+						}
+					}
+				}
+			}
+
+			&:hover {
+				.img {
+					img.Main-img {
+						display: none;
+					}
+					img.Hover-img {
+						display: block;
+					}
+				}
+				.Icons {
+					left: 0;
+				}
+			}
+		}
+	}
+
+	.Deals {
+		@include Grid(20rem);
+		padding-bottom: 50px;
+		@include Width600 {
+			@include Grid(15rem);
+		}
+		.box {
+			@include Flex(auto, center);
+			height: 20rem;
+			padding: 20px;
+			position: relative;
+			overflow: hidden;
+			box-shadow: var(--Shadow);
+			img {
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+				@include PositionLeft(0, 0);
+			}
+			.Content {
+				z-index: 1;
+				h1 {
+					color: var(--black);
+					font-size: 35px;
+					@include Width600 {
+						font-size: 25px;
+					}
+					@include Width400 {
+						font-size: 18px;
+					}
+				}
+				span {
+					color: var(--blue);
+					font-size: 25px;
+					@include Width600 {
+						font-size: 18px;
+					}
+					@include Width400 {
+						font-size: 16px;
+					}
+				}
+				p {
+					color: var(--black);
+					font-size: 20px;
+					@include Width600 {
+						font-size: 16px;
+					}
+					@include Width400 {
+						font-size: 14px;
+					}
+				}
+
+				.Style {
+					display: block;
+				}
+			}
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}

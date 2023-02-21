@@ -1,0 +1,202 @@
+@use "../../assets/scss/mixins" as *;
+
+.add-user {
+	@include absolute(tr, 0, 0);
+	width: calc(100% - 250px);
+	margin-top: 100px;
+	padding: 2rem;
+	@include width(lg) {
+		width: 100%;
+	}
+	@include width(xsm) {
+		padding: 1rem;
+		margin-top: 50px;
+	}
+	.paper-form {
+		background-color: get(mode-bg);
+		padding: 20px;
+		box-shadow: get(box-shadow);
+		@include width(xsm) {
+			font-size: 3rem;
+			box-shadow: none;
+		}
+		.header-title {
+			color: get(main-color);
+			text-align: center;
+			font-size: 4rem;
+			font-weight: bold;
+			margin-bottom: 20px;
+			@include width(sm) {
+				font-size: 3rem;
+			}
+		}
+		.container-grid {
+			flex-direction: column-reverse;
+			.right-section {
+				@include flex(center, center);
+				flex-direction: column;
+				gap: 2rem;
+				position: relative;
+				margin-block: 10px;
+				@include width(sm) {
+					margin-block: 0;
+				}
+				.label {
+					width: 250px;
+					height: 250px;
+					display: block;
+					margin: auto;
+					@include width(md) {
+						width: 200px;
+					}
+					@include width(sm) {
+						width: 150px;
+					}
+				}
+				input[type="file"] {
+					position: absolute;
+					width: 250px;
+					height: 250px;
+					z-index: 2;
+					opacity: 0;
+					cursor: pointer;
+					border-radius: 50%;
+					@include width(md) {
+						width: 200px;
+					}
+					@include width(sm) {
+						width: 150px;
+					}
+				}
+				.avatar {
+					width: 100%;
+					height: 250px !important;
+					z-index: 1;
+					height: initial;
+				}
+			}
+			.left-section {
+				padding: 0 2rem;
+				@include width(xsm) {
+					padding: 0.2rem;
+				}
+				.alert {
+					color: white;
+					font-size: 16px;
+					&.error {
+						background-color: red;
+					}
+					&.success {
+						background-color: green;
+					}
+					svg {
+						color: white;
+					}
+				}
+				.password-grid {
+					position: relative;
+					.adornment-icon {
+						@include absolute(tr, 40%, 20px);
+						svg {
+							color: get(light-text);
+							font-size: 25px;
+							@include width(xsm) {
+								font-size: 18px;
+							}
+						}
+					}
+				}
+				.adorn-grid {
+					position: relative;
+					.adornment {
+						@include absolute(tl, 40%, 30px);
+						color: get(black);
+						font-size: 22px;
+					}
+					.star {
+						left: 25px;
+						top: 45%;
+					}
+					input {
+						padding-left: 40px;
+					}
+				}
+				.auto-complete {
+					transition: 0s !important;
+					.MuiFormControl-root {
+						width: 100%;
+						min-height: 48.4px;
+						.MuiInput-root {
+							width: 100%;
+							height: 100%;
+							margin: 0;
+							font-size: 16px;
+							.MuiSvgIcon-root {
+								color: get(light-text);
+							}
+						}
+						.MuiInputLabel-root {
+							color: #c0c0c0;
+							top: 0px;
+							left: 15px;
+							font-size: 14px;
+							text-transform: capitalize !important;
+						}
+						.MuiInput-root {
+							&::before,
+							&:after {
+								border: none !important;
+							}
+						}
+						.Mui-focused {
+							color: transparent;
+						}
+						.MuiSvgIcon-root {
+							&[data-testid="ArrowDropDownIcon"] {
+								color: get(main-color);
+								width: 30px;
+								height: 30px;
+							}
+							&[data-testid="CloseIcon"] {
+								color: red;
+								width: 20px;
+								height: 20px;
+							}
+						}
+						input {
+							color: get(light-text);
+							width: 100%;
+							height: 100%;
+							font-size: 16px;
+						}
+					}
+				}
+				.field {
+					background-color: get(mode-bg);
+					color: get(light-text);
+					width: 100%;
+					padding: 15px 20px;
+					margin-block: 10px;
+					font-size: 1.6rem;
+					text-transform: initial !important;
+					display: block;
+					border-radius: 5px;
+					box-shadow: inset get(box-shadow);
+					&::placeholder {
+						color: #c0c0c0;
+						font-size: 14px;
+						text-transform: capitalize !important;
+					}
+				}
+				.btn {
+					font-size: 2rem;
+					margin: 20px 0;
+				}
+			}
+		}
+	}
+}
+
+[role="presentation"] {
+	transition: 0s !important;
+}

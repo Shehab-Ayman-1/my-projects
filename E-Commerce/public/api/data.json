@@ -1,0 +1,240 @@
+{
+	"home": {
+		"banner": [
+			{
+				"img": "home-img-1.jpg",
+				"offer": "Up To 10% Offer",
+				"price": "350.99",
+				"title": "Smart Phones"
+			},
+			{
+				"img": "home-img-2.jpg",
+				"offer": "Up To 30% Offer",
+				"price": "550.99",
+				"title": "Smart Watch"
+			},
+			{
+				"img": "home-img-3.jpg",
+				"offer": "Up To 50% Offer",
+				"price": "750.99",
+				"title": "Head Phones"
+			}
+		],
+		"labelContent": [
+			{
+				"img": "banner-1.jpg",
+				"Price": 10,
+				"Title": "Head Phone"
+			},
+			{
+				"img": "banner-2.jpg",
+				"Price": 30,
+				"Title": "Smart Watch"
+			},
+			{
+				"img": "banner-3.jpg",
+				"Price": 50,
+				"Title": "Smart Phone"
+			}
+		],
+		"arrivalContent": [
+			{
+				"Main_img": "arrival-1.jpg",
+				"Hover_img": "arrival-1-hover.jpg",
+				"Title": "HD Television",
+				"Price": 254.99
+			},
+
+			{
+				"Main_img": "arrival-2.jpg",
+				"Hover_img": "arrival-2-hover.jpg",
+				"Title": "Lenovo Laptop",
+				"Price": 354.99
+			},
+
+			{
+				"Main_img": "arrival-3.jpg",
+				"Hover_img": "arrival-3-hover.jpg",
+				"Title": "New Smart phone",
+				"Price": 454.99
+			},
+
+			{
+				"Main_img": "arrival-4.jpg",
+				"Hover_img": "arrival-4-hover.jpg",
+				"Title": "New Printer",
+				"Price": 554.99
+			},
+
+			{
+				"Main_img": "arrival-5.jpg",
+				"Hover_img": "arrival-5-hover.jpg",
+				"Title": "New Headphones",
+				"Price": 654.99
+			},
+
+			{
+				"Main_img": "arrival-6.jpg",
+				"Hover_img": "arrival-6-hover.jpg",
+				"Title": "New Speakers",
+				"Price": 754.99
+			}
+		]
+	},
+	"about": {
+		"accourdions": [
+			{
+				"title": "How To Make Websites?",
+				"content": "Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Minus, Laboriosam Non Eligendi Reiciendis Quis Laborum Exercitationem Voluptatibus Autem Harum Nihil Nisi Sed Mollitia, Quam Blanditiis Architecto Cumque? Sit, Voluptate Maiores."
+			},
+			{
+				"title": "How To Place Order Online?",
+				"content": "Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Minus, Laboriosam Non Eligendi Reiciendis Quis Laborum Exercitationem Voluptatibus Autem Harum Nihil Nisi Sed Mollitia, Quam Blanditiis Architecto Cumque? Sit, Voluptate Maiores."
+			},
+			{
+				"title": "How To Pay Online?",
+				"content": "Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Minus, Laboriosam Non Eligendi Reiciendis Quis Laborum Exercitationem Voluptatibus Autem Harum Nihil Nisi Sed Mollitia, Quam Blanditiis Architecto Cumque? Sit, Voluptate Maiores."
+			},
+			{
+				"title": "Is Online Payment Safe?",
+				"content": "Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Minus, Laboriosam Non Eligendi Reiciendis Quis Laborum Exercitationem Voluptatibus Autem Harum Nihil Nisi Sed Mollitia, Quam Blanditiis Architecto Cumque? Sit, Voluptate Maiores."
+			},
+			{
+				"title": "How To Contact Service Center?",
+				"content": "Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Minus, Laboriosam Non Eligendi Reiciendis Quis Laborum Exercitationem Voluptatibus Autem Harum Nihil Nisi Sed Mollitia, Quam Blanditiis Architecto Cumque? Sit, Voluptate Maiores."
+			}
+		],
+		"clients": [
+			{
+				"img": "pic-1.png",
+				"name": "Shehab Ayman",
+				"job": "FrontEnd Developer"
+			},
+			{
+				"img": "pic-2.png",
+				"name": "Aya Mahmoud",
+				"job": "Web Designer"
+			},
+			{
+				"img": "pic-3.png",
+				"name": "Hesham Mohamed",
+				"job": "BackEnd Developer"
+			},
+			{
+				"img": "pic-4.png",
+				"name": "Salma Hammam",
+				"job": "Artict"
+			},
+			{
+				"img": "pic-5.png",
+				"name": "Mahmoud Wahed",
+				"job": "Graphice Design"
+			},
+			{
+				"img": "pic-6.png",
+				"name": "Fady Adel",
+				"job": "SoftWare Engineer"
+			}
+		]
+	},
+	"products": {
+		"labels": [
+			{
+				"img": "cat_img1.png",
+				"Title": "Televisions"
+			},
+			{
+				"img": "cat_img2.png",
+				"Title": "Smart Phones"
+			},
+			{
+				"img": "cat_img3.png",
+				"Title": "Head Phones"
+			},
+			{
+				"img": "cat_img4.png",
+				"Title": "Smart Watches"
+			},
+			{
+				"img": "cat_img5.png",
+				"Title": "Games"
+			},
+			{
+				"img": "cat_img6.png",
+				"Title": "Camera"
+			},
+			{
+				"img": "cat_img7.png",
+				"Title": "Speakers"
+			}
+		],
+		"products": [
+			{
+				"img1": "product-1.jpg",
+				"img2": "product-1-hover.jpg",
+				"title": "Smartphone",
+				"price": "949.99"
+			},
+			{
+				"img1": "product-2.jpg",
+				"img2": "product-2-hover.jpg",
+				"title": "Camera",
+				"price": "249.99"
+			},
+			{
+				"img1": "product-3.jpg",
+				"img2": "product-3-hover.jpg",
+				"title": "Television",
+				"price": "349.99"
+			},
+			{
+				"img1": "product-4.jpg",
+				"img2": "product-4-hover.jpg",
+				"title": "Speaker",
+				"price": "449.99"
+			},
+			{
+				"img1": "product-5.jpg",
+				"img2": "product-5-hover.jpg",
+				"title": "Speaker",
+				"price": "549.99"
+			},
+			{
+				"img1": "product-6.jpg",
+				"img2": "product-6-hover.jpg",
+				"title": "Smartwatch",
+				"price": "649.99"
+			},
+			{
+				"img1": "product-7.jpg",
+				"img2": "product-7-hover.jpg",
+				"title": "Headphone",
+				"price": "749.99"
+			},
+			{
+				"img1": "product-8.jpg",
+				"img2": "product-8-hover.jpg",
+				"title": "Smartphone",
+				"price": "849.99"
+			},
+			{
+				"img1": "product-9.jpg",
+				"img2": "product-9-hover.jpg",
+				"title": "Camera",
+				"price": "949.99"
+			}
+		],
+		"deals": [
+			{
+				"img": "product-banner-1.jpg",
+				"Title": "Head Phone",
+				"price": 30
+			},
+			{
+				"img": "product-banner-2.jpg",
+				"Title": "Smart Watch",
+				"price": 50
+			}
+		]
+	}
+}

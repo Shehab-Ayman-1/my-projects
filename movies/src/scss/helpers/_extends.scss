@@ -1,0 +1,18 @@
+@use "./variables" as *;
+// Basic Extends
+%box {
+	background-color: get(white);
+	padding: gutter(p5, p2);
+	margin: get(p4) auto;
+	line-height: 2;
+	text-align: center;
+	outline: get(border);
+	outline-offset: -15px;
+	cursor: pointer;
+	border-radius: get(r1);
+	&:hover {
+		outline-offset: 0;
+		transform: translateY(-5px);
+		box-shadow: get(box-shadow);
+	}
+}

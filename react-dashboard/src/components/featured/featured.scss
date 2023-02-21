@@ -1,0 +1,91 @@
+@use "../../scss/helpers/mixins" as *;
+.featured {
+	background-color: get(mode-bg);
+	min-width: 400px;
+	flex: 1;
+	padding: 2rem;
+	border-radius: 5px;
+	box-shadow: get(box-shadow);
+	@include width(md) {
+		width: 100%;
+		min-width: initial;
+		margin-inline: 20px;
+	}
+	.featured-header {
+		@include flex(space-between, center);
+		.header-title {
+			color: get(light-text);
+			font-size: 1.7rem;
+			font-weight: 600;
+		}
+		.header-icon {
+			color: get(light-text);
+			font-size: 2.3rem;
+			cursor: pointer;
+		}
+	}
+	.featured-body {
+		text-align: center;
+		padding-block: 20px;
+		.body-circular-progressbar {
+			.CircularProgressbar .CircularProgressbar-path {
+				stroke: get(main-color);
+			}
+			.CircularProgressbar-text {
+				fill: get(second-color);
+			}
+			.progressbar {
+				width: 130px;
+			}
+		}
+		.body-details {
+			padding-top: 15px;
+			.details-title {
+				color: get(light-text);
+				text-align: center;
+				font-weight: 400;
+			}
+			.details-amount {
+				@extend .details-title;
+				color: get(second-color);
+				padding-block: 20px;
+				font-size: 3.5rem;
+				font-weight: bold;
+			}
+			.details-description {
+				@extend .details-title;
+				font-size: 1.4rem;
+			}
+		}
+	}
+	.featured-footer {
+		@include flex(space-between, center);
+		.footer-target {
+			text-align: center;
+			.target-name {
+				color: get(light-text);
+				font-size: 2rem;
+			}
+			.target-icon {
+				color: get(second-color);
+				display: block;
+				margin: 10px auto;
+				font-size: 3rem;
+				animation: UpDown 2s ease-in-out infinite;
+			}
+			.target-amount {
+				@include flex(space-between, center);
+				font-size: 1.8rem;
+				&.positive {
+					color: green;
+				}
+				&.negative {
+					color: red;
+				}
+				.icon {
+					font-size: 2.8rem;
+				}
+			}
+		}
+	}
+}

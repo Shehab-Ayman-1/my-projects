@@ -1,0 +1,70 @@
+@use "../../assets/scss/mixins" as *;
+
+.modal-container {
+	background-color: rgba(black, 0.01);
+	.not-signin-box {
+		@include absolute(tl, 50%, 50%);
+		background-color: white;
+		color: black;
+		width: 400px;
+		padding: 30px;
+		text-align: center;
+		border: 2px solid black;
+		transform: translate(-50%, -50%);
+		box-shadow: 2px 5px 10px 1px rgba(black, 0.5);
+		.box-title {
+			color: red;
+			font-weight: bold;
+			margin-bottom: 40px;
+		}
+	}
+
+	.reserves-box {
+		@include absolute(tl, 50%, 50%);
+		background-color: white;
+		width: 600px;
+		max-height: 90vh;
+		padding: 20px;
+		transform: translate(-50%, -50%);
+		box-shadow: 2px 5px 10px 1px rgba(black, 0.5);
+		overflow-y: auto;
+		.reserve-title {
+			font-weight: bold;
+		}
+		.reserve-room {
+			@include flex(space-between, center);
+			padding: 15px 0 15px 30px;
+			border-bottom: 1px solid gray;
+			.left-part {
+				flex: 3;
+				.room-name {
+					font-weight: bold;
+				}
+			}
+			.room-roomnumbers {
+				@include flex(center, center);
+				flex: 1;
+				flex-wrap: wrap;
+				div {
+					width: 50%;
+					text-align: center;
+					label {
+						font-size: 10px;
+						padding-top: 5px;
+						display: block;
+						cursor: pointer;
+					}
+					.MuiCheckbox-root {
+						padding: 0;
+						color: green;
+						&.Mui-disabled {
+							.MuiSvgIcon-root {
+								color: red;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
