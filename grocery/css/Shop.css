@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+:root {
+	--white: white;
+	--black: #222;
+	--green: #bac34e;
+	--light-color: #666;
+	--bg: #eee;
+	--border: 2px solid #999;
+}
+* {
+	font-family: "Poppins", sans-serif;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+	text-decoration: none;
+	text-transform: capitalize;
+	transition: 0.2s linear;
+}
+body {
+	background: #eee;
+}
+html {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+	width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+	background: var(--bg);
+}
+html::-webkit-scrollbar-thumb {
+	background-color: var(--green);
+}
+::selection {
+	background: var(--green);
+}
+
+/* ============================================ FrameWork ============================================== */
+section {
+	padding: 3rem 9%;
+}
+span {
+	color: var(--green);
+}
+.Style {
+	background: var(--green);
+	color: var(--black);
+	font-size: 20px;
+	padding: 10px 40px;
+	margin-top: 20px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+.Style:hover {
+	background: var(--black);
+	color: var(--bg);
+}
+.fa {
+	font-size: 30px;
+	padding: 0 5px;
+	cursor: pointer;
+}
+.fa:hover {
+	color: var(--green);
+}
+a {
+	color: var(--black);
+	font-weight: 500;
+	font-size: 25px;
+}
+a:hover {
+	color: var(--green);
+}
+.title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+	border-bottom: var(--border);
+}
+
+/* ============================================ Active ================================================= */
+header nav.Active {
+	clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+}
+
+/* ============================================ Header ================================================= */
+header {
+	background: var(--white);
+	color: var(--black);
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+header .logo {
+	display: flex;
+	align-items: center;
+	font-size: 25px;
+	font-weight: bold;
+}
+header .logo a {
+	font-size: 30px;
+}
+header .logo .fas {
+	color: var(--green);
+	font-size: 35px;
+	padding-right: 10px;
+	animation: moving 2s linear infinite;
+}
+header nav a {
+	color: var(--light-color);
+	padding: 0 20px;
+	font-size: 22px;
+	font-weight: 500;
+}
+header .Icons .fa {
+	font-size: 30px;
+	padding: 0 5px;
+	cursor: pointer;
+}
+header .Icons .fa-bars {
+	display: none;
+}
+
+/* =============== Effects =============== */
+header .Icons .fa:hover {
+	color: var(--green);
+}
+header nav a:hover {
+	color: var(--green);
+}
+@keyframes moving {
+	0%,
+	100% {
+		transform: translateY(10px);
+		color: var(--green);
+	}
+	50% {
+		transform: translateY(-10px);
+		color: var(--black);
+	}
+}
+@media (max-width: 800px) {
+	header .Icons .fa-bars {
+		display: inline-block;
+	}
+	header nav {
+		background: var(--bg);
+		width: 100%;
+		position: absolute;
+		top: 100%;
+		clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+	}
+	header nav a {
+		display: block;
+		padding: 20px;
+	}
+}
+
+/* ============================================ Home =============================================== */
+.Home {
+	background: url(../Images/heading-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	width: 100vw;
+	height: 19rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.Home h1 {
+	color: var(--black);
+	font-size: 50px;
+}
+.Home span {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+/* ============================================ Shopping =============================================== */
+.Shopping .Catagory {
+	color: var(--black);
+	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+}
+
+/* ============================================ Shopping =============================================== */
+.Products .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+	margin-top: 50px;
+}
+.Products .Catagory .box {
+	background: #f3f3f3;
+	text-align: center;
+	padding: 50px;
+	position: relative;
+	overflow: hidden;
+}
+.Products .Catagory .box .img {
+	width: 100%;
+	max-height: 20rem;
+}
+.Products .Catagory .box .img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.Products .Catagory .box .Icons {
+	background: rgba(243, 243, 243, 0.5);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: -100%;
+	left: 50%;
+	opacity: 0;
+	transform: translate(-50%, -5%);
+}
+.Products .Catagory .box .Icons i {
+	background: var(--white);
+	color: var(--black);
+	padding: 15px;
+	margin: 5px;
+}
+.Products .Catagory .box .Content h3 {
+	font-size: 30px;
+}
+.Products .Catagory .box .Content p {
+	font-size: 22px;
+}
+.Products .Catagory .box .Content span {
+	text-decoration: line-through;
+	font-size: 20px;
+}
+.Products .Catagory .box:hover .Icons {
+	opacity: 1;
+	top: -5%;
+}
+.Products .Catagory .box .Icons i:hover {
+	background: var(--green);
+	color: var(--white);
+}
+/* ============================================ Footer ================================================= */
+footer {
+	background: var(--bg);
+	color: var(--black);
+}
+footer .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+	padding: 3rem 9% 0;
+}
+footer .Catagory .box .row {
+	width: fit-content;
+	padding: 10px 0;
+	font-size: 18px;
+}
+footer .Catagory .box h1 {
+	color: var(--black);
+	font-size: 28px;
+}
+footer .Catagory .box .row a {
+	color: var(--light-color);
+	font-size: initial;
+	font-weight: initial;
+	padding-left: 10px;
+}
+footer .Catagory .box .row i {
+	color: var(--green);
+}
+footer .Catagory .box .row .fa {
+	font-size: 23px;
+}
+footer .Catagory .box .row:hover a {
+	color: var(--green);
+	padding-left: 25px;
+}
+footer .Catagory .box .row:hover i {
+	color: var(--light-color);
+}
+
+footer .Catagory .box:nth-child(4) {
+	overflow: hidden;
+}
+footer .Catagory .box:nth-child(4) h1 {
+	font-size: 35px;
+}
+footer .Catagory .box:nth-child(4) p {
+	color: var(--light-color);
+	width: 100%;
+	font-size: 18px;
+}
+footer .Catagory .box:nth-child(4) input {
+	background: transparent;
+	border-bottom: 1px solid var(--black);
+	width: 100%;
+	font-size: 20px;
+	padding: 10px 15px;
+	margin-top: 20px;
+}
+footer .Copyright {
+	background: var(--light-color);
+	color: var(--white);
+	width: 100vw;
+	text-align: center;
+	padding: 20px;
+	margin-top: 1rem;
+}
+footer .Copyright span {
+	color: var(--green);
+	font-size: 25px;
+}

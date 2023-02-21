@@ -1,0 +1,581 @@
+@use "../helpers" as *;
+
+header {
+	@include Sticky(tl, 0, 0);
+	@include Flex(space-between, center);
+	background-color: get(white);
+	padding: gutter(p2, p6);
+	flex-wrap: wrap;
+	z-index: 1000;
+	@include Width(md) {
+		padding: gutter(p2, p2);
+	}
+	.left-section {
+		@include Flex(space-between, center);
+		i {
+			font-size: 18px;
+			-webkit-text-stroke: 1px get(white);
+			@include Width(md) {
+				font-size: 14px;
+				&.fa-bars {
+					display: none;
+				}
+			}
+		}
+		img {
+			width: 110px;
+			padding-left: 10px;
+			@include Width(md) {
+				width: 80px;
+			}
+		}
+	}
+	.mid-section {
+		@include Flex(space-between, center);
+		@include Width(md) {
+			@include Absolute(tr, 45px, 0);
+			background-color: rgba(black, 0.3);
+			width: 100%;
+			height: 100vh;
+			z-index: 1000;
+			align-items: flex-start;
+			transition: 0.2s ease-in-out;
+			clip-path: polygon(50% 0%, 100% 0, 100% 100%, 100% 100%, 100% 0);
+		}
+		input {
+			background-color: get(light-bg);
+			color: get(black);
+			width: 500px;
+			font-size: 16px;
+			padding: gutter(p1, p2);
+			border: get(border);
+			border-color: get(dark-bg);
+			border-radius: get(r1);
+			@include Width(lg) {
+				margin-left: 0;
+				width: 300px;
+			}
+			@include Width(md) {
+				width: 100%;
+				border-right: none;
+			}
+		}
+		label {
+			@extend i;
+			padding: gutter(p2, p4);
+			font-size: 16px;
+			border: get(border);
+			border-color: get(dark-bg);
+			border-radius: get(r1);
+			@include Width(md) {
+				background-color: get(light-bg);
+				border: none;
+				border-radius: get(r0);
+			}
+		}
+		i {
+			@include Width(md) {
+				background-color: get(light-bg);
+				font-size: 16px;
+				padding: get(p2);
+				border: none;
+				border-radius: get(r0);
+			}
+		}
+	}
+	.right-section {
+		@include Flex(space-between, center);
+		gap: get(p2);
+		@include Width(md) {
+			gap: get(p0);
+		}
+		i {
+			font-size: 18px;
+			&.fa-search {
+				display: none;
+				@include Width(md) {
+					display: initial;
+				}
+			}
+			@include Width(md) {
+				font-size: 14px;
+			}
+		}
+		img {
+			width: 30px;
+			height: 30px;
+			cursor: pointer;
+			border-radius: get(circle);
+			@include Width(md) {
+				width: 25px;
+				height: 25px;
+			}
+		}
+	}
+	.dropdown-menus {
+		@include Absolute(tr, 62px, 20px);
+		@include Width(md) {
+			right: 5px;
+		}
+		@include Width(sm) {
+			width: calc(100% - 10px);
+		}
+		.notifications-menu {
+			background-color: get(white);
+			width: 400px;
+			position: relative;
+			@include Width(sm) {
+				width: 100%;
+			}
+			&:after {
+				@include Absolute(br, 100%, 48.3px);
+				content: "";
+				border-style: solid;
+				border-width: 15px;
+				border-color: transparent transparent get(dark-color) transparent;
+				@include Width(md) {
+					right: 25px;
+				}
+			}
+			.noti-header {
+				@include Flex(space-between, center);
+				background-color: #111;
+				color: white;
+				padding: get(p2);
+				i {
+					color: get(white);
+					@include Width(md) {
+						margin-right: 12px;
+					}
+				}
+			}
+			.noti-body {
+				padding: get(p2);
+				.link {
+					@include Flex(flex-start, center);
+					padding-top: get(p3);
+					& {
+						&:nth-child(1),
+						&:nth-child(4) {
+							i {
+								color: get(main-color);
+							}
+						}
+						&:nth-child(2),
+						&:nth-child(5) {
+							i {
+								color: get(second-color);
+							}
+						}
+						&:nth-child(3),
+						&:nth-child(7) {
+							i {
+								color: get(dark-color);
+							}
+						}
+					}
+					p {
+						padding-left: get(p1);
+						color: get(black);
+						font-size: 15px;
+						font-weight: 500;
+					}
+				}
+			}
+			.noti-footer {
+				@extend .noti-header;
+				background: none;
+				justify-content: center;
+				border-top: get(border);
+				h4 {
+					color: get(main-color);
+					cursor: pointer;
+					&:hover {
+						text-decoration: underline !important;
+					}
+				}
+			}
+		}
+		.mega-menu {
+			background-color: get(white);
+			width: 300px;
+			max-height: calc(100vh - 80px);
+			overflow-y: auto;
+			@include Width(sm) {
+				width: 100%;
+			}
+			&::-webkit-scrollbar {
+				width: 3px;
+				@include Width(md) {
+					width: 0;
+				}
+			}
+			&:after {
+				@include Absolute(br, 100%, 8px);
+				content: "";
+				border-style: solid;
+				border-width: 15px;
+				border-color: transparent transparent get(dark-color) transparent;
+				@include Width(md) {
+					right: 2px;
+				}
+			}
+			.mega-header {
+				@include Flex(flex-start, center);
+				background-color: #111;
+				color: white;
+				border-bottom: get(border);
+				padding: get(p2);
+				.name {
+					background-color: orangered;
+					color: white;
+					font-size: 18px;
+					padding: gutter(p1, p3);
+					border-radius: get(circle);
+				}
+				.content {
+					padding-left: get(p2);
+					h4 {
+						color: get(white);
+					}
+					span {
+						color: get(main-color);
+						font-size: 12px;
+						font-weight: 500;
+						cursor: pointer;
+						&:hover {
+							text-decoration: underline !important;
+						}
+					}
+				}
+			}
+			.mega-body {
+				padding: get(p2);
+				.link {
+					padding: gutter(p2, p0);
+					position: relative;
+					cursor: pointer;
+					&:hover {
+						background-color: get(light-bg);
+					}
+					&.signup {
+						padding-bottom: get(p2);
+						border-bottom: get(border);
+					}
+					i {
+						font-size: 20px;
+						&.fa-angle-right {
+							@include Absolute(tr, 12px, 5px);
+						}
+						&.fa-cog {
+							-webkit-text-stroke: 1px get(white);
+						}
+					}
+					span {
+						color: get(black);
+						font-size: 14px;
+						font-weight: 500;
+					}
+				}
+			}
+			.mega-footer {
+				color: get(black);
+				padding: get(p2);
+				border-top: get(border);
+				font-size: 14px;
+				font-weight: 500;
+				position: relative;
+				cursor: pointer;
+				i {
+					@include Absolute(tr, 12px, 5px);
+					font-size: 20px;
+				}
+			}
+		}
+		.app-menu {
+			background-color: get(white);
+			width: 250px;
+			margin-right: 65px;
+			position: relative;
+			@include Width(md) {
+				margin-right: 0;
+				right: 30px;
+			}
+			@include Width(sm) {
+				width: 100%;
+				right: 0;
+			}
+			&:after {
+				@include Absolute(br, 100%, 17px);
+				content: "";
+				border-style: solid;
+				border-width: 15px;
+				border-color: transparent transparent get(dark-color) transparent;
+			}
+			.app-header {
+				@include Flex(flex-start, center);
+				background-color: #111;
+				color: white;
+				border-bottom: get(border);
+				padding: get(p2);
+				.name {
+					background-color: orangered;
+					color: white;
+					font-size: 18px;
+					padding: gutter(p1, p3);
+					border-radius: get(circle);
+				}
+				.content {
+					padding-left: get(p2);
+					h4 {
+						color: get(white);
+					}
+					span {
+						color: get(main-color);
+						font-size: 12px;
+						font-weight: 500;
+						cursor: pointer;
+						&:hover {
+							text-decoration: underline !important;
+						}
+					}
+				}
+			}
+			.app-body {
+				.link {
+					padding: get(p2);
+					padding-bottom: get(p1);
+					&:nth-child(1),
+					&:nth-child(3) {
+						border-bottom: get(border);
+					}
+					i {
+						color: red;
+						font-size: 20px;
+					}
+					span {
+						color: get(black);
+						font-size: 14px;
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
+}
+
+main {
+	@include Flex(space-between, flex-start);
+}
+
+.nav-bar {
+	@include Fixed(tl, 58px, 0);
+	background: get(white);
+	color: get(dark-color);
+	width: 230px;
+	height: calc(100vh - 58px);
+	overflow-y: auto;
+	clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 0);
+	@include Width(md) {
+		display: none;
+	}
+	&::-webkit-scrollbar {
+		width: 0;
+	}
+	&:hover {
+		&::-webkit-scrollbar {
+			width: 5px;
+		}
+	}
+	.links-container {
+		padding: get(p2);
+		border-bottom: get(border);
+		.link {
+			padding: get(p2);
+			display: block;
+			cursor: pointer;
+			&:hover {
+				background-color: get(light-bg);
+			}
+			i {
+				font-size: 16px;
+			}
+			span {
+				font-size: 14px;
+				font-weight: 500;
+			}
+		}
+		.user-channel {
+			@include Flex(flex-start, center);
+			gap: get(p2);
+			padding: get(p2);
+			cursor: pointer;
+			&:hover {
+				background-color: get(light-bg);
+			}
+			img {
+				width: 23px;
+				height: 23px;
+				border-radius: get(circle);
+			}
+			span {
+				font-size: 14px;
+				font-weight: 500;
+			}
+		}
+		&.about-youtube p {
+			padding-top: get(p2);
+			font-size: 14px;
+			cursor: pointer;
+			span {
+				padding: gutter(p0, p1);
+			}
+		}
+	}
+}
+
+.sub-nav {
+	@include Fixed(tl, 60px, 0);
+	background-color: get(white);
+	color: get(black);
+	min-height: 100vh;
+	z-index: 1000;
+	@include Width(md) {
+		@include Flex(space-between, center);
+		@include Fixed(bl, 0, 0);
+		background-color: get(white);
+		width: 100% !important;
+		min-height: initial;
+		top: initial;
+		padding: gutter(p1, p3);
+	}
+	.link {
+		@include Flex(center, center);
+		flex-direction: column;
+		padding-top: get(p4);
+		@include Width(md) {
+			@include Flex(center, center);
+			padding-top: get(p1);
+		}
+		i {
+			font-size: 16px;
+			@include Width(md) {
+				font-size: 20px;
+			}
+		}
+		span {
+			font-size: 12px;
+		}
+	}
+}
+
+.videos-container {
+	@include Flex(space-between, center);
+	background-color: get(light-bg);
+	width: calc(100% - 200px);
+	padding: get(p4);
+	margin-left: auto;
+	flex-wrap: wrap;
+	position: relative;
+	@include Width(md) {
+		width: 100% !important;
+	}
+	.video {
+		color: get(black);
+		width: calc(100% / 4);
+		padding: 5px;
+		margin-top: get(p4);
+		cursor: pointer;
+		@include Width(xlg) {
+			width: calc(100% / 5);
+		}
+		@include Width(lg) {
+			width: calc(100% / 4);
+		}
+		@include Width(xmd) {
+			width: calc(100% / 3);
+		}
+		@include Width(xsm) {
+			width: calc(100% / 2);
+		}
+		@include Width(sm) {
+			width: calc(100% / 1);
+		}
+		.cover-img {
+			width: 100%;
+			height: 200px;
+			overflow: hidden;
+			z-index: 33;
+			img {
+				width: 100%;
+				height: 100%;
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+		}
+		.content {
+			@include Flex(flex-start, center);
+			gap: 1rem;
+			.channel-img {
+				img {
+					width: 40px;
+					height: 40px;
+					border-radius: 100%;
+				}
+			}
+			.video-details {
+				.video-title {
+					color: get(dark-color);
+					font-size: 16px;
+					padding: gutter(p2, p0) gutter(p0, p0);
+				}
+				.channel-name {
+					color: get(dark-color);
+					font-size: 14px;
+				}
+				.target {
+					@include Flex(space-between, center);
+					color: get(dark-color);
+					span {
+						font-weight: 500;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+	.suggest-icons {
+		@include Sticky(tr, 58px, 0);
+		background-color: get(white);
+		width: 100%;
+		padding: get(p1);
+		margin-top: -18px;
+		z-index: 100;
+		border-bottom: get(border);
+		@include Width(md) {
+			@include Sticky(tr, 45px, 0);
+		}
+		.swiper-slide {
+			width: fit-content;
+			label {
+				background-color: get(light-bg);
+				color: get(black);
+				width: 50px;
+				font-size: 14px;
+				font-weight: 500;
+				padding: gutter(p1, p3);
+				cursor: pointer;
+				user-select: none;
+				border-radius: get(r4);
+			}
+			input {
+				display: none;
+				&:checked + label {
+					background-color: get(black);
+					color: get(white);
+				}
+			}
+		}
+	}
+}

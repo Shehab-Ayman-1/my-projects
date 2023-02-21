@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coffee shop website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+    <!-- CDN FontAwasome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+
+<body>
+    <!-- ======================================== NaveBare =========================================== -->
+    <header>
+        <div class="logo">
+            <img src="Images/logo.png">
+        </div>
+        <nav>
+            <a href="#Home">Home</a>
+            <a href="#About">About</a>
+            <a href="#Menu">Menu</a>
+            <a href="#Products">Products</a>
+            <a href="#Review">Review</a>
+            <a href="#Contact">Contact</a>
+            <a href="#Blogs">Blogs</a>
+        </nav>
+        <div class="Icons">
+            <i class="fa fa-bars" id="Bars_btn"></i>
+            <i class="fa fa-search" id="Search_btn"></i>
+            <i class="fa fa-shopping-cart"></i>
+        </div>
+        <form action="#">
+            <input type="search" placeholder="Enter Here...." id="Search">
+            <label for="Search" class="fa fa-search"></label>
+        </form>
+    </header>
+
+    <!-- ======================================== Home ============================================== -->
+    <section class="Home" id="Home" data-aos="zoom-in-down">
+        <div class="Content">
+            <h1 data-aos="fade-down">FRESH COFFEE IN THE MORNING</h1>
+            <p data-aos="fade-right">Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Placeat Labore, Sint
+                Cupiditate Distinctio
+                Tempora Reiciendis.</p>
+            <button class="Style">Get Yours Now</button>
+        </div>
+    </section>
+
+    <!-- ======================================== About ============================================== -->
+    <section class="About" id="About" data-aos="zoom-in-down">
+        <div class="title">
+            <h1><span>ABOUT</span> US</h1>
+        </div>
+
+        <div class="Catagory">
+            <div class="left">
+                <img src="Images/about-img.jpeg">
+            </div>
+            <div class="right">
+                <h1>What Makes Our Coffee Special?</h1>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Voluptatibus Qui Ea Ullam, Enim Tempora
+                    Ipsum Fuga Alias Quae Ratione A Officiis Id Temporibus Autem? Quod Nemo Facilis Cupiditate. Ex, Vel?
+                </p> <br>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. Odit Amet Enim Quod Veritatis, Nihil
+                    Voluptas Culpa! Neque Consectetur Obcaecati Sapiente?</p>
+                <button class="Style">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== Menu =============================================== -->
+    <section class="Menu" id="Menu">
+        <div class="title">
+            <h1>OUR <span>MENU</span></h1>
+        </div>
+
+        <div class="Catagory">
+            <div class="box" data-aos="fade-right">
+                <div class="Img">
+                    <img src="Images/menu-1.png">
+                </div>
+
+                <div class="Content">
+                    <h4>Tasty And Healty</h4>
+                    <p>$10.99 <span>15.99</span></p>
+                    <button class="Style">Add To Cart</button>
+                </div>
+            </div>
+
+            <div class="box" data-aos="fade-down">
+                <div class="Img">
+                    <img src="Images/menu-2.png">
+                </div>
+                <div class="Content">
+                    <h4>Tasty And Healty</h4>
+                    <p>$15.99 <span>20.99</span></p>
+                    <button class="Style">Add To Cart</button>
+                </div>
+            </div>
+
+            <div class="box" data-aos="fade-left">
+                <div class="Img">
+                    <img src="Images/menu-3.png">
+                </div>
+                <div class="Content">
+                    <h4>Tasty And Healty</h4>
+                    <p>$20.99 <span>25.99</span></p>
+                    <button class="Style">Add To Cart</button>
+                </div>
+            </div>
+
+            <div class="box" data-aos="fade-right">
+                <div class="Img">
+                    <img src="Images/menu-4.png">
+                </div>
+                <div class="Content">
+                    <h4>Tasty And Healty</h4>
+                    <p>$25.99 <span>30.99</span></p>
+                    <button class="Style">Add To Cart</button>
+                </div>
+            </div>
+
+            <div class="box" data-aos="fade-down">
+                <div class="Img">
+                    <img src="Images/menu-5.png">
+                </div>
+                <div class="Content">
+                    <h4>Tasty And Healty</h4>
+                    <p>$30.99 <span>35.99</span></p>
+                    <button class="Style">Add To Cart</button>
+                </div>
+            </div>
+
+            <div class="box" data-aos="fade-left">
+                <div class="Img">
+                    <img src="Images/menu-6.png">
+                </div>
+                <div class="Content">
+                    <h4>Tasty And Healty</h4>
+                    <p>$35.99 <span>40.99</span></p>
+                    <button class="Style">Add To Cart</button>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ======================================== Products =========================================== -->
+    <section class="Products" id="Products">
+        <div class="title">
+            <h1>OUR <span>PRODUCTS</span></h1>
+        </div>
+
+        <div class="Catagory">
+            <div class="box" data-aos="zoom-in">
+                <div class="Icons">
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-heart"></i>
+                    <i class="fa fa-eye"></i>
+                </div>
+                <div class="img">
+                    <img src="Images/product-1.png">
+                </div>
+                <div class="Content">
+                    <h3>Fresh Coffee</h3>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p>$15.99 <span>$20.99</span></p>
+                </div>
+            </div>
+
+            <div class="box" data-aos="zoom-in">
+                <div class="Icons">
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-heart"></i>
+                    <i class="fa fa-eye"></i>
+                </div>
+                <div class="img">
+                    <img src="Images/product-2.png">
+                </div>
+                <div class="Content">
+                    <h3>Fresh Coffee</h3>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p>$25.99 <span>$40.99</span></p>
+                </div>
+            </div>
+
+            <div class="box" data-aos="zoom-in">
+                <div class="Icons">
+                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-heart"></i>
+                    <i class="fa fa-eye"></i>
+                </div>
+                <div class="img">
+                    <img src="Images/product-3.png">
+                </div>
+                <div class="Content">
+                    <h3>Fresh Coffee</h3>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p>$35.99 <span>$50.99</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== Review ============================================= -->
+    <section class="Review" id="Review">
+        <div class="title">
+            <h1>CUSTOMER'S <span>REVIEW</span></h1>
+        </div>
+
+        <div class="Catagory">
+            <div class="box" data-aos="fade-down">
+                <div class="Coma">
+                    <img src="Images/quote-img.png">
+                </div>
+                <div class="Content">
+                    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Animi Nulla Sit Libero Nemo Fuga Sequi
+                        Nobis? Necessitatibus Aut Laborum, Nisi Quas Eaque Laudantium Consequuntur Iste Ex Aliquam Minus
+                        Vel? Nemo.</p>
+                </div>
+                <div class="Img-Cont">
+                    <img src="Images/pic-1.png">
+                    <h4>Shehab Ayman</h4>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-aos="fade-up">
+                <div class="Coma">
+                    <img src="Images/quote-img.png">
+                </div>
+                <div class="Content">
+                    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Animi Nulla Sit Libero Nemo Fuga Sequi
+                        Nobis? Necessitatibus Aut Laborum, Nisi Quas Eaque Laudantium Consequuntur Iste Ex Aliquam Minus
+                        Vel? Nemo.</p>
+                </div>
+                <div class="Img-Cont">
+                    <img src="Images/pic-2.png">
+                    <h4>Aya Mahmoud</h4>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box" data-aos="fade-down">
+                <div class="Coma">
+                    <img src="Images/quote-img.png">
+                </div>
+                <div class="Content">
+                    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Animi Nulla Sit Libero Nemo Fuga Sequi
+                        Nobis? Necessitatibus Aut Laborum, Nisi Quas Eaque Laudantium Consequuntur Iste Ex Aliquam Minus
+                        Vel? Nemo.</p>
+                </div>
+                <div class="Img-Cont">
+                    <img src="Images/pic-3.png">
+                    <h4>Hesham Mohamed</h4>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== Contact ============================================ -->
+    <section class="Contact" id="Contact">
+        <div class="title">
+            <h1><span>CONTACT</span> US</h1>
+        </div>
+
+        <div class="Catagory">
+            <div class="left" data-aos="fade-down">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13651.431412873415!2d29.91622705!3d31.19695445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1635769765352!5m2!1sen!2seg"
+                    width="500" height="550" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="right" data-aos="fade-down">
+                <h1>GET IN TOUCH</h1>
+                <form action="#">
+                    <div class="con" data-aos="zoom-down">
+                        <label for="username" class="fa fa-user"></label>
+                        <input type="text" placeholder="Enter Name" class="username">
+                    </div>
+
+                    <div class="con" data-aos="zoom-down">
+                        <label for="Email" class="fa fa-envelope"></label>
+                        <input type="email" placeholder="Enter Email" class="username">
+                    </div>
+
+                    <div class="con" data-aos="zoom-down">
+                        <label for="Number" class="fa fa-phone"></label>
+                        <input type="number" placeholder="Enter Number" class="username">
+
+                    </div>
+
+                    <button class="Style" data-aos="zoom-in-down">Contact Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== Blogs ============================================== -->
+    <section class="Blogs" id="Blogs">
+        <div class="title">
+            <h1>OUR <span>BLOGS</span></h1>
+        </div>
+        <div class="Catagory">
+            <div class="box" data-aos="fade-up">
+                <div class="Img">
+                    <img src="Images/blog-1.jpeg">
+                </div>
+                <div class="Content">
+                    <h1>Tasty And Refreshing Coffee</h1>
+                    <span>By Admin / 21st May, 2021</span>
+                    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Non, Dicta.</p>
+                    <button class="Style">Read More</button>
+                </div>
+            </div>
+            <div class="box" data-aos="fade-down">
+                <div class="Img">
+                    <img src="Images/blog-2.jpeg">
+                </div>
+                <div class="Content">
+                    <h1>Tasty And Refreshing Coffee</h1>
+                    <span>By Admin / 21st May, 2021</span>
+                    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Non, Dicta.</p>
+                    <button class="Style">Read More</button>
+                </div>
+            </div>
+            <div class="box" data-aos="fade-up">
+                <div class="Img">
+                    <img src="Images/blog-3.jpeg">
+                </div>
+                <div class="Content">
+                    <h1>Tasty And Refreshing Coffee</h1>
+                    <span>By Admin / 21st May, 2021</span>
+                    <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Non, Dicta.</p>
+                    <button class="Style">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== Blogs ============================================== -->
+    <footer>
+        <div class="Icons"">
+            <i class=" fab fa-facebook-f" data-aos="fade-right"></i>
+            <i class="fab fa-twitter" data-aos="fade-up"></i>
+            <i class="fab fa-instagram" data-aos="fade-down"></i>
+            <i class="fab fa-linkedin-in" data-aos="fade-up"></i>
+            <i class="fab fa-pinterest-p" data-aos="fade-left"></i>
+        </div>
+        <div class="NabeBar" data-aos="zoom-in">
+            <a href="#Home" data-aos="fade-up">Home</a>
+            <a href="#About" data-aos="fade-down">About</a>
+            <a href="#Menu" data-aos="fade-up">Menu</a>
+            <a href="#Products" data-aos="fade-down">Products</a>
+            <a href="#Review" data-aos="fade-up">Review</a>
+            <a href="#Contact" data-aos="fade-down">Contact</a>
+            <a href="#Blogs" data-aos="fade-up">Blogs</a>
+        </div>
+        <div class="footer">
+            <p>Created By <span>Mr. Shehab Ayman</span> | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- ====================================== JavaScript =========================================== -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            delay: 50,
+            duration: 800
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

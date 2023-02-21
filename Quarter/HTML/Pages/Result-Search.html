@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Search</title>
+		<link rel="stylesheet" href="../../css/Style.css" />
+		<link rel="stylesheet" href="../../css/Libs/BootStrap.css" />
+		<link rel="stylesheet" href="../../css/Libs/Swipper.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+			integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="../../css/Libs/Select2.css" />
+	</head>
+
+	<body class="Result-Search">
+		<!-- ============================================= Header ============================================= -->
+		<header>
+			<div class="logo">
+				<a href="index.html"><img src="../../Images/Logo.png" /></a>
+
+				<div class="dropdown">
+					<button
+						class="btn btn-transparent text-light dropdown-toggle"
+						type="button"
+						id="dropdownMenuButton2"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+						data-bs-display="static"
+					>
+						All India
+					</button>
+					<ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownMenuButton2">
+						<li><a class="dropdown-item" href="#">Mumbai 1</a></li>
+						<li><a class="dropdown-item" href="#">Mumbai 2</a></li>
+						<li><a class="dropdown-item" href="#">Mumbai 3</a></li>
+						<li><a class="dropdown-item" href="#">Mumbai 4</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<ul class="NavBar">
+				<i class="fa fa-times"></i>
+				<li class="Main">
+					<div class="title">
+						<p><img src="../../Images/cursor.png" alt="Cursor" /> Buyers</p>
+						<i class="fas fa-plus"></i>
+					</div>
+					<ul class="Nested-List">
+						<li><a href="./index.html">For Buyers 1</a></li>
+						<li><a href="./Result-Search.html">For Buyers 2</a></li>
+						<li><a href="./Contact.html">For Buyers 3</a></li>
+						<li><a href="./Manage-Pro.html">For Buyers 4</a></li>
+						<li><a href="./Shortlisted.html">For Buyers 5</a></li>
+					</ul>
+				</li>
+				<li class="Main">
+					<div class="title">
+						<p><img src="../../Images/cursor.png" alt="Cursor" /> Tenants</p>
+						<i class="fas fa-plus"></i>
+					</div>
+					<ul class="Nested-List">
+						<li><a href="./index.html">For Tenants 1</a></li>
+						<li><a href="./Result-Search.html">For Tenants 2</a></li>
+						<li><a href="./Contact.html">For Tenants 3</a></li>
+						<li><a href="./Manage-Pro.html">For Tenants 4</a></li>
+						<li><a href="./Shortlisted.html">For Tenants 5</a></li>
+					</ul>
+				</li>
+				<li class="Main">
+					<div class="title">
+						<p><img src="../../Images/cursor.png" alt="Cursor" /> Owners</p>
+						<i class="fas fa-plus"></i>
+					</div>
+					<ul class="Nested-List">
+						<li><a href="./index.html">For Owners 1</a></li>
+						<li><a href="./Result-Search.html">For Owners 2</a></li>
+						<li><a href="./Contact.html">For Owners 3</a></li>
+						<li><a href="./Manage-Pro.html">For Owners 4</a></li>
+						<li><a href="./Shortlisted.html">For Owners 5</a></li>
+					</ul>
+				</li>
+				<li class="Main">
+					<div class="title">
+						<p><img src="../../Images/cursor.png" alt="Cursor" /> Dealers / Builers</p>
+						<i class="fas fa-plus"></i>
+					</div>
+					<ul class="Nested-List">
+						<li><a href="./index.html">For Dealers / Builers 1</a></li>
+						<li><a href="./Result-Search.html">For Dealers / Builers 2</a></li>
+						<li><a href="./Contact.html">For Dealers / Builers 3</a></li>
+						<li><a href="./Manage-Pro.html">For Dealers / Builers 4</a></li>
+						<li><a href="./Shortlisted.html">For Dealers / Builers 5</a></li>
+					</ul>
+				</li>
+				<li class="li Main">
+					<a href="../Post-Form/Post-Form1.html" class="Style">
+						<img src="../../Images/cursor.png" alt="cursor" />
+						Post Property
+					</a>
+				</li>
+				<li class="Main-Login-Desktop">
+					<a href="../Post-Form/Login.html">Login</a>
+				</li>
+				<li class="Main-Login-Desktop">
+					<a href="../Post-Form/Register.html">Sign Up</a>
+				</li>
+				<div class="Mobile btn-group w-100 justify-content-evenly">
+					<li class="Main-Login-Mobile">
+						<a href="../Post-Form/Login.html">Login</a>
+					</li>
+					<li class="Main-Login-Mobile">
+						<a href="../Post-Form/Register.html">Sign-Up</a>
+					</li>
+				</div>
+			</ul>
+
+			<i class="fa fa-bars"></i>
+		</header>
+
+		<div class="Filter-Sort-Buttons input-group justify-content-center">
+			<button class="Style Filter">Filter <img src="../../Images/filter-btn.png" alt="filter" /></button>
+			<button class="Style" id="Sort">Sort <img src="../../Images/Sort-btn.png" alt="Sort" /></button>
+		</div>
+
+		<div id="Sort-Menu">
+			<div class="Title btn-group w-100 justify-content-between align-items-center">
+				<h3 class="Menu-Title">Sort By</h3>
+				<i class="fa fa-times"></i>
+			</div>
+			<div class="Option">
+				<p>Lorem ipsum dolor.</p>
+				<i class="fas fa-check"></i>
+			</div>
+			<hr />
+			<div class="Option">
+				<p>Lorem ipsum dolor.</p>
+				<i class="fas fa-check"></i>
+			</div>
+			<hr />
+			<div class="Option">
+				<p>Lorem ipsum dolor.</p>
+				<i class="fas fa-check"></i>
+			</div>
+			<hr />
+			<div class="Option">
+				<p>Lorem ipsum dolor.</p>
+				<i class="fas fa-check"></i>
+			</div>
+			<hr />
+			<div class="Option">
+				<p>Lorem ipsum dolor.</p>
+				<i class="fas fa-check"></i>
+			</div>
+			<hr />
+			<div class="Option">
+				<p>Lorem ipsum dolor.</p>
+				<i class="fas fa-check"></i>
+			</div>
+			<hr />
+			<div class="Option">
+				<p>Lorem ipsum dolor.</p>
+				<i class="fas fa-check"></i>
+			</div>
+			<hr />
+			<div class="Option">
+				<p>Lorem ipsum dolor.</p>
+				<i class="fas fa-check"></i>
+			</div>
+			<hr />
+			<button class="Style">Apply</button>
+		</div>
+
+		<!-- ============================================= Search-Navbar ====================================== -->
+		<section class="Search-Navbar" id="Search-Navbar">
+			<div class="SearchBar btn-group w-100 p-3">
+				<div class="dropdown">
+					<button
+						class="btn btn-outline-transparent dropdown-toggle"
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+						data-bs-display="static"
+					>
+						Mumbai
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Action 1</a></li>
+						<li><a class="dropdown-item" href="#">Action 2</a></li>
+						<li><a class="dropdown-item" href="#">Action 3</a></li>
+						<li><a class="dropdown-item" href="#">Action 4</a></li>
+					</ul>
+				</div>
+
+				<div class="dropdown">
+					<button
+						class="btn btn-outline-transparent dropdown-toggle"
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+						data-bs-display="static"
+					>
+						Rent
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Action 1</a></li>
+						<li><a class="dropdown-item" href="#">Action 2</a></li>
+						<li><a class="dropdown-item" href="#">Action 3</a></li>
+						<li><a class="dropdown-item" href="#">Action 4</a></li>
+					</ul>
+				</div>
+
+				<div class="btn-group w-100 align-items-center">
+					<select class="form-control btn-outline-light" id="Select-Home-box" multiple>
+						<option value="HI">Mumbai</option>
+						<option value="HI">Hawaii</option>
+						<option value="CA">California</option>
+						<option value="NV">Nevada</option>
+						<option value="OR">Oregon</option>
+						<option value="WA">Washington</option>
+						<option value="AZ">Arizona</option>
+						<option value="CO">Colorado</option>
+						<option value="ID">Idaho</option>
+						<option value="MT">Montana</option>
+						<option value="NE">Nebraska</option>
+						<option value="NM">New Mexico</option>
+						<option value="ND">North Dakota</option>
+						<option value="UT">Utah</option>
+						<option value="WY">Wyoming</option>
+						<option value="AL">Alabama</option>
+						<option value="AR">Arkansas</option>
+						<option value="AR">Paris</option>
+						<option value="AR">London</option>
+						<option value="AR">Egypt</option>
+						<option value="IL">Canada</option>
+						<option value="IA">Germeen</option>
+						<option value="KS">Kansas</option>
+						<option value="KY">Kentucky</option>
+						<option value="LA">Louisiana</option>
+						<option value="MN">Minnesota</option>
+						<option value="MS">Mississippi</option>
+						<option value="MO">Missouri</option>
+						<option value="OK">Oklahoma</option>
+						<option value="SD">South Dakota</option>
+						<option value="TX">Texas</option>
+						<option value="TN">Tennessee</option>
+						<option value="WI">Wisconsin</option>
+						<option value="CT">Connecticut</option>
+						<option value="DE">Delaware</option>
+						<option value="FL">Florida</option>
+						<option value="GA">Georgia</option>
+						<option value="IN">Indiana</option>
+						<option value="ME">Maine</option>
+						<option value="MD">Maryland</option>
+						<option value="MA">Massachusetts</option>
+						<option value="MI">Michigan</option>
+						<option value="NH">New Hampshire</option>
+						<option value="NJ">New Jersey</option>
+						<option value="NY">New York</option>
+						<option value="NC">North Carolina</option>
+						<option value="OH">Ohio</option>
+						<option value="PA">Pennsylvania</option>
+						<option value="RI">Rhode Island</option>
+						<option value="SC">South Carolina</option>
+						<option value="VT">Vermont</option>
+						<option value="VA">Virginia</option>
+						<option value="WV">West Virginia</option>
+					</select>
+					<img src="../../Images/search-bar2.png" />
+				</div>
+
+				<div class="dropdown">
+					<button
+						class="btn btn-outline-transparent dropdown-toggle"
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+						data-bs-display="static"
+					>
+						Sorted By
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Action 1</a></li>
+						<li><a class="dropdown-item" href="#">Action 2</a></li>
+						<li><a class="dropdown-item" href="#">Action 3</a></li>
+						<li><a class="dropdown-item" href="#">Action 4</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============================================= Small-Return ======================================= -->
+		<div class="Small-Return Result-Search">
+			<div>
+				<a href="./index.html"><i class="fa fa-chevron-left"></i></a>
+				<p class="m-0 d-inline-block">Showing 2,298 results</p>
+			</div>
+			<div class="img">
+				<a href="./Contact.html"><img src="../../Images/search-bar2.png" alt="search" /></a>
+			</div>
+		</div>
+
+		<section class="row g-0 justify-content-center">
+			<!-- ========================================== SideBar =========================================== -->
+			<aside class="Search-Filters col-lg-3 col-md-4 g-0">
+				<div class="return btn-group w-100 align-items-center justify-content-between">
+					<i class="fas fa-chevron-left"></i>
+					<a href="Result-Search.html" class="Style">Done</a>
+				</div>
+
+				<div class="Apply">
+					<div class="filter-title">
+						<h5>Applied Filters</h5>
+						<p class="Clear-All">Clear All</p>
+					</div>
+					<div class="Catagory">
+						<button class="Style" type="button">Apartment</button>
+					</div>
+				</div>
+
+				<div class="Property">
+					<div class="filter-title">
+						<h5>Property Type</h5>
+						<i class="fas fa-chevron-up"></i>
+					</div>
+					<div class="Catagory">
+						<input type="checkbox" class="btn-check" id="Property1" autocomplete="off" />
+						<label class="btn btn-outline-primary" for="Property1">
+							<img src="../../Images/icon-1.png" alt="Images" />
+							Apartment
+						</label>
+
+						<input type="checkbox" class="btn-check" id="Property2" autocomplete="off" />
+						<label class="btn btn-outline-primary" for="Property2">
+							<img src="../../Images/icon-2.png" alt="Images" />
+							Indipendet house/Villa
+						</label>
+
+						<input type="checkbox" class="btn-check" id="Property3" autocomplete="off" />
+						<label class="btn btn-outline-primary" for="Property3">
+							<img src="../../Images/icon-3.png" alt="Images" />
+							Standalone Building
+						</label>
+					</div>
+				</div>
+
+				<div class="Pricing">
+					<div class="filter-title">
+						<h5>Pricing</h5>
+						<i class="fas fa-chevron-up"></i>
+					</div>
+					<div class="Catagory">
+						<div class="Range-Box">
+							<div class="values">
+								<span id="Range-input-1">0</span>
+								<span> - </span>
+								<span id="Range-input-2">100</span>
+							</div>
+							<div class="Range-container">
+								<div class="slider-track"></div>
+								<input type="range" min="0" max="5000" value="1000" id="slider-1" />
+								<input type="range" min="0" max="5000" value="4000" id="slider-2" />
+							</div>
+						</div>
+						<div class="btn-group w-100 justify-content-between mt-3">
+							<div class="dropdown">
+								<button
+									class="btn btn-light"
+									type="button"
+									id="dropdownMenuButton2"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									<span>Min Budget</span>
+									<i class="fa fa-chevron-down"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownMenuButton2">
+									<li><a class="dropdown-item" href="#">1000</a></li>
+									<li><a class="dropdown-item" href="#">2000</a></li>
+									<li><a class="dropdown-item" href="#">3000</a></li>
+									<li><a class="dropdown-item" href="#">4000</a></li>
+								</ul>
+							</div>
+							<div class="dropdown">
+								<button
+									class="btn btn-light"
+									type="button"
+									id="dropdownMenuButton2"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									<span>Max Budget</span>
+									<i class="fa fa-chevron-down"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownMenuButton2">
+									<li><a class="dropdown-item" href="#">1000</a></li>
+									<li><a class="dropdown-item" href="#">2000</a></li>
+									<li><a class="dropdown-item" href="#">3000</a></li>
+									<li><a class="dropdown-item" href="#">4000</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="BKH">
+					<div class="filter-title">
+						<h5>BKH Type</h5>
+						<i class="fas fa-chevron-up"></i>
+					</div>
+					<div class="Catagory">
+						<button class="Style" type="button"><i class="fas fa-circle"></i>1 RK</button>
+						<button class="Style" type="button"><i class="fas fa-circle"></i>1 BKH</button>
+						<button class="Style" type="button"><i class="fas fa-circle"></i>2 BKH</button>
+						<button class="Style" type="button"><i class="fas fa-circle"></i>3 BKH</button>
+					</div>
+				</div>
+
+				<div class="Status">
+					<div class="filter-title">
+						<h5>Property Status</h5>
+						<i class="fas fa-chevron-up"></i>
+					</div>
+					<div class="Catagory">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="flexCheckDefault" />
+							<label class="form-check-label" for="flexCheckDefault">Ready to move</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="flexCheckChecked" />
+							<label class="form-check-label" for="flexCheckChecked">Under Construction</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="Only">
+					<div class="filter-title">
+						<h5>Only show with photos</h5>
+						<span class="button"></span>
+					</div>
+				</div>
+
+				<div class="Select-Amenities">
+					<div class="filter-title">
+						<h5>Amenities</h5>
+						<i class="fas fa-chevron-up"></i>
+					</div>
+					<div class="Catagory">
+						<div class="left">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="One" />
+								<label class="form-check-label" for="One">Parking</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="Two" />
+								<label class="form-check-label" for="Two">Lift</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="Three" />
+								<label class="form-check-label" for="Three">Power backup</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="Four" />
+								<label class="form-check-label" for="Four">Park</label>
+							</div>
+						</div>
+						<div class="right">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="Five" />
+								<label class="form-check-label" for="Five">Security</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="Six" />
+								<label class="form-check-label" for="Six">Gas pipeline</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="Seven" />
+								<label class="form-check-label" for="Seven">Club House</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="Eight" />
+								<label class="form-check-label" for="Eight">AC Room</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="Area">
+					<div class="filter-title">
+						<h5>Area</h5>
+						<i class="fas fa-chevron-up"></i>
+					</div>
+					<div class="Catagory">
+						<div class="Range-Box">
+							<div class="values">
+								<span id="Range-input-1">0</span>
+								<span> - </span>
+								<span id="Range-input-2">100</span>
+							</div>
+							<div class="Range-container">
+								<div class="slider-track"></div>
+								<input type="range" min="0" max="5000" value="1000" id="slider-1" />
+								<input type="range" min="0" max="5000" value="4000" id="slider-2" />
+							</div>
+						</div>
+						<div class="btn-group w-100 justify-content-between mt-3">
+							<div class="dropdown">
+								<button
+									class="btn btn-light"
+									type="button"
+									id="dropdownMenuButton2"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									<span>Min Area</span>
+									<i class="fa fa-chevron-down"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownMenuButton2">
+									<li><a class="dropdown-item" href="#">1000</a></li>
+									<li><a class="dropdown-item" href="#">2000</a></li>
+									<li><a class="dropdown-item" href="#">3000</a></li>
+									<li><a class="dropdown-item" href="#">4000</a></li>
+								</ul>
+							</div>
+							<div class="dropdown">
+								<button
+									class="btn btn-light"
+									type="button"
+									id="dropdownMenuButton2"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									<span>Max Area</span>
+									<i class="fa fa-chevron-down"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownMenuButton2">
+									<li><a class="dropdown-item" href="#">1000</a></li>
+									<li><a class="dropdown-item" href="#">2000</a></li>
+									<li><a class="dropdown-item" href="#">3000</a></li>
+									<li><a class="dropdown-item" href="#">4000</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="Furnishing">
+					<div class="filter-title">
+						<h5>Furnishing Type</h5>
+						<i class="fas fa-chevron-up"></i>
+					</div>
+					<div class="Catagory">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="Nine" />
+							<label class="form-check-label" for="Nine">Fully Furnished</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="Ten" />
+							<label class="form-check-label" for="Ten">Semi Furnished</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="Eleven" />
+							<label class="form-check-label" for="Eleven">Unfrunished</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="BathRoom">
+					<h5>Bathrooms</h5>
+					<div class="Counter">
+						<i class="fas fa-chevron-down down"></i>
+						<span class="Count">0</span>
+						<i class="fas fa-chevron-up up"></i>
+					</div>
+				</div>
+
+				<div class="Localities">
+					<div class="filter-title">
+						<h5>Localities</h5>
+						<i class="fas fa-chevron-up"></i>
+					</div>
+					<div class="Catagory">
+						<div class="left">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="LoremIpsum1" />
+								<label class="form-check-label" for="LoremIpsum1">Lorem Ipsum</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="LoremIpsum2" />
+								<label class="form-check-label" for="LoremIpsum2">Lorem Ipsum</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="LoremIpsum3" />
+								<label class="form-check-label" for="LoremIpsum3">Lorem Ipsum</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="LoremIpsum4" />
+								<label class="form-check-label" for="LoremIpsum4">Lorem Ipsum</label>
+							</div>
+						</div>
+						<div class="right">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="LoremIpsum5" />
+								<label class="form-check-label" for="LoremIpsum5">Lorem Ipsum</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="LoremIpsum6" />
+								<label class="form-check-label" for="LoremIpsum6">Lorem Ipsum</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="LoremIpsum7" />
+								<label class="form-check-label" for="LoremIpsum7">Lorem Ipsum</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="LoremIpsum8" />
+								<label class="form-check-label" for="LoremIpsum8">Lorem Ipsum</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<a href="./Contact.html" class="Style Submit-Button">Apply</a>
+			</aside>
+
+			<!-- ======================================== Main-Section ======================================== -->
+			<section class="Parent col-md-7 justify-content-center">
+				<!-- ======================================= One ============================================== -->
+				<section class="One" id="One">
+					<div class="left">
+						<div class="Big-Images">
+							<img src="../../Images/Test1.jpeg" alt="Big" class="Hide-img" />
+							<img src="../../Images/Test2.jpeg" alt="Big" class="OneImage Main-img" />
+							<img src="../../Images/Test3.jpeg" alt="Big" class="twoImage Main-img" />
+							<img src="../../Images/Test4.jpeg" alt="Big" class="threeImage Main-img" />
+						</div>
+						<div class="Small-Images">
+							<img src="../../Images/Test1.jpeg" alt="Small" data-img=".OneImage" />
+							<img src="../../Images/Test2.jpeg" alt="Small" data-img=".twoImage" />
+							<img src="../../Images/Test3.jpeg" alt="Small" data-img=".threeImage" />
+						</div>
+					</div>
+					<div class="right">
+						<div class="Sponsered btn-group justify-content-between w-100">
+							<p>₹20,000</p>
+							<div>
+								<a href="#" class="text-light">Sponsered</a>
+								<a href="#" class="text-light">Trending</a>
+							</div>
+						</div>
+
+						<h3 class="Name">2 BKH Apartment at Knight Heights <img src="../../Images/tag.png" alt="tag" /></h3>
+						<p class="cursor"><img src="../../Images/cursor.png" alt="cursor" /> Vile Parle, No 321</p>
+
+						<div class="type">
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/life.png" alt="life" />
+								<p>Lift</p>
+							</div>
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/bed.png" alt="bed" />
+								<p>King bed</p>
+							</div>
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/pool.png" alt="Pool" />
+								<p>Swimming Pool</p>
+							</div>
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/bath-tube.png" alt="bath" />
+								<p>Bath Tub</p>
+							</div>
+						</div>
+
+						<h3 class="Place">Nearby Places</h3>
+
+						<div class="Distance swiper">
+							<div class="swiper-wrapper">
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="Labels btn-group w-100 gap-2">
+							<p>Featured</p>
+							<p>Ready to move</p>
+							<p>New Booking</p>
+							<p>Rera</p>
+						</div>
+
+						<div class="Contact btn-group align-items-center w-100 pt-3">
+							<div class="Owner input-group gap-2">
+								<img src="../../Images/owner.png" alt="owner" />
+								<p>Contact Owner</p>
+							</div>
+							<div class="icons text-end d-flex">
+								<i class="fa fa-heart"></i>
+								<i class="fa fa-eye"></i>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- ======================================= Two ============================================== -->
+				<section class="Two" id="Two">
+					<div class="swiper left">
+						<div class="Absolute1 input-group gap-3">
+							<p>Most Viewed</p>
+							<p>Trending</p>
+						</div>
+						<div class="Absolute2 gap-3">
+							<p>Rent</p>
+							<p>₹ 20,000</p>
+						</div>
+						<div class="swiper-wrapper">
+							<img class="swiper-slide" src="../../Images/Test1.jpeg" alt="Big" />
+							<img class="swiper-slide" src="../../Images/Test2.jpeg" alt="Big" />
+							<img class="swiper-slide" src="../../Images/Test3.jpeg" alt="Big" />
+							<img class="swiper-slide" src="../../Images/Test4.jpeg" alt="Big" />
+							<img class="swiper-slide" src="../../Images/Test1.jpeg" alt="Big" />
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+					<div class="right">
+						<h3 class="Name">2 BKH Apartment at Knight Heights <img src="../../Images/tag.png" alt="tag" /></h3>
+
+						<p class="cursor"><img src="../../Images/cursor.png" alt="cursor" /> Vile Parle, No 321</p>
+
+						<div class="type">
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/life.png" alt="life" />
+								<p>Lift</p>
+							</div>
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/bed.png" alt="bed" />
+								<p>King bed</p>
+							</div>
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/pool.png" alt="Pool" />
+								<p>Swimming Pool</p>
+							</div>
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/bath-tube.png" alt="bath" />
+								<p>Bath Tub</p>
+							</div>
+						</div>
+
+						<h3 class="Place">Nearby Places</h3>
+
+						<div class="Distance swiper">
+							<div class="swiper-wrapper">
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="Labels btn-group w-100 gap-2">
+							<p>Featured</p>
+							<p>Ready to move</p>
+							<p>New Booking</p>
+							<p>Rera</p>
+						</div>
+
+						<div class="Contact row pt-3 g-0">
+							<p class="col-4"><span>123456</span> Views</p>
+							<p class="col"><span>Posted On</span> 11\10\2021</p>
+							<div class="col-2 d-flex justify-content-end">
+								<i class="fa fa-heart"></i>
+								<i class="fa fa-eye"></i>
+							</div>
+						</div>
+						<img class="Owner" src="../../Images/Owner2.png" alt="owner" />
+					</div>
+				</section>
+
+				<!-- ====================================== Budget ============================================ -->
+				<section class="Budget Range-Box mt-5" id="Budget">
+					<div class="values">
+						<h5 class="pt-4" style="font-weight: bold">Your Budget</h5>
+						<span id="Range-input-1">0</span>
+						<span> - </span>
+						<span id="Range-input-2">100</span> Lacs
+					</div>
+					<div class="Range-container">
+						<div class="slider-track"></div>
+						<input type="range" min="0" max="5000" value="1000" id="slider-1" />
+						<input type="range" min="0" max="5000" value="4000" id="slider-2" />
+					</div>
+				</section>
+
+				<!-- ======================================== Three =========================================== -->
+				<section class="Three" id="Three">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide box">
+								<img src="../../Images/Test1.jpeg" alt="img" />
+								<div class="Content">
+									<p>Saviour Lord Krishna Mart</p>
+									<p>Yumna expressway, Noida</p>
+									<p>₹ 25.0 - 94.74 Lacs</p>
+								</div>
+							</div>
+							<div class="swiper-slide box">
+								<img src="../../Images/Test2.jpeg" alt="img" />
+								<div class="Content">
+									<p>Saviour Lord Krishna Mart</p>
+									<p>Yumna expressway, Noida</p>
+									<p>₹ 25.0 - 94.74 Lacs</p>
+								</div>
+							</div>
+							<div class="swiper-slide box">
+								<img src="../../Images/Test3.jpeg" alt="img" />
+								<div class="Content">
+									<p>Saviour Lord Krishna Mart</p>
+									<p>Yumna expressway, Noida</p>
+									<p>₹ 25.0 - 94.74 Lacs</p>
+								</div>
+							</div>
+							<div class="swiper-slide box">
+								<img src="../../Images/Test4.jpeg" alt="img" />
+								<div class="Content">
+									<p>Saviour Lord Krishna Mart</p>
+									<p>Yumna expressway, Noida</p>
+									<p>₹ 25.0 - 94.74 Lacs</p>
+								</div>
+							</div>
+							<div class="swiper-slide box">
+								<img src="../../Images/Test1.jpeg" alt="img" />
+								<div class="Content">
+									<p>Saviour Lord Krishna Mart</p>
+									<p>Yumna expressway, Noida</p>
+									<p>₹ 25.0 - 94.74 Lacs</p>
+								</div>
+							</div>
+							<div class="swiper-slide box">
+								<img src="../../Images/Test2.jpeg" alt="img" />
+								<div class="Content">
+									<p>Saviour Lord Krishna Mart</p>
+									<p>Yumna expressway, Noida</p>
+									<p>₹ 25.0 - 94.74 Lacs</p>
+								</div>
+							</div>
+							<div class="swiper-slide box">
+								<img src="../../Images/Test3.jpeg" alt="img" />
+								<div class="Content">
+									<p>Saviour Lord Krishna Mart</p>
+									<p>Yumna expressway, Noida</p>
+									<p>₹ 25.0 - 94.74 Lacs</p>
+								</div>
+							</div>
+							<div class="swiper-slide box">
+								<img src="../../Images/Test4.jpeg" alt="img" />
+								<div class="Content">
+									<p>Saviour Lord Krishna Mart</p>
+									<p>Yumna expressway, Noida</p>
+									<p>₹ 25.0 - 94.74 Lacs</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+				</section>
+
+				<!-- ========================================= Four =========================================== -->
+				<section class="Four" id="Four">
+					<div class="left">
+						<div class="Absolute input-group gap-3">
+							<p>Most Viewed</p>
+							<p>Trending</p>
+						</div>
+						<div class="Top">
+							<img src="../../Images/Test1.jpeg" alt="Four" />
+						</div>
+						<div class="Down">
+							<img src="../../Images/Test1.jpeg" alt="Four" />
+							<img src="../../Images/Test2.jpeg" alt="Four" />
+							<img src="../../Images/Test3.jpeg" alt="Four" />
+						</div>
+					</div>
+					<div class="right">
+						<div class="Sponsered btn-group justify-content-between w-100">
+							<p>₹20,000</p>
+							<div>
+								<a href="#" class="text-light">Sponsered</a>
+								<a href="#" class="text-light">Trending</a>
+							</div>
+						</div>
+
+						<h3 class="Name">2 BKH Apartment at Knight Heights <img src="../../Images/tag.png" alt="tag" /></h3>
+
+						<p class="cursor"><img src="../../Images/cursor.png" alt="cursor" /> Vile Parle, No 321</p>
+
+						<div class="type">
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/life.png" alt="life" />
+								<p>Lift</p>
+							</div>
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/bed.png" alt="bed" />
+								<p>King bed</p>
+							</div>
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/pool.png" alt="Pool" />
+								<p>Swimming Pool</p>
+							</div>
+							<div class="tag btn-group align-items-center">
+								<img src="../../Images/bath-tube.png" alt="bath" />
+								<p>Bath Tub</p>
+							</div>
+						</div>
+
+						<h3 class="Place">Nearby Places</h3>
+
+						<div class="Distance swiper">
+							<div class="swiper-wrapper">
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>1.5 km</h6>
+									<p>From railway station</p>
+								</div>
+								<div class="box swiper-slide">
+									<h6>2.5 km</h6>
+									<p>From School</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="Posted row g-0">
+							<p class="col-4"><span>123456</span> Views</p>
+							<p class="col"><span>Posted On</span> 11\10\2021</p>
+						</div>
+
+						<div class="Contact btn-group align-items-center w-100">
+							<div class="Owner input-group gap-2">
+								<img src="../../Images/owner.png" alt="owner" />
+								<p>Contact Owner</p>
+							</div>
+							<div class="icons text-end d-flex">
+								<i class="fa fa-heart"></i>
+								<i class="fa fa-eye"></i>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- ========================================= Five =========================================== -->
+				<section class="Five" id="Five">
+					<h3 class="title">Check Before They’re Rented out</h3>
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<button class="swiper-slide">
+								<img src="../../Images/result-label-1.png" alt="Label1" />
+								<p>3000sqft</p>
+							</button>
+							<button class="swiper-slide">
+								<img src="../../Images/result-label-2.png" alt="Label2" />
+								<p>3Bedrooms</p>
+							</button>
+							<button class="swiper-slide">
+								<img src="../../Images/result-label-3.png" alt="Label3" />
+								<p>Furnished</p>
+							</button>
+							<button class="swiper-slide">
+								<img src="../../Images/result-label-1.png" alt="Label1" />
+								<p>3000sqft</p>
+							</button>
+							<button class="swiper-slide">
+								<img src="../../Images/result-label-2.png" alt="Label2" />
+								<p>3Bedrooms</p>
+							</button>
+							<button class="swiper-slide">
+								<img src="../../Images/result-label-3.png" alt="Label3" />
+								<p>Furnished</p>
+							</button>
+							<button class="swiper-slide">
+								<img src="../../Images/result-label-1.png" alt="Label1" />
+								<p>3000sqft</p>
+							</button>
+							<button class="swiper-slide">
+								<img src="../../Images/result-label-2.png" alt="Label2" />
+								<p>3Bedrooms</p>
+							</button>
+							<button class="swiper-slide">
+								<img src="../../Images/result-label-3.png" alt="Label3" />
+								<p>Furnished</p>
+							</button>
+						</div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+				</section>
+			</section>
+		</section>
+
+		<!-- ============================================== JavaScript ======================================== -->
+		<script src="../../js/Libs/BootStrap.js" defer></script>
+		<script src="../../js/Libs/Jquary.js" defer></script>
+		<script src="../../js/Libs/Select2.js" defer></script>
+		<script src="../../js/Libs/Swipper.js" defer></script>
+		<script type="module" src="../../js/pages/Result-Search.js" defer></script>
+	</body>
+</html>

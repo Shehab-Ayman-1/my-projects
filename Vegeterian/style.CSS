@@ -1,0 +1,643 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap";
+:root {
+	--orange: #ff7800;
+	--black: #130f40;
+	--light-color: #666;
+	--box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+	--border: 0.2rem solid rgba(0, 0, 0, 0.1);
+	--outline: 0.1rem solid rgba(0, 0, 0, 0.1);
+	--outline-hover: 0.2rem solid var(--black);
+}
+* {
+	font-family: "Poppins", sans-serif;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	text-decoration: none;
+	text-transform: capitalize;
+	transition: all 0.2s linear;
+}
+body {
+	background: #eee;
+}
+html {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+	background: white;
+	width: 0.7rem;
+}
+html::-webkit-scrollbar-thumb {
+	background: var(--orange);
+	border-radius: 20px;
+}
+::selection {
+	background: var(--orange);
+	color: white;
+}
+
+/* ================================================ Frame Work ============================================ */
+section {
+	padding: 2rem 9%;
+}
+span {
+	color: var(--orange);
+}
+.Style {
+	background: none;
+	color: var(--black);
+	font-size: 20px;
+	font-weight: 450;
+	padding: 10px 40px;
+	margin: 15px auto;
+	border: 2px solid var(--black);
+	border-radius: 7px;
+	cursor: pointer;
+}
+.Style:hover {
+	background: var(--orange);
+	color: white;
+}
+.title {
+	color: var(--black);
+	font-size: 30px;
+	text-align: center;
+	margin: 50px 0;
+}
+.title span {
+	background: var(--orange);
+	color: white;
+	padding: 5px 40px;
+	clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+/* ================================================ Header ================================================ */
+header {
+	background: white;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	box-shadow: 0 2px 20px var(--black);
+}
+header .logo {
+	color: var(--black);
+	display: flex;
+	font-size: 25px;
+}
+header .logo i {
+	color: var(--orange);
+	font-size: 40px;
+	padding: 0px 12px 0 0;
+	animation: floating 2.5s linear infinite;
+}
+header nav a {
+	color: var(--black);
+	padding: 0 10px;
+	font-size: 22px;
+	font-weight: 500;
+}
+header .Icons i {
+	background: #eee;
+	color: var(--black);
+	font-size: 25px;
+	padding: 15px;
+	margin: 2px 3px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+header .Icons i.fa-bars {
+	display: none;
+}
+
+/* =================== Buttons ================== */
+header .SearchForm {
+	background: white;
+	width: 400px;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	top: 110%;
+	right: 2%;
+	clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+}
+header .SearchForm input {
+	padding: 5px;
+	width: 100%;
+	font-size: 25px;
+}
+header .SearchForm label {
+	color: var(--black);
+	font-size: 25px;
+	cursor: pointer;
+}
+/* ========= */
+header .ShoppingCart {
+	background: white;
+	max-width: 40rem;
+	padding: 10px;
+	position: absolute;
+	top: 110%;
+	right: 2%;
+	clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+}
+header .ShoppingCart .box {
+	margin: 2px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+header .ShoppingCart .box .img {
+	width: 120px;
+}
+header .ShoppingCart .box img {
+	width: 100%;
+}
+header .ShoppingCart .box .Content {
+	letter-spacing: 1px;
+}
+header .ShoppingCart .box .Content span {
+	text-decoration: line-through;
+}
+header .ShoppingCart .box i.fa {
+	font-size: 23px;
+	padding: 10px;
+}
+header .ShoppingCart .Total h2 {
+	color: var(--black);
+	text-align: center;
+	font-weight: bold;
+	font-size: 35px;
+	letter-spacing: 2px;
+}
+/* ========= */
+header .UserLogin {
+	background: white;
+	max-width: 20rem;
+	padding: 25px;
+	text-align: center;
+	position: absolute;
+	top: 110%;
+	right: 2%;
+	clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+}
+header .UserLogin h1 {
+	color: var(--black);
+	text-transform: uppercase;
+	font-size: 30px;
+	margin-bottom: 10px;
+	text-shadow: 2px 2px 5px var(--orange);
+}
+header .UserLogin input {
+	background: #eee;
+	width: 100%;
+	padding: 10px;
+	margin: 7px 0;
+	font-size: 20px;
+}
+header .UserLogin p {
+	color: var(--light-color);
+	font-size: 17px;
+	line-height: 2;
+}
+header .UserLogin p a {
+	color: var(--orange);
+	text-decoration: underline solid;
+	font-weight: bold;
+}
+header .UserLogin button {
+	width: 80%;
+}
+
+/* =================== Active =================== */
+header.Active {
+	background: rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0px 10px var(--black);
+}
+header nav a.Active {
+	color: var(--orange);
+}
+header.Active .Icons i.fa {
+	background: rgba(255, 255, 255, 0.3);
+}
+header nav.Active,
+.SearchForm.Active,
+header .ShoppingCart.Active,
+header .UserLogin.Active {
+	right: 2%;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+/* =================== Effects =================== */
+header nav a:hover {
+	color: var(--orange);
+}
+header .Icons i.fa:hover {
+	background: var(--orange);
+	color: white;
+}
+header .SearchForm label:hover {
+	color: var(--orange);
+}
+header .UserLogin input:nth-child(2) {
+	margin-bottom: 20px;
+}
+@keyframes floating {
+	0%,
+	100% {
+		transform: translatey(-0.2rem);
+	}
+	50% {
+		transform: translatey(0.2rem);
+	}
+}
+@media (max-width: 830px) {
+	header .Icons i.fa-bars {
+		display: inline-block;
+	}
+	header nav {
+		background: white;
+		width: 20rem;
+		position: absolute;
+		top: 110%;
+		right: 2%;
+		clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+	}
+	header nav a {
+		display: block;
+		padding: 20px;
+		margin: 0 10px;
+	}
+	header nav a:hover {
+		border-bottom: 2px solid rgba(255, 119, 0, 0.4);
+	}
+	header .SearchForm input {
+		padding: 5px;
+		max-width: 400px;
+		font-size: 25px;
+	}
+	header .ShoppingCart,
+	header .UserLogin,
+	header .SearchForm {
+		clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+	}
+}
+@media (max-width: 460px) {
+	header .Icons i {
+		font-size: 20px;
+		padding: 10px;
+		margin: 2px 3px;
+	}
+}
+
+/* ================================================ Home =============================================== */
+.Home {
+	width: 100%;
+	min-height: 90vh;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position: relative;
+}
+.Home img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	object-fit: cover;
+}
+.Home .Content h1 {
+	color: var(--black);
+	font-size: 38px;
+	line-height: 2;
+}
+.Home .Content p {
+	color: var(--light-color);
+	width: 60%;
+	margin: auto;
+	line-height: 2;
+}
+@media (max-width: 830px) {
+	.Home .Content h1 {
+		margin-top: 50px;
+	}
+	.Home .Content p {
+		color: var(--light-color);
+		width: 95%;
+	}
+}
+
+@media (max-width: 460px) {
+	.Home .Content h1 {
+		font-size: 25px;
+		margin-top: 40px;
+	}
+	.Home .Content p {
+		width: 90%;
+	}
+}
+
+/* ================================================ Features =========================================== */
+.Features .Galory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.Features .Galory .box {
+	background: white;
+	padding: 20px 50px;
+	text-align: center;
+	outline: var(--outline);
+	outline-offset: -1rem;
+	border-radius: 2px;
+	box-shadow: var(--box-shadow);
+}
+.Features .Galory .box .img {
+	width: 13rem;
+	height: 10rem;
+	margin: 30px auto 10px;
+}
+.Features .Galory .box .img img {
+	width: 100%;
+}
+.Features .Galory .box .Content {
+	line-height: 2;
+	color: var(--black);
+}
+.Features .Galory .box:hover {
+	outline-offset: 0;
+	outline: var(--outline-hover);
+}
+
+/* ================================================ Products =========================================== */
+.Products .Galory-1 {
+	margin-bottom: 50px;
+}
+.Products .Galory {
+	padding: 10px;
+}
+.Products .Galory .box {
+	background: white;
+	text-align: center;
+	padding-bottom: 40px;
+	outline-offset: -1rem;
+	outline: var(--outline);
+	box-shadow: var(--box-shadow);
+	border-radius: 2px;
+	transition: 0.2s linear;
+}
+.Products .Galory .box .img {
+	width: 15rem;
+	height: 12rem;
+	margin: 20px auto 10px;
+}
+.Products .Galory .box .img img {
+	width: 100%;
+	height: 100%;
+}
+.Products .Galory .box .Content h3 {
+	font-size: 30px;
+	color: var(--black);
+}
+.Products .Galory .box .Content p {
+	font-size: 25px;
+	font-weight: bold;
+	padding: 10px 0;
+}
+.Products .Galory .box .Content p span {
+	font-size: 20px;
+	text-decoration: line-through;
+}
+.Products .Galory .box:hover {
+	outline-offset: 0;
+	outline: var(--outline-hover);
+}
+
+/* ================================================ Categories ========================================= */
+.Categories .Galory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+	padding: 10px;
+}
+.Categories .Galory .box {
+	background: white;
+	text-align: center;
+	padding-bottom: 40px;
+	outline-offset: -1rem;
+	outline: var(--outline);
+	box-shadow: var(--box-shadow);
+	border-radius: 2px;
+	transition: 0.2s linear;
+}
+.Categories .Galory .box .img {
+	width: 13rem;
+	height: 9rem;
+	margin: 50px auto 10px;
+}
+.Categories .Galory .box .img img {
+	width: 100%;
+	height: 100%;
+}
+.Categories .Galory .box .Content h3 {
+	font-size: 30px;
+	color: var(--black);
+}
+.Categories .Galory .box .Content p {
+	font-size: 25px;
+	font-weight: bold;
+	padding: 10px 0;
+}
+.Categories .Galory .box .Content p span {
+	font-size: 18px;
+}
+.Categories .Galory .box:hover {
+	outline-offset: 0;
+	outline: var(--outline-hover);
+}
+
+/* ================================================ Review ============================================= */
+.Review .Galory {
+	padding: 1rem;
+}
+.Review .Galory .wrapper .box {
+	background: white;
+	text-align: center;
+	padding: 30px;
+	line-height: 1.7;
+	outline: var(--outline);
+	outline-offset: -1rem;
+	border-radius: 2px;
+	transition: 0.2s linear;
+}
+.Review .Galory .wrapper .box .img {
+	width: 6rem;
+	height: 6rem;
+	margin: 10px auto 30px;
+}
+.Review .Galory .wrapper .box .img img {
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+.Review .Galory .wrapper .box .Content p {
+	color: var(--light-color);
+	font-size: 19px;
+}
+.Review .Galory .wrapper .box .Content h3 {
+	color: var(--black);
+	padding-top: 10px;
+}
+.Review .Galory .wrapper .box:hover {
+	outline-offset: 0;
+	outline: var(--outline-hover);
+}
+
+/* ================================================ Blogs ============================================== */
+.Blogs .Galory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.Blogs .Galory .box {
+	background: white;
+	border-radius: 5px;
+	outline: var(--outline);
+}
+.Blogs .Galory .box .img {
+	width: 100%;
+	height: 13rem;
+	overflow: hidden;
+}
+.Blogs .Galory .box .img img {
+	width: 100%;
+	height: 100%;
+}
+.Blogs .Galory .box .Details {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 5px;
+	border-bottom: var(--border);
+	margin: 10px 30px;
+	color: var(--orange);
+}
+.Blogs .Galory .box .Content {
+	color: var(--black);
+	margin: 10px 20px;
+	line-height: 1.7;
+}
+.Blogs .Galory .box .Content h1 {
+	font-size: 28px;
+}
+.Blogs .Galory .box .Content button {
+	margin: 20px 0;
+}
+.Blogs .Galory .box:hover .img img {
+	transform: scale(1.1);
+}
+@media (max-width: 1050px) {
+	.Blogs .Galory {
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	}
+}
+@media (max-width: 830px) {
+	.Blogs .Galory {
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	}
+}
+
+/* ================================================ Footer ========================================== */
+footer {
+	padding: 2rem 5%;
+	background: white;
+}
+footer .Galory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+	margin-bottom: 20px;
+}
+footer .Galory .groco {
+	font-size: 18px;
+	color: var(--light-color);
+	line-height: 2;
+	color: var(--black);
+	margin-bottom: 12px;
+}
+footer .Galory .groco i.fab {
+	background: #eee;
+	color: var(--black);
+	font-size: 25px;
+	padding: 15px;
+	margin: 20px 3px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+footer .Galory .groco i.fab:hover {
+	background: var(--orange);
+	color: white;
+}
+footer .Galory .box {
+	color: var(--light-color);
+	line-height: 2;
+}
+footer .Galory .box h2 {
+	color: var(--black);
+	margin-bottom: 12px;
+}
+footer .Galory .box .row i {
+	color: var(--orange);
+}
+footer .Galory .box .row p {
+	display: inline-block;
+	padding-left: 5px;
+	cursor: pointer;
+}
+footer .Galory .box .row a {
+	color: var(--light-color);
+	padding-left: 5px;
+}
+footer .Galory .box .row:hover i.fa {
+	padding-right: 10px;
+}
+/* ================ */
+footer .Letter {
+	line-height: 2;
+	color: var(--black);
+}
+footer .Letter form input {
+	background: #eee;
+	width: 20rem;
+	padding: 10px;
+	margin: 7px 0;
+	font-size: 20px;
+	display: block;
+}
+footer .Letter form button {
+	text-align: left;
+}
+footer .footer {
+	text-align: center;
+	border-top: var(--border);
+	padding-top: 20px;
+}
+footer .footer p {
+	font-size: 25px;
+}
+footer .footer p span {
+	font-size: 23px;
+	font-weight: bold;
+}

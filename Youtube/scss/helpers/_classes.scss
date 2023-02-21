@@ -1,0 +1,123 @@
+.show-display {
+	display: initial !important;
+}
+
+.hide-display {
+	display: none !important;
+}
+
+.show-scale {
+	transform: scale(1) !important;
+}
+
+.hide-scale {
+	transform: scale(0) !important;
+	width: 0 !important;
+	height: 0 !important;
+}
+
+$clipPath: (
+	top: (
+		show: (
+			50% 0%,
+			100% 0,
+			100% 100%,
+			0 100%,
+			0 0,
+		),
+		hide: (
+			50% 0%,
+			100% 0,
+			100% 0,
+			0 0,
+			0 0,
+		),
+	),
+	right: (
+		show: (
+			50% 0%,
+			100% 0,
+			100% 100%,
+			0 100%,
+			0 0,
+		),
+		hide: (
+			50% 0%,
+			100% 0,
+			100% 100%,
+			100% 100%,
+			100% 0,
+		),
+	),
+	bottom: (
+		show: (
+			50% 0%,
+			100% 0,
+			100% 100%,
+			0 100%,
+			0 0,
+		),
+		hide: (
+			50% 100%,
+			100% 100%,
+			100% 100%,
+			0 100%,
+			0 100%,
+		),
+	),
+	left: (
+		show: (
+			50% 0%,
+			100% 0,
+			100% 100%,
+			0 100%,
+			0 0,
+		),
+		hide: (
+			0 0,
+			0 50%,
+			0 100%,
+			0 100%,
+			0 0,
+		),
+	),
+);
+
+@each $dir, $value in $clipPath {
+	.show-#{$dir}-clip {
+		clip-path: polygon(map-get($value, show)) !important;
+	}
+
+	.hide-#{$dir}-clip {
+		clip-path: polygon(map-get($value, hide)) !important;
+	}
+}
+
+$opacities: (
+	opacity-0: 0,
+	opacity-10: 0.1,
+	opacity-15: 0.15,
+	opacity-20: 0.2,
+	opacity-25: 0.25,
+	opacity-30: 0.3,
+	opacity-35: 0.35,
+	opacity-40: 0.4,
+	opacity-45: 0.45,
+	opacity-50: 0.5,
+	opacity-55: 0.55,
+	opacity-60: 0.6,
+	opacity-65: 0.65,
+	opacity-70: 0.7,
+	opacity-75: 0.75,
+	opacity-80: 0.8,
+	opacity-85: 0.85,
+	opacity-90: 0.9,
+	opacity-95: 0.95,
+	opacity-100: 1,
+);
+
+@each $opacity, $value in $opacities {
+	.#{$opacity} {
+		opacity: $value;
+	}
+}

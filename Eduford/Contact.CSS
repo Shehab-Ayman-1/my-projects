@@ -1,0 +1,243 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+body{overflow-x: hidden; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+::selection{background-color: gray; color: white;}
+
+/* ========================================= FrameWork ========================================= */
+.button-style{
+    background-color: transparent;
+    color: white;
+    padding: 15px 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+.button-style::before{
+    content: "";
+    background-color: white;
+    width: 45px;
+    height: 2px;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 25px;
+    left: 250px;
+}
+.button-style::after{
+    content: "";
+    background-color: white;
+    width: 45px;
+    height: 2px;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 25px;
+    right: 250px;
+}
+.button-style:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.4) , crimson);
+}
+
+/* ========================================== Banner =========================================== */
+header{
+    background-image: linear-gradient(rgba(4,9,30,0.7) , rgba(4,9,30,0.7)) , url(Images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    width: 100%;
+    height: 60vh;
+    text-align: center;
+}
+header nav{
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+header nav .logo{
+    width: 150px;
+    margin-left: 70px;
+}
+header nav .logo img{
+    width: 100%;
+}
+header nav .links ul{
+    list-style-type: none;
+    display: flex;
+    margin-right: 70px;
+}
+header nav .links ul li{
+    padding-left: 30px;
+    transition: 0.4s ease-in-out;
+    position: relative;
+}
+header nav .links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.7s ease-in-out;
+}
+header nav .links ul li::before{
+    content: "";
+    background-color: crimson;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 30px;
+    transition: 0.7s ease-in-out;
+    opacity: 0;
+}
+header nav .links ul li:hover::before{
+    width: 100%;
+    opacity: 1;
+}
+header nav .links ul li a:hover{
+    color: #ccc;
+}
+header .banner{
+    transform: translatey(35%);
+}
+header .banner h1{
+    font-size: 60px;
+    padding: 40px;
+}
+/* ================= Media Query ============== */
+@media (max-width:700px){
+    header nav .logo{
+        width: 100px;
+        margin-left: 20px;
+    }
+    header nav .links ul{
+        margin-right: 0px;
+    }
+    header nav .links ul li{
+        padding-left: 10px;
+    }
+    header nav .links ul li a{
+        font-size: 12px;
+    }
+    header .banner h1{
+        font-size: 30px;
+        padding: 40px;
+    }
+    header .banner p{
+        line-height: 1.7;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+}
+
+/* ========================================= Contact ============================================ */
+.Contact .map{
+    width: 100%;
+}
+.Contact .map iframe{
+    width: 80%;
+    margin: 50px auto;
+    display: block;
+}
+.Contact .Call{
+    width: 100%;
+    display: flex;
+}
+/* ================= Left Side ================= */
+.Contact .Call .left-side{
+    width: 50%;
+}
+.Contact .Call .left-side .row{
+    margin: 30px;
+    position: relative;
+    top: 10%;
+    left: 10%;
+}
+.Contact .Call .left-side .row i{
+    font-size: 35px;
+    transform: translateY(-5px);
+    color: crimson;
+}
+.Contact .Call .left-side .row .parag{
+    display: inline-block;
+    padding-left: 15px;
+}
+.Contact .Call .left-side .row .parag p{
+    color: rgba(0, 0, 0, 0.7);
+    
+}
+/* ================= right Side =============== */
+.Contact .Call .right-side{
+    width: 50%;
+    margin: 0 30px;
+}
+.Contact .Call .right-side form{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px 0 black;
+    margin: 80px 0;
+    border-radius: 5px;
+}
+.Contact .Call .right-side form .input{
+    background-color: #ddd;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+}
+.Contact .Call .right-side form textarea{
+    height: 150px;
+}
+.Contact .Call .right-side form .button-style{
+    color: black;
+    border: 1px solid black;
+    width: fit-content;
+    margin: auto;
+}
+.Contact .Call .right-side form .button-style::after{
+    background-color: rgba(4,9,30,0.7);
+    right: 230px;
+}
+.Contact .Call .right-side form .button-style::before{
+    background-color: rgba(4,9,30,0.7);
+    left: 230px;
+}
+/* ================= Media Query ============== */
+@media (max-width:700px){
+    .Contact .Call{
+        flex-direction: column-reverse;
+    }
+    .Contact .Call .right-side , .Contact .Call .left-side{
+        width: 90%;
+    }
+}
+
+/* ========================================= Footer ============================================ */
+footer{
+    width: 100%;
+    margin: 100px 0 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+footer p{
+    text-align: center;
+    width: 80%;
+    padding: 20px 0;
+    line-height: 1.5;
+}
+footer i{
+    padding: 0 20px;
+    color: crimson;
+    cursor: pointer;
+}
+/* ================= Media Query ============== */
+@media (max-width:700px){
+    footer p{
+        font-size: 13px;
+    }
+}

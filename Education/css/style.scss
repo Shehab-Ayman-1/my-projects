@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+$black: #130f40;
+$white: #fff;
+$gradient: linear-gradient(darkviolet, deeppink);
+$background: rgba(255, 255, 255, 0.1);
+$box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.1);
+$border: 0.2rem solid rgba(255, 255, 255, 0.1);
+$border-top: 0.2rem solid rgba(255, 255, 255, 0.3);
+$border-left: 0.2rem solid rgba(255, 255, 255, 0.3);
+
+@mixin Width600 {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
+
+@mixin Width400 {
+	@media (max-width: 400px) {
+		@content;
+	}
+}
+
+html {
+	width: 100vw;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	&::-webkit-scrollbar {
+		width: 0.7rem;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: #ff1493;
+	}
+	&::-webkit-scrollbar-track {
+		background: white;
+	}
+	::selection {
+		background: $background;
+		color: $white;
+		text-shadow: 5px 5px 10px $black;
+	}
+	* {
+		font-family: "Poppins", sans-serif;
+		padding: 0;
+		margin: 0;
+		border: none;
+		outline: none;
+		text-decoration: none !important;
+		text-transform: capitalize;
+		box-sizing: border-box;
+		transition: 0.2s linear;
+	}
+	i {
+		font-size: 30px;
+		&:hover {
+			color: $black;
+			cursor: pointer;
+		}
+	}
+	.title h1 {
+		background: $border;
+		color: $white;
+		width: fit-content;
+		font-size: 40px;
+		padding: 0.5rem 1.5rem;
+		margin: auto auto 50px;
+		border: $border;
+		border-top: $border-top;
+		border-left: $border-left;
+		text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+		border-radius: 0.5rem;
+		box-shadow: $box-shadow;
+	}
+	.btn {
+		padding: 10px 30px;
+		margin-top: 20px;
+		transition: 0.2s linear;
+		&:hover {
+			letter-spacing: 2px !important;
+		}
+	}
+}
+
+// ============================================= Animation =============================================
+.Grediant {
+	background: $gradient;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	overflow: hidden;
+	span {
+		position: absolute;
+		background: rgba(255, 255, 255, 0.2);
+		display: block;
+		pointer-events: none;
+		border-radius: 0.5rem;
+		animation: Animate 3s linear infinite;
+	}
+}
+@keyframes Animate {
+	0% {
+		opacity: 0;
+		transform: scale(0) translateY(-200%) rotate(0deg);
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1) translateY(-500%) rotate(360deg);
+	}
+}
+
+// ============================================= Header =================================================
+header {
+	background: transparent;
+	width: 100%;
+	position: sticky !important;
+	top: 0;
+	left: 0;
+	z-index: 122222222222222222222222222;
+	border: $border;
+	box-shadow: $box-shadow;
+	backdrop-filter: blur(0.2rem);
+	.logo {
+		color: $white !important;
+	}
+	ul {
+		a {
+			color: $white !important;
+			font-size: 20px;
+			padding-left: 10px;
+			&:hover {
+				color: $black !important;
+			}
+		}
+		.ULDropDown {
+			background: $background;
+		}
+	}
+	.bars-icon {
+		filter: invert(1);
+	}
+}
+
+// ============================================= Home ===================================================
+.Home {
+	background: transparent;
+	color: white;
+	width: 100%;
+	min-height: 50vh;
+	position: relative;
+	.Content {
+		background: transparent;
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		h1 {
+			width: 100%;
+			font-size: 50px;
+			font-weight: bold;
+			text-shadow: 5px 5px 10px $black;
+			@include Width600 {
+				font-size: 30px;
+			}
+		}
+		p {
+			@include Width600 {
+				font-size: 10px;
+			}
+		}
+	}
+}
+
+// ============================================= Courses ================================================
+.Courses {
+	text-align: center;
+	.Catagory {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+		gap: 1rem;
+		.card {
+			background: $background;
+			backdrop-filter: blur(0.2rem);
+			color: white;
+			box-shadow: $box-shadow;
+			&:hover {
+				border-top: $border-top;
+				border-left: $border-left;
+			}
+			.card-title {
+				background: transparent;
+				font-size: 25px;
+			}
+			img {
+				width: 100%;
+				height: 20rem;
+			}
+			.foot {
+				background-color: $background;
+				color: white;
+				display: flex;
+				justify-content: center;
+				gap: 1rem;
+				padding-top: 20px;
+				border-top: $border;
+				i {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+
+// ============================================= Courses ================================================
+.Teacher {
+	padding: 50px;
+	text-align: center;
+	img {
+		width: 50%;
+		border-bottom-left-radius: 50%;
+		border-bottom-right-radius: 50%;
+	}
+	.Catagory {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+		gap: 1rem;
+		.card {
+			background: $background;
+			backdrop-filter: blur(0.2rem);
+			color: white;
+			box-shadow: $box-shadow;
+			&:hover {
+				border-top: $border-top;
+				border-left: $border-left;
+			}
+			.card-title {
+				background: transparent;
+				font-size: 25px;
+			}
+			.card-text {
+				color: $black;
+			}
+			img {
+				width: 50%;
+			}
+			.icons {
+				width: 100%;
+				padding: 10px;
+				i {
+					background-color: $background;
+					color: $white;
+					padding: 15px;
+					margin-right: 10px;
+					&:hover {
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+}
+
+// ============================================= Plans ================================================
+.Plans {
+	padding-bottom: 50px;
+	.Catagory {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+		gap: 1rem;
+		text-align: center;
+	}
+	.card {
+		background-color: $background;
+		backdrop-filter: blur(0.2rem);
+		color: $white;
+		line-height: 2;
+		padding: 20px;
+		i {
+			width: fit-content;
+			margin: auto;
+			font-size: 70px;
+			padding: 30px;
+		}
+		h3 {
+			background-color: rgba(white, 0.5);
+			color: $black;
+			padding: 10px;
+			font-size: 30px;
+		}
+		p {
+			font-size: 20px;
+			font-size: 300;
+		}
+	}
+}
+
+// ============================================= Reviews ================================================
+.Reviews {
+	text-align: center;
+	padding-bottom: 50px;
+	.Catagory {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		gap: 1rem;
+		.card {
+			background-color: $background;
+			backdrop-filter: blur(0.2rem);
+			color: $white;
+			width: 100%;
+			padding: 20px;
+			.row {
+				img {
+					width: 100px;
+					height: 90px;
+					margin: auto;
+					border-radius: 50%;
+				}
+				i {
+					color: rgba($black, 0.5);
+					font-size: 60px;
+				}
+			}
+			.Content {
+				line-height: 2;
+				.S1 {
+					color: $black;
+					font-size: 18px;
+					font-weight: 400;
+				}
+				i {
+					font-size: 20px;
+					color: $black;
+				}
+			}
+		}
+	}
+}
+
+// ============================================= Contact ================================================
+.Contact {
+	padding-bottom: 50px;
+	form {
+		background-color: $background;
+		backdrop-filter: blur(0.2rem);
+		color: $white;
+		width: 50%;
+		padding: 20px;
+		margin: auto;
+		@include Width600 {
+			width: 90%;
+		}
+		input,
+		textarea {
+			background-color: transparent;
+			&::placeholder {
+				color: rgba($white, 0.6);
+			}
+		}
+	}
+}
+
+// ============================================= Footer =================================================
+footer {
+	background-color: $background;
+	backdrop-filter: blur(0.2rem);
+	border-top: $border;
+	.Icons {
+		padding: 10px;
+		padding: 20px;
+		i {
+			background-color: $background;
+			color: $white;
+			padding: 15px;
+			margin-right: 10px;
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+	.CopyRight {
+		font-size: 30px;
+		padding: 30px;
+		border-top: $border-top;
+		span {
+			color: $black;
+		}
+	}
+}

@@ -1,0 +1,606 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+:root {
+	--White: #fff;
+	--Black: #111;
+	--Blue: #29d9d5;
+	--LightColor: #aaa;
+	--Background: #222;
+	--border: 2px solid #29d9d5;
+	--box-shadow: 0 -10px 20px #29d9d5;
+}
+* {
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+	text-decoration: none;
+	text-transform: capitalize;
+	transition: 0.2s linear;
+}
+html {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	scroll-padding-top: 9rem;
+}
+html::-webkit-scrollbar {
+	width: 0.5rem;
+}
+html::-webkit-scrollbar-track {
+	background: var(--Black);
+}
+html::-webkit-scrollbar-thumb {
+	background: var(--Blue);
+	border-radius: 5rem;
+}
+::selection {
+	background: var(--Blue);
+	color: var(--Black);
+}
+body {
+	background: var(--Black);
+	color: var(--White);
+}
+
+/* =========================================== FrameWork ============================================== */
+section {
+	padding: 3rem 9%;
+}
+span {
+	color: var(--Blue);
+}
+.Style {
+	color: var(--Blue);
+	background: transparent;
+	padding: 12px 40px;
+	margin: 10px 0;
+	font-size: 20px;
+	border: var(--border);
+	border-radius: 30px;
+	cursor: pointer;
+}
+.Style:hover {
+	background: var(--Blue);
+	color: var(--Black);
+}
+i {
+	color: var(--Blue);
+	font-size: 30px;
+	padding: 15px;
+	cursor: pointer;
+}
+.title {
+	text-align: center;
+	margin-bottom: 30px;
+}
+.title span {
+	font-size: 30px;
+}
+.title h1 {
+	color: var(--Black);
+	-webkit-text-stroke: 2px var(--White);
+	font-size: 55px;
+}
+
+/* =========================================== Actives ================================================= */
+header.Active {
+	background: var(--Background);
+	box-shadow: var(--box-shadow);
+}
+header nav.Active {
+	clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+}
+header nav a.Active {
+	color: var(--Blue);
+}
+
+/* =========================================== Header ================================================= */
+header {
+	background: transparent;
+	color: var(--LightColor);
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+header .logo {
+	display: flex;
+	align-items: center;
+}
+header .logo h2 {
+	color: white;
+	padding-left: 10px;
+	letter-spacing: 1.5px;
+}
+header .logo i {
+	color: var(--Blue);
+	font-size: 30px;
+}
+header nav a {
+	color: var(--LightColor);
+	padding: 0 10px;
+	font-weight: 500;
+}
+header .fa-bars {
+	display: none;
+}
+/* =============== Effects =============== */
+header nav a:hover {
+	color: var(--Blue);
+}
+@media (max-width: 950px) {
+	header .fa-bars {
+		display: initial;
+	}
+	header nav {
+		background: var(--Background);
+		padding: 20px;
+		width: 100%;
+		position: absolute;
+		top: 115%;
+		clip-path: polygon(100% 0, 100% 0, 0% 0, 0 0);
+	}
+	header nav a {
+		width: fit-content;
+		display: block;
+		padding: 20px;
+	}
+}
+
+/* =========================================== Home =================================================== */
+.Home {
+	background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url(../Images/home-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	width: 90%;
+	min-height: 80vh;
+	margin: 5.3rem auto 0;
+	text-align: center;
+	border-radius: 10px;
+}
+.Home h2 {
+	color: var(--Black);
+	-webkit-text-stroke: 1px var(--White);
+	font-size: 50px;
+}
+.Home h1 {
+	font-size: 60px;
+}
+.Home p {
+	color: var(--LightColor);
+	width: 75%;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+}
+@media (max-width: 800px) {
+	.Home h2 {
+		font-size: 30px;
+	}
+	.Home h1 {
+		font-size: 40px;
+	}
+	.Home p {
+		width: 100%;
+		font-size: 18px;
+	}
+}
+
+/* =========================================== About ================================================== */
+.About .HomeAbout {
+	background: var(--Background);
+	color: var(--LightColor);
+	width: 100%;
+	padding: 50px;
+	margin: -5rem auto 0;
+	border-radius: 10px;
+}
+.About .HomeAbout form {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.About .HomeAbout form div {
+	flex: 1 1 16rem;
+}
+.About .HomeAbout form input {
+	background: transparent;
+	color: var(--LightColor);
+	width: 100%;
+	font-size: 22px;
+	padding: 10px 15px;
+	margin-top: 20px;
+	border: var(--border);
+	border-radius: 30px;
+	display: block;
+}
+.About .HomeAbout form button {
+	flex: 1 1 15rem;
+	margin: auto;
+	display: block;
+	margin-top: 30px;
+}
+/* ===================================== */
+.About .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+	margin: 5rem 0;
+}
+.About .Catagory .left {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.About .Catagory .left video {
+	width: 100%;
+	border-radius: 20px;
+}
+.About .Catagory .left .button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+.About .Catagory .left span {
+	background: var(--White);
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	margin: 10px;
+	cursor: pointer;
+	border: 2px solid var(--White);
+}
+.About .Catagory .right {
+	padding: 10px;
+	font-size: 25px;
+	line-height: 2;
+	letter-spacing: 2px;
+}
+.About .Catagory .right h1 {
+	font-size: 50px;
+	font-weight: bold;
+	line-height: 1.5;
+}
+.About .Catagory .right p {
+	color: var(--LightColor);
+	font-size: 15px;
+}
+.About .Catagory .left span:hover {
+	background: var(--Blue);
+}
+.About .Catagory .left span:nth-child(1) {
+	background: var(--Blue);
+}
+
+/* =========================================== Destination ============================================ */
+.Destination .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+}
+.Destination .Catagory .box {
+	background: var(--Background);
+	text-align: center;
+	overflow: hidden;
+	border-radius: 15px;
+}
+.Destination .Catagory .box .img {
+	width: 100%;
+	height: 15rem;
+	overflow: hidden;
+}
+.Destination .Catagory .box .img img {
+	width: 100%;
+	height: 100%;
+}
+.Destination .Catagory .box .Content {
+	line-height: 2.3;
+}
+.Destination .Catagory .box .Content h3 {
+	font-size: 28px;
+}
+.Destination .Catagory .box .Content p {
+	width: 80%;
+	margin: auto;
+	color: var(--LightColor);
+}
+.Destination .Catagory .box .Content a {
+	color: var(--Blue);
+	font-size: 25px;
+}
+.Destination .Catagory .box .Content a .fas {
+	padding-left: 5px;
+}
+.Destination .Catagory .box .Content a:hover .fas {
+	padding-left: 15px;
+}
+.Destination .Catagory .box:hover img {
+	transform: scale(1.2);
+}
+
+/* =========================================== Services =============================================== */
+.Services .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.Services .Catagory .box {
+	background: var(--Background);
+	text-align: center;
+	padding: 50px 30px;
+	line-height: 2;
+	border-radius: 20px;
+}
+.Services .Catagory .box .fas {
+	color: var(--Blue);
+	font-size: 55px;
+}
+.Services .Catagory .box h3 {
+	font-size: 30px;
+}
+.Services .Catagory .box p {
+	color: var(--LightColor);
+	font-size: 18px;
+}
+.Services .Catagory .box:hover {
+	border: var(--border);
+}
+
+/* =========================================== Gallory ================================================ */
+.Gallory .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+}
+.Gallory .Catagory .box {
+	width: fit-content;
+	overflow: hidden;
+	border-radius: 20px;
+}
+.Gallory .Catagory .box img {
+	width: 100%;
+	padding-bottom: 10px;
+}
+.Gallory .Catagory .box .Content {
+	font-size: 25px;
+}
+.Gallory .Catagory .box .Content p {
+	color: var(--LightColor);
+	font-size: 20px;
+}
+
+/* =========================================== Blogs ================================================== */
+.Blogs .Reviews {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.Blogs .Reviews .left {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	text-align: left;
+	line-height: 2;
+}
+.Blogs .Reviews .left span {
+	font-size: 30px;
+}
+.Blogs .Reviews .left p {
+	color: var(--LightColor);
+}
+.Blogs .Reviews .left h1 {
+	font-size: 40px;
+}
+.Blogs .Reviews .right {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+.Blogs .Reviews .right .box {
+	background: var(--Background);
+	color: var(--LightColor);
+	flex: 1 1 10rem;
+	padding: 30px 25px;
+	line-height: 2;
+	border-radius: 20px;
+}
+.Blogs .Reviews .right .box .user {
+	display: flex;
+	align-items: center;
+}
+.Blogs .Reviews .right .box .user .img {
+	width: 70px;
+	height: 70px;
+	margin-top: 20px;
+}
+.Blogs .Reviews .right .box .user .img img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.Blogs .Reviews .right .box .user .Content {
+	padding-left: 15px;
+	margin-top: 20px;
+}
+.Blogs .Reviews .right .box .user .Content h3 {
+	color: var(--White);
+}
+/* ===================================== */
+.Blogs .title {
+	margin-top: 5rem;
+}
+.Blogs .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.Blogs .Catagory .box {
+	background: var(--Background);
+	border-radius: 10px;
+	overflow: hidden;
+}
+.Blogs .Catagory .box .img {
+	width: 100%;
+	height: 16rem;
+	overflow: hidden;
+}
+.Blogs .Catagory .box .img img {
+	width: 100%;
+	height: 100%;
+}
+.Blogs .Catagory .box .Content {
+	padding: 20px;
+	line-height: 2;
+}
+.Blogs .Catagory .box .Content p {
+	color: var(--LightColor);
+}
+.Blogs .Catagory .box .footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.Blogs .Catagory .box .footer .fa {
+	font-size: 22px;
+	padding: 10px 10px 0 0;
+}
+.Blogs .Catagory .box .footer p {
+	display: inline-block;
+}
+.Blogs .Catagory .box:hover .img img {
+	transform: scale(1.2);
+}
+/* ===================================== */
+.Blogs .Adventures {
+	background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url(../Images/banner-bg.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	text-align: center;
+	padding: 20px;
+	line-height: 2;
+	padding: 50 0;
+	margin-top: 5rem;
+}
+.Blogs .Adventures span {
+	font-size: 25px;
+}
+.Blogs .Adventures h1 {
+	font-size: 50px;
+}
+.Blogs .Adventures p {
+	color: var(--LightColor);
+	width: 80%;
+	margin: auto;
+}
+
+/* =========================================== Footer ================================================= */
+footer {
+	padding: 0 9%;
+}
+footer .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+footer .Catagory .box .row {
+	width: fit-content;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	cursor: pointer;
+}
+footer .Catagory .box .row i {
+	font-size: 20px;
+}
+footer .Catagory .box nav a {
+	color: var(--LightColor);
+	padding: 0 10px;
+	display: block;
+	font-weight: 500;
+}
+footer .Catagory .box:nth-child(1) .logo {
+	display: flex;
+	align-items: center;
+}
+footer .Catagory .box:nth-child(1) .logo h2 {
+	color: white;
+	padding-left: 10px;
+	letter-spacing: 1.5px;
+}
+footer .Catagory .box:nth-child(1) .logo p {
+	color: var(--LightColor);
+	line-height: 2;
+}
+footer .Catagory .box:nth-child(1) .logo .fa-paper-plane {
+	color: var(--Blue);
+	font-size: 30px;
+}
+footer .Catagory .box:nth-child(1) i {
+	color: var(--Blue);
+	font-size: 20px;
+	padding: 10px;
+	margin: 20px 10px;
+	border: var(--border);
+	border-radius: 50%;
+	cursor: pointer;
+}
+footer .Catagory .box:nth-child(1) i:hover {
+	background: var(--Blue);
+	color: var(--Black);
+}
+footer .Catagory .box:nth-child(4) h1 {
+	font-size: 40px;
+	letter-spacing: 2px;
+	line-height: 2;
+}
+footer .Catagory .box:nth-child(4) p {
+	color: var(--LightColor);
+	font-size: 18px;
+	letter-spacing: 2px;
+}
+footer .Catagory .box:nth-child(4) form {
+	max-width: 50rem;
+	text-align: center;
+}
+footer .Catagory .box:nth-child(4) form input {
+	background: transparent;
+	color: var(--Blue);
+	width: 100%;
+	font-size: 25px;
+	padding: 15px;
+	margin: 10px 0;
+	border: var(--border);
+	border-radius: 30px;
+}
+footer .Catagory .box:nth-child(4) form button {
+	font-size: 20px;
+	padding: 10px 20px;
+}
+footer .Catagory .box .row:hover a {
+	color: var(--Blue);
+}
+footer .Catagory .box .row:hover i {
+	color: var(--White);
+	padding-right: 25px;
+}
+footer .Copyright {
+	background: var(--Background);
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 20px;
+	margin: 50px auto;
+}

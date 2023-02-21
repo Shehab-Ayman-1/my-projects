@@ -1,0 +1,104 @@
+@mixin Flex($justfy, $align) {
+	display: flex;
+	justify-content: $justfy;
+	align-items: $align;
+}
+
+@mixin Grid($width) {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+	gap: 1rem;
+}
+
+@mixin Absolute($dir, $y, $x) {
+	position: absolute;
+	@if $dir == "tl" {
+		top: $y;
+		left: $x;
+	}
+	@if $dir == "tr" {
+		top: $y;
+		right: $x;
+	}
+	@if $dir == "bl" {
+		bottom: $y;
+		left: $x;
+	}
+	@if $dir == "br" {
+		bottom: $y;
+		right: $x;
+	}
+}
+
+@mixin Fixed($dir, $y, $x) {
+	position: fixed;
+	@if $dir == "tl" {
+		top: $y;
+		left: $x;
+	}
+	@if $dir == "tr" {
+		top: $y;
+		right: $x;
+	}
+	@if $dir == "bl" {
+		bottom: $y;
+		left: $x;
+	}
+	@if $dir == "br" {
+		bottom: $y;
+		right: $x;
+	}
+}
+
+@mixin Sticky($dir, $y, $x) {
+	position: sticky;
+	@if $dir == "tl" {
+		top: $y;
+		left: $x;
+	}
+	@if $dir == "tr" {
+		top: $y;
+		right: $x;
+	}
+	@if $dir == "bl" {
+		bottom: $y;
+		left: $x;
+	}
+	@if $dir == "br" {
+		bottom: $y;
+		right: $x;
+	}
+}
+
+@mixin Width($Width) {
+	@if $Width == "xlg" {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	}
+	@if $Width == "lg" {
+		@media (max-width: 1200px) {
+			@content;
+		}
+	}
+	@if $Width == "xmd" {
+		@media (max-width: 992px) {
+			@content;
+		}
+	}
+	@if $Width == "md" {
+		@media (max-width: 792px) {
+			@content;
+		}
+	}
+	@if $Width == "xsm" {
+		@media (max-width: 576px) {
+			@content;
+		}
+	}
+	@if $Width == "sm" {
+		@media (max-width: 390px) {
+			@content;
+		}
+	}
+}

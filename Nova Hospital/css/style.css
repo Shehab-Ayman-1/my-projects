@@ -1,0 +1,562 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+:root {
+	--Green: #108de0;
+	--White: #fff;
+	--Black: #444;
+	--Dark: #111;
+	--light-bg: #f3f3f3;
+	--light-color: #777;
+	--border: 2px solid var(--Green);
+	--text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+	--box-shadow: 3px 3px 0 var(--Green);
+}
+* {
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-transform: capitalize;
+	transition: all 0.2s ease-out;
+	text-decoration: none;
+}
+html {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+	width: 0.7rem;
+}
+html::-webkit-scrollbar-thumb {
+	background-color: var(--Green);
+	border-radius: 20px;
+}
+html::-webkit-scrollbar-track {
+	background-color: var(--White);
+}
+::selection {
+	background-color: var(--Green);
+	color: var(--White);
+}
+
+/* ========================================== FrameWork =========================================== */
+section {
+	padding: 2rem 9%;
+}
+span {
+	color: var(--Green);
+}
+.Style {
+	background-color: var(--White);
+	color: var(--Green);
+	width: fit-content;
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 500;
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: 2px solid var(--Green);
+	transform: scale(0.9);
+	cursor: pointer;
+}
+.Style span {
+	background-color: var(--Green);
+	color: var(--White);
+	margin: auto;
+	padding: 10px;
+	font-size: 20px;
+	border-radius: 5px;
+}
+.Style:hover {
+	background-color: var(--Green);
+	color: var(--White);
+	letter-spacing: 2px;
+}
+.Style:hover span {
+	background-color: var(--White);
+	color: var(--Green);
+}
+i {
+	font-size: 30px;
+	color: var(--Green);
+	cursor: pointer;
+}
+.title {
+	color: var(--black);
+	font-size: 30px;
+	text-align: center;
+	margin: 50px 0;
+}
+.title span {
+	background: var(--Green);
+	color: white;
+	padding: 5px 40px;
+	clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+.left {
+	display: flex;
+	align-items: center;
+}
+
+/* ========================================== Actives ============================================= */
+header nav.Active {
+	clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+}
+header .SearchForm.Active {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* ========================================== Header ============================================== */
+header {
+	background-color: var(--White);
+	width: 100vw;
+	padding: 10px 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 100000;
+	box-shadow: var(--box-shadow);
+}
+header .logo {
+	width: 150px;
+	height: 70px;
+}
+header .logo img {
+	width: 100%;
+	height: 100%;
+}
+
+header nav a {
+	color: var(--Black);
+	padding: 0 10px;
+	font-size: 20px;
+	font-weight: 500;
+}
+header nav a:hover {
+	color: var(--Green);
+}
+header .Icons .fa-bars {
+	display: none;
+}
+header .Icons i {
+	color: var(--Dark);
+	padding: 0 7px;
+}
+header form {
+	background-color: var(--White);
+	padding: 10px;
+	position: absolute;
+	top: 115%;
+	right: 30px;
+	padding: 10px;
+	border-radius: 20px;
+	border-bottom: var(--border);
+	box-shadow: var(--box-shadow);
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	z-index: 10000;
+}
+header form label {
+	color: var(--Dark);
+	font-size: 25px;
+	cursor: pointer;
+}
+header form input {
+	background-color: transparent;
+	width: 25rem;
+	padding: 10px;
+	font-size: 21px;
+}
+header form label:hover {
+	color: var(--Green);
+}
+header .Icons i:hover {
+	color: var(--Green);
+}
+@media (max-width: 800px) {
+	header .Icons .fa-bars {
+		display: initial;
+	}
+	header nav {
+		background-color: var(--light-color);
+		width: 100%;
+		position: absolute;
+		top: 100%;
+		clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+	}
+	header nav a {
+		color: var(--White);
+		padding: 15px;
+		display: block;
+	}
+}
+
+/* ========================================== Home ================================================ */
+.Home {
+	background: url(../Images/download.png);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	width: 100%;
+	min-height: 80vh;
+	padding: 50px;
+	display: flex;
+	align-items: center;
+}
+.Home .Content {
+	width: 60%;
+	line-height: 2;
+}
+.Home .Content h1 {
+	font-size: 40px;
+	color: var(--White);
+	text-shadow: var(--text-shadow);
+	-webkit-text-stroke: 2px black;
+}
+.Home .Content p {
+	color: var(--White);
+	font-size: 18px;
+	padding: 10px 0;
+	opacity: 0.8;
+}
+
+/* ========================================== Labels ============================================== */
+.Labels {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	gap: 1rem;
+	padding: 5rem 9%;
+}
+.Labels .box {
+	text-align: center;
+	padding: 20px 0;
+	border: var(--border);
+	border-color: var(--Green);
+	box-shadow: var(--box-shadow);
+	cursor: pointer;
+	border-radius: 87% 20% 0% 100% / 45% 94% 1% 14%;
+}
+.Labels .box:hover {
+	border-radius: 50% 50% 0% 100% / 82% 94% 6% 18%;
+	transform: translateY(-10px);
+	box-shadow: 0 10px 5px rgb(16, 141, 224, 0.5);
+}
+.Labels .box h1 {
+	color: var(--Black);
+	text-shadow: var(--text-shadow);
+	font-size: 50px;
+	padding: 20px 0 10px;
+}
+.Labels .box i {
+	font-size: 50px;
+	object-fit: cover;
+}
+.Labels .box p {
+	font-weight: bold;
+}
+
+/* ========================================== Services ============================================ */
+.Services {
+	background-color: var(--light-bg);
+}
+.Services .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.Services .Catagory .box {
+	background-color: var(--White);
+	padding: 20px;
+	line-height: 2;
+	border: var(--border);
+	border-color: var(--Green);
+	box-shadow: var(--box-shadow);
+	border-radius: 10px;
+}
+.Services .Catagory .box:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 10px 5px rgb(16, 141, 224, 0.5);
+}
+.Services .Catagory .box i {
+	font-size: 50px;
+}
+.Services .Catagory .box h2 {
+	color: var(--Dark);
+}
+.Services .Catagory .box p {
+	color: var(--Black);
+	font-size: 16px;
+	padding-bottom: 10px;
+}
+/* ========================================== About =============================================== */
+.About .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.About .Catagory .right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	line-height: 1.5;
+}
+.About .Catagory .right h1 {
+	color: var(--Black);
+	font-size: 40px;
+	text-shadow: var(--text-shadow);
+}
+.About .Catagory .right p {
+	color: var(--Black);
+	padding-top: 10px;
+	text-align: justify;
+}
+.About .Catagory .right button {
+	margin-top: 10px;
+}
+/* ========================================== Doctors ============================================= */
+.Doctors {
+	background-color: var(--light-bg);
+}
+
+.Doctors .Catagory .box {
+	background-color: var(--White);
+	padding: 30px 0 10px;
+	text-align: center;
+	border: var(--border);
+	box-shadow: var(--box-shadow);
+}
+.Doctors .Catagory .box:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 10px 5px rgb(16, 141, 224, 0.5);
+}
+.Doctors .Catagory .box img {
+	width: 60%;
+	border: var(--border);
+}
+.Doctors .Catagory .box h1 {
+	color: var(--Black);
+}
+.Doctors .Catagory .box p {
+	color: var(--Green);
+}
+.Doctors .Catagory .box i {
+	background-color: var(--White);
+	font-size: 22px;
+	padding: 10px;
+	margin: 10px 2px 20px;
+	border-radius: 5px;
+	border: var(--border);
+}
+.Doctors .Catagory .box i:hover {
+	background: var(--Green);
+	color: white;
+}
+
+/* ========================================== Books =============================================== */
+.Books .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.Books .Catagory .right {
+	height: fit-content;
+	padding: 20px;
+	margin-top: 50px;
+	border-radius: 10px;
+	border: var(--border);
+}
+.Books .Catagory .right h1 {
+	color: var(--Black);
+	text-align: center;
+	font-size: 35px;
+	text-shadow: var(--text-shadow);
+}
+.Books .Catagory .right input {
+	width: 100%;
+	font-size: 18px;
+	padding: 10px;
+	margin: 13px 0;
+	display: block;
+	border-radius: 5px;
+	border: var(--border);
+}
+.Books .Catagory .right .button {
+	text-align: center;
+}
+.Books .Catagory .right .button button {
+	width: 80%;
+	padding: 15px;
+	position: relative;
+}
+.Books .Catagory .right .button button span {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	transform: translate(-5px, -50%);
+}
+.Books .Catagory .right .button button:hover {
+	width: 83%;
+}
+
+/* ========================================== Reviews ============================================= */
+.Reviews {
+	background-color: var(--light-bg);
+}
+.Reviews .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.Reviews .Catagory .box {
+	background-color: var(--White);
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	border-radius: 8px;
+	border: var(--border);
+}
+.Reviews .Catagory .box:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 10px 5px rgb(16, 141, 224, 0.5);
+}
+.Reviews .Catagory .box p {
+	color: var(--Black);
+	padding: 20px;
+	line-height: 2;
+}
+.Reviews .Catagory .box .User {
+	padding: 20px;
+}
+.Reviews .Catagory .box .User .img {
+	width: 80px;
+	margin: auto;
+}
+.Reviews .Catagory .box .User .img img {
+	width: 100%;
+	border: 3px solid white;
+	border-radius: 50%;
+}
+.Reviews .Catagory .box .User h3 {
+	color: var(--White);
+}
+.Reviews .Catagory .box .User i {
+	color: var(--White);
+	font-size: 18px;
+	padding-top: 10px;
+}
+.Reviews .Catagory .box::before {
+	background-color: var(--Green);
+	content: "";
+	width: 120%;
+	height: 17rem;
+	position: absolute;
+	top: -5rem;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: -1;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+}
+/* ========================================== Blogs =============================================== */
+.Blogs {
+	background-color: var(--White);
+}
+.Blogs .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.Blogs .Catagory .box {
+	background-color: var(--light-bg);
+	padding: 15px;
+	border: var(--border);
+}
+.Blogs .Catagory .box:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 10px 5px rgb(16, 141, 224, 0.5);
+}
+.Blogs .Catagory .box .img {
+	width: 100%;
+	height: 13rem;
+	margin: auto;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.Blogs .Catagory .box .img img {
+	width: 100%;
+	height: 100%;
+}
+.Blogs .Catagory .box h1 {
+	color: var(--Black);
+	font-size: 31px;
+	padding: 20px 0;
+}
+.Blogs .Catagory .box p {
+	padding-bottom: 10px;
+}
+.Blogs .Catagory .box:hover .img img {
+	transform: scale(1.1);
+}
+
+/* ========================================== Footer ============================================== */
+footer {
+	padding: 3rem 9% 1rem;
+	position: relative;
+}
+footer .Logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0.1;
+	z-index: -1;
+}
+footer .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+footer .Catagory .box {
+	padding: 20px;
+}
+footer .row {
+	width: fit-content;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	cursor: pointer;
+}
+footer .row i {
+	font-size: 18px;
+	padding-right: 15px;
+}
+footer .row p,
+footer .row a {
+	color: var(--Black);
+	font-size: 18px;
+	font-weight: 500;
+}
+footer .row:hover p,
+footer .row:hover a {
+	color: var(--Green);
+}
+footer .row:hover i {
+	color: var(--Dark);
+	padding-right: 25px;
+}
+footer .Copy {
+	border-top: var(--border);
+	border-color: rgba(22, 160, 132, 0.5);
+	font-size: 15px;
+	text-align: center;
+}
+@media (max-width: 460px) {
+	footer .Copy {
+		font-size: 10px;
+	}
+}

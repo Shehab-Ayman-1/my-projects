@@ -1,0 +1,54 @@
+@use "./global" as *;
+$themes: light-red-theme, light-blue-theme, light-purple-theme, light-yellow-theme, light-green-theme, light-red-theme,
+	light-silver-theme, light-darkBlue-theme, nightMode-theme;
+
+@each $theme in $themes {
+	body[data-theme="#{$theme}"] {
+		@if $theme == "light-red-theme" {
+			--main-color: #e84118;
+			--second-color: #c23616;
+		}
+		@if $theme == "light-blue-theme" {
+			--main-color: #00a8ff;
+			--second-color: #0097e6;
+		}
+		@if $theme == "light-red-blue-theme" {
+			--main-color: #00a8ff;
+			--second-color: #e84118;
+		}
+		@if $theme == "light-purple-theme" {
+			--main-color: #9c88ff;
+			--second-color: #8c7ae6;
+		}
+		@if $theme == "light-yellow-theme" {
+			--main-color: #fbc531;
+			--second-color: #e1b12c;
+		}
+		@if $theme == "light-green-theme" {
+			--main-color: #4cd137;
+			--second-color: #44bd32;
+		}
+		@if $theme == "light-silver-theme" {
+			--main-color: #7f8fa6;
+			--second-color: #718093;
+		}
+		@if $theme == "light-darkBlue-theme" {
+			--main-color: #273c75;
+			--second-color: #192a56;
+		}
+		@if $theme == "nightMode-theme" {
+			--white: #222;
+			--black: #fff;
+			--light-color: #999;
+			--dark-color: #ddd;
+			--light-bg: #111;
+			--dark-bg: #999;
+			.swiper-pagination-bullet {
+				background: get(dark);
+			}
+			.swiper-pagination-bullet-active {
+				background: get(second-color);
+			}
+		}
+	}
+}

@@ -1,0 +1,193 @@
+@use "./mixins" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+// Set The Global Variables
+:root {
+	--white: #fff;
+	--black: #000;
+	--dark-color: #130f40;
+	--main-color: #2196f3;
+	--second-color: #e91e63;
+	--light-color: #aaa;
+	--light-bg: #f7f7f7;
+	--dark-bg: #ccc;
+	--border: 1px solid var(--light-color);
+	--box-shadow: 5px 5px 15px var(--second-color);
+
+	--p0: 0;
+	--p1: 5px;
+	--p2: 10px;
+	--p3: 15px;
+	--p4: 20px;
+	--p5: 25px;
+	--p6: 30px;
+
+	--m0: 0;
+	--m1: 5px;
+	--m2: 10px;
+	--m3: 15px;
+	--m4: 20px;
+	--m5: 25px;
+	--m6: 30px;
+
+	--r0: 0;
+	--r1: 5px;
+	--r2: 10px;
+	--r3: 15px;
+	--r4: 20px;
+	--r5: 25px;
+	--r6: 30px;
+	--circle: 100%;
+}
+
+@function get($att) {
+	@return var(--#{$att});
+}
+
+@function gutter($gutter1, $gutter2) {
+	@return var(--#{$gutter1}) var(--#{$gutter2});
+}
+
+// Basic Page Style
+* {
+	font-family: "Poppins", sans-serif;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	box-sizing: border-box !important;
+	text-decoration: none !important;
+	text-transform: capitalize !important;
+	transition: all 0.1s ease-in-out;
+}
+
+html {
+	width: 100vw;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	::-webkit-scrollbar {
+		width: 0.5rem;
+	}
+	::-webkit-scrollbar-thumb {
+		background: get(second-color);
+		border-radius: 10px;
+	}
+	::-webkit-scrollbar-track {
+		background: get(white);
+	}
+	::selection {
+		background: get(second-color);
+		color: get(white);
+		text-shadow: 10px 10px 10px get(black);
+	}
+}
+
+// Default Elements Style
+a {
+	color: get(black);
+	list-style: none !important;
+}
+
+p {
+	margin-bottom: 0;
+}
+
+i {
+	color: get(black);
+	font-size: 22px;
+	padding: 0 5px;
+	cursor: pointer;
+	&:hover {
+		color: get(light-color);
+	}
+	&[data-empty] {
+		color: get(white);
+		-webkit-text-stroke: 1px get(black);
+	}
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	li {
+		list-style: none;
+	}
+}
+
+// Swiper Library
+.swiper-pagination {
+	bottom: -5px !important;
+	.swiper-pagination-bullet-active {
+		width: 20px;
+		border-radius: 4px;
+	}
+	.swiper-pagination-bullet {
+		background: get(second-color);
+	}
+}
+
+// Basic Classes
+.mybtn {
+	background: transparent;
+	color: get(black);
+	font-size: 1.1em;
+	font-weight: 500;
+	padding: 5px 30px;
+	margin: 15px auto;
+	border: 2px solid get(second-color);
+	border-radius: 7px;
+	cursor: pointer;
+	&:hover {
+		background-color: get(second-color);
+		color: get(white);
+	}
+}
+
+.title {
+	@include Flex(center, center);
+	color: get(dark-color);
+	font-size: 2.5rem;
+	font-weight: 900;
+	padding: get(p5);
+	text-align: center;
+	@include Width(md) {
+		font-size: 2rem;
+		padding: get(p3);
+	}
+	@include Width(sm) {
+		font-size: 1.5rem;
+		padding: get(p1);
+	}
+	@include Width(xsm) {
+		padding: get(p0);
+	}
+	span {
+		background: get(second-color);
+		color: get(white);
+		font-size: 1rem;
+		padding: 5px 40px;
+		@include Width(sm) {
+			font-size: 1rem;
+		}
+		@include Width(xsm) {
+			padding: 5px 20px;
+		}
+	}
+}
+
+// Basic Extends
+%box {
+	background-color: get(white);
+	padding: gutter(p5, p2);
+	margin: get(p4) auto;
+	line-height: 2;
+	text-align: center;
+	outline: get(border);
+	outline-offset: -15px;
+	cursor: pointer;
+	border-radius: get(r1);
+	&:hover {
+		outline-offset: 0;
+		transform: translateY(-5px);
+		box-shadow: get(box-shadow);
+	}
+}

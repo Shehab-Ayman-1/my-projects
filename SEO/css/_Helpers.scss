@@ -1,0 +1,30 @@
+@mixin Flex($Just, $ALign) {
+	display: flex;
+	justify-content: $Just;
+	align-items: $ALign;
+}
+@mixin Grid($Size) {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax($Size, 1fr));
+	gap: 1rem;
+}
+@mixin Width800 {
+	@media (max-width: 800px) {
+		@content;
+	}
+}
+@mixin Width600 {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
+@mixin Width400 {
+	@media (max-width: 400px) {
+		@content;
+	}
+}
+@mixin Width300 {
+	@media (max-width: 300px) {
+		@content;
+	}
+}

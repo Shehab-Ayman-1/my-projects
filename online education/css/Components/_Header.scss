@@ -1,0 +1,126 @@
+// ============================================ Header ============================================
+header {
+    @include Flex(space-around, center);
+    @include Position-Left(sticky, 0, 0);
+    background-color: $blue;
+    color: white;
+    width: 100%;
+    padding: 15px 10px;
+    z-index: 1000;
+    .logo {
+        @include Flex(space-around, center);
+        font-size: 24px;
+        i {
+            color: $pink;
+            animation: UpDown 2s ease-in-out infinite;
+        }
+        h3 {
+            color: $white;
+            padding-left: 10px;
+        }
+        @keyframes UpDown {
+            0% {
+                transform: translatey(10px);
+                font-size: 35px;
+                color: $pink;
+            }
+            50% {
+                transform: translatey(-10px);
+                font-size: 23px;
+                color: $black;
+            }
+            100% {
+                transform: translatey(10px);
+                font-size: 35px;
+                color: $pink;
+            }
+        }
+    }
+    .Icons {
+        .fa-bars {
+            display: none;
+            @include Media800 {
+                display: initial;
+            }
+        }
+    }
+    nav {
+        color: $white;
+        ul {
+            li {
+                position: relative;
+                display: inline-block;
+                padding: 10px;
+                cursor: pointer;
+                font-weight: 500;
+                a {
+                    color: $white;
+                    font-size: 20px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    &:hover {
+                        color: $pink;
+                    }
+                }
+                ul {
+                    @include Position-Left(absolute, 100%, 0);
+                    background-color: $blue;
+                    width: 15rem;
+                    display: none;
+                    z-index: 1000;
+                    li {
+                        width: 100%;
+                        display: block;
+                        &:hover {
+                            background-color: $pink;
+                            a {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    color: $pink;
+                    ul {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        @include Media800 {
+            & {
+                @include Position-Left(absolute, 100%, 0);
+                background-color: $blue;
+                width: 100%;
+                clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+                ul {
+                    li {
+                        width: 100%;
+                        padding: 0px;
+                        display: block;
+                        a {
+                            width: 100%;
+                            padding: 10px;
+                            display: block;
+                        }
+                        a:hover {
+                            background-color: $pink;
+                            color: $white;
+                            width: 100%;
+                        }
+                        ul {
+                            width: 100%;
+                            position: relative;
+                            li {
+                                width: 100%;
+                                display: block;
+                                padding: 10px 10px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

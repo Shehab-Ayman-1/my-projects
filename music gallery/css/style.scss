@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+// ========================================== Variables ==========================================
+$White: #f5f5f5;
+$Dark: #111;
+$Black: #000;
+$lightBG: #333;
+$Green: #16a085;
+$border: 2px solid $Green;
+$box-shadow: 3px 3px 10px $Green;
+
+// ========================================== Global =============================================
+* {
+	font-family: "Poppins", sans-serif;
+	padding: 0;
+	margin: 0;
+	text-transform: capitalize;
+	text-decoration: none;
+	box-sizing: border-box;
+	transition: 0.2s ease-in-out;
+}
+html {
+	background-color: $Dark;
+	color: $White;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	scroll-padding-top: 7rem;
+}
+html::-webkit-scrollbar {
+	width: 0.7rem;
+}
+html::-webkit-scrollbar-thumb {
+	background-color: $Green;
+	border: $border;
+	border-radius: 10px;
+}
+::selection {
+	background-color: $Green;
+	color: $White;
+}
+// ========================================== Mixins =============================================
+@mixin Flex($justify, $align) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+}
+@mixin Grid($value) {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax($value, 1fr));
+	gap: 3rem;
+}
+@mixin Position-right($type, $top, $right) {
+	position: $type;
+	top: $top;
+	right: $right;
+}
+i {
+	background-color: $White;
+	color: $Green;
+	border-radius: 50%;
+	font-size: 35px;
+	cursor: pointer;
+	&:hover {
+		background-color: $Green;
+		color: $White;
+	}
+}
+
+// ========================================== Body ===============================================
+header {
+	@include Flex(space-between, center);
+	background: $Black;
+	padding: 30px 50px;
+	position: relative;
+	box-shadow: $box-shadow;
+	.logo {
+		@include Flex(space-around, center);
+		gap: 1rem;
+	}
+	nav {
+		@include Position-right(fixed, 0, -100%);
+		background-color: $lightBG;
+		width: 20rem;
+		height: 100%;
+		padding-top: 50px;
+		.fa-close {
+			@include Position-right(absolute, 20px, 20px);
+			background: none;
+			padding: 10px;
+			font-size: 30px;
+			&:hover {
+				transform: rotate(360deg);
+			}
+		}
+		a {
+			color: whitesmoke;
+			padding: 20px;
+			font-size: 25px;
+			font-weight: 500;
+			display: block;
+			&:hover {
+				color: $Green;
+			}
+		}
+	}
+	.fa-bars {
+		background: none;
+	}
+}
+
+.Music {
+	.Catagory {
+		@include Grid(20rem);
+		padding: 5rem 9%;
+		.box {
+			background: $lightBG;
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+			border: $border;
+			border-radius: 10px;
+			box-shadow: $box-shadow;
+			.img {
+				width: 95%;
+				height: 93%;
+				overflow: hidden;
+				margin: auto;
+				img {
+					image-rendering: crisp-edges;
+					width: 100%;
+					height: 100%;
+					height: 30rem;
+				}
+			}
+			.icon {
+				@include Position-right(absolute, -100%, 0);
+				@include Flex(center, center);
+				background: rgba($Black, 0.3);
+				width: 100%;
+				height: 93%;
+				i {
+					font-size: 40px;
+					padding: 20px;
+					opacity: 0.8;
+				}
+			}
+			.Content {
+				color: $White;
+				text-align: center;
+			}
+			&:hover {
+				.icon {
+					top: 0;
+					z-index: 1;
+				}
+				img {
+					transform: scale(1.1);
+					z-index: -1;
+				}
+			}
+		}
+	}
+	.FitchAudio {
+		@include Position-right(sticky, auto, 0);
+		background-color: $lightBG;
+		width: 100%;
+		bottom: 0%;
+		left: 0;
+		display: none;
+		z-index: 10000000000;
+		i {
+			@include Position-right(absolute, 20px, 20px);
+			background: none;
+		}
+		h1 {
+			text-align: center;
+			padding: 20px;
+			border-top: $border;
+		}
+		audio {
+			background: $lightBG;
+			color: $lightBG;
+			width: 100%;
+			&::-webkit-media-controls-enclosure {
+				background-color: rgba($Black, 0.2);
+				border-radius: 10px;
+			}
+		}
+		&.Active {
+			display: block;
+		}
+	}
+}

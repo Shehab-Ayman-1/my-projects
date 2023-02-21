@@ -1,0 +1,525 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+:root {
+	--White: #fff;
+	--Black: #130f40;
+	--Orange: #ef7819;
+	--light-color: #aaa;
+	--light-bg: #222;
+	--Dark-bg: #111;
+	--border: 1px solid var(--Black);
+	--box-Shadow: 0 0 10px var(--Black);
+	--box-Shadow-hover: 0 -5px 10px var(--Black);
+}
+* {
+	font-family: "Poppins", sans-serif;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	text-decoration: none;
+	text-transform: capitalize;
+	transition: 0.2s linear;
+}
+html {
+	width: 100vw;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	scroll-padding-top: 4rem;
+}
+html::-webkit-scrollbar {
+	width: 0.7rem;
+}
+html::-webkit-scrollbar-track {
+	background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+	background: #e67e22;
+	border-radius: 10px;
+}
+::selection {
+	background: #555;
+}
+
+/* ============================================= FrameWork ============================================ */
+section {
+	padding: 5rem 9%;
+	width: 100%;
+}
+span {
+	color: var(--Orange);
+}
+i {
+	color: var(--Black);
+	font-size: 28px;
+	padding: 10px;
+	cursor: pointer;
+}
+i:hover {
+	color: var(--Orange);
+}
+.Style {
+	background: transparent;
+	color: var(--Black);
+	font-size: 20px;
+	padding: 10px 35px;
+	border-radius: 30px;
+	border-top-left-radius: 0;
+	overflow: hidden;
+	border: 2px solid var(--Black);
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+	box-shadow: var(--box-Shadow);
+}
+.Style span {
+	background: var(--Black);
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	clip-path: circle(0% at 0 0);
+}
+.Style:hover span {
+	width: 100%;
+	height: 100%;
+	clip-path: circle(1000% at 0 0);
+}
+.Style:hover {
+	color: var(--White);
+	font-weight: bolder;
+}
+.title {
+	color: var(--Black);
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 50px;
+}
+
+/* ============================================= Actives ============================================== */
+header.Active {
+	top: -50%;
+}
+header nav a.Active {
+	color: var(--Orange);
+}
+header nav.Active {
+	clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+}
+
+/* ============================================= Header =============================================== */
+header {
+	background: var(--White);
+	width: 100vw;
+	padding: 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	z-index: 100000;
+}
+header .logo {
+	color: var(--Black);
+	display: flex;
+	align-items: center;
+}
+header .Icons .fa-bars {
+	display: none;
+}
+header .logo i {
+	color: var(--Orange);
+	font-size: 30px;
+}
+header nav a {
+	color: var(--Black);
+	font-weight: 500;
+	padding: 0 10px;
+}
+header nav a:hover {
+	color: var(--Orange);
+}
+@media (max-width: 800px) {
+	header.Active {
+		background: transparent;
+		top: 0;
+	}
+	header .Icons .fa-bars {
+		display: initial;
+	}
+	header nav {
+		background: var(--White);
+		width: 100%;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+	}
+	header nav a {
+		color: var(--Black);
+		display: block;
+		padding: 20px;
+	}
+}
+
+/* ============================================= Home ================================================= */
+.Home {
+	background: url(../Images/home_bg_img.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+}
+.Home img {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.Home .Content {
+	position: absolute;
+	left: 45%;
+	top: 40%;
+	transform: translateY(-40%);
+}
+.Home .Content h1 {
+	color: var(--White);
+	font-size: 70px;
+}
+.Home .Content button {
+	color: var(--White);
+	border-color: var(--White);
+}
+.Home .Content button span {
+	background: var(--White);
+}
+.Home .Content button:hover {
+	color: var(--Black);
+}
+@media (max-width: 800px) {
+	.Home {
+		background-attachment: initial;
+	}
+	.Home .Content h1 {
+		font-size: 50px;
+	}
+}
+@media (max-width: 500px) {
+	.Home .Content {
+		position: absolute;
+		top: 40%;
+		left: 15%;
+		transform: translateY(-40%);
+	}
+}
+
+/* ============================================= About ================================================ */
+.About .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 2rem;
+}
+.About .Catagory .left img {
+	width: 100%;
+}
+.About .Catagory .right {
+	color: var(--Black);
+}
+.About .Catagory .right h1 {
+	font-size: 50px;
+}
+.About .Catagory .right p {
+	opacity: 0.8;
+	line-height: 2;
+	margin: 20px 0;
+}
+
+/* ============================================= Shop ================================================= */
+.Shop {
+	padding: 5rem 0;
+}
+.Shop .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.Shop .Catagory .left img {
+	width: 100%;
+}
+.Shop .Catagory .right {
+	color: var(--Black);
+	text-align: center;
+	line-height: 2;
+}
+.Shop .Catagory .right h1 {
+	font-size: 50px;
+}
+.Shop .Catagory .right p {
+	opacity: 0.8;
+	line-height: 2;
+	margin: 20px 0;
+}
+.Shop .Catagory .right img {
+	transform: scale(1.1);
+}
+.Shop .Catagory .right img:hover {
+	transform: rotate(20deg) scale(1.1);
+}
+.Shop .Catagory:nth-child(2) {
+	margin-top: 100px;
+}
+
+/* ============================================= Products ============================================== */
+.Products .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 1rem;
+}
+.Products .Catagory .box {
+	color: var(--Black);
+	font-size: 25px;
+	text-align: center;
+	padding-bottom: 30px;
+	margin-top: 30px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: var(--box-Shadow);
+}
+.Products .Catagory .box .img {
+	width: 100%;
+	height: 25rem;
+	overflow: hidden;
+}
+.Products .Catagory .box .img img {
+	width: 100%;
+	height: 100%;
+}
+.Products .Catagory .box .Icons {
+	position: absolute;
+	top: 1rem;
+	right: -80%;
+	transition: 0.4s linear;
+}
+.Products .Catagory .box .Icons i {
+	background: var(--White);
+	font-size: 30px;
+	padding: 16px;
+	margin: 20px;
+	display: block;
+}
+.Products .Catagory .box:hover {
+	transform: translateY(10px);
+	box-shadow: var(--box-Shadow-hover);
+}
+.Products .Catagory .box:hover .Icons {
+	right: 0;
+}
+.Products .Catagory .box:hover img {
+	transform: scale(1.1);
+}
+@media (max-width: 450px) {
+	.Products .Catagory .box {
+		width: 80%;
+	}
+}
+/* ============================================= Services ============================================= */
+.Services .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 2rem;
+}
+.Services .Catagory .box {
+	background: #eee;
+	color: var(--Black);
+	padding: 30px;
+	text-align: center;
+	line-height: 3;
+	border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+	box-shadow: var(--box-Shadow);
+}
+.Services .Catagory .box i.fas {
+	background: var(--Orange);
+	color: var(--White);
+	padding: 20px;
+	font-size: 40px;
+	border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+}
+.Services .Catagory .box h3 {
+	font-size: 30px;
+}
+.Services .Catagory .box:hover {
+	border-radius: 0% 67% 0% 30% / 0% 30% 70% 70%;
+	transform: translateY(10px);
+	box-shadow: var(--box-Shadow-hover);
+}
+@media (max-width: 450px) {
+	.Services .Catagory .box {
+		width: 90%;
+	}
+	.Services .Catagory .box button {
+		padding: 10px 15px;
+	}
+}
+
+/* ============================================= Plan ================================================= */
+.Plan .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 3em;
+}
+.Plan .Catagory .box {
+	background: #eee;
+	color: var(--Black);
+	padding: 30px;
+	box-shadow: var(--box-Shadow);
+}
+.Plan .Catagory .box .car {
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+.Plan .Catagory .box .Icone i {
+	color: var(--Orange);
+	font-size: 50px;
+	padding-bottom: 20px;
+}
+.Plan .Catagory .box .row {
+	font-weight: 500;
+	display: flex;
+	justify-content: space-between;
+}
+.Plan .Catagory .box .price {
+	padding-left: 20px;
+	font-size: 30px;
+	font-weight: bold;
+}
+.Plan .Catagory .box .button {
+	text-align: center;
+}
+.Plan .Catagory .box .button button {
+	width: 100%;
+}
+.Plan .Catagory .box:hover {
+	transform: translateY(10px);
+	box-shadow: var(--box-Shadow-hover);
+}
+.Plan .Catagory .box .row i:hover {
+	color: var(--Black);
+}
+@media (max-width: 450px) {
+	.Plan .Catagory .box {
+		width: 85%;
+	}
+}
+
+/* ============================================= Contact ============================================== */
+.Contact {
+	padding: 5rem 20px 5rem 0;
+}
+.Contact .Catagory {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 2rem;
+}
+.Contact .Catagory img {
+	width: 100%;
+}
+.Contact .Catagory form {
+	padding: 20px;
+}
+.Contact .Catagory form input,
+.Contact .Catagory form textarea {
+	color: var(--Black);
+	width: 100%;
+	padding: 15px;
+	margin-top: 20px;
+	display: block;
+	border-bottom: var(--border);
+	box-shadow: var(--box-Shadow);
+	border-radius: 30px;
+	border-top-left-radius: 0;
+}
+.Contact .Catagory form textarea {
+	height: 150px;
+}
+.Contact .Catagory form .button {
+	width: 80%;
+	margin: 20px auto;
+}
+.Contact .Catagory form button {
+	width: 100%;
+	box-shadow: var(--box-Shadow);
+}
+
+/* ============================================= Footer =============================================== */
+footer {
+	background: url(../Images/footer_background.jpg);
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	padding-top: 9rem;
+	position: relative;
+	text-align: center;
+}
+footer img {
+	width: 100%;
+	height: 7rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+footer nav {
+	width: 100%;
+	text-align: center;
+	padding: 20px 9%;
+	margin: 50px 0;
+}
+footer nav a.Style {
+	display: inline-block;
+	color: var(--White);
+	font-size: 25px;
+	margin: 10px;
+	border: 2px solid var(--white);
+	box-shadow: 0 0 10px var(--White);
+}
+footer nav a.Style span {
+	background: var(--White);
+	border-radius: 30px;
+	border-top-left-radius: 0;
+}
+footer nav a.Style i {
+	color: var(--White);
+}
+footer nav a.Style:hover {
+	color: var(--Black);
+}
+footer nav a.Style:hover i {
+	color: var(--Black);
+}
+footer .Copy h1 {
+	color: var(--White);
+	font-size: 35px;
+	padding: 10px;
+	border-top: var(--border);
+	border-color: var(--White);
+}
+@media (max-width: 450px) {
+	footer nav a.Style {
+		display: block;
+		font-size: 20px;
+	}
+	footer .Copy {
+		padding: 20px;
+	}
+	footer .Copy h1 {
+		font-size: 23px;
+	}
+	footer .Copy h1 span {
+		font-size: 20px;
+	}
+}
