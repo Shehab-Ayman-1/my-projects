@@ -17,9 +17,7 @@ function About() {
 	useEffect(() => fetchData().then((result) => setData(result)), []);
 
 	let accourdion = () => {
-		return data.about.accourdions.map((item, index) => (
-			<Accourdion key={index} title={item.title} content={item.content} />
-		));
+		return data.about.accourdions.map((item, index) => <Accourdion key={index} title={item.title} content={item.content} />);
 	};
 
 	let clients = () => {
@@ -39,13 +37,12 @@ function About() {
 				<div className="Right">
 					<h1>OUR STORY</h1>
 					<p>
-						Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. Quam Modi Ea Fuga Quibusdam Fugiat Porro
-						Doloremque, Quas Dignissimos Culpa Unde. Recusandae Maxime Aliquam Beatae Reiciendis, Facilis
-						Voluptatum Eligendi Nesciunt Ipsa?
+						Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. Quam Modi Ea Fuga Quibusdam Fugiat Porro Doloremque, Quas
+						Dignissimos Culpa Unde. Recusandae Maxime Aliquam Beatae Reiciendis, Facilis Voluptatum Eligendi Nesciunt Ipsa?
 					</p>
 					<p>
-						Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Accusamus, Distinctio Et? Odio Voluptatum
-						Eius Reprehenderit Saepe Quisquam Excepturi Molestiae Architecto.
+						Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Accusamus, Distinctio Et? Odio Voluptatum Eius
+						Reprehenderit Saepe Quisquam Excepturi Molestiae Architecto.
 					</p>
 					<a href="#About" className="Style">
 						Read More
@@ -75,7 +72,7 @@ function About() {
 						breakpoints={{ 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 991: { slidesPerView: 3 } }}
 						pagination={{ clickable: true }}
 						autoplay={{ delay: 5000, disableOnInteraction: false }}>
-						{data ? clients() : ""}
+						{data && clients()}
 					</Swiper>
 				</div>
 			</div>

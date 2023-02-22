@@ -9,7 +9,10 @@ function Cart() {
 	const Total_Price = States.Cart.reduce((acc, obj) => ("Acc", acc != null ? acc : 0) + parseInt(obj.Price), 0);
 
 	const Handle_Delete = (i) => Dispatch(DELETEFROMCART(i));
-	const Handle_PayMent = () => Dispatch(PayMent());
+	const Handle_PayMent = () => {
+		Dispatch(PayMent());
+		alert("Successfully, The Products Will Arrive To You In About 3 Days");
+	};
 
 	return (
 		<section className="Shopping-Cart" id="Shopping-Cart">
