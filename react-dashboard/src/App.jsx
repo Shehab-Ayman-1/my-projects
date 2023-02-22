@@ -40,8 +40,8 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/">
-					<Route index element={<Login />} />
-					<Route path="home-page" element={<Home rows={productsRows} columns={productsColumns} />} />
+					<Route index element={<Home rows={productsRows} columns={productsColumns} />} />
+					<Route path="login" element={<Login />} />
 					<Route path="/users">
 						<Route index element={<List row={usersRows} column={usersColumns.concat(addActions)} />} />
 						<Route path=":id" element={<Single rows={usersRows} />} />

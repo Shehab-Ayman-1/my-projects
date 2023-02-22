@@ -29,9 +29,10 @@ const Login = () => {
 			passwordValid.classList.remove("active");
 			email = "";
 			password = "";
-			navigate("/home-page");
+			navigate("/");
 		}
 	};
+
 	return (
 		<div className="login-page">
 			<div className="form-container">

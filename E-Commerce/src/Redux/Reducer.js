@@ -1,7 +1,7 @@
 const Reducer = (State, Action) => {
 	switch (Action.type) {
 		case "ADDTOCART": {
-			State.Cart.push(Action.Info);
+			return State.Cart.push(Action.Info);
 		}
 
 		case "DELETEFROMCART": {

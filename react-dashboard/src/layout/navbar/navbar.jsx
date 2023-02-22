@@ -64,11 +64,8 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const Navbar = () => {
 	useEffect(() => {
-		if (localStorage.getItem("data-mode") === "dark-mode") {
-			document.body.setAttribute("data-mode", "dark-mode");
-		} else if (localStorage.getItem("data-mode") === "light-mode") {
-			document.body.setAttribute("data-mode", "light-mode");
-		}
+		if (localStorage.getItem("data-mode") === "dark-mode") document.body.setAttribute("data-mode", "dark-mode");
+		else if (localStorage.getItem("data-mode") === "light-mode") document.body.setAttribute("data-mode", "light-mode");
 	}, []);
 
 	// context Api
@@ -87,44 +84,27 @@ const Navbar = () => {
 	const openLanguagesMenu = Boolean(languagesMenu);
 
 	// Account Dropdown Menu
-	const handleOpenAccountMenu = (event) => {
-		setAccountMenu(event.currentTarget);
-	};
-	const handleCloseAccountMenu = () => {
-		setAccountMenu(null);
-	};
+	const handleOpenAccountMenu = (event) => setAccountMenu(event.currentTarget);
+	const handleCloseAccountMenu = () => setAccountMenu(null);
 
 	// Chat Dropdown Menu
-	const handleOpenChatMenu = (event) => {
-		setChatMenu(event.currentTarget);
-	};
-	const handleCloseChatMenu = () => {
-		setChatMenu(null);
-	};
+	const handleOpenChatMenu = (event) => setChatMenu(event.currentTarget);
+	const handleCloseChatMenu = () => setChatMenu(null);
 
 	// Languages Dropdown Menu
-	const handleOpenLanguagesMenu = (event) => {
-		setLanguagesMenu(event.currentTarget);
-	};
-	const handleCloseLanguagesMenu = () => {
-		setLanguagesMenu(null);
-	};
+	const handleOpenLanguagesMenu = (event) => setLanguagesMenu(event.currentTarget);
+	const handleCloseLanguagesMenu = () => setLanguagesMenu(null);
 
 	// Dark Mode Switch
 	const handleMode = () => {
 		context.dispatch(TOGGLE_MODE());
 
-		if (localStorage.getItem("data-mode") !== "dark-mode") {
-			document.body.setAttribute("data-mode", "dark-mode");
-		} else {
-			document.body.setAttribute("data-mode", "light-mode");
-		}
+		if (localStorage.getItem("data-mode") !== "dark-mode") document.body.setAttribute("data-mode", "dark-mode");
+		else document.body.setAttribute("data-mode", "light-mode");
 	};
 
 	// handle Search Bar
-	let handleSearchbar = () => {
-		document.querySelector(".left-section .search-bar").classList.toggle("show");
-	};
+	let handleSearchbar = () => document.querySelector(".left-section .search-bar").classList.toggle("show");
 
 	// handle Sidebar
 	let handleSidebar = () => {
@@ -138,7 +118,7 @@ const Navbar = () => {
 				<FormatListBulletedOutlined className="icon bars" onClick={handleSidebar} />
 				<SearchOutlined className="icon search" onClick={handleSearchbar} />
 				<div className="search-bar">
-					<input className="input-field" type="search" placeholder="Search Here ...." />
+					<input className="input-field" type="search" placeholder="Search Here...." />
 					<SearchOutlined className="icon" />
 				</div>
 			</div>
@@ -541,7 +521,7 @@ const Navbar = () => {
 									"&:hover": { bgcolor: "#795efd33", color: "black" },
 								}}>
 								<Logout sx={{ fontSize: "30px", paddingRight: "10px" }} />
-								Logout
+								login
 							</MenuItem>
 						</Link>
 					</Menu>

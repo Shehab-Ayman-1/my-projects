@@ -63,7 +63,7 @@ const Sidebar = () => {
 		<section className="sidebar">
 			<div className="header-sidebar">
 				<Close className="icon cross" onClick={handleSidebar} />
-				<Link to="/home-page" className="title">
+				<Link to="/" className="title">
 					<img src={logo} alt="logo" />
 					<span>Dashboard</span>
 				</Link>
@@ -73,7 +73,7 @@ const Sidebar = () => {
 				<ul className="main-list">
 					<h4 className="link-title">Main</h4>
 					<li>
-						<Link to="/home-page" className="link-content">
+						<Link to="/" className="link-content">
 							<Dashboard className="icon" />
 							<span>Dashboard</span>
 						</Link>
@@ -95,47 +95,47 @@ const Sidebar = () => {
 
 					<h4 className="link-title">UseFull</h4>
 					<li>
-						<div className="link-content">
+						<Link className="link-content" to="/">
 							<BarChart className="icon" />
 							<span>Stats</span>
-						</div>
+						</Link>
 					</li>
 					<li>
-						<div className="link-content">
+						<Link className="link-content" to="/">
 							<NotificationsActive className="icon" />
 							<span>Notifications</span>
-						</div>
+						</Link>
 					</li>
 
 					<h4 className="link-title">Services</h4>
 					<li>
-						<div className="link-content">
+						<Link className="link-content" to="/">
 							<MedicationLiquid className="icon" />
 							<span>System Health</span>
-						</div>
+						</Link>
 					</li>
 					<li>
-						<div className="link-content">
+						<Link className="link-content" to="/">
 							<Psychology className="icon" />
 							<span>Logs</span>
-						</div>
+						</Link>
 					</li>
 					<li>
-						<div className="link-content">
+						<Link className="link-content" to="/">
 							<Settings className="icon" />
 							<span>Settings</span>
-						</div>
+						</Link>
 					</li>
 
 					<h4 className="link-title">User</h4>
 					<li>
-						<div className="link-content">
+						<Link className="link-content" to="/">
 							<AccountCircleOutlined className="icon" />
 							<span>Profile</span>
-						</div>
+						</Link>
 					</li>
 					<li>
-						<Link to="/" className="link-content">
+						<Link to="/login" className="link-content">
 							<LoginOutlined className="icon" />
 							<span>Logout</span>
 						</Link>
