@@ -1,11 +1,11 @@
 import React, { createContext, useEffect, useState } from "react";
 import fetchData from "../util/getData";
 
-export const Context = createContext();
+export const Context = createContext({ data: "", setData: "", movie: "", setMovie: "" });
 
-export function ContextStore(props) {
+export function ContextStore({ children }) {
 	const [data, setData] = useState({ stream: [], services: [], TvShow: [], suggestion: [] });
-	const [activeCard, setActiveCard] = useState({});
+	const [movie, setMovie] = useState({});
 	useEffect(() => {
 		fetchData().then((res) => {
 			let stream = res.find((item) => item.type === "stream").branches || [];
@@ -16,5 +16,5 @@ export function ContextStore(props) {
 		});
 	}, []);
 
-	return <Context.Provider value={{ data, setData, activeCard, setActiveCard }}>{props.children}</Context.Provider>;
+	return <Context.Provider value={{ data, setData, movie, setMovie }}>{children}</Context.Provider>;
 }

@@ -23,17 +23,11 @@ window.addEventListener("load", scrollerAndHeader);
 window.addEventListener("scroll", scrollerAndHeader);
 
 export default function Header() {
-	let closeNavbar = () => {
-		document.querySelector("nav.nav-bar").classList.remove("show-right-clip");
-	};
+	let closeNavbar = () => document.querySelector("nav.nav-bar").classList.remove("show-right-clip");
 
-	let openNavbar = () => {
-		document.querySelector("nav.nav-bar").classList.add("show-right-clip");
-	};
+	let openNavbar = () => document.querySelector("nav.nav-bar").classList.add("show-right-clip");
 
-	let handleScroller = () => {
-		window.scrollTo({ top: 0, behavior: "smooth" });
-	};
+	let handleScroller = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 	return (
 		<header className="header active" id="header">
@@ -48,19 +42,19 @@ export default function Header() {
 				<NavLink className="link" to="/">
 					Home
 				</NavLink>
-				<a className="link" href="#streaming-section">
+				<a className="link" href="/#streaming-section">
 					Streaming
 				</a>
-				<a className="link" href="#services-section">
+				<a className="link" href="/#services-section">
 					Services
 				</a>
-				<a className="link" href="#rating-section">
+				<a className="link" href="/#rating-section">
 					Rating
 				</a>
-				<a className="link" href="#tv-show-section">
+				<a className="link" href="/#tv-show-section">
 					TV Show
 				</a>
-				<a className="link" href="#offer-section">
+				<a className="link" href="/#offer-section">
 					Our Offer
 				</a>
 				<div className="footer">

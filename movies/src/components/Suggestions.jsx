@@ -1,15 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../context/contextStore";
 
-export default function Card(props) {
-	const scrollTop = () => {
-		window.scrollTo({
-			top: 0,
-			behavior: "smooth",
-		});
+export default function Card({ data }) {
+	const { id } = useParams();
+	const {
+		data: { stream, services, TvShow, suggestion },
+		setMovie,
+	} = useContext(Context);
+
+	const changeMovie = () => {
+		if (stream || services || TvShow || suggestion) {
+			let streamMovie = stream.find((item) => item.id === +id);
+			let TvShowMovie = TvShow.find((item) => item.id === +id);
+			let servicesMovie = services.find((item) => item.id === +id);
+			setMovie((prev) => (prev = streamMovie || TvShowMovie || servicesMovie));
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		}
 	};
+
 	return (
-		<>
+		<div className="suggestion-movies">
 			<div className="header">
 				<div className="left-section">
 					<p className="main-color">BEST TV SERIES</p>
@@ -20,35 +31,34 @@ export default function Card(props) {
 				</div>
 			</div>
 			<div className="movies">
-				{props.data.map((card, index) => {
-					return (
-						<Link className="card" key={index} to={`/movie/${card.id}`} onClick={scrollTop}>
+				{data &&
+					data.map(({ id, img, name, config }) => (
+						<Link className="card" key={id} to={`/movie/${id}`} onClick={changeMovie}>
 							<div className="card-img">
-								<img src={`../../images/${card.img}`} alt={card.img} />
+								<img src={`../../images/${img}`} alt={img} />
 							</div>
 							<div className="card-footer">
 								<div className="name">
-									<h4>{card.name.title}</h4>
-									<span className="date">{card.name.date}</span>
+									<h4>{name.title}</h4>
+									<span className="date">{name.date}</span>
 								</div>
 								<div className="config">
-									<p className="hd">{card.config.hd}</p>
+									<p className="hd">{config.hd}</p>
 									<div className="data">
 										<div className="min">
 											<i className="far fa-clock"></i>
-											<span>{card.config.data.min} min</span>
+											<span>{config.data.min} min</span>
 										</div>
 										<div className="rate">
 											<i className="far fa-star"></i>
-											<span>{card.config.data.target}</span>
+											<span>{config.data.target}</span>
 										</div>
 									</div>
 								</div>
 							</div>
 						</Link>
-					);
-				})}
+					))}
 			</div>
-		</>
+		</div>
 	);
 }

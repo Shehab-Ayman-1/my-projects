@@ -9,6 +9,7 @@ export default function HomePage() {
 	const {
 		data: { stream, services, TvShow },
 	} = useContext(Context);
+
 	return (
 		<main className="home-page">
 			<section className="bg-section" id="bg-section">
