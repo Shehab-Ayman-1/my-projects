@@ -47,7 +47,7 @@ export const SIGNIN_AUTH = async (req, res) => {
 		const cookie = res.cookie("access_token", token, { httpOnly: true });
 
 		// [5] Send The User With The Token To The Frontend
-		const { password: p, isAdmin, ...other } = auth._doc;
+		const { password: pass, isAdmin, ...other } = auth._doc;
 		cookie.status(201).json({ other, isAdmin });
 	} catch (error) {
 		console.log(error);
