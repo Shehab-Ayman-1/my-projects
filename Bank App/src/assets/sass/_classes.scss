@@ -1,0 +1,115 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./global" as *;
+
+.gradient-text {
+	background: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 153, 0));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+// Show & Hide Element
+.hide-height {
+	max-height: 0 !important;
+}
+
+.show-display {
+	display: initial !important;
+}
+
+.hide-display {
+	display: none !important;
+}
+
+.show-scale {
+	transform: scale(1) !important;
+}
+
+.hide-scale {
+	transform: scale(0) !important;
+	height: 0 !important;
+	overflow: hidden;
+}
+
+.mybtn {
+	background: transparent;
+	color: get(white);
+	width: fit-content;
+	font-size: 1.8rem;
+	font-weight: bold;
+	padding: 10px 30px;
+	margin: 15px 0;
+	display: block;
+	cursor: pointer;
+	border: 2px solid get(primary);
+	border-radius: 30px;
+	transition: all 0.4s ease-in-out !important;
+	&:hover,
+	&:focus {
+		background: get(primary);
+		color: get(white);
+		border-color: get(primary) !important;
+	}
+	@include width(md) {
+		padding: 10px 20px;
+		margin: 10px 0;
+	}
+	@include width(sm) {
+		padding: 10px 15px;
+		margin: 5px 0;
+	}
+}
+
+// Swiper Library
+.swiper-pagination {
+	bottom: -5px !important;
+	.swiper-pagination-bullet-active {
+		background: get(primary) !important;
+		width: 20px;
+		border-radius: 4px;
+	}
+	.swiper-pagination-bullet {
+		background: get(white);
+	}
+}
+
+.swiper-button-prev {
+	background-color: get(dark-bg);
+	color: get(light-text) !important;
+	width: 40px !important;
+	border-radius: 100%;
+	@include width(sm) {
+		display: none !important;
+	}
+	&:hover {
+		box-shadow: 0 0 10px get(white);
+	}
+	&::after {
+		font-size: 22px !important;
+		font-weight: bold !important;
+	}
+}
+
+.swiper-button-next {
+	@extend .swiper-button-prev;
+}
+
+$vars: ("primary", "secondary", "white", "dimWhite", "white-bg", "black", "dimBlack", "black-bg");
+
+@each $var in $vars {
+	.text-#{$var} {
+		color: get($var);
+	}
+	.bg-#{$var} {
+		background-color: get($var);
+	}
+}
+
+.shadow {
+	box-shadow: get(shadow);
+}
+
+.bg-black-mode {
+	background-color: get(black-mode);
+}
