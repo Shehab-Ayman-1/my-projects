@@ -1,0 +1,16 @@
+@use "@/assets/sass/mixins" as *;
+
+.top-section {
+	@include flex(space-between, center);
+	background-color: get(primary);
+	padding: 10px 20px;
+	.logo {
+		color: get(white);
+		font-size: 30px;
+		font-weight: bold;
+	}
+	.buttons {
+		@include flex(space-between, center);
+		gap: 10px;
+	}
+}

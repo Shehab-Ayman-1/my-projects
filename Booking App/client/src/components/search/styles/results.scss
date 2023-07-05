@@ -1,0 +1,61 @@
+@use "@/assets/sass/mixins" as *;
+
+.right-section {
+	width: calc(100% - 350px);
+	padding: 10px;
+	.box {
+		@include flex(space-between, center);
+		background-color: get(white);
+		margin-bottom: 20px;
+		box-shadow: 5px 5px 5px get(primary);
+		.img {
+			width: 30%;
+			height: 100%;
+			padding-right: 10px;
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: cover;
+			}
+		}
+		.content {
+			width: 70%;
+			padding: 10px 10px 10px 0;
+			.rate {
+				background-color: get(primary);
+				color: get(white);
+				font-weight: bold;
+				padding: 5px 10px;
+			}
+			.distance {
+				color: #555;
+				margin-bottom: 10px;
+				font-size: 14px;
+			}
+			.green {
+				color: green;
+				font-size: 12px;
+				&.free {
+					background-color: green;
+					color: get(white);
+					padding: 5px 8px;
+					font-size: 14px;
+					border-radius: 5px;
+				}
+			}
+			.description {
+				margin-top: 10px;
+			}
+			.apartments {
+				font-size: 14px;
+			}
+			.fees {
+				font-size: 14px;
+			}
+			.mybtn {
+				white-space: nowrap;
+			}
+		}
+	}
+}

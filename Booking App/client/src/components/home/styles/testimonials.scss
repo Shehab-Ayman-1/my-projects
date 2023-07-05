@@ -1,0 +1,30 @@
+@use "@/assets/sass/mixins" as *;
+
+.testimonials-section {
+	background-color: get(primary);
+	padding: 20px;
+	margin-top: 60px;
+	text-align: center;
+	h1 {
+		color: get(white);
+		font-size: 40px;
+	}
+	p {
+		color: get(white);
+	}
+	div {
+		@include flex(center, stretch);
+		gap: 20px;
+		margin-top: 30px;
+		input {
+			width: 50%;
+			padding: 20px;
+			font-size: 18px;
+			display: block;
+			border-radius: 10px;
+		}
+		button {
+			margin: 0;
+		}
+	}
+}

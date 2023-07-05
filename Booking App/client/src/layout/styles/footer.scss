@@ -1,0 +1,28 @@
+@use "@/assets/sass/mixins" as *;
+
+footer {
+	padding: 20px;
+	nav {
+		@include grid(250px);
+		gap: 20px;
+		.flex-start {
+			&:hover {
+				.link {
+					color: get(primary);
+					margin-left: 10px;
+				}
+			}
+			.link {
+				color: #555;
+				line-height: 2;
+				cursor: pointer;
+			}
+		}
+	}
+	h3 {
+		color: get(dimBlack);
+		text-align: center;
+		margin-top: 20px;
+		border-top: get(border);
+	}
+}

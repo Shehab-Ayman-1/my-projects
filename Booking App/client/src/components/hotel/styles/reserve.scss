@@ -1,0 +1,35 @@
+@use "@/assets/sass/mixins" as *;
+
+.reserve-section {
+	@include flex(space-between, flex-start);
+	padding: 20px;
+	.description {
+		flex: 3;
+		.title {
+			margin-bottom: 10px;
+		}
+		.desc {
+			letter-spacing: 1px;
+			margin-bottom: 10px;
+		}
+	}
+	.reserve {
+		background-color: rgba(#003088, 0.22);
+		padding: 20px;
+		border-radius: 10px;
+		flex: 1;
+		.title {
+			margin-bottom: 10px;
+		}
+		.desc {
+			font-size: 14px;
+		}
+		.price {
+			font-size: 25px;
+			padding-right: 5px;
+		}
+		.nights {
+			font-size: 25px;
+		}
+	}
+}

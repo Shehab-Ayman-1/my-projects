@@ -1,0 +1,64 @@
+@use "@/assets/sass/mixins" as *;
+
+.login-section {
+	@include flex(center, center);
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("@/assets/images/london.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh;
+	padding: 5px;
+	.box {
+		background-color: get(white-bg);
+		width: 500px;
+		padding: 20px;
+		opacity: 0.85;
+		box-shadow: get(shadow);
+		.back-icon {
+			color: get(black);
+			font-size: 33px;
+		}
+		.person-icon {
+			color: get(primary);
+			width: fit-content;
+			text-align: center;
+			font-size: 32px;
+			display: block;
+			margin: auto;
+			margin-bottom: 10px;
+		}
+		.title {
+			text-align: center;
+			font-size: 32px;
+			margin-bottom: 10px;
+		}
+		label {
+			display: block;
+			font-weight: bold;
+			font-size: 20px;
+		}
+		input {
+			width: 100%;
+			padding: 10px;
+			font-size: 20px;
+			border: 1px solid get(dimWhite);
+			margin-bottom: 20px;
+		}
+		.gap {
+			gap: 10px;
+		}
+		.mybtn {
+			width: 100%;
+			font-size: 18px;
+		}
+		.have-account {
+			color: get(primary);
+			text-align: center;
+			display: block;
+			font-weight: 500;
+			&:hover {
+				color: blue;
+				font-weight: bold;
+			}
+		}
+	}
+}
