@@ -1,15 +1,18 @@
-import { GET_USERS } from "@/utilities";
-
-export const usersReducer = async (states, action) => {
+export const usersReducer = async (states, { type, payload }) => {
 	const state = await states;
 
-	switch (action.type) {
-		case "GET_ALL":
-			let res = await GET_USERS();
-			state.users = res.data;
+	switch (type) {
+		case "SIGN_UP": {
 			return state;
-
-		default:
+		}
+		case "SIGN_IN": {
 			return state;
+		}
+		case "SIGN_OUT": {
+			return state;
+		}
+		default: {
+			return state;
+		}
 	}
 };

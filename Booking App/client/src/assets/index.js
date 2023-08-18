@@ -1,3 +1,4 @@
+import Avatar from "./images/avatar.png";
 import Berlin from "./images/berlin.jpg";
 import Feature1 from "./images/feature 1.jpg";
 import Feature2 from "./images/feature 2.jpg";
@@ -22,4 +23,4 @@ import Madrid from "./images/madrid.jpg";
 export { Feature1, Feature2, Feature3, Feature4, Feature5, Feature6, Feature7 };
 export { Hotel1, Hotel2, Hotel3, Hotel4, Hotel5, Hotel6 };
 export { Furnitur1, Furnitur2, Furnitur3, Furnitur4 };
-export { London, Madrid, Berlin };
+export { London, Madrid, Berlin, Avatar };

@@ -23,28 +23,4 @@
 			font-weight: 500;
 		}
 	}
-	.reserve {
-		@include fixed(tl, 50%, 50%);
-		background-color: get(white);
-		width: 600px;
-		height: 80%;
-		padding: 10px;
-		box-shadow: get(shadow);
-		transform: translate(-50%, -50%);
-		.head {
-			@include flex(space-between, center);
-			.title {
-				font-size: 22px;
-			}
-			.close-icon {
-				color: get(black);
-				font-size: 25px;
-				margin: -45px -25px 0 0;
-			}
-		}
-		.body {
-		}
-		.foot {
-		}
-	}
 }

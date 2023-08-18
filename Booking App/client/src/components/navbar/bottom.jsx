@@ -1,6 +1,6 @@
 import "./styles/bottom.scss";
 
-export const ButtonSection = () => {
+export const ButtomSection = () => {
 	return (
 		<div className="bottom-section">
 			<div className="label">
@@ -17,7 +17,7 @@ export const ButtonSection = () => {
 			</div>
 			<div className="label">
 				<label htmlFor="car-rentals">
-					<i className="fas fa-car" /> car rentals
+					<i className="fas fa-car" /> cars
 				</label>
 				<input type="radio" name="label" id="car-rentals" />
 			</div>
@@ -29,7 +29,7 @@ export const ButtonSection = () => {
 			</div>
 			<div className="label">
 				<label htmlFor="airport-taxis">
-					<i className="fas fa-taxi" /> airport taxis
+					<i className="fas fa-taxi" /> taxis
 				</label>
 				<input type="radio" name="label" id="airport-taxis" />
 			</div>

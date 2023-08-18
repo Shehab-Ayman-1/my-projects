@@ -4,9 +4,9 @@ export * from "./navbar/bottom";
 
 // Home
 export * from "./home/hero";
-export * from "./home/widgets";
-export * from "./home/catagories";
-export * from "./home/favourites";
+export * from "./home/cities";
+export * from "./home/types";
+export * from "./home/features";
 export * from "./home/testimonials";
 
 // Search
@@ -16,6 +16,7 @@ export * from "./search/results";
 // Hotel
 export * from "./hotel/banner";
 export * from "./hotel/reserve";
+export * from "./hotel/reserve-model";
 export * from "./hotel/slider";
 
 // Login

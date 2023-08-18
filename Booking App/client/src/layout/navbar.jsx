@@ -1,10 +1,10 @@
-import { ButtonSection, TopSection } from "@/components";
+import { ButtomSection, TopSection } from "@/components";
 
 export const Navbar = () => {
 	return (
 		<div>
 			<TopSection />
-			<ButtonSection />
+			<ButtomSection />
 		</div>
 	);
 };

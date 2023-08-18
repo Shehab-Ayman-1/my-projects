@@ -3,6 +3,12 @@
 .right-section {
 	width: calc(100% - 350px);
 	padding: 10px;
+	.result {
+		color: green;
+		font-size: 18px;
+		font-weight: 500;
+		text-align: end;
+	}
 	.box {
 		@include flex(space-between, center);
 		background-color: get(white);
@@ -48,7 +54,11 @@
 				margin-top: 10px;
 			}
 			.apartments {
-				font-size: 14px;
+				font-size: 18px;
+				font-weight: 700;
+			}
+			.address {
+				@extend .apartments;
 			}
 			.fees {
 				font-size: 14px;

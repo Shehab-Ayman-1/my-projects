@@ -1,44 +1,75 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
 import { DateRange } from "react-date-range";
 import { Menu } from "@/components";
+import { useAxios } from "@/hooks";
+import useContext, { UPDATE_HOTELS } from "@/context";
 import "./styles/options.scss";
 
-export const FilterOptions = () => {
-	const { city, adults, children, rooms, startDate, endDate } = useLocation().state;
-	const [filterData, setFilterData] = useState({ city, adults, children, rooms, startDate, endDate, min: 0, max: 0 });
-	const [calender, setCalender] = useState([{ startDate: filterData.startDate, endDate: filterData.endDate, key: "selection" }]);
+const today = new Date();
+const formData = { city: "All Locations", dates: { startDate: today, endDate: today }, options: { adults: 1, children: 1, rooms: 1 }, price: { min: 1, max: 1000 } };
+export const FilterOptions = ({ cities }) => {
+	const { hotelsState, hotelsDispatch } = useContext(0);
+	const [data, setData] = useState(formData);
+	const [calender, setCalender] = useState([{ startDate: data.dates.startDate, endDate: data.dates.endDate, key: "selection" }]);
+	const { data: hotels, loading, error, Refetch } = useAxios("get", `/`);
 
-	const handleCity = ({ target }) => setFilterData((f) => (f = { ...f, city: target.getAttribute("name") }));
-	const handleFilterData = ({ target: { name, value } }) => setFilterData((f) => (f = { ...f, [name]: value }));
+	useEffect(() => {
+		(async () => await hotelsDispatch(UPDATE_HOTELS({ hotels, loading, error })))();
+	}, [hotels, loading, error]);
 
-	let start = new Date(calender[0].startDate).toLocaleDateString();
-	let end = new Date(calender[0].endDate).toLocaleDateString();
+	useEffect(() => {
+		(async () => {
+			const { city, dates, options } = await hotelsState;
+			setData((d) => (d = { ...d, city, dates, options }));
+			Refetch("get", `hotels/get-hotels?city=${city || data.city}&min=1&max=1000`);
+		})();
+	}, []);
 
+	const handleData = useCallback(
+		({ target }) => {
+			let id = target.getAttribute("id");
+			let name = target.getAttribute("name");
+			let value = target.value;
+			if (id === "city") {
+				setData((d) => (d = { ...d, city: name }));
+			}
+			if (id === "price") {
+				setData((d) => (d = { ...d, price: { ...d.price, [name]: +value } }));
+			}
+			if (id === "options") {
+				setData((d) => (d = { ...d, options: { ...d.options, [name]: +value } }));
+			}
+		},
+		[data.city, data.price, data.options]
+	);
+
+	const handleRefetch = () => {
+		Refetch("get", `/hotels/get-hotels?city=${data.city}&min=${data.price.min}&max=${data.price.max}`);
+	};
+
+	const startDate = new Date(calender[0].startDate).toLocaleDateString();
+	const endDate = new Date(calender[0].endDate).toLocaleDateString();
 	return (
 		<div className="left-section">
 			<h3>Search</h3>
+
 			<div className="locations">
-				<Menu title={`${filterData.city || "Where Are You Going ?"}`} closeable>
-					<h3 name="london" onClick={handleCity}>
-						London
+				<Menu title={`${data.city || "Where Are You Want To Reserve ?"}`} closeable>
+					<h3 name="All Locations" id="city" onClick={handleData}>
+						All Locations
 					</h3>
-					<h3 name="egypt" onClick={handleCity}>
-						Egypt
-					</h3>
-					<h3 name="hongkong" onClick={handleCity}>
-						HongKong
-					</h3>
-					<h3 name="paris" onClick={handleCity}>
-						Paris
-					</h3>
+					{cities.map((city, i) => (
+						<h3 name={city} id="city" onClick={handleData} key={i}>
+							{city}
+						</h3>
+					))}
 				</Menu>
 			</div>
 
 			<div className="dates">
 				<h3>Check In Dates</h3>
 				<div className="calender">
-					<Menu title={`From: ${start} - To: ${end}`}>
+					<Menu title={`From: ${startDate} - To: ${endDate}`}>
 						<DateRange editableDateInputs={true} onChange={(item) => setCalender([item.selection])} moveRangeOnFirstSelection={false} ranges={calender} />
 					</Menu>
 				</div>
@@ -48,27 +79,27 @@ export const FilterOptions = () => {
 				<h3>Options</h3>
 				<div className="option">
 					<p>Min Price Per Night</p>
-					<input type="number" name="min" value={filterData.min} onChange={handleFilterData} placeholder="0" />
+					<input type="number" id="price" name="min" value={data.price.min} onChange={handleData} />
 				</div>
 				<div className="option">
 					<p>Max Price Per Night</p>
-					<input type="number" name="max" value={filterData.max} onChange={handleFilterData} placeholder="0" />
+					<input type="number" id="price" name="max" value={data.price.max} onChange={handleData} />
 				</div>
 				<div className="option">
 					<p>Adults</p>
-					<input type="number" name="adults" value={filterData.adults} onChange={handleFilterData} placeholder="0" />
+					<input type="number" id="options" name="adults" value={data.options.adults} onChange={handleData} />
 				</div>
 				<div className="option">
 					<p>Children</p>
-					<input type="number" name="children" value={filterData.children} onChange={handleFilterData} placeholder="0" />
+					<input type="number" id="options" name="children" value={data.options.children} onChange={handleData} />
 				</div>
 				<div className="option">
 					<p>Rooms</p>
-					<input type="number" name="rooms" value={filterData.rooms} onChange={handleFilterData} placeholder="0" />
+					<input type="number" id="options" name="rooms" value={data.options.rooms} onChange={handleData} />
 				</div>
 			</div>
 
-			<button className="mybtn" data-varient="fill">
+			<button className="mybtn" data-varient="fill" onClick={handleRefetch}>
 				Search
 			</button>
 		</div>

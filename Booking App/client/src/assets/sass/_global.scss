@@ -33,7 +33,7 @@ html {
 	}
 	::selection {
 		background: get(primary);
-		color: black;
+		color: white;
 		text-shadow: 5px 5px 10px get(primary);
 	}
 }
@@ -53,5 +53,19 @@ i {
 	cursor: pointer;
 	&:hover {
 		color: get(secondary);
+	}
+}
+
+.desktop {
+	display: none !important;
+	@include width(md) {
+		display: inherit !important;
+	}
+}
+
+.mobile {
+	display: initial;
+	@include width(md) {
+		display: none !important;
 	}
 }

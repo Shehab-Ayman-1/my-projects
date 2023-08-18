@@ -16,7 +16,7 @@ export const Footer = () => {
 					</div>
 				))}
 			</nav>
-			<h3 className="copyright">Copyright © 1996-2022 Booking.com™. All rights reserved.</h3>
+			<p className="copyright">Copyright © 1996-2022 Booking.com™. All rights reserved.</p>
 		</footer>
 	);
 };

@@ -1,0 +1,55 @@
+@use "@/assets/sass/mixins" as *;
+
+.reserve-model {
+	@include fixed(tl, 50%, 50%);
+	background-color: get(white);
+	width: 600px;
+	height: 80%;
+	padding: 20px;
+	overflow-y: auto;
+	box-shadow: get(shadow);
+	transform: translate(-50%, -50%);
+	.head {
+		@include flex(space-between, center);
+		.title {
+			color: get(dimWhite);
+			font-size: 22px;
+		}
+		.close-icon {
+			color: get(black);
+			font-size: 25px;
+			margin: -35px -20px 0 0;
+		}
+	}
+	.body {
+		padding: 10px;
+		.flex-between {
+			border-bottom: 1px solid gray;
+			padding-block: 20px;
+			.left {
+				.price,
+				.max-people {
+					font-weight: bold;
+				}
+			}
+			.right {
+				@include flex(space-between, center);
+				gap: 20px;
+				label {
+					display: block;
+					font-size: 10px;
+					cursor: pointer;
+				}
+				input {
+					scale: 1.3;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.foot {
+		.mybtn:disabled {
+			background-color: gray;
+		}
+	}
+}

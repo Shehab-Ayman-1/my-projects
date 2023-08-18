@@ -4,13 +4,97 @@
 	@include flex(space-between, center);
 	background-color: get(primary);
 	padding: 10px 20px;
+	position: relative;
+	.fa-xl {
+		font-size: 18px;
+		@include width(md) {
+			font-size: 20px;
+		}
+		&:hover {
+			color: white;
+		}
+	}
+	.gap {
+		gap: 5px;
+		@include width(md) {
+			gap: 10px;
+		}
+	}
 	.logo {
 		color: get(white);
-		font-size: 30px;
+		font-size: 18px;
 		font-weight: bold;
+		@include width(sm) {
+			font-size: 20px;
+		}
+		@include width(md) {
+			font-size: 24px;
+		}
 	}
-	.buttons {
+	.desktop {
 		@include flex(space-between, center);
+		display: flex;
+		gap: 5px;
+		@include width(md) {
+			gap: 10px;
+		}
+	}
+	.user {
+		@include absolute(tr, 10px, 10px);
+		@include flex(space-between, center);
+		color: get(white);
 		gap: 10px;
+		.menu-section {
+			background-color: transparent;
+			.name {
+				margin-left: 10px;
+			}
+			.menu {
+				width: 200px;
+				top: 40px;
+				h3 {
+					color: black;
+					width: 100%;
+					padding: 5px 10px;
+					margin: 0;
+					text-transform: capitalize;
+					&:nth-child(1) {
+						text-align: center;
+						border-bottom: 1px solid gray;
+					}
+					&:hover {
+						background-color: #f3f3f3;
+					}
+				}
+			}
+		}
+		.avatar {
+			width: 24px;
+			height: 24px;
+			display: block;
+			border-radius: 50%;
+			@include width(md) {
+				width: 32px;
+				height: 32px;
+			}
+		}
+		.email {
+			font-size: 12px;
+		}
+	}
+	.mobile-nav {
+		@include absolute(tr, 60px, 10px);
+		background-color: get(white);
+		width: 70%;
+		scale: 1;
+		padding: 10px;
+		z-index: 1000000;
+		box-shadow: get(shadow);
+		.fa-times {
+			color: get(black);
+		}
+		.mybtn {
+			width: 100%;
+		}
 	}
 }

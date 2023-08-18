@@ -1,17 +1,16 @@
-import { Fragment } from "react";
 import { Navbar, Footer } from "@/layout";
-import { Hero, Widgets, Catagories, Favourites, Testimonials } from "@/components";
+import { Hero, Cities, Types, Features, Testimonials } from "@/components";
 
 export const Home = () => {
 	return (
-		<Fragment>
+		<div className="page">
 			<Navbar />
 			<Hero />
-			<Widgets />
-			<Catagories />
-			<Favourites />
+			<Cities />
+			<Types />
+			<Features />
 			<Testimonials />
 			<Footer />
-		</Fragment>
+		</div>
 	);
 };

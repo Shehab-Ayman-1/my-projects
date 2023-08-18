@@ -1,4 +1,4 @@
 export const routes = {
-	locale: "http://localhost:5000",
+	local: "http://localhost:5000/api",
 	remote: "",
 };

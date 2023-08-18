@@ -1,22 +1,23 @@
 import { useState } from "react";
 import "./styles/menu.scss";
 
-export const Menu = ({ title, children, closeable }) => {
+export const Menu = ({ title, children, closeable, useArrow = true }) => {
 	const [open, setOpen] = useState(false);
 	const openMenu = () => setOpen((o) => !o);
 
 	return (
 		<div className="menu-section">
 			<div className="flex-between" onClick={openMenu}>
-				<p>{title}</p>
-				<i className={`fas ${open ? "fa-chevron-down" : "fa-chevron-up"} text-black`} />
+				{typeof title === "string" ? <p>{title}</p> : title}
+
+				{useArrow && <i className={`fas ${open ? "fa-chevron-down" : "fa-chevron-up"} text-black`} />}
 			</div>
 			{closeable && (
-				<div className={`menu ${!open ? "hide-height" : ""}`} onClick={openMenu}>
+				<div className={`menu ${!open ? "hide-scale" : ""}`} onClick={openMenu}>
 					{children}
 				</div>
 			)}
-			{!closeable && <div className={`menu ${!open ? "hide-height" : ""}`}>{children}</div>}
+			{!closeable && <div className={`menu ${!open ? "hide-scale" : ""}`}>{children}</div>}
 		</div>
 	);
 };

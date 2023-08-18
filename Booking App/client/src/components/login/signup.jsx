@@ -26,9 +26,12 @@ export const SignUp = () => {
 			<button className="mybtn" data-varient="outline">
 				Submit
 			</button>
-			<Link className="have-account" to="/signin">
-				Already Have An Account !!!
-			</Link>
+			<p className="flex-center gap">
+				Already Have An Account?
+				<Link className="have-account" to="/signin">
+					Sign In
+				</Link>
+			</p>
 		</Fragment>
 	);
 };
