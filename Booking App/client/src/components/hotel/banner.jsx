@@ -19,7 +19,7 @@ export const Banner = ({ hotel: { _id, name, description, distance, rating } }) 
 		if (user) return setOpen((o) => (o = true));
 
 		let confirm = window.confirm("You must be registered to be available to book any hotel rooms.");
-		if (confirm) navigate("/signin", { state: { fromPathname: pathname } });
+		if (confirm) navigate("/login", { state: { fromPathname: pathname } });
 	};
 
 	return (
@@ -28,18 +28,20 @@ export const Banner = ({ hotel: { _id, name, description, distance, rating } }) 
 				<div className="flex-between">
 					<h1 className="title">{name}</h1>
 					<button className="mybtn" data-varient="fill" onClick={openReserve}>
-						Reserve OR Book Now!
+						Reserve Now !
 					</button>
 				</div>
-				<div className="flex-start">
-					<i className="fas fa-bed text-dimWhite" />
-					<p className="description">{description}</p>
+				<div className="">
+					<div className="flex-start">
+						<i className="fas fa-bed text-dimWhite bed-icon" />
+						<p className="description">{description}</p>
+					</div>
+					<p className="rate">
+						{rating}
+						<i className="fas fa-star text-black fa-xs" /> {rating > 8 ? "Excellent" : "Good"} Location - {distance}m From Center
+					</p>
+					<p className="green">Book A Stay Over $114 At This Property And Get A Free Airport Taxi</p>
 				</div>
-				<p className="rate">
-					{rating}
-					<i className="fas fa-star text-black fa-xs" /> {rating > 8 ? "Excellent" : "Good"} Location - {distance}m From Center
-				</p>
-				<p className="green">Book A Stay Over $114 At This Property And Get A Free Airport Taxi</p>
 			</div>
 			{_id && <ReserveModel hotelID={_id} open={open} setOpen={setOpen} />}
 		</section>

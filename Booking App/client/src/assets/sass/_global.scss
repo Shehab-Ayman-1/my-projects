@@ -57,14 +57,12 @@ i {
 }
 
 .desktop {
-	display: none !important;
-	@include width(md) {
-		display: inherit !important;
+	@media (max-width: 792px) {
+		display: none !important;
 	}
 }
 
 .mobile {
-	display: initial;
 	@include width(md) {
 		display: none !important;
 	}

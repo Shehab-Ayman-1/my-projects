@@ -9,21 +9,21 @@ export const ReserveModel = ({ hotelID, open, setOpen }) => {
 	const { data: rooms, loading } = useAxios("get", `/hotels/get-hotel-rooms/${hotelID}`);
 	const [selectedRooms, setSelectedRooms] = useState([]);
 	const [reserveLoading, setReserveLoading] = useState(false);
-	const [dates, setDates] = useState({ startDate: "", endDate: "", rangeDates: [] });
+	const [calender, setCalender] = useState([{ startDate: "", endDate: "" }]);
 	const { hotelsState } = useContext(0);
 	const navigate = useNavigate();
 
 	useEffect(() => {
 		(async () => {
-			const { dates } = await hotelsState;
-			setDates((d) => (d = { ...d, startDate: dates.startDate, endDate: dates.endDate }));
+			const { calender } = await hotelsState;
+			setCalender((c) => (c = calender));
 		})();
 	}, [hotelsState]);
 
 	const getRangeDates = () => {
-		if (!dates.startDate || !dates.endDate) return;
-		let current = new Date(dates.startDate.getTime());
-		let end = new Date(dates.endDate);
+		if (!calender.length) return;
+		let current = new Date(calender[0].startDate.getTime());
+		let end = new Date(calender[0].endDate);
 		let list = [];
 
 		while (current <= end) {

@@ -4,20 +4,21 @@ import { useAxios } from "@/hooks";
 import { Footer, Navbar } from "@/layout";
 import { Banner, Reserve, Slider, Testimonials } from "@/components";
 
+const formState = { _id: "", name: "", title: "", rating: "", distance: "", description: "", price: "" };
 export const Hotel = () => {
 	const { id } = useParams();
-	const { data, loading } = useAxios("get", `/hotels/get-hotel/${id}`);
-	const [hotel, setHotel] = useState({ _id: "", name: "", title: "", rating: "", distance: "", description: "", price: "" });
+	const { data, loading, error } = useAxios("get", `/hotels/get-hotel/${id}`);
+	const [hotel, setHotel] = useState(formState);
 
 	useEffect(() => {
-		if (!loading) setHotel((h) => (h = data));
+		if (!loading && !error) setHotel((h) => (h = data));
 	}, [data]);
 
 	return (
 		<Fragment>
 			<Navbar />
 			<Banner hotel={hotel} />
-			<Slider />
+			<Slider photos={data?.photos || []} />
 			<Reserve title={hotel.title} price={hotel.price} />
 			<Testimonials />
 			<Footer />

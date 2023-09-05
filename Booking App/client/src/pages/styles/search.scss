@@ -2,5 +2,14 @@
 
 .main-section {
 	@include flex(space-between, flex-start);
-	padding: 20px;
+	padding: 20px 0;
+	.filter-btn {
+		@include fixed(bl, 10px, 50%);
+		transform: translateX(-50%);
+		padding: 10px 25px;
+		font-size: 20px;
+		@include width(md) {
+			display: none;
+		}
+	}
 }

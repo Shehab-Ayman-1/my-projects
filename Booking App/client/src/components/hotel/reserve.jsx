@@ -5,29 +5,28 @@ import "./styles/reserve.scss";
 
 export const Reserve = ({ title, price }) => {
 	const { hotelsState } = useContext(0);
-	const [dates, setDates] = useState({ startDate: "", endDate: "" });
+	const [calender, setCalender] = useState([{ startDate: "", endDate: "" }]);
 	const [days, setDays] = useState(0);
 	const navigate = useNavigate();
 
 	useEffect(() => {
 		(async () => {
-			let { dates } = await hotelsState;
-			if (!dates.startDate || !dates.endDate) {
-				alert("The Start Date OR End Date Is Not Exists, Please Fill The Start, And End Dates Of The Reserve.");
-				setTimeout(() => navigate("/"), 500);
-			}
-			setDates((d) => (d = dates));
+			let { calender } = await hotelsState;
+			if (calender.length && calender[0]?.startDate !== calender[0]?.endDate) return setCalender((d) => (d = calender));
+
+			alert("Please Select The Start, And End Dates To Be Able Reserve The Hotel Rooms.");
+			navigate("/search");
 		})();
 	}, [hotelsState]);
 
 	useEffect(() => {
-		let date1 = new Date(dates.startDate);
-		let date2 = new Date(dates.endDate);
+		let date1 = new Date(calender[0].startDate);
+		let date2 = new Date(calender[0].endDate);
 		let day = 1000 * 60 * 60 * 24;
 		let millSecondsOfAllDays = Math.abs(date2.getTime() - date1.getTime());
 		let daysCount = Math.ceil(millSecondsOfAllDays / day);
 		setDays((d) => (d = daysCount));
-	}, [dates]);
+	}, [calender]);
 
 	return (
 		<section className="reserve-section">
@@ -51,7 +50,7 @@ export const Reserve = ({ title, price }) => {
 					<p className="nights">({days} Nights)</p>
 				</div>
 				<button className="mybtn" data-varient="fill">
-					Reserve OR Book Now!
+					Reserve OR Book Now !
 				</button>
 			</div>
 		</section>

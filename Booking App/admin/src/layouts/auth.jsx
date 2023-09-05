@@ -1,13 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import { ChartPieIcon, UserPlusIcon, ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid";
+import { Login, Register, UpdateUser } from "@/pages";
+import { RoleValidation } from "./role-validation";
 import { Navbar } from "@/widgets";
-import routes from "@/routes";
 
 export function Auth() {
    const navbarRoutes = [
       { name: "dashboard", path: "/dashboard/home", Icon: ChartPieIcon },
-      { name: "sign up", path: "/auth/sign-up", Icon: UserPlusIcon },
-      { name: "sign in", path: "/auth/sign-in", Icon: ArrowRightOnRectangleIcon },
+      { name: "register", path: "/auth/register", Icon: UserPlusIcon },
+      { name: "login", path: "/auth/login", Icon: ArrowRightOnRectangleIcon },
    ];
 
    return (
@@ -15,7 +16,13 @@ export function Auth() {
          <div className="container relative z-40 mx-auto p-4">
             <Navbar routes={navbarRoutes} />
          </div>
-         <Routes>{routes.map(({ layout, pages }) => layout === "auth" && pages.map(({ path, element }) => <Route exact path={path} element={element} />))}</Routes>
+         <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route element={<RoleValidation />}>
+               <Route path="/register" element={<Register />} />
+               <Route path="/update-user" element={<UpdateUser />} />
+            </Route>
+         </Routes>
       </div>
    );
 }

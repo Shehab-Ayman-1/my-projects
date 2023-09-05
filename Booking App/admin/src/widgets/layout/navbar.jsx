@@ -28,7 +28,7 @@ export function Navbar({ brandName, routes }) {
          <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
             <Link to="/">
                <Typography variant="small" className="mr-4 ml-2 cursor-pointer py-1.5 font-bold">
-                  {brandName}
+                  {brandName || " "}
                </Typography>
             </Link>
             <div className="hidden lg:block">{navList}</div>

@@ -3,13 +3,52 @@
 .left-section {
 	@include sticky(tl, 10px, 10px);
 	background-color: orange;
-	width: 350px;
+	width: 450px;
 	padding: 10px;
+	z-index: 1000;
+	display: none;
 	border-radius: 20px;
-	> h3 {
-		text-align: center;
+	@include width(md) {
+		display: block;
+	}
+	&.mobile {
+		@include fixed(bl, 0, 0);
+		top: initial;
+		width: 100%;
+		height: fit-content;
+		display: block;
+		border-radius: 20px 20px 0 0;
+	}
+	&:has(.close) {
+		width: 10px;
+		padding: 0;
+		.heading h3,
+		.locations {
+			display: none;
+		}
+	}
+	.open {
+		left: 5px;
+	}
+	.close {
+		left: -300px;
+		overflow: hidden;
+		opacity: 0;
+	}
+	.heading h3 {
 		font-size: 30px;
+		text-align: center;
 		margin-block: 10px;
+	}
+	.close-options-icon {
+		@include absolute(tr, 10px, 10px);
+		text-align: end;
+		font-size: 22px;
+		font-weight: bold;
+		cursor: pointer;
+		@include width(md) {
+			display: none;
+		}
 	}
 	.locations {
 		.menu-section {
@@ -46,6 +85,7 @@
 			z-index: 1;
 			.menu {
 				width: fit-content;
+				max-height: inherit;
 				left: 0;
 			}
 		}

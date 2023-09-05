@@ -5,8 +5,16 @@ import { ObjectId } from "mongodb";
 
 export const GET_ROOMS = async (req, res) => {
 	try {
-		const rooms = await Rooms.find();
-		res.status(200).json(rooms);
+		const { selected, ...query } = req.query;
+		if (selected === "true") {
+			let selectedQuery = {};
+			Object.keys(query).forEach((key) => (selectedQuery[key] = true));
+			const rooms = await Rooms.find().select(selectedQuery);
+			res.status(200).json(rooms);
+		} else {
+			const rooms = await Rooms.find();
+			res.status(200).json(rooms);
+		}
 	} catch (error) {
 		res.status(404).json(error);
 	}

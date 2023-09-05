@@ -20,8 +20,8 @@ export * from "./hotel/reserve-model";
 export * from "./hotel/slider";
 
 // Login
-export * from "./login/signin";
-export * from "./login/signup";
+export * from "./autherization/login";
+export * from "./autherization/register";
 
 // Public
 export * from "./public/select";

@@ -16,8 +16,10 @@ import logoJira from "./images/logo-jira.svg";
 import logoSlack from "./images/logo-slack.svg";
 import logoSpotify from "./images/logo-spotify.svg";
 import logoXD from "./images/logo-xd.svg";
-const signinBG = "https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
+import User from "./images/user.webp";
+import Hotel from "./images/hotel.png";
+const signBG = "https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80";
 
-export { bruceMars, devTo, github, signinBG };
+export { bruceMars, devTo, github, signBG, User, Hotel };
 export { logoAsana, logoAtlassian, logoInvision, logoJira, logoSlack, logoSpotify, logoXD };
 export { homeDecor1, homeDecor2, homeDecor3, homeDecor4, team1, team2, team3, team4 };

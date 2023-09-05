@@ -38,7 +38,7 @@ export const Hero = () => {
 		if (!selectedCity) return alert("Please Choose The City.");
 		if (endDate === today) return alert("Please Choose The Date.");
 
-		await hotelsDispatch(UPDATE_HOTELS({ city: selectedCity, dates: { startDate: calender[0].startDate, endDate: calender[0].endDate }, options }));
+		await hotelsDispatch(UPDATE_HOTELS({ city: selectedCity, calender, options }));
 		navigate(`/search`);
 	};
 
@@ -50,8 +50,8 @@ export const Hero = () => {
 				<h1 className="heading">A Lifetime Of discounts? It's Genius.</h1>
 				<p className="description">Get Rewarded For Your Travils - Unlock Instant Saving Of 100% Or More With A Free Booking.com Account</p>
 				{!user && (
-					<button className="mybtn" data-varient="outline" onClick={() => navigate("/signin")}>
-						Sign In / Sign Up
+					<button className="mybtn" data-varient="outline" onClick={() => navigate("/login")}>
+						Login / Register
 					</button>
 				)}
 			</div>
@@ -75,7 +75,7 @@ export const Hero = () => {
 						<Menu
 							title={
 								<div className="">
-									<p className="whitespace-none">From: [ ${startDate} ]</p> <p className="whitespace-none">To: [ ${endDate} ]</p>
+									<p className="whitespace-none">From: [{startDate}]</p> <p className="whitespace-none">To: [{endDate}]</p>
 								</div>
 							}>
 							<DateRange editableDateInputs={true} onChange={(item) => setCalender([item.selection])} moveRangeOnFirstSelection={false} ranges={calender} />

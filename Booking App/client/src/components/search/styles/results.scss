@@ -1,8 +1,16 @@
 @use "@/assets/sass/mixins" as *;
 
 .right-section {
-	width: calc(100% - 350px);
-	padding: 10px;
+	@include width(md) {
+		padding: 10px;
+	}
+	&.full-width {
+		width: calc(100% - 370px);
+	}
+	&.part-width {
+		width: calc(100% - 40px);
+		margin: auto;
+	}
 	.result {
 		color: green;
 		font-size: 18px;
@@ -11,13 +19,22 @@
 	}
 	.box {
 		@include flex(space-between, center);
-		background-color: get(white);
+		background-color: transparent;
 		margin-bottom: 20px;
+		position: relative;
+		flex-direction: column;
 		box-shadow: 5px 5px 5px get(primary);
+		@include width(md) {
+			flex-direction: row;
+		}
 		.img {
-			width: 30%;
-			height: 100%;
-			padding-right: 10px;
+			width: 100%;
+			height: 300px;
+			@include width(md) {
+				width: 30%;
+				height: 100%;
+				padding-right: 10px;
+			}
 			img {
 				width: 100%;
 				height: 100%;
@@ -26,22 +43,43 @@
 			}
 		}
 		.content {
-			width: 70%;
-			padding: 10px 10px 10px 0;
+			width: 100%;
+			padding: 10px;
+			@include width(md) {
+				width: 70%;
+				height: 100%;
+				padding: 10px 10px 10px 0;
+			}
+			.title {
+				font-size: 16px;
+				@include width(xsm) {
+					font-size: 23px;
+				}
+			}
 			.rate {
+				@include absolute(tr, 10px, 10px);
 				background-color: get(primary);
 				color: get(white);
 				font-weight: bold;
 				padding: 5px 10px;
+				@include width(md) {
+					position: static;
+				}
 			}
 			.distance {
 				color: #555;
+				font-size: 12px;
 				margin-bottom: 10px;
-				font-size: 14px;
+				@include width(md) {
+					font-size: 14px;
+				}
 			}
 			.green {
 				color: green;
-				font-size: 12px;
+				font-size: 10px;
+				@include width(md) {
+					font-size: 12px;
+				}
 				&.free {
 					background-color: green;
 					color: get(white);
@@ -52,19 +90,57 @@
 			}
 			.description {
 				margin-top: 10px;
+				font-size: 12px;
+				@include width(md) {
+					font-size: 14px;
+				}
 			}
 			.apartments {
-				font-size: 18px;
+				font-size: 16px;
 				font-weight: 700;
+				@include width(md) {
+					font-size: 18px;
+				}
 			}
 			.address {
 				@extend .apartments;
 			}
-			.fees {
-				font-size: 14px;
+			.price {
+				font-size: 22px;
+				@include width(md) {
+					font-size: 30px;
+				}
 			}
-			.mybtn {
-				white-space: nowrap;
+			.fees {
+				font-size: 12px;
+				@include width(md) {
+					font-size: 14px;
+				}
+			}
+			.flex-between:last-of-type {
+				@include flex(space-between, center);
+				flex-direction: column;
+				@include width(md) {
+					flex-direction: row;
+				}
+				.mybtn {
+					white-space: nowrap;
+					width: 100%;
+					@include width(md) {
+						width: fit-content;
+					}
+				}
+			}
+		}
+	}
+	.next-prev {
+		@include flex(flex-between, center);
+		button {
+			margin-right: 10px;
+			font-size: 33px;
+			cursor: pointer;
+			&:hover {
+				color: get(primary);
 			}
 		}
 	}

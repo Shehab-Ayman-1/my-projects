@@ -17,8 +17,11 @@
 		.feature {
 			img {
 				width: 100%;
-				min-height: 400px;
+				min-height: 300px;
 				object-fit: cover;
+				@include width(md) {
+					min-height: 400px;
+				}
 			}
 			p {
 				margin-block: 10px;

@@ -3,24 +3,55 @@
 .banner-section {
 	padding: 20px;
 	.banner {
-		.flex-between {
+		& > div:first-of-type {
+			flex-wrap: wrap;
 			.title {
-				font-size: 35px;
+				font-size: 20px;
+				@include width(sm) {
+					font-size: 25px;
+				}
+				@include width(md) {
+					font-size: 30px;
+				}
+				@include width(lg) {
+					font-size: 35px;
+				}
 			}
 		}
-		.description {
-			color: #666;
-			line-height: 3;
-		}
-		.rate {
-			color: get(primary);
-			line-height: 2;
-			letter-spacing: 1px;
-		}
-		.green {
-			color: green;
-			line-height: 2;
-			font-weight: 500;
+
+		& > div:last-of-type {
+			%mediaQueries {
+				font-size: 12px;
+				@include width(md) {
+					font-size: 14px;
+				}
+				@include width(lg) {
+					font-size: 16px;
+				}
+			}
+			.bed-icon {
+				@extend %mediaQueries;
+				display: none;
+				@include width(sm) {
+					display: initial;
+				}
+			}
+			.description {
+				@extend %mediaQueries;
+				color: #666;
+			}
+			.rate {
+				@extend %mediaQueries;
+				color: get(primary);
+				line-height: 2;
+				letter-spacing: 1px;
+			}
+			.green {
+				@extend %mediaQueries;
+				color: green;
+				line-height: 2;
+				font-weight: 500;
+			}
 		}
 	}
 }

@@ -1,2 +1,2 @@
-export * from "./auth/footer";
-export * from "./dashboard/home/table";
+export * from "./auth-footer";
+export * from "./dashboard-table";

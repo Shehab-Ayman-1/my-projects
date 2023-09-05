@@ -20,7 +20,7 @@
 			gap: 10px;
 		}
 	}
-	.logo {
+	.left-side {
 		color: get(white);
 		font-size: 18px;
 		font-weight: bold;
@@ -31,70 +31,78 @@
 			font-size: 24px;
 		}
 	}
-	.desktop {
-		@include flex(space-between, center);
-		display: flex;
-		gap: 5px;
-		@include width(md) {
+	.right-side {
+		.desktop {
+			@include flex(space-between, center);
 			gap: 10px;
 		}
-	}
-	.user {
-		@include absolute(tr, 10px, 10px);
-		@include flex(space-between, center);
-		color: get(white);
-		gap: 10px;
-		.menu-section {
-			background-color: transparent;
-			.name {
-				margin-left: 10px;
-			}
-			.menu {
-				width: 200px;
-				top: 40px;
-				h3 {
-					color: black;
-					width: 100%;
-					padding: 5px 10px;
-					margin: 0;
-					text-transform: capitalize;
-					&:nth-child(1) {
-						text-align: center;
-						border-bottom: 1px solid gray;
-					}
-					&:hover {
-						background-color: #f3f3f3;
+		.mobile {
+		}
+		.user-dropdown {
+			@include flex(space-between, center);
+			gap: 10px;
+			.menu-section {
+				background-color: transparent;
+				& > .menu {
+					width: 200px;
+					position: fixed;
+					top: 60px;
+					border-radius: 10px;
+					padding-block: 10px;
+					.option {
+						&.name {
+							text-align: center;
+							border-bottom: 1px solid gray;
+							margin-bottom: 10px;
+							text-transform: capitalize;
+						}
+						&:not(.option.name) {
+							@include flex(flex-start, center);
+							&:hover {
+								background-color: #f3f3f3;
+							}
+							h3 {
+								justify-self: flex-start;
+								padding: 5px 10px;
+								margin: 0;
+								text-transform: capitalize;
+								&:nth-child(1) {
+									text-align: center;
+									border-bottom: 1px solid gray;
+								}
+							}
+						}
 					}
 				}
 			}
-		}
-		.avatar {
-			width: 24px;
-			height: 24px;
-			display: block;
-			border-radius: 50%;
-			@include width(md) {
-				width: 32px;
-				height: 32px;
+			.avatar {
+				width: 24px;
+				height: 24px;
+				display: block;
+				border-radius: 50%;
+				@include width(md) {
+					width: 32px;
+					height: 32px;
+				}
+			}
+			.email {
+				font-size: 12px;
 			}
 		}
-		.email {
-			font-size: 12px;
-		}
-	}
-	.mobile-nav {
-		@include absolute(tr, 60px, 10px);
-		background-color: get(white);
-		width: 70%;
-		scale: 1;
-		padding: 10px;
-		z-index: 1000000;
-		box-shadow: get(shadow);
-		.fa-times {
-			color: get(black);
-		}
-		.mybtn {
-			width: 100%;
+		.mobile-nav {
+			@include absolute(tr, 60px, 10px);
+			background-color: get(white);
+			width: 70%;
+			scale: 1;
+			padding: 10px;
+			z-index: 1000000;
+			box-shadow: get(shadow);
+			.fa-times {
+				color: get(black);
+			}
+			.mybtn {
+				width: 100%;
+			}
 		}
 	}
 }

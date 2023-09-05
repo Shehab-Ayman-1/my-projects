@@ -8,31 +8,31 @@
 // 	- verify(token, JWT_KEY, (err, info) => {}) =>
 
 // - cookie-parser => Is Used To Carry The Data To The Client Side
-// 	- 
+// 	-
 
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import usersRoute from "./routes/users.route.js";
+import authsRoute from "./routes/auths.route.js";
 import hotelsRoute from "./routes/hotels.route.js";
 import roomsRoute from "./routes/rooms.route.js";
 import cookieParser from "cookie-parser";
+import { corsOrigins } from "./configs/cors.js";
 
 // Configs
 const app = express();
 dotenv.config();
-app.use(cors());
+app.use(cors(corsOrigins));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "100kb", parameterLimit: 10000000 }));
-app.use(cookieParser())
+app.use(cookieParser());
 
 // Middleware
-app.use((req, res, next) => {
-	console.log("Here we write the public middleware that will work on all the app.");
-	next();
-});
+app.use((req, res, next) => setTimeout(next, 2000));
 app.use("/api/users", usersRoute);
+app.use("/api/auths", authsRoute);
 app.use("/api/hotels", hotelsRoute);
 app.use("/api/rooms", roomsRoute);
 app.use("/", (req, res) => res.send("Hello In The Booking.com App"));
