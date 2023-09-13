@@ -1,0 +1,121 @@
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	font-family: roboto;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.MuiButtonBase-root {
+	transform: translate(0) !important;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgb(114, 113, 113);
+	border-radius: 10px;
+	height: 200px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+.colored-title {
+	color: #fc1503;
+}
+
+.react-player {
+	height: 77vh !important;
+	width: 100% !important;
+}
+
+.search-bar {
+	border: none;
+	outline: none;
+	width: 350px;
+}
+
+.category-btn {
+	background: transparent;
+	font-weight: bold !important;
+	text-transform: capitalize;
+
+	display: flex;
+	align-items: center;
+	justify-content: start;
+
+	cursor: pointer;
+	outline: none;
+	border: none;
+
+	padding: 7px 5px;
+	margin: 10px 0px;
+	border-radius: 20px;
+	transition: all 0.3s ease;
+}
+
+.category-btn.open:hover {
+	background-color: #fc1503 !important;
+	color: white !important;
+}
+
+.category-btn:hover span {
+	color: white !important;
+}
+
+.likes-thumb.active {
+	color: white;
+	animation: pulse 1.5s ease-in-out;
+	transition: 0.4s ease-in-out;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		color: #bbb;
+	}
+	50% {
+		transform: scale(1.5);
+		color: white;
+	}
+	100% {
+		transform: scale(1);
+		color: white;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.category-btn {
+		margin: 10px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.copyright {
+		display: none !important;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.scroll-horizontal {
+		overflow: auto !important;
+	}
+	.react-player {
+		height: 45vh !important;
+	}
+	.search-bar {
+		width: 200px;
+	}
+}
