@@ -15,8 +15,8 @@ type VideoCardProps = {
 export const VideoCard = ({ video: { id, snippet }, cardHeight = "100%", cardWidth = "auto" }: VideoCardProps) => {
 	const { videoId } = id;
 	const { title, channelId, channelTitle, publishedAt, thumbnails } = snippet;
-
 	const date = moment(new Date(publishedAt)).fromNow();
+
 	return (
 		<Card sx={{ maxWidth: "400px", width: cardWidth, height: cardHeight, borderRadius: 3, boxShadow: "0px 2px 5px #a1a1a1" }}>
 			<Link href={videoId ? `/video/${videoId}` : demoVideoUrl}>

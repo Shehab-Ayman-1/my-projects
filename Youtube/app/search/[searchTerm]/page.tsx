@@ -17,11 +17,9 @@ const SearchFeed = ({ params: { searchTerm } }: SearchFeedProps) => {
 		})();
 	}, [searchTerm]);
 
-	return loading ? (
-		<Loading />
-	) : error ? (
-		<Error />
-	) : (
+	if (loading) return <Loading />;
+	if (error) return <Error error={error} />;
+	return (
 		<Fragment>
 			<Navbar noSidebar />
 			<Box p={2}>

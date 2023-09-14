@@ -29,34 +29,30 @@ const ChannelDetails = ({ params: { id } }: ChannelDetailsProps) => {
 		})();
 	}, [id]);
 
+	if (channelLoading || videosLoading) return <Loading />;
+	if (channelError || videosError) return <Error error={channelError || videosError} />;
 	return (
 		<Fragment>
 			<Navbar noSidebar />
-			{channelLoading || videosLoading ? (
-				<Loading />
-			) : channelError || videosError ? (
-				<Error />
-			) : (
-				<Stack>
-					<Box sx={{ zIndex: 10, height: "200px" }}>
-						<img src={channel?.brandingSettings?.image?.bannerExternalUrl} alt="bannerExternalUrl" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-						<Box sx={{ mt: -15, pointerEvents: "none" }}>
-							{channel?.snippet && channel?.statistics && (
-								<ChannelCard
-									channel={{
-										id: { channelId: channel?.id },
-										snippet: channel.snippet,
-										statistics: channel.statistics,
-									}}
-								/>
-							)}
-						</Box>
+			<Stack>
+				<Box sx={{ zIndex: 10, height: "200px" }}>
+					<img src={channel?.brandingSettings?.image?.bannerExternalUrl} alt="bannerExternalUrl" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+					<Box sx={{ mt: -15, pointerEvents: "none" }}>
+						{channel?.snippet && channel?.statistics && (
+							<ChannelCard
+								channel={{
+									id: { channelId: channel?.id },
+									snippet: channel.snippet,
+									statistics: channel.statistics,
+								}}
+							/>
+						)}
 					</Box>
-					<Box display="flex" sx={{ p: 2, mx: { sm: "50px" }, mt: 20 }}>
-						<Videos videos={videos} noChannels noPlaylists />
-					</Box>
-				</Stack>
-			)}
+				</Box>
+				<Box display="flex" sx={{ p: 2, mx: { sm: "50px" }, mt: 20 }}>
+					<Videos videos={videos} noChannels noPlaylists />
+				</Box>
+			</Stack>
 		</Fragment>
 	);
 };

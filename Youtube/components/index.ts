@@ -4,9 +4,11 @@ export * from "./navbar/searchbar";
 // Feed
 export * from "./feed/sidebar";
 export * from "./feed/videos";
-export * from "./feed/videoCard";
-export * from "./feed/channelCard";
-export * from "./feed/playlistCard";
+
+// Cards
+export * from "./cards/videoCard";
+export * from "./cards/channelCard";
+export * from "./cards/playlistCard";
 
 // Video
 export * from "./video/description";

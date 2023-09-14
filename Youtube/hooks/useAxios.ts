@@ -32,7 +32,6 @@ export const useAxios = (method: Method, url?: string, body?: any, options?: any
 		} catch (error) {
 			console.log(error);
 			if (error instanceof AxiosError) {
-				console.log(error);
 				setError((e) => (e = (error as AxiosError)?.message));
 			}
 			return { data: null, loading: false, error: (error as AxiosError)?.message };

@@ -1,3 +1,4 @@
+"use client";
 import { Badge, Stack, Typography } from "@mui/material";
 import { logo } from "@/constants";
 import { Searchbar } from "@/components";

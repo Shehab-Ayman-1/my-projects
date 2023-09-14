@@ -21,11 +21,10 @@ const VideoDetails = ({ params: { id } }: VideoIdParams) => {
 
 	const bgGradient = `linear-gradient(90deg, rgba(28,28,28,1) 0%, rgba(43,43,43,1) 49%, rgba(28,28,28,1) 98%)`;
 
-	return loading ? (
-		<Loading />
-	) : error ? (
-		<Error />
-	) : (
+	if (loading) return <Loading />;
+	if (error) return <Error error={error} />;
+
+	return (
 		<Fragment>
 			<Navbar noSidebar />
 			<Stack sx={{ flexDirection: { xs: "column", md: "row" }, p: { xs: 2, sx: 3, md: 4 } }} gap={4}>
