@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export const Navbar = ({ setOpen, noSidebar }: OpenCloseSidebar) => {
 	const handleOpenSidebar = () => setOpen && setOpen((o) => (o = !o));
-	const innerWidth = window.innerWidth;
+	const innerWidth = typeof window !== "undefined" ? window.innerWidth : 0;
 
 	return (
 		<Stack direction="row" justifyContent="space-between" alignItems="center" p={2}>
