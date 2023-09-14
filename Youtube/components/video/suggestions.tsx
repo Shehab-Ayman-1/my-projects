@@ -19,7 +19,7 @@ export const Suggestions = ({ videoId }: { videoId?: string }) => {
 		})();
 	}, []);
 
-	if (loading) return <Loading />;
+	if (loading) return <Loading noNavbar />;
 	if (error) return <Error />;
 
 	return (

@@ -1,10 +1,15 @@
-import { Box, CircularProgress, LinearProgress } from "@mui/material";
+import { Box, LinearProgress } from "@mui/material";
+import { Navbar } from "@/layout";
 
-export const Loading = () => {
+type LoadingProps = {
+	noNavbar?: boolean;
+};
+
+export const Loading = ({ noNavbar }: LoadingProps) => {
 	return (
 		<Box>
-			<LinearProgress color="success" />
-			<CircularProgress color="success" size={250} sx={{ position: "absolute", top: "50%", left: "50%", translate: "-50% -50%" }} />
+			{!noNavbar && <Navbar noSidebar />}
+			<LinearProgress color="error" />
 		</Box>
 	);
 };
