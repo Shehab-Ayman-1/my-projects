@@ -1,0 +1,126 @@
+@use "@/assets/sass/mixins" as *;
+
+%links {
+	@include flex(space-between, center);
+	gap: 0.5rem;
+	display: none;
+	@include width(md) {
+		display: flex;
+	}
+	li {
+		cursor: pointer;
+		&:hover a::before {
+			background-color: get(secondary);
+		}
+		a {
+			color: get(dimWhite);
+			display: block;
+			font-size: 1rem;
+			font-weight: 500;
+			text-transform: uppercase;
+			position: relative;
+			&:hover {
+				color: get(secondary);
+			}
+			&:before {
+				content: "";
+				@include absolute(tl, -5px, 50%);
+				background-color: transparent;
+				width: 5px;
+				height: 5px;
+				margin-bottom: 5px;
+				border-radius: 50%;
+				transform: translate(-5px, -50%);
+				transition: 0.8s;
+			}
+		}
+	}
+}
+
+.navbar {
+	@include flex(space-between, center);
+	@include sticky(tl, 0, 0);
+	background-color: rgba(white, 0.25);
+	width: 100%;
+	padding: 1rem 2rem;
+	backdrop-filter: blur(5px);
+	border: 1px solid rgba(white, 0.25);
+	z-index: 1000;
+	.logo-section {
+		.logo {
+			width: 90px;
+			height: 20px;
+			@include width(lg) {
+				width: 180px;
+				height: 40px;
+			}
+		}
+	}
+	.desktop-section {
+		.links {
+			@extend %links;
+			gap: 1rem;
+			a {
+				font-weight: bold !important;
+			}
+			@include width(md) {
+				gap: 2rem;
+			}
+		}
+	}
+	.mobile-menu {
+		@include width(md) {
+			display: none;
+		}
+		.menu-opener {
+			@include flex(center, center);
+			background-color: get(secondary);
+			width: 30px;
+			height: 30px;
+			position: relative;
+			border-radius: 50%;
+			cursor: pointer;
+			svg {
+				color: get(white);
+				width: 70%;
+				height: 70%;
+			}
+		}
+		.menu {
+			@include background("@/assets/images/bgWhite.png", 100% 100%, initial);
+			@include fixed(tr, 0, 0);
+			background-color: get(white);
+			background-repeat: repeat;
+			width: 80%;
+			height: 100vh;
+			padding: 5px;
+			box-shadow: get(shadow);
+			z-index: 1001;
+			@include width(sm) {
+				padding: 10px;
+			}
+			.menu-closer {
+				cursor: pointer;
+				svg {
+					@include absolute(tr, 10px, 10px);
+					color: get(secondary);
+					width: 35px;
+					height: 35px;
+				}
+				&:hover svg {
+					color: black;
+				}
+			}
+			.links {
+				@extend %links;
+				flex-direction: column;
+				display: block !important;
+				margin-top: 2rem;
+				li {
+					margin: 2rem 1rem;
+					width: fit-content;
+				}
+			}
+		}
+	}
+}

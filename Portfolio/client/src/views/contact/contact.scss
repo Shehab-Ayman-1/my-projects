@@ -1,0 +1,77 @@
+@use "@/assets/sass/mixins" as *;
+
+.contact-section {
+	width: 100%;
+	padding: 20px;
+	.labels {
+		@include flex(center, center);
+		margin-top: 4rem;
+		flex-wrap: wrap;
+		gap: 2rem;
+		.label {
+			@include flex(flex-start, center);
+			width: 300px;
+			height: 80px;
+			padding: 0.2rem 1rem;
+			gap: 1rem;
+			border-radius: 15px;
+			&:first-of-type {
+				background-color: #fef4f5;
+			}
+			&:last-of-type {
+				background-color: #f2f7fb;
+			}
+			img {
+				height: 60%;
+				object-fit: contain;
+			}
+			a {
+				color: get(dimWhite);
+				font-size: 1rem;
+				font-weight: 500;
+				display: block;
+			}
+		}
+	}
+	.form-data {
+		.form {
+			max-width: 850px;
+			margin: auto;
+			margin-top: 4rem;
+			.input-field {
+				margin-bottom: 1rem;
+				input {
+					background-color: get(primary);
+					width: 100%;
+					padding: 1rem 0.8rem;
+					font-size: 1rem;
+					font-weight: 500;
+					border-radius: 10px;
+				}
+				textarea {
+					@extend input;
+					height: 150px;
+				}
+			}
+			.btn {
+				background-color: get(secondary);
+				color: get(white);
+				padding: 1.2rem 2rem;
+				font-size: 1rem;
+				display: block;
+				margin: auto;
+				cursor: pointer;
+				border-radius: 15px;
+			}
+		}
+	}
+	.submitted {
+		color: get(secondary);
+		font-size: 1.5rem;
+		text-align: center;
+		margin-top: 5rem;
+		@include width(xl) {
+			font-size: 2rem;
+		}
+	}
+}

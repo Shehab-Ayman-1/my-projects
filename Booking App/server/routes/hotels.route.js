@@ -3,7 +3,7 @@ import { GET_HOTELS, GET_HOTEL, GET_HOTEL_ROOMS, GET_COUNT_BY_CITY, GET_COUNT_BY
 import { CREATE_HOTEL, UPDATE_HOTEL, DELETE_HOTEL } from "../controllers/hotels.controller.js";
 import { verifyAdmin } from "../middlewares/verify.middleware.js";
 
-let router = express.Router();
+export const router = express.Router();
 
 // GET ALL
 router.get("/get-hotels", GET_HOTELS);
@@ -24,5 +24,3 @@ router.put("/update-hotel/:id", verifyAdmin, UPDATE_HOTEL);
 
 // DELETE
 router.delete("/delete-hotel/:id", verifyAdmin, DELETE_HOTEL);
-
-export default router;

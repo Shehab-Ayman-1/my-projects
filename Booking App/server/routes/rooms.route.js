@@ -1,7 +1,7 @@
 import express from "express";
 import { GET_ROOMS, GET_ROOM, CREATE_ROOM, UPDATE_ROOM, DELETE_ROOM, UPDATE_UN_AVAILABLE_ROOMS } from "../controllers/rooms.controller.js";
 
-const router = express.Router();
+export const router = express.Router();
 
 // GET ALL
 router.get("/get-rooms", GET_ROOMS);
@@ -18,5 +18,3 @@ router.put("/update-un-available-rooms/:roomNumbersID", UPDATE_UN_AVAILABLE_ROOM
 
 // DELETE
 router.delete("/delete-room/:hotelID/:roomID", DELETE_ROOM);
-
-export default router;

@@ -1,0 +1,96 @@
+@use "@/assets/sass/mixins" as *;
+
+.skills-section {
+	.container {
+		@include flex(space-between, flex-start);
+		width: 100%;
+		margin-top: 1rem;
+		gap: 4rem;
+		flex-direction: column;
+		@include width(md) {
+			margin-top: 3rem;
+			flex-direction: row;
+		}
+		.skills {
+			@include flex(center, center);
+			width: 100%;
+			gap: 2rem;
+			flex-wrap: wrap;
+			@include width(md) {
+				@include flex(center, flex-start);
+				width: 50%;
+				gap: 5rem;
+			}
+			.skill {
+				.skill-img {
+					@include flex(center, center);
+					background-color: get(white);
+					border-radius: 50%;
+					width: 90px;
+					height: 90px;
+					position: relative;
+					.overlay {
+						@include absolute(tl, 0, 0);
+						width: 100%;
+						height: 100%;
+						border-radius: 50%;
+						opacity: 0.2;
+					}
+					@include width(xl) {
+						width: 110px;
+						height: 110px;
+					}
+					img {
+						width: 60%;
+						height: 60%;
+						z-index: 1;
+					}
+				}
+				.skill-name {
+					font-weight: 500;
+					text-align: center;
+					margin-top: 0.5rem;
+				}
+			}
+		}
+		.experiences {
+			width: 100%;
+			@include width(md) {
+				width: 50%;
+				margin-top: 2rem;
+			}
+			.experience {
+				@include flex(flex-start, flex-start);
+				margin-bottom: 2rem;
+				.years {
+					width: 100px;
+					p {
+						color: get(secondary);
+						font-size: 22px;
+						font-weight: bold;
+					}
+				}
+				.works {
+					.work {
+						.info {
+							margin-bottom: 2rem;
+							h4 {
+								font-size: 22px;
+								font-weight: 500;
+							}
+							p {
+								font-size: 16px;
+							}
+						}
+					}
+					.work-tooltip {
+					}
+				}
+			}
+		}
+	}
+}
+/* 
+   I Worked On The Design Of The New google App, I Was Responsible For The Design of New App, Adn The Developement Of The New App
+
+*/

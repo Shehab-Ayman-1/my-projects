@@ -1,0 +1,142 @@
+@use "@/assets/sass/mixins" as *;
+
+.header-section {
+	@include background("@/assets/images/bgIMG.png", cover, initial);
+	background-repeat: repeat;
+	position: relative;
+	padding: 2rem;
+	flex-direction: column;
+	@include width(lg) {
+		flex-direction: row;
+	}
+	.app__wrapper {
+		padding: 0;
+		.copyright {
+			display: none;
+		}
+	}
+	.header-info {
+		@include flex(flex-start, flex-start);
+		height: 100%;
+		flex: 0.65;
+		flex-direction: column;
+		@include width(xl) {
+			width: 100%;
+		}
+		.badge {
+			@include flex(flex-end, flex-end);
+			width: 100%;
+			flex-direction: column;
+			.badge-cmp {
+				width: auto;
+				padding: 1rem 2rem;
+				border-radius: 15px;
+				box-shadow: get(shadow);
+				text-align: center;
+				user-select: none;
+				cursor: default;
+				span {
+					margin-right: 5px;
+					font-size: 2.5rem;
+					@include width(xl) {
+						font-size: 5rem;
+					}
+				}
+			}
+			.tag-cmp {
+				@extend .badge-cmp;
+				margin-top: 3rem;
+				p {
+					width: 100%;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+	.header-img {
+		@include flex(flex-start, flex-start);
+		height: 100%;
+		max-height: 800px;
+		flex: 1;
+		margin: auto;
+		position: relative;
+		@include width(xl) {
+			margin: 2rem 0;
+		}
+		img {
+			width: 100%;
+			max-height: 100%;
+			z-index: 1;
+			object-fit: contain;
+		}
+		.overlay-circle {
+			width: 100%;
+			height: 80%;
+			z-index: 0;
+			inset: unset;
+			position: absolute;
+		}
+	}
+	.header-circles {
+		@include flex(space-evenly, flex-start);
+		flex: 0.75;
+		margin-top: 2rem;
+		margin-left: 1rem;
+		height: 100%;
+		gap: 1rem;
+		flex-direction: row;
+		flex-wrap: wrap;
+		@include width(lg) {
+			flex-direction: column;
+			flex-wrap: nowrap;
+			margin-top: 1rem;
+		}
+		.circle {
+			background-color: get(white);
+			border-radius: 50%;
+			box-shadow: get(shadow);
+
+			&:nth-child(1) {
+				width: 70px;
+				height: 70px;
+				@include width(sm) {
+					width: 100px;
+					height: 100px;
+				}
+				@include width(xl) {
+					width: 150px;
+					height: 150px;
+				}
+			}
+			&:nth-child(2) {
+				width: 100px;
+				height: 100px;
+				margin: 1.75rem;
+				@include width(sm) {
+					width: 150px;
+					height: 150px;
+				}
+				@include width(xl) {
+					width: 250px;
+					height: 250px;
+				}
+			}
+			&:nth-child(3) {
+				width: 50px;
+				height: 50px;
+				@include width(sm) {
+					width: 70px;
+					height: 70px;
+				}
+				@include width(xl) {
+					width: 100px;
+					height: 100px;
+				}
+			}
+			img {
+				width: 70%;
+				height: 70%;
+			}
+		}
+	}
+}

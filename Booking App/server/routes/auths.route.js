@@ -3,7 +3,7 @@ import { LOGIN, REGISTER } from "../controllers/auths.controller.js";
 import { CHECK_AUTHENTICATION, CHECK_USER, CHECK_ADMIN } from "../controllers/checkers.controller.js";
 import { verifyToken, verifyUser, verifyAdmin, rememberLogin, refreshToken } from "../middlewares/verify.middleware.js";
 
-const router = express.Router();
+export const router = express.Router();
 
 // CHECKERS
 router.get("/check-authentication", verifyToken, CHECK_AUTHENTICATION);
@@ -16,5 +16,3 @@ router.post("/register", REGISTER);
 
 // Refresh Token
 router.get("/refresh-token", refreshToken);
-
-export default router;
