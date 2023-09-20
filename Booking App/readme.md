@@ -1,0 +1,3 @@
+-   start app -> netlify dev
+-   set env -> netlify env:set <key> <value>
+-   upload app on cloude -> netlify deploy && netlify deploy --prod
