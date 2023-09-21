@@ -1,4 +1,4 @@
-export { router as authsRouter } from "./auths.route.js";
-export { router as hotelsRouter } from "./hotels.route.js";
-export { router as roomsRouter } from "./rooms.route.js";
-export { router as usersRouter } from "./users.route.js";
+export { router as auths } from "./auths.route.js";
+export { router as hotels } from "./hotels.route.js";
+export { router as rooms } from "./rooms.route.js";
+export { router as users } from "./users.route.js";

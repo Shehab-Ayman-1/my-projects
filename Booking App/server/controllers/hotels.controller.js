@@ -43,7 +43,7 @@ export const GET_HOTELS = async (req, res) => {
 export const GET_HOTEL = async (req, res) => {
 	try {
 		const { id } = req.params;
-		if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json("This ID Is Not Currect");
+		if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json({ message: "This ID Is Not Currect", id, Hotels });
 
 		const hotel = await Hotels.findById(id);
 		if (!hotel) return res.status(404).json("This Hotel Is Not Defined");

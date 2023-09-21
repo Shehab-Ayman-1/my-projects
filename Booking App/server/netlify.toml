@@ -5,5 +5,5 @@ site_id = "2c1944f9-c031-4137-bcaa-f0c752284949"
 
 [[redirects]]
    from = "/*"
-   to = "/.netlify/functions/app"
+   to = "/.netlify/functions/api"
    status = 200
