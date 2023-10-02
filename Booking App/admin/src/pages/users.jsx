@@ -4,6 +4,7 @@ import { User } from "@/assets";
 import { Table } from "@/components";
 import { useContext } from "@/context";
 import { useAxios } from "@/hooks";
+import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 export const Users = () => {
    const { loading, refetch } = useAxios("delete", "/");
@@ -19,17 +20,31 @@ export const Users = () => {
    const UsersRows = () => {
       return authsStates.users?.length
          ? authsStates.users.map(({ _id, avatar, fName, lName, email, isAdmin }, i) => {
-              let td = `py-3 px-5 ${i === authsStates.users?.length - 1 ? "" : "border-b border-blue-gray-50"}`;
+              let td = `py-3 px-5 text-center whitespace-nowrap`;
               let typography = `text-[18px] font-semibold text-blue-gray-600`;
               return (
                  <tr className={i % 2 ? "bg-blue-50" : ""} key={i}>
-                    <td className={`flex items-center justify-start whitespace-nowrap ${td}`}>
-                       <Avatar src={avatar || User} className="mr-2 ml-2 h-[32px] w-[32px]" />
-                       <Typography variant="small" className={typography}>
-                          - {fName} {lName}
+                    <td className={`${td}`}>
+                       <Button
+                          className="mr-1 text-[10px]"
+                          variant="text"
+                          size="sm"
+                          disabled={loading}
+                          onClick={() => navigate(`/auth/update-user`, { state: { _id, avatar, fName, lName, email, isAdmin } })}
+                       >
+                          <PencilSquareIcon /> Update
+                       </Button>
+                       <Button className="text-[10px]" variant="text" size="sm" color="red" disabled={loading} onClick={() => handleDeleteUser(_id)}>
+                          <TrashIcon /> Delete
+                       </Button>
+                    </td>
+                    <td className={`${td}`}>
+                       <Avatar src={avatar || User} alt={fName} className="mr-2 ml-2 h-[32px] w-[32px]" />
+                       <Typography variant="small" className={`${typography} inline-block`}>
+                          {fName} {lName}
                        </Typography>
                     </td>
-                    <td className={`${td} whitespace-nowrap`}>
+                    <td className={td}>
                        <Typography variant="small" className={typography}>
                           {email}
                        </Typography>
@@ -39,13 +54,10 @@ export const Users = () => {
                           {isAdmin ? "Admin" : "User"}
                        </Typography>
                     </td>
-                    <td className={`${td} whitespace-nowrap`}>
-                       <Button className="mr-2 text-[15px]" variant="gradient" size="sm" onClick={() => navigate("/auth/update-user", { state: { _id, avatar, fName, lName, email, isAdmin } })}>
-                          Update
-                       </Button>
-                       <Button className="text-[15px] " variant="gradient" size="sm" color="red" disabled={loading} onClick={() => handleDeleteUser(_id)}>
-                          Delete
-                       </Button>
+                    <td className={td}>
+                       <Typography variant="small" className={`${typography} ${i % 2 ? "text-red-500" : "text-green-500"}`}>
+                          {i % 2 ? "Offline" : "Online"}
+                       </Typography>
                     </td>
                  </tr>
               );
@@ -59,7 +71,7 @@ export const Users = () => {
             states={authsStates}
             dispatch={authsDispatch}
             title="Users"
-            headers={["Name", "Email", "Role", "Controllers"]}
+            headers={["Controllers", "Name", "Email", "Role", "state"]}
             addButton={{ text: "Add User", path: "/auth/register" }}
             paginationURL={"/users/get-users"}
          >

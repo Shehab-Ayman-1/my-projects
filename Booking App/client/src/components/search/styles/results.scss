@@ -11,19 +11,15 @@
 		width: calc(100% - 40px);
 		margin: auto;
 	}
-	.result {
-		color: green;
-		font-size: 18px;
-		font-weight: 500;
-		text-align: end;
-	}
 	.box {
 		@include flex(space-between, center);
 		background-color: transparent;
+		padding-left: 10px;
 		margin-bottom: 20px;
 		position: relative;
 		flex-direction: column;
-		box-shadow: 5px 5px 5px get(primary);
+		border-radius: 10px;
+		box-shadow: 0 0 15px get(dimBlack);
 		@include width(md) {
 			flex-direction: row;
 		}
@@ -62,6 +58,7 @@
 				color: get(white);
 				font-weight: bold;
 				padding: 5px 10px;
+				white-space: nowrap;
 				@include width(md) {
 					position: static;
 				}
@@ -134,13 +131,16 @@
 		}
 	}
 	.next-prev {
-		@include flex(flex-between, center);
+		@include flex(center, center);
 		button {
 			margin-right: 10px;
 			font-size: 33px;
 			cursor: pointer;
 			&:hover {
-				color: get(primary);
+				color: get(primary) !important;
+			}
+			&:last-of-type {
+				margin-left: 10px;
 			}
 		}
 	}

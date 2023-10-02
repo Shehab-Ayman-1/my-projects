@@ -23,7 +23,6 @@ import about04 from "./images/about04.png";
 
 import email from "./images/email.png";
 import mobile from "./images/mobile.png";
-import _profile from "./images/_profile.png";
 import profile from "./images/profile.png";
 import circle from "./images/circle.svg";
 import logo from "./images/logo.png";

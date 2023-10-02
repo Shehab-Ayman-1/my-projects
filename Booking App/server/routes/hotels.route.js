@@ -1,6 +1,6 @@
 import express from "express";
 import { GET_HOTELS, GET_HOTEL, GET_HOTEL_ROOMS, GET_COUNT_BY_CITY, GET_COUNT_BY_TYPE, GET_LIMITED_HOTELS, GET_HOTELS_COUNT } from "../controllers/hotels.controller.js";
-import { CREATE_HOTEL, UPDATE_HOTEL, DELETE_HOTEL } from "../controllers/hotels.controller.js";
+import { CREATE_HOTEL, UPDATE_HOTEL, DELETE_HOTEL, GET_DEFAULT_HOTELS } from "../controllers/hotels.controller.js";
 import { verifyAdmin } from "../middlewares/verify.middleware.js";
 
 export const router = express.Router();
@@ -18,6 +18,7 @@ router.get("/get-hotels-count", GET_HOTELS_COUNT);
 
 // CREATE
 router.post("/create-hotel", verifyAdmin, CREATE_HOTEL);
+router.post("/default-hotels", GET_DEFAULT_HOTELS);
 
 // UPDATE
 router.put("/update-hotel/:id", verifyAdmin, UPDATE_HOTEL);

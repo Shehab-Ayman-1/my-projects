@@ -1,5 +1,6 @@
+import { Users } from "../models/index.js";
 import mongoose from "mongoose";
-import Users from "../models/users.model.js";
+import bcrypt from "bcryptjs";
 
 export const GET_USERS = async (req, res) => {
 	try {
@@ -29,10 +30,17 @@ export const GET_USER = async (req, res) => {
 export const UPDATE_USER = async (req, res) => {
 	try {
 		const { id } = req.params;
+		const { password, ...body } = req.body;
 		if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json("This ID Is Not Currect");
 
-		await Users.findByIdAndUpdate(id, req.body, { new: true });
-		res.status(200).json("The User Was Updated Successfully.");
+		if (password) {
+			const hashPassword = await bcrypt.hash(password, 10);
+			await Users.findByIdAndUpdate(id, { ...body, password: hashPassword }, { new: true });
+		} else {
+			await Users.findByIdAndUpdate(id, body, { new: true });
+		}
+
+		res.status(200).json("The User Was Successfully Updated.");
 	} catch (error) {
 		res.status(404).json(`UPDATE_USER ${error.message}`);
 	}

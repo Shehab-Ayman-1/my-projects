@@ -6,14 +6,14 @@ import { AuthFooter } from "@/components";
 import { useAxios } from "@/hooks";
 import { useContext } from "@/context";
 
-const formState = { email: "", password: "", trust: true };
+const formState = { email: "shehab@gmail.com", password: "123", trust: true };
 export function Login() {
-   const { data, loading, status, error, refetch } = useAxios("post", "/auths/login");
+   const { data, loading, status, error, refetch } = useAxios("post", "/auths/login", formState);
    const [, authsDispatch] = useContext(1);
    const [formData, setFormData] = useState(formState);
-   const navigate = useNavigate();
    const jwtMessage = useLocation().state;
    const [jwtExp, setJwtExp] = useState(jwtMessage);
+   const navigate = useNavigate();
 
    useEffect(() => {
       setTimeout(() => setJwtExp((e) => (e = "")), 5000);
@@ -26,9 +26,14 @@ export function Login() {
       }
    }, [data, loading, error, status]);
 
-   const handleChange = ({ target: { name, value } }) => setFormData((f) => ({ ...f, [name]: value }));
+   const handleChange = ({ target: { name, value } }) => {
+      setFormData((f) => ({ ...f, [name]: value }));
+   };
 
-   const handleSubmit = async () => await refetch("post", "/auths/login", formData);
+   const handleSubmit = async () => {
+      if (!formData.email || !formData.password) return;
+      await refetch("post", "/auths/login", formData);
+   };
 
    return (
       <Fragment>

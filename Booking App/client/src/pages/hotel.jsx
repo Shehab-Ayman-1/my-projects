@@ -12,6 +12,7 @@ export const Hotel = () => {
 
 	useEffect(() => {
 		if (!loading && !error) setHotel((h) => (h = data));
+		window.scrollTo({ top: 0, behavior: "smooth" });
 	}, [data]);
 
 	return (

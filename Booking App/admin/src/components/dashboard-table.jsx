@@ -53,12 +53,12 @@ export const Table = ({ states = [], dispatch, title, addButton, headers, pagina
             </div>
          </CardHeader>
 
-         <CardBody className="overflow-x-scroll px-0 pt-0 pb-2">
+         <CardBody className="overflow-x-auto px-0 pt-0 pb-2">
             <table className="w-full min-w-[640px] table-auto">
                <thead>
                   <tr className="min-w-[400px] bg-blue-200">
                      {headers?.map((el, i) => (
-                        <th key={i} className="border-b border-blue-gray-50 py-3 px-6 text-left">
+                        <th key={i} className="border-b border-blue-gray-50 py-3 px-6 text-center">
                            <Typography variant="small" className="text-[18px] font-bold uppercase text-black">
                               {el}
                            </Typography>
@@ -71,15 +71,11 @@ export const Table = ({ states = [], dispatch, title, addButton, headers, pagina
 
                <tfoot className="flex w-full py-3 px-6">
                   <tr>
-                     <td className="flex min-w-[150px] items-center justify-start gap-4" colSpan={headers.length}>
-                        <div className="">
-                           <span className="count">{widgetNo?.from / 5 + 1}</span>
-                           <span className="count"> / {Math.ceil(states?.count / 5)}</span>
-                        </div>
-                        <div className="">
-                           <button className="fa fa-arrow-left mr-4 cursor-pointer text-3xl text-black transition hover:text-blue-500" disabled={loading} onClick={prevWidget} />
-                           <button className="fa fa-arrow-right ml-4 cursor-pointer text-3xl text-black transition hover:text-blue-500" disabled={loading} onClick={nextWidget} />
-                        </div>
+                     <td className="flex min-w-[150px] items-center justify-start gap-4 whitespace-nowrap" colSpan={headers.length}>
+                        <button className="fa fa-arrow-left mr-1 cursor-pointer text-3xl text-black transition hover:text-blue-500" disabled={loading} onClick={prevWidget} />
+                        <span className="count">{widgetNo?.from / 5 + 1}</span>
+                        <span className="count"> / {Math.ceil(states?.count / 5)}</span>
+                        <button className="fa fa-arrow-right ml-1 cursor-pointer text-3xl text-black transition hover:text-blue-500" disabled={loading} onClick={nextWidget} />
                      </td>
                   </tr>
                </tfoot>

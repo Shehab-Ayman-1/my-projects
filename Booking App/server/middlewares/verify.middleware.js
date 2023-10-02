@@ -1,5 +1,5 @@
+import { Users } from "../models/index.js";
 import jwt from "jsonwebtoken";
-import Users from "../models/users.model.js";
 
 /**
  * This Function Check If The User Is login OR Not
@@ -9,7 +9,7 @@ import Users from "../models/users.model.js";
 export const verifyToken = (req, res, next) => {
 	try {
 		let { access_token } = req.cookies;
-		if (!access_token) return res.status(401).json("You Are Not Authonticated.");
+		if (!access_token) return res.status(402).json("You Are Not Authonticated.");
 
 		jwt.verify(access_token, process.env.ACCESS_TOKEN, (error, info) => {
 			if (error) return res.status(400).json({ message: `verifyToken: Error [${error.message}]`, error });
@@ -34,7 +34,7 @@ export const refreshToken = (req, res) => {
 			const newToken = jwt.sign({ id: info.id, isAdmin: info.isAdmin }, process.env.ACCESS_TOKEN, { expiresIn: "1h" });
 
 			let expTime = 1000 * 60 * 60;
-			res.cookie("access_token", newToken, { httpOnly: true, maxAge: expTime });
+			res.cookie("access_token", newToken, { httpOnly: true, sameSite: "none", secure: true, maxAge: expTime });
 
 			return res.status(200).json(newToken);
 		});
@@ -48,7 +48,7 @@ export const rememberLogin = (req, res, next) => {
 		if (req.body?.email) return next();
 
 		const { refresh_token } = req.cookies;
-		if (!refresh_token) return res.status(203).json("Non-Authoritative Information.");
+		if (!refresh_token) return res.status(400).json("Non-Authoritative Information.");
 
 		jwt.verify(refresh_token, process.env.REFRESH_TOKEN, async (error, info) => {
 			if (error) return res.status(400).json(`rememberLogin: [${error.message}]`);
@@ -60,7 +60,7 @@ export const rememberLogin = (req, res, next) => {
 
 			// Save Cookies
 			let expTime = 1000 * 60 * 60;
-			res.cookie("access_token", accessToken, { httpOnly: true, maxAge: expTime });
+			res.cookie("access_token", accessToken, { httpOnly: true, sameSite: "none", secure: true, maxAge: expTime });
 
 			const { _id, password, isAdmin, ...rest } = user._doc;
 			res.status(200).json({ ...rest, accessToken, expTime });

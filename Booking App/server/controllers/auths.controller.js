@@ -1,6 +1,6 @@
-import Users from "../models/users.model.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+import { Users } from "../models/index.js";
 
 export const LOGIN = async (req, res) => {
 	try {
@@ -24,8 +24,8 @@ export const LOGIN = async (req, res) => {
 
 		// Save Cookies
 		let expTime = 1000 * 60 * 60;
-		res.cookie("access_token", accessToken, { httpOnly: true, maxAge: expTime });
-		res.cookie("refresh_token", refreshToken, { httpOnly: true, maxAge: expTime * 2 });
+		res.cookie("access_token", accessToken, { httpOnly: true, sameSite: "none", secure: true, maxAge: expTime });
+		res.cookie("refresh_token", refreshToken, { httpOnly: true, sameSite: "none", secure: true, maxAge: expTime * 2 });
 
 		const { _id, password, isAdmin, ...rest } = user._doc;
 		res.status(200).json({ ...rest, accessToken, expTime });

@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { routes } from "@/constants";
 import axios from "axios";
 
-const router = axios.create({ baseURL: "http://localhost:5000/api", headers: { "Content-Type": "application/json", Authorization: "Bearer shehab" }, withCredentials: true });
+let router;
+if (import.meta.env.MODE === "production") router = axios.create(routes.remote);
+else router = axios.create(routes.locale);
 
 export const useAxios = (method, url, body, configs) => {
    const [data, setData] = useState([]);

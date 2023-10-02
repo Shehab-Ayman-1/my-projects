@@ -4,22 +4,25 @@ import { useAxios } from "@/hooks";
 
 export const Login = () => {
 	const [credentials, setCredentials] = useState({ email: "", password: "" });
-	const { data: user, loading, error, Refetch } = useAxios("post", "/");
-	const navigate = useNavigate();
+	const { loading: isLoading, error, Refetch } = useAxios("post", "/");
 	const { state } = useLocation();
+	const navigate = useNavigate();
 
-	useEffect(() => {
-		if (!user?.email) return;
-		localStorage.setItem("user", JSON.stringify(user));
-		setTimeout(() => navigate(state?.fromPathname || "/"), 3000);
-	}, [user, loading, error]);
+	const handleChange = ({ target: { name, value } }) => {
+		setCredentials((c) => (c = { ...c, [name]: value }));
+	};
 
-	const handleChange = ({ target: { name, value } }) => setCredentials((c) => (c = { ...c, [name]: value }));
-
-	const handleSubmit = () => {
+	const handleSubmit = async () => {
 		if (!credentials.email) return alert("Email Is Required Field.");
 		if (!credentials.password) return alert("Password Is Required Field.");
-		Refetch("post", "users/login", credentials);
+
+		const { data, loading, error } = await Refetch("post", "/auths/login", credentials);
+		if (!loading && error) return;
+
+		if (data?.email) {
+			setTimeout(() => navigate(state?.fromPathname || "/"), 1000);
+			localStorage.setItem("user", JSON.stringify(data));
+		}
 	};
 
 	return (
@@ -34,8 +37,8 @@ export const Login = () => {
 				<label htmlFor="password">Password: </label>
 				<input type="password" id="password" name="password" placeholder="Enter Your Password" onChange={handleChange} />
 			</div>
-			<button className="mybtn" data-varient="outline" disabled={loading} onClick={handleSubmit}>
-				Submit
+			<button className="mybtn" data-varient="outline" disabled={isLoading} onClick={handleSubmit}>
+				{isLoading ? "Loading..." : "Submit"}
 			</button>
 			<p className="flex-center gap">
 				Don't Have An Account?

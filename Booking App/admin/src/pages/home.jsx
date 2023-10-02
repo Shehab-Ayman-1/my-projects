@@ -21,7 +21,7 @@ export function Home() {
    const UsersRows = () => {
       return authsStates.users?.length
          ? authsStates.users.map(({ _id, avatar, fName, lName, email, isAdmin }, i) => {
-              let td = `py-3 px-5 ${i === authsStates.users?.length - 1 ? "" : "border-b border-blue-gray-50"}`;
+              let td = `py-3 px-5 text-center ${i === authsStates.users?.length - 1 ? "" : "border-b border-blue-gray-50"}`;
               let typography = `text-[18px] font-semibold text-blue-gray-600`;
               return (
                  <tr className={i % 2 ? "bg-blue-50" : ""} key={i}>

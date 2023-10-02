@@ -35,10 +35,9 @@ export const Hero = () => {
 	};
 
 	const handleNavigate = async () => {
-		if (!selectedCity) return alert("Please Choose The City.");
 		if (endDate === today) return alert("Please Choose The Date.");
 
-		await hotelsDispatch(UPDATE_HOTELS({ city: selectedCity, calender, options }));
+		await hotelsDispatch(UPDATE_HOTELS({ city: selectedCity || "All Locations", calender, options }));
 		navigate(`/search`);
 	};
 

@@ -8,7 +8,7 @@ import axios from "axios";
 
 const formState = { avatar: "", fName: "", lName: "", email: "", password: "", isAdmin: true };
 export function Register() {
-   const { data, loading, error, refetch } = useAxios("post", "/");
+   const { data, loading, error, setError, refetch } = useAxios("post", "/");
    const [formData, setFormData] = useState(formState);
    const navigate = useNavigate();
 
@@ -18,6 +18,7 @@ export function Register() {
    };
 
    const handleSubmit = async () => {
+      if (!formData.avatar) return setError(() => "Avatar Image Is A Required Field.");
       const file = new FormData();
       file.append("file", formData.avatar);
       file.append("upload_preset", "upload");
@@ -28,7 +29,9 @@ export function Register() {
 
          if (!loading && error === null && typeof data === "string") navigate("/dashboard/home");
       } catch (error) {
+         const err = error?.response?.data?.error?.message || error?.response?.data || error?.message;
          console.log(error);
+         setError(() => err);
       }
    };
 

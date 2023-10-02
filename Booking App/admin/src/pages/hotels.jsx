@@ -1,11 +1,12 @@
 import { Avatar, Button, Tooltip, Typography } from "@material-tailwind/react";
+import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
 import { Table } from "@/components";
 import { User } from "@/assets";
 import { useContext } from "@/context";
 import { useAxios } from "@/hooks";
 
-const headers = ["Name", "Title", "Type", "Address", "City", "Distance", "Price", "Rating", "Photos", "Featured", "Controllers"];
+const headers = ["Controllers", "Name", "Title", "Type", "Address", "City", "Distance", "Price", "Rating", "Photos", "Featured"];
 export const Hotels = () => {
    const { loading, refetch } = useAxios("delete", "/");
    const [hotelsStates, hotelsDispatch] = useContext(2);
@@ -21,18 +22,31 @@ export const Hotels = () => {
       const hotels = hotelsStates.hotels;
       return hotels?.length
          ? hotels.map(({ _id, name, title, type, address, city, description, distance, price, rating, photos, featured }, i) => {
-              let td = `py-3 px-5 ${i === hotels?.length - 1 ? "" : "border-b border-blue-gray-50"}`;
+              let td = `py-3 px-5 text-center ${i === hotels?.length - 1 ? "" : "border-b border-blue-gray-50"}`;
               let typography = `text-[18px] font-semibold text-blue-gray-600`;
               return (
                  <tr className={i % 2 ? "bg-blue-50" : ""} key={i}>
                     <td className={`${td} whitespace-nowrap`}>
-                       <Typography variant="small" className={typography}>
-                          {++i} - {name}
-                       </Typography>
+                       <Button
+                          className="text-[10px]"
+                          variant="text"
+                          size="sm"
+                          onClick={() => navigate("/dashboard/update-hotel", { state: { _id, name, title, type, address, city, description, distance, price, rating, photos, featured } })}
+                       >
+                          <PencilSquareIcon /> Update
+                       </Button>
+                       <Button className="text-[10px]" variant="text" size="sm" color="red" disabled={loading} onClick={() => handleDeleteHotel(_id)}>
+                          <TrashIcon /> Delete
+                       </Button>
                     </td>
                     <td className={`${td} whitespace-nowrap`}>
                        <Typography variant="small" className={typography}>
-                          {title}
+                          {name}
+                       </Typography>
+                    </td>
+                    <td className={`${td} whitespace-nowrap`}>
+                       <Typography variant="small" className={typography} title={title.slice(0, -2)}>
+                          {title.slice(0, 40)}...
                        </Typography>
                     </td>
                     <td className={`${td} whitespace-nowrap`}>
@@ -78,19 +92,6 @@ export const Hotels = () => {
                        <Typography variant="small" className={typography}>
                           {`${featured}`}
                        </Typography>
-                    </td>
-                    <td className={`${td} whitespace-nowrap`}>
-                       <Button
-                          className="mr-2 text-[15px]"
-                          variant="gradient"
-                          size="sm"
-                          onClick={() => navigate("/dashboard/update-hotel", { state: { _id, name, title, type, address, city, description, distance, price, rating, photos, featured } })}
-                       >
-                          Update
-                       </Button>
-                       <Button className="text-[15px]" variant="gradient" size="sm" color="red" disabled={loading} onClick={() => handleDeleteHotel(_id)}>
-                          Delete
-                       </Button>
                     </td>
                  </tr>
               );

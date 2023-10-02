@@ -11,4 +11,4 @@ const schema = new Schema(
 	{ timestamps: true }
 );
 
-export default model("rooms", schema);
+export const Rooms = model("rooms", schema);

@@ -5,7 +5,7 @@ import { useAxios } from "@/hooks";
 import useContext from "@/context";
 import "./styles/results.scss";
 
-export const FilterResults = ({ widgetNo, setWidgetNo }) => {
+export const FilterResults = ({ selectedCity, widgetNo, setWidgetNo }) => {
 	const [hotels, setHotels] = useState({ data: [], loading: true, error: false });
 	const { data: hotelsCount, Refetch } = useAxios("get", "/");
 	const { hotelsState } = useContext(0);
@@ -13,9 +13,8 @@ export const FilterResults = ({ widgetNo, setWidgetNo }) => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		if (typeof hotelsCount === "number") return;
-		Refetch("get", "/hotels/get-hotels-count");
-	}, []);
+		Refetch("get", `/hotels/get-hotels-count?city=${selectedCity || "All Locations"}`);
+	}, [selectedCity]);
 
 	useEffect(() => {
 		(async () => {
@@ -44,10 +43,14 @@ export const FilterResults = ({ widgetNo, setWidgetNo }) => {
 		});
 	};
 
+	const handleNavigate = async (_id) => {
+		let { calender } = await hotelsState;
+		if (!calender?.length || calender[0]?.startDate === calender[0]?.endDate) return alert("Please Select The Start, And End Dates To Be Able To Reserve The Hotel Rooms.");
+		navigate(`/hotel/${_id}`, { replace: true, preventScrollReset: false });
+	};
+
 	return (
 		<div className={`right-section ${controller.openSearchPage ? "part-width" : "full-width"}`}>
-			<p className="result">Results: [{hotels?.data?.length}]</p>
-
 			{hotels.loading && <Loading limit={3} />}
 			{hotels.error && <Error message="Hotels Not Found, Please Try Again." />}
 			{!hotels.loading && !hotels.error && !hotels.data?.length && <h3>No Hotels Found.</h3>}
@@ -81,7 +84,7 @@ export const FilterResults = ({ widgetNo, setWidgetNo }) => {
 						</div>
 						<div className="flex-between">
 							<p className="green">You Can Cancel Later, So Lock In This Great Price Today!</p>
-							<button className="mybtn" data-varient="fill" onClick={() => navigate(`/hotel/${_id}`)}>
+							<button className="mybtn" data-varient="fill" onClick={() => handleNavigate(_id)}>
 								See Availability
 								<i className="fas fa-chevron-right fa-xs" />
 							</button>
@@ -92,14 +95,12 @@ export const FilterResults = ({ widgetNo, setWidgetNo }) => {
 
 			{hotels.data?.length && (
 				<div className="next-prev">
+					<button className="fa fa-arrow-left text-black bg-white" disabled={hotels.loading} onClick={prevWidget} />
 					<div className="">
 						<span className="count">{widgetNo?.from / 5 + 1}</span>
 						<span className="count"> / {typeof hotelsCount === "number" ? Math.ceil(hotelsCount / 5) : 0}</span>
 					</div>
-					<div className="">
-						<button className="fa fa-arrow-left text-black" disabled={hotels.loading} onClick={prevWidget} />
-						<button className="fa fa-arrow-right text-black" disabled={hotels.loading} onClick={nextWidget} />
-					</div>
+					<button className="fa fa-arrow-right text-black bg-white" disabled={hotels.loading} onClick={nextWidget} />
 				</div>
 			)}
 		</div>

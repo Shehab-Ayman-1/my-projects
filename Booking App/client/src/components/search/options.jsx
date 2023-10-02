@@ -7,13 +7,14 @@ import "./styles/options.scss";
 
 const today = new Date();
 const formState = { city: "All Locations", options: { adults: 1, children: 1, rooms: 1 }, price: { min: 1, max: 1000 } };
-export const FilterOptions = ({ widgetNo, cities, openFilter, setOpenFilter }) => {
+export const FilterOptions = ({ setSelectedCity, widgetNo, cities, openFilter, setOpenFilter }) => {
 	const { hotelsState, hotelsDispatch } = useContext(0);
 	const [formData, setFormData] = useState(formState);
 	const [calender, setCalender] = useState([{ startDate: today, endDate: today, key: "selection" }]);
 	const { data: hotels, loading, error, Refetch } = useAxios("get", `/`);
 
 	useEffect(() => {
+		setSelectedCity(() => formData.city);
 		(async () => await hotelsDispatch(UPDATE_HOTELS({ hotels, loading, error })))();
 	}, [hotels, loading, error]);
 
@@ -30,7 +31,6 @@ export const FilterOptions = ({ widgetNo, cities, openFilter, setOpenFilter }) =
 	}, []);
 
 	useEffect(() => {
-		console.log(widgetNo);
 		Refetch("get", `/hotels/get-hotels?city=${formData.city || "All Locations"}&min=${formData.price.min}&max=${formData.price.max}&from=${widgetNo.from}&to=${widgetNo.to}`);
 	}, [widgetNo]);
 

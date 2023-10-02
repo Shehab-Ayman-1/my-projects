@@ -9,7 +9,7 @@ export const authsReducer = (state, { type, payload }) => {
          return { ...state, auth: payload };
       }
       case "DELETE_USER": {
-         return { ...state, users: users.filter((user) => user._id !== payload) };
+         return { ...state, users: state.users.filter((user) => user._id !== payload) };
       }
       case "RESET": {
          return authStates;

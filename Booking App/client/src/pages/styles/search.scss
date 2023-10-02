@@ -3,6 +3,7 @@
 .main-section {
 	@include flex(space-between, flex-start);
 	padding: 20px 0;
+	gap: 20px;
 	.filter-btn {
 		@include fixed(bl, 10px, 50%);
 		transform: translateX(-50%);

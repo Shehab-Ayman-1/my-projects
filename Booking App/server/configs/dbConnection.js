@@ -2,8 +2,7 @@ import mongoose from "mongoose";
 
 export const DBconnection = async () => {
 	try {
-		const URL = process.env.MONGO_URL || process.env.MONGODB_URI;
-		return await mongoose.connect(URL);
+		await mongoose.connect(process.env.MONGODB_URL || process.env.MONGODB_URI);
 	} catch (error) {
 		console.log(`Database Error 🤦‍♂️ \n`, error);
 	}

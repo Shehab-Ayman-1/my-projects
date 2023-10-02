@@ -1,7 +1,6 @@
-import Rooms from "../models/rooms.model.js";
-import Hotels from "../models/hotels.model.js";
-import mongoose from "mongoose";
+import { Hotels, Rooms } from "../models/index.js";
 import { ObjectId } from "mongodb";
+import mongoose from "mongoose";
 
 export const GET_ROOMS = async (req, res) => {
 	try {
@@ -16,7 +15,7 @@ export const GET_ROOMS = async (req, res) => {
 			res.status(200).json(rooms);
 		}
 	} catch (error) {
-		res.status(404).json(error);
+		res.status(404).json(error.message);
 	}
 };
 
@@ -30,8 +29,7 @@ export const GET_ROOM = async (req, res) => {
 
 		res.status(200).json(room);
 	} catch (error) {
-		res.status(404).json(error);
-		console.log(error);
+		res.status(404).json(error.message);
 	}
 };
 
@@ -47,7 +45,7 @@ export const CREATE_ROOM = async (req, res) => {
 
 		res.status(200).json("The Room Was Successfully Created.");
 	} catch (error) {
-		res.status(404).json(error);
+		res.status(404).json(error.message);
 	}
 };
 
@@ -59,7 +57,7 @@ export const UPDATE_ROOM = async (req, res) => {
 		await Rooms.findByIdAndUpdate(roomID, req.body, { new: true });
 		res.status(200).json("The Room Was Successfully Updated.");
 	} catch (error) {
-		res.status(404).json(error);
+		res.status(404).json(error.message);
 	}
 };
 
@@ -72,7 +70,7 @@ export const UPDATE_UN_AVAILABLE_ROOMS = async (req, res) => {
 		let updated = await Rooms.updateOne({ "roomNumbers._id": roomNumbersID }, { $push: { "roomNumbers.$.unAvailableDates": unAvailableDates } });
 		res.status(200).json({ success: "The Room Numbers Was Successfully Updated.", updated });
 	} catch (error) {
-		res.status(404).json(error);
+		res.status(404).json(error.message);
 	}
 };
 
@@ -87,7 +85,6 @@ export const DELETE_ROOM = async (req, res) => {
 		await Hotels.findByIdAndUpdate(hotelID, { $pull: { rooms: new ObjectId(roomID) } });
 		res.status(200).json("The Room Was Successfully Deleted.");
 	} catch (error) {
-		res.status(404).json(error);
-		console.log(error);
+		res.status(404).json(error.message);
 	}
 };

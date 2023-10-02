@@ -8,6 +8,7 @@
 	z-index: 1000;
 	display: none;
 	border-radius: 20px;
+	box-shadow: 0 0 15px get(dimBlack);
 	@include width(md) {
 		display: block;
 	}

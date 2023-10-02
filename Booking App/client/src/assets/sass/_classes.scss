@@ -9,6 +9,10 @@
 	-webkit-text-fill-color: transparent;
 }
 
+.hidden {
+	display: none !important;
+}
+
 // Show & Hide Element
 .hide-height {
 	max-height: 0 !important;
@@ -33,6 +37,7 @@
 }
 
 .mybtn {
+	color: get(black);
 	font-size: 14px;
 	font-weight: bold;
 	padding: 8px 20px;

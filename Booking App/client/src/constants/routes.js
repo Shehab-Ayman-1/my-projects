@@ -1,4 +1,6 @@
 export const routes = {
-	local: "http://localhost:5000/api",
-	remote: "",
+	locale: {
+		baseURL: "http://localhost:5000/api",
+	},
+	remote: "https://booking-app-server.netlify.app/api",
 };

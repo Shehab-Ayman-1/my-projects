@@ -8,6 +8,7 @@ export const SearchPage = () => {
 	const { data: cities } = useAxios("get", `/hotels/get-count-by-city?cities=all`);
 	const [widgetNo, setWidgetNo] = useState({ from: 0, to: 5 });
 	const [openFilter, setOpenFilter] = useState(false);
+	const [selectedCity, setSelectedCity] = useState("All Locations");
 
 	const handleOpenFilter = () => setOpenFilter((o) => (o = true));
 
@@ -15,8 +16,8 @@ export const SearchPage = () => {
 		<Fragment>
 			<Navbar />
 			<main className="main-section">
-				<FilterOptions cities={cities} openFilter={openFilter} setOpenFilter={setOpenFilter} widgetNo={widgetNo} />
-				<FilterResults widgetNo={widgetNo} setWidgetNo={setWidgetNo} />
+				<FilterOptions cities={cities} setSelectedCity={setSelectedCity} openFilter={openFilter} setOpenFilter={setOpenFilter} widgetNo={widgetNo} />
+				<FilterResults selectedCity={selectedCity} widgetNo={widgetNo} setWidgetNo={setWidgetNo} />
 				<button className="mybtn filter-btn" data-varient="outline" onClick={handleOpenFilter}>
 					Filter
 				</button>
