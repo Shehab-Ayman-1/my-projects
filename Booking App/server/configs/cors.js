@@ -2,9 +2,9 @@ const whiteList = ["https://booking-com-admin.netlify.app", "https://booking-app
 
 export const corsOrigins = {
 	origin: (origin, callback) => {
-		// origin = undefined -> on localhost
 		const isAcceptable = whiteList.some((site) => site === origin);
-		if (isAcceptable || origin === undefined) callback(null, origin);
+
+		if (isAcceptable || origin === undefined) callback(null, origin); // origin = undefined -> on localhost
 		else callback(`${origin}: Not Allowed By CORS`);
 	},
 	credentials: true,
