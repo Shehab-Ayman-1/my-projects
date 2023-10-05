@@ -5,8 +5,10 @@
 	padding: 20px 0;
 	gap: 20px;
 	.filter-btn {
-		@include fixed(bl, 10px, 50%);
+		@include fixed(bl, 60px, 50%);
 		transform: translateX(-50%);
+		max-width: 300px;
+		width: 100%;
 		padding: 10px 25px;
 		font-size: 20px;
 		@include width(md) {
