@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAxios } from "@/hooks";
 import useContext from "@/context";
-import axios from "axios";
 import "./styles/reserve-model.scss";
 
 export const ReserveModel = ({ hotelID, open, setOpen }) => {
 	const { data: rooms, loading } = useAxios("get", `/hotels/get-hotel-rooms/${hotelID}`);
+	const { Refetch } = useAxios("put", "/");
 	const [selectedRooms, setSelectedRooms] = useState([]);
 	const [reserveLoading, setReserveLoading] = useState(false);
 	const [calender, setCalender] = useState([{ startDate: "", endDate: "" }]);
@@ -50,16 +50,16 @@ export const ReserveModel = ({ hotelID, open, setOpen }) => {
 	const handleReseve = async () => {
 		setReserveLoading((r) => (r = true));
 		try {
-			const promises = selectedRooms.map((roomID) => {
-				const response = axios.put(`http://localhost:5000/api/rooms/update-un-available-rooms/${roomID}`, { unAvailableDates: getRangeDates() });
-				return response.data;
+			const promises = selectedRooms.map(async (roomID) => {
+				const data = await Refetch("put", `/rooms/update-un-available-rooms/${roomID}`, { unAvailableDates: getRangeDates() });
+				return data;
 			});
 			await Promise.all(promises);
 		} catch (error) {
 			console.log(error);
 		} finally {
-			setReserveLoading((r) => (r = false));
 			alert("The Rooms Was Reserved, We Will Contact You As Soon As Possible.");
+			setReserveLoading((r) => (r = false));
 			navigate("/search");
 		}
 	};
