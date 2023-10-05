@@ -4,9 +4,9 @@ import { Error, Loading } from "@/layout";
 import "./styles/types.scss";
 
 export const Types = () => {
-	const { data, loading, error } = useAxios("get", "/hotels/get-count-by-type");
+	const { data, loading, error } = useAxios("get", "/hotels/get-list-of?types=Hostels,Resorts,Villas,Ryokans");
 
-	let types = data?.map((item, i) => ({ ...item, img: typesImages[i] }));
+	const types = data?.map((item, i) => ({ ...item, img: typesImages[i] }));
 
 	return (
 		<section className="types-section">
@@ -19,7 +19,7 @@ export const Types = () => {
 						<img src={img} alt={type} />
 						<h2>{type}</h2>
 						<p>
-							1{count} {type}
+							{count} {type}
 						</p>
 					</div>
 				))}

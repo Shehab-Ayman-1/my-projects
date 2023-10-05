@@ -10,7 +10,7 @@ import "./styles/hero.scss";
 
 let today = new Date();
 export const Hero = () => {
-	const { data: cities, error } = useAxios("get", "/hotels/get-count-by-city?cities=all");
+	const { data: cities, error } = useAxios("get", "/hotels/get-list-of?cities=All Locations");
 	const { hotelsDispatch } = useContext(0);
 
 	const [calender, setCalender] = useState([{ startDate: today, endDate: today, key: "selection" }]);

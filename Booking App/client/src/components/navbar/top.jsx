@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Avatar } from "@/assets";
 import { Menu } from "..";
@@ -38,7 +38,7 @@ export const TopSection = () => {
 			</Link>
 			<div className="right-side">
 				<i className="far fa-question-circle fa-xl" />
-				<Link to="/" className="mybtn" data-varient="outline">
+				<Link to="https://booking-com-admin.netlify.app" className="mybtn" target="_blank" data-varient="outline">
 					Dashboard
 				</Link>
 

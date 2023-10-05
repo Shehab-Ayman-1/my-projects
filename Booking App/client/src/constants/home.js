@@ -2,7 +2,7 @@ import { London, Berlin, Madrid, Hotel1, Hotel5, Hotel4, Hotel3, Hotel2, Furnitu
 
 export const citiesImages = [London, Berlin, Madrid];
 
-export const typesImages = [Hotel1, Hotel2, Hotel3, Hotel4, Hotel5];
+export const typesImages = [Hotel1, Hotel3, Hotel2, Hotel4, Hotel5];
 
 export const featuresImages = [Furnitur1, Furnitur2, Furnitur3, Furnitur4];
 

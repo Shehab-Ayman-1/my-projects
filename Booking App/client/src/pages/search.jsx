@@ -5,7 +5,7 @@ import { FilterOptions, FilterResults } from "@/components";
 import "./styles/search.scss";
 
 export const SearchPage = () => {
-	const { data: cities } = useAxios("get", `/hotels/get-count-by-city?cities=all`);
+	const { data: cities } = useAxios("get", `/hotels/get-list-of?cities=All Locations`);
 	const [widgetNo, setWidgetNo] = useState({ from: 0, to: 5 });
 	const [openFilter, setOpenFilter] = useState(false);
 	const [selectedCity, setSelectedCity] = useState("All Locations");
