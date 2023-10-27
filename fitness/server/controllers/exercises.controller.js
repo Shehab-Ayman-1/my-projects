@@ -68,7 +68,7 @@ export const CREATE_EXERCISES = async (req, res) => {
 
 		// Add The New Exercises
 		const items = response.data?.map(({ id, ...item }) => item) || [];
-		const newExercises = await Exercises.create(items);
+		const newExercises = await Exercises.create(items.slice(0, 500));
 
 		res.status(200).json(newExercises);
 	} catch (error) {
