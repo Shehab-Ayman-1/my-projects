@@ -1,5 +1,6 @@
 import Exercises from "../models/exercises.model.js";
 import axios from "axios";
+const headers = { "X-RapidAPI-Key": process.env.RAPID_KEY, "X-RapidAPI-Host": "exercisedb.p.rapidapi.com" };
 
 export const GET_SEARCH = async (req, res) => {
 	try {
@@ -23,8 +24,22 @@ export const GET_EXERCISES = async (req, res) => {
 	try {
 		const { limit, ...query } = req.query;
 
-		const exercises = await Exercises.find(query).limit(limit || 999);
-		res.status(200).json(exercises);
+		const exercises = (await Exercises.find(query).limit(limit || 999)) || [];
+		const date = new Date(exercises[0]?.createdAt);
+
+		if (date.getDate() === new Date().getDate()) return res.status(200).json(exercises);
+
+		// Delete The Previous Exercises
+		await Exercises.deleteMany();
+
+		// Get The Source Data
+		const response = await axios.get("https://exercisedb.p.rapidapi.com/exercises", { headers });
+
+		// Add The New Exercises
+		const items = response.data?.map(({ id, ...item }) => item) || [];
+		const newExercises = await Exercises.create(items.slice(0, 500));
+
+		res.status(200).json(newExercises);
 	} catch (error) {
 		res.status(404).json(error.message);
 	}
@@ -59,8 +74,6 @@ export const GET_LIST_BY_KEY = async (req, res) => {
 
 export const CREATE_EXERCISES = async (req, res) => {
 	try {
-		// Exercises Options
-		const headers = { "X-RapidAPI-Key": process.env.RAPID_KEY, "X-RapidAPI-Host": "exercisedb.p.rapidapi.com" };
 		const response = await axios.get("https://exercisedb.p.rapidapi.com/exercises", { headers });
 
 		// Delete The Previous Exercises

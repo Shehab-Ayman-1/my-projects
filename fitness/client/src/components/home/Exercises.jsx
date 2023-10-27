@@ -40,8 +40,8 @@ export const Exercises = ({ exercises, setExercises, bodyPart }) => {
 				Showing Results ({bodyPart})
 			</Typography>
 			<Stack direction="row" sx={{ gap: { lg: "107px", xs: "50px" } }} flexWrap="wrap" justifyContent="center">
-				{currentExercises.map((exercise, idx) => (
-					<ExerciseCard key={idx} exercise={exercise} />
+				{currentExercises.map((exercise, i) => (
+					<ExerciseCard key={i} exercise={exercise} />
 				))}
 				{!currentExercises.length && <h3>No Result</h3>}
 			</Stack>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { DBURL } from "@/constants";
 import axios from "axios";
 
-const router = axios.create({ baseURL: DBURL });
+const router = axios.create({ baseURL: DBURL() });
 
 export const youtubeOptions = {
 	method: "GET",

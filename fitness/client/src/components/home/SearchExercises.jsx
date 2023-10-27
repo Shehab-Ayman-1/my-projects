@@ -36,11 +36,16 @@ export const SearchExercises = ({ bodyPart, setBodyPart, setExercises }) => {
 			<Typography fontWeight={700} sx={{ fontSize: { lg: "44px", xs: "30px" } }} mb="49px" textAlign="center">
 				Awesome Exercises You <br /> Should Know
 			</Typography>
-			<Box position="relative" mb="72px">
+			<Stack width="100%" mb="72px" direction="row" alignItems="center" justifyContent="center">
 				<TextField
 					type="text"
 					height="76px"
-					sx={{ input: { fontWeight: "700", border: "none", borderRadius: "4px" }, width: { lg: "1170px", xs: "350px" }, backgroundColor: "#fff", borderRadius: "40px" }}
+					sx={{
+						width: { xs: "90%", sm: "60%" },
+						backgroundColor: "#fff",
+						borderRadius: "40px",
+						input: { fontWeight: "700", border: "none", borderRadius: "4px" },
+					}}
 					value={search}
 					onChange={({ target: { value } }) => setSearch(value.toLowerCase())}
 					placeholder="Search Exercises"
@@ -48,20 +53,18 @@ export const SearchExercises = ({ bodyPart, setBodyPart, setExercises }) => {
 				<Button
 					className="search-btn"
 					sx={{
+						width: { md: "173px", xs: "80px" },
+						fontSize: { md: "20px", xs: "14px" },
+						fontWeight: 900,
 						bgcolor: "#FF2625",
 						color: "#fff",
-						textTransform: "none",
-						width: { lg: "173px", xs: "80px" },
 						height: "56px",
-						position: "absolute",
-						right: "0px",
-						fontSize: { lg: "20px", xs: "14px" },
 					}}
 					onClick={handleSearch}>
 					Search
 				</Button>
-			</Box>
-			<Box sx={{ position: "relative", width: "100%", p: "20px" }}>
+			</Stack>
+			<Box sx={{ position: "relative", width: "100%" }}>
 				<HorizontalScrollbar data={bodyParts} bodyParts setBodyPart={setBodyPart} bodyPart={bodyPart} />
 			</Box>
 		</Stack>
