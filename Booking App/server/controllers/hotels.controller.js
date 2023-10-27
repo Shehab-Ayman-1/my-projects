@@ -96,34 +96,37 @@ export const GET_HOTEL_ROOMS = async (req, res) => {
 	}
 };
 
-export const GET_COUNT_BY_CITY = async (req, res) => {
+export const GET_LIST_OF = async (req, res) => {
 	try {
-		const cities = req.query.cities.split(",");
+		const { types, cities } = req.query;
 
-		if (cities[0] === "all") {
-			let cities = await Hotels.find().select("city");
-			let allCities = cities.map(({ city }) => city);
-			let filterCities = Array.from(new Set(allCities));
-			res.status(200).json(filterCities);
-		} else {
-			const listOfCities = cities.map(async (city) => ({ city, count: await Hotels.countDocuments({ city }) }));
-			const counts = await Promise.all(listOfCities);
-			res.status(200).json(counts);
+		if (types) {
+			const query = types.split(",");
+			const listOfTypes = query.map(async (type) => ({ type, count: await Hotels.countDocuments({ type }) }));
+
+			const result = await Promise.all(listOfTypes);
+			return res.status(200).json(result);
 		}
-	} catch (error) {
-		res.status(404).json(error.message);
-	}
-};
 
-export const GET_COUNT_BY_TYPE = async (req, res) => {
-	try {
-		let types = ["hotels", "apartments", "resorts", "villas", "cabins"];
-		let listOfTypes = types.map(async (type) => ({ type, count: await Hotels.countDocuments({ type }) }));
+		if (cities) {
+			const query = cities.split(",");
+			let listOfCities;
 
-		let counts = await Promise.all(listOfTypes);
-		res.status(200).json(counts);
+			if (cities === "All Locations") {
+				const cities = await Hotels.find().select("city");
+				listOfCities = cities.map(({ city }) => city);
+			} else {
+				listOfCities = query.map(async (city) => ({ city, count: await Hotels.countDocuments({ city }) }));
+			}
+
+			const result = await Promise.all(listOfCities);
+			return res.status(200).json(result);
+		}
+
+		res.status(404).json(`Only Types And Cities Are Available`);
 	} catch (error) {
-		res.status(404).json(error.message);
+		res.status(404).json(`GET_LIST_OF: ${error.message}`);
+		console.log(error?.message);
 	}
 };
 

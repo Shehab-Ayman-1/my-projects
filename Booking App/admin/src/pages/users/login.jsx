@@ -55,8 +55,8 @@ export function Login() {
                   )}
                   {status !== 203 && error && !loading && <h3 className="border-b border-t border-r border-l border-red-900 bg-red-500/20 p-2 text-center text-red-500">{error}</h3>}
                   {jwtExp && <h3 className="border-b border-t border-r border-l border-red-900 bg-red-500/20 p-2 text-center text-red-500">{jwtExp}</h3>}
-                  <Input type="email" label="Email" name="email" size="lg" disabled={loading} onChange={handleChange} />
-                  <Input type="password" label="Password" name="password" size="lg" disabled={loading} onChange={handleChange} />
+                  <Input type="email" label={formData.email} name="email" size="lg" disabled={loading} onChange={handleChange} />
+                  <Input type="password" label={formData.password} name="password" size="lg" disabled={loading} onChange={handleChange} />
                </CardBody>
 
                <CardFooter className="pt-0">
