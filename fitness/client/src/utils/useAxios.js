@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { localURL, publicURL } from "@/constants";
 import axios from "axios";
 
-const router = axios.create({ baseURL: localURL });
+const router = axios.create({ baseURL: publicURL });
 
 export const youtubeOptions = {
 	method: "GET",
