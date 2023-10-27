@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
 body {
-	font-family: "Josefin Sans";
 	background-color: #fffafb;
 }
 
@@ -7,6 +8,7 @@ body {
 	padding: 0px;
 	margin: 0px;
 	box-sizing: border-box;
+	font-family: "Josefin Sans", cursive !important;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -16,6 +18,33 @@ body {
 }
 ::-webkit-scrollbar-thumb {
 	background-color: red;
+}
+
+::selection {
+	background-color: #ff2625;
+	color: white;
+	text-shadow: 5px 5px 10px black;
+}
+
+.navlink {
+	color: #3a1212;
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.navlink:hover {
+	color: darkred;
+}
+
+@media (min-width: 390px) {
+	.navlink {
+		font-size: 1.5rem;
+	}
+}
+@media (min-width: 600px) {
+	.navlink {
+		font-size: 2rem;
+	}
 }
 
 .right-arrow,
@@ -50,12 +79,23 @@ body {
 }
 
 .hero-banner-img {
+	width: 100%;
+	max-width: 600px;
+	display: block;
+}
+
+.word-overlay {
+	color: #ff2625;
+	font-size: 200px;
+	font-weight: 600;
+	opacity: 0.1;
 	position: absolute;
-	right: 40px;
-	top: 0px;
-	width: 700px;
-	height: 900px;
-	margin-top: -330px;
+	z-index: -1;
+}
+@media (max-width: 900px) {
+	.word-overlay {
+		display: none;
+	}
 }
 
 .exercise-card {
@@ -114,10 +154,6 @@ body {
 	.left-arrow,
 	.right-arrow {
 		position: static !important;
-	}
-
-	.hero-banner-img {
-		display: none;
 	}
 
 	.exercise-card {

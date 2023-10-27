@@ -25,6 +25,7 @@ export const SearchExercises = ({ bodyPart, setBodyPart, setExercises }) => {
 		if (!loading && error) return alert(error);
 
 		window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
+		setBodyPart(() => search);
 		setOldSearch((s) => (s = search));
 		setSearch((s) => (s = ""));
 		setExercises((e) => (e = searchResult));

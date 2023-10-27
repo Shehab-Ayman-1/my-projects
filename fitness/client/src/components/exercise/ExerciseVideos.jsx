@@ -9,11 +9,11 @@ export const ExerciseVideos = ({ exerciseVideos, name }) => {
 			<Typography sx={{ fontSize: { md: "44px", xs: "25px" } }} fontWeight={700} color="#000" mb="33px">
 				Watch <span style={{ color: "#FF2625", textTransform: "capitalize" }}>{name}</span> exercise videos
 			</Typography>
-			<Grid container spacing={4} justifyContent="space-between">
+			<Stack flexWrap="wrap" justifyContent="space-around" alignItems="flex-start" gap={3} direction="row">
 				{exerciseVideos?.slice(0, 6)?.map(({ video }, index) => (
-					<Grid key={index} item xs={12} sm={6} md={4}>
-						<a className="exercise-video" href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noreferrer">
-							<img style={{ borderTopLeftRadius: "20px" }} src={video.thumbnails[0].url} alt={video.title} />
+					<Box key={index} sx={{ width: "100%", maxWidth: "350px" }}>
+						<a style={{ width: "100%", height: "100%" }} className="exercise-video" href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noreferrer">
+							<img style={{ borderTopLeftRadius: "20px", borderTopRightRadius: "20px", width: "100%", height: "100%" }} src={video.thumbnails[0].url} alt={video.title} />
 							<Box>
 								<Typography sx={{ fontSize: { lg: "28px", xs: "18px" } }} fontWeight={600} color="#000">
 									{video.title}
@@ -23,9 +23,9 @@ export const ExerciseVideos = ({ exerciseVideos, name }) => {
 								</Typography>
 							</Box>
 						</a>
-					</Grid>
+					</Box>
 				))}
-			</Grid>
+			</Stack>
 		</Box>
 	);
 };

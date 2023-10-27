@@ -23,6 +23,8 @@ export const Description = ({ video, bgGradient }: DescriptionProps) => {
 		setOpen((o) => (o = false));
 	};
 
+	if (!video?.snippet || !video?.statistics) return;
+
 	const viewsCount = +(video?.statistics.viewCount || 0);
 	const createdAt = new Date(video?.snippet.publishedAt || "");
 	return (
@@ -45,11 +47,11 @@ export const Description = ({ video, bgGradient }: DescriptionProps) => {
 					{moment(createdAt).fromNow()} -
 				</Typography>
 				<Typography variant="body1" color="#bbb" fontWeight="bold">
-					#{video?.snippet.tags.slice(0, 3).join(" - #")}
+					#{video?.snippet?.tags?.slice(0, 3).join(" - #")}
 				</Typography>
 			</Stack>
 			<Typography variant="body2" color="white" sx={{ whiteSpace: "pre-line" }}>
-				{video?.snippet.description}
+				{video?.snippet?.description}
 			</Typography>
 			{!open && (
 				<Button variant="text" color="inherit" sx={{ color: "white", mt: 2, fontWeight: "bold", "&:hover": { color: "#bbb" } }} onClick={handleClose}>

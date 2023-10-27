@@ -9,18 +9,18 @@ export const Detail = ({ exerciseDetail: { bodyPart, gifUrl, name, target, equip
 	];
 
 	return (
-		<Stack gap="60px" sx={{ flexDirection: { lg: "row" }, p: "20px", alignItems: "center" }}>
+		<Stack gap="60px" alignItems="center" p="20px" sx={{ flexDirection: { md: "row" } }}>
 			<img src={gifUrl} alt={name} loading="lazy" className="detail-image" />
-			<Stack sx={{ gap: { lg: "35px", xs: "20px" } }}>
+			<Stack alignItems="center" justifyContent="center" sx={{ gap: { xs: "20px", sm: "28px", md: "32px", lg: "35px" }, textAlign: "center" }}>
 				<Typography sx={{ fontSize: { lg: "64px", xs: "30px" } }} fontWeight={700} textTransform="capitalize">
 					{name}
 				</Typography>
-				<Typography sx={{ fontSize: { lg: "24px", xs: "18px" } }} color="#4F4C4C">
-					Exercises keep you strong. <span style={{ textTransform: "capitalize" }}>{name}</span> bup is one of the best <br /> exercises to target your {target}. It will help you improve
-					your <br /> mood and gain energy.
+				<Typography sx={{ color: "gray", fontSize: { xs: "14px", sm: "16px", md: "18px", lg: "20px" } }} color="#4F4C4C">
+					Exercises keep you strong. <span style={{ textTransform: "capitalize" }}>{name}</span> bup is one of the best <br /> exercises to target your {target}. It will help you improve your{" "}
+					<br /> mood and gain energy.
 				</Typography>
 				{extraDetail?.map((item, i) => (
-					<Stack key={i} direction="row" gap="24px" alignItems="center">
+					<Stack key={i} direction="row" gap="24px" alignItems="center" sx={{ minWidth: "240px" }}>
 						<Button sx={{ background: "#FFF2DB", borderRadius: "50%", width: "100px", height: "100px" }}>
 							<img src={item.icon} alt={bodyPart} style={{ width: "50px", height: "50px" }} />
 						</Button>

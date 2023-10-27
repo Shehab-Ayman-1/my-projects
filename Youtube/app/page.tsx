@@ -32,7 +32,7 @@ const Feed = () => {
 		<Fragment>
 			<Navbar setOpen={setOpen} />
 			<Stack sx={{ width: "100%", flexDirection: { sm: "column", md: "row" } }}>
-				<Box sx={{ borderRight: "1px solid #3d3d3d", px: { sm: 0, md: 2 }, width: { xs: "100%", md: open ? "300px" : "40px" }, overflowX: "hidden" }}>
+				<Box sx={{ borderRight: "1px solid #3d3d3d", px: { sm: 0, md: 2 }, width: { xs: "100%", md: open ? "300px" : "50px" }, overflowX: "hidden" }}>
 					<Sidebar open={open} setOpen={setOpen} selected={selected} setSelected={setSelected} />
 					{open && (
 						<Typography variant="subtitle2" className="copyright" sx={{ color: "#bbb", mt: 1, textAlign: "center" }}>

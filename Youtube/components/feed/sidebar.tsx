@@ -2,9 +2,15 @@
 import { Stack } from "@mui/material";
 import { categories } from "@/constants";
 import type { SelectedCatagory, ButtonEvent, OpenCloseSidebar } from "@/types";
+import { useEffect, useState } from "react";
 
 export const Sidebar = ({ open, setOpen, selected, setSelected }: SelectedCatagory & OpenCloseSidebar) => {
-	const innerWidth = window.innerWidth;
+	const [innerWidth, setInnerWidth] = useState(0);
+
+	useEffect(() => {
+		setInnerWidth(() => window?.innerWidth || 0);
+	}, []);
+
 	const handleClick = ({ currentTarget: { name } }: ButtonEvent) => {
 		setSelected((s) => (s = name));
 		if (innerWidth < 1200) {
@@ -21,7 +27,7 @@ export const Sidebar = ({ open, setOpen, selected, setSelected }: SelectedCatago
 					name={name}
 					onClick={handleClick}
 					style={{
-						background: name === selected ? "#fc1503" : "",
+						background: name === selected ? "#fc1503" : "initial",
 						color: "white",
 						whiteSpace: "nowrap",
 					}}>
