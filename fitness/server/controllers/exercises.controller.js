@@ -72,6 +72,6 @@ export const CREATE_EXERCISES = async (req, res) => {
 
 		res.status(200).json(newExercises);
 	} catch (error) {
-		res.status(404).json(error.message);
+		res.status(404).json(`CREATE_EXERCISES: ${error.message}`);
 	}
 };
