@@ -16,7 +16,7 @@ app.use("/exercises", ExercisesRoute);
 // DB Connection
 const DBconnection = async () => {
 	try {
-		await mongoose.connect(process.env.MONGO_URL);
+		await mongoose.connect(process.env.MONGODB_URL || process.env.MONGODB_URI);
 	} catch (error) {
 		console.log(error);
 	}
