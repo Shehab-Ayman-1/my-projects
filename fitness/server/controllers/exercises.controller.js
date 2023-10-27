@@ -1,4 +1,5 @@
 import Exercises from "../models/exercises.model.js";
+import axios from "axios";
 
 export const GET_SEARCH = async (req, res) => {
 	try {
@@ -47,9 +48,8 @@ export const GET_LIST_BY_KEY = async (req, res) => {
 		const { key } = req.query;
 		if (!key) return res.status(400).json("Key Is Required Query.");
 
-		const allExercises = await Exercises.find().select(key);
-		const values = allExercises.map((item) => item[key]);
-		const list = Array.from(new Set(values));
+		const keys = await Exercises.find().distinct(key);
+		const list = Array.from(new Set(keys));
 
 		res.status(200).json(list);
 	} catch (error) {
@@ -57,13 +57,20 @@ export const GET_LIST_BY_KEY = async (req, res) => {
 	}
 };
 
-export const CREATE_BODY_PARTS = async (req, res) => {
+export const CREATE_EXERCISES = async (req, res) => {
 	try {
-		const { bodyParts } = req.body;
+		// Exercises Options
+		const headers = { "X-RapidAPI-Key": process.env.RAPID_KEY, "X-RapidAPI-Host": "exercisedb.p.rapidapi.com" };
+		const response = await axios.get("https://exercisedb.p.rapidapi.com/exercises", { headers });
 
-		const items = bodyParts.map(({ id, ...item }) => item);
-		const newBodyParts = await Exercises.create(items);
-		res.status(200).json(newBodyParts);
+		// Delete The Previous Exercises
+		await Exercises.deleteMany();
+
+		// Add The New Exercises
+		const items = response.data?.map(({ id, ...item }) => item) || [];
+		const newExercises = await Exercises.create(items);
+
+		res.status(200).json(newExercises);
 	} catch (error) {
 		res.status(404).json(error.message);
 	}

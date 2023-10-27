@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { GET_EXERCISES, GET_EXERCISE, GET_LIST_BY_KEY, GET_SEARCH, CREATE_BODY_PARTS } from "../controllers/exercises.controller.js";
+import { GET_EXERCISES, GET_EXERCISE, GET_LIST_BY_KEY, GET_SEARCH, CREATE_EXERCISES } from "../controllers/exercises.controller.js";
 
 const router = Router();
 
@@ -10,7 +10,7 @@ router.get("/get-list-by-key", GET_LIST_BY_KEY);
 router.get("/get-search/:search", GET_SEARCH);
 
 // POST
-router.post("/create-body-parts", CREATE_BODY_PARTS);
+router.get("/create-exercises", CREATE_EXERCISES);
 
 // PUT
 

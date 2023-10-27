@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Middlewares
 app.use(cors());
-app.use("/exercises", ExercisesRoute);
+app.use("/api/exercises", ExercisesRoute);
 
 // DB Connection
 const DBconnection = async () => {
