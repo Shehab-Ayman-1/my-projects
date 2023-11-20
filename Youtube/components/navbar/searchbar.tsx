@@ -38,7 +38,7 @@ export const Searchbar = () => {
 	};
 
 	return (
-		<Paper component="form" sx={{ width: "100%", maxWidth: "300px", borderRadius: 20, border: "1px solid #e3e3e3", pl: 2, boxShadow: "none", mr: { sm: 1 }, ml: 2 }} onSubmit={handleSubmit}>
+		<Paper component="form" sx={{ width: "100%", maxWidth: "600px", borderRadius: 20, border: "1px solid #e3e3e3", pl: 2, boxShadow: "none", mr: { sm: 1 }, ml: 2 }} onSubmit={handleSubmit}>
 			<div className="">
 				<Autocomplete
 					fullWidth

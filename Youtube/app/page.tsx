@@ -32,19 +32,13 @@ const Feed = () => {
 		<Fragment>
 			<Navbar setOpen={setOpen} />
 			<Stack sx={{ width: "100%", flexDirection: { sm: "column", md: "row" } }}>
-				<Box sx={{ borderRight: "1px solid #3d3d3d", px: { sm: 0, md: 2 }, width: { xs: "100%", md: open ? "300px" : "50px" }, overflowX: "hidden" }}>
-					<Sidebar open={open} setOpen={setOpen} selected={selected} setSelected={setSelected} />
-					{open && (
-						<Typography variant="subtitle2" className="copyright" sx={{ color: "#bbb", mt: 1, textAlign: "center" }}>
-							Copyright 2023 With ❤️ By <br /> Shehab Ayman
-						</Typography>
-					)}
-				</Box>
+				<Sidebar open={open} setOpen={setOpen} selected={selected} setSelected={setSelected} />
 
 				<Box p={2}>
 					<Typography variant="h4" fontWeight="bold" sx={{ color: "white" }}>
 						{selected} <span className="colored-title">Videos</span>
 					</Typography>
+
 					<Videos videos={videos} />
 				</Box>
 			</Stack>

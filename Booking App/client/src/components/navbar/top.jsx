@@ -12,7 +12,7 @@ export const TopSection = () => {
 		const user = JSON.parse(localStorage.getItem("user"));
 		if (!user) return;
 
-		setUser((u) => (u = { fName: user.fName, lName: user.lName }));
+		setUser((u) => (u = { avatar: user?.avatar, fName: user.fName, lName: user.lName }));
 	}, []);
 
 	useEffect(() => {
@@ -38,7 +38,7 @@ export const TopSection = () => {
 			</Link>
 			<div className="right-side">
 				<i className="far fa-question-circle fa-xl" />
-				<Link to="https://booking-com-admin.netlify.app" className="mybtn" target="_blank" data-varient="outline">
+				<Link to="https://booking-com-admin.vercel.app" className="mybtn" target="_blank" data-varient="outline">
 					Dashboard
 				</Link>
 
@@ -51,7 +51,7 @@ export const TopSection = () => {
 					</button>
 				</div>
 
-				<Menu title={<img className="avatar" src={Avatar} alt="avatar" />} useArrow={false} hidden={!user} closeable>
+				<Menu title={<img className="avatar" src={user?.avatar || Avatar} alt="avatar" />} useArrow={false} hidden={!user} closeable>
 					<div className="option name">
 						<h3>
 							{user?.fName} {user?.lName}

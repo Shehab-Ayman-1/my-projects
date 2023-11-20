@@ -27,7 +27,9 @@ const VideoDetails = ({ params: { id } }: VideoIdParams) => {
 	return (
 		<Fragment>
 			<Navbar noSidebar />
-			<Stack sx={{ flexDirection: { xs: "column", md: "row" }, p: { xs: 2, sx: 3, md: 4 } }} gap={4}>
+			<Stack sx={{ position: "relative", flexDirection: { xs: "column", md: "row" }, p: { xs: 2, sx: 3, md: 4 } }} gap={4}>
+				<div className="gradient-bg" />
+
 				<Box flex={2.5}>
 					<Box sx={{ width: "100%" }}>
 						<ReactPlayer controls className="react-player" url={`https://www.youtube.com/watch?v=${id}`} />

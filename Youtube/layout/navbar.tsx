@@ -1,11 +1,11 @@
 "use client";
+import { useEffect, useState } from "react";
 import { Badge, Stack, Typography } from "@mui/material";
 import { logo } from "@/constants";
 import { Searchbar } from "@/components";
 import { Menu } from "@mui/icons-material";
 import type { OpenCloseSidebar } from "@/types";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export const Navbar = ({ setOpen, noSidebar }: OpenCloseSidebar) => {
 	const handleOpenSidebar = () => setOpen && setOpen((o) => (o = !o));

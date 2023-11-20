@@ -1,8 +1,9 @@
 "use client";
-import { Stack } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { categories } from "@/constants";
 import type { SelectedCatagory, ButtonEvent, OpenCloseSidebar } from "@/types";
 import { useEffect, useState } from "react";
+import "./sidebar.scss";
 
 export const Sidebar = ({ open, setOpen, selected, setSelected }: SelectedCatagory & OpenCloseSidebar) => {
 	const [innerWidth, setInnerWidth] = useState(0);
@@ -19,22 +20,24 @@ export const Sidebar = ({ open, setOpen, selected, setSelected }: SelectedCatago
 	};
 
 	return (
-		<Stack direction="row" sx={{ flexDirection: { md: "column" } }} overflow="hidden">
-			{categories.map(({ name, icon }) => (
-				<button
-					key={name}
-					className={`category-btn ${open ? "open" : "close"}`}
-					name={name}
-					onClick={handleClick}
-					style={{
-						background: name === selected ? "#fc1503" : "initial",
-						color: "white",
-						whiteSpace: "nowrap",
-					}}>
-					<span style={{ paddingRight: 10 }}>{icon}</span>
-					<span style={{ color: name === selected ? "white" : "#bbb", opacity: innerWidth > 900 && !open ? 0 : 1 }}>{name}</span>
-				</button>
-			))}
-		</Stack>
+		<Box className={`box ${!open ? "close" : ""}`}>
+			<Stack className="sidebar" direction="row" sx={{ flexDirection: { md: "column" } }} overflow="hidden">
+				{categories.map(({ name, icon }) => (
+					<button key={name} name={name} className={`category-btn ${name === selected ? "selected" : ""}`} onClick={handleClick}>
+						<div className="icon">
+							<span>{icon}</span>
+						</div>
+						<div className={`name ${name === selected ? "selected" : ""} ${!open ? "hidden" : ""}`}>
+							<span>{name}</span>
+						</div>
+					</button>
+				))}
+			</Stack>
+			{open && (
+				<Typography variant="subtitle2" className="copyright" sx={{ color: "#bbb", mt: 1, textAlign: "center" }}>
+					Copyright 2022 With ❤️ <br /> Shehab Ayman
+				</Typography>
+			)}
+		</Box>
 	);
 };
