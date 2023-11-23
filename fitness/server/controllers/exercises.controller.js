@@ -9,7 +9,7 @@ export const GET_SEARCH = async (req, res) => {
 		const keys = Object.keys(exercises[0]._doc).filter((key) => key !== "_id" && key !== "__v");
 
 		const result = exercises.filter((item) => {
-			const isExist = keys.some((key) => item[key].toLowerCase() === search.toLowerCase());
+			const isExist = keys.some((key) => typeof item[key] === "string" && item[key]?.toLowerCase() === search.toLowerCase());
 			return isExist;
 		});
 

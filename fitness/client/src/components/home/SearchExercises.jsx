@@ -18,7 +18,8 @@ export const SearchExercises = ({ bodyPart, setBodyPart, setExercises }) => {
 		})();
 	}, []);
 
-	const handleSearch = async () => {
+	const handleSearch = async (event) => {
+		event.preventDefault();
 		if (!search || search.toLowerCase() === oldSearch.toLowerCase()) return;
 
 		const { data: searchResult, loading, error } = await searchRefetch("get", `/get-search/${search}`);
@@ -32,7 +33,7 @@ export const SearchExercises = ({ bodyPart, setBodyPart, setExercises }) => {
 	};
 
 	return (
-		<Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
+		<Stack component="form" alignItems="center" mt="37px" justifyContent="center" p="20px" onSubmit={handleSearch}>
 			<Typography fontWeight={700} sx={{ fontSize: { lg: "44px", xs: "30px" } }} mb="49px" textAlign="center">
 				Awesome Exercises You <br /> Should Know
 			</Typography>
@@ -47,11 +48,12 @@ export const SearchExercises = ({ bodyPart, setBodyPart, setExercises }) => {
 						input: { fontWeight: "700", border: "none", borderRadius: "4px" },
 					}}
 					value={search}
-					onChange={({ target: { value } }) => setSearch(value.toLowerCase())}
 					placeholder="Search Exercises"
+					onChange={({ target: { value } }) => setSearch(value.toLowerCase())}
 				/>
 				<Button
 					className="search-btn"
+					type="submit"
 					sx={{
 						width: { md: "173px", xs: "80px" },
 						fontSize: { md: "20px", xs: "14px" },
@@ -59,8 +61,7 @@ export const SearchExercises = ({ bodyPart, setBodyPart, setExercises }) => {
 						bgcolor: "#FF2625",
 						color: "#fff",
 						height: "56px",
-					}}
-					onClick={handleSearch}>
+					}}>
 					Search
 				</Button>
 			</Stack>

@@ -43,7 +43,7 @@ export const ExerciseDetail = () => {
 		})();
 	}, [id]);
 
-	if (!exerciseDetail) return <div>No Data</div>;
+	if (!exerciseDetail) return <div>No Data Found.</div>;
 
 	return (
 		<Box sx={{ mt: { lg: "96px", xs: "60px" } }}>
