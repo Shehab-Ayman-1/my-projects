@@ -21,8 +21,14 @@ export const Cities = () => {
 		navigate("/search");
 	};
 
-	if (loading) return <Loading limit={3} />;
 	if (error || error === null) return <Error message="Catagories Not Found, Please Try Again Later" />;
+	if (loading) {
+		return (
+			<div style={{ marginTop: "50px" }}>
+				<Loading limit={3} />
+			</div>
+		);
+	}
 
 	return (
 		<section className="widgets-section">

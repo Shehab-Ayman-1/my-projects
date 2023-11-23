@@ -33,7 +33,9 @@ export const FilterResults = ({ widgetNo, setWidgetNo }) => {
 
 	const handleNavigate = async (_id) => {
 		let { calender } = await hotelsState;
-		if (!calender?.length || calender[0]?.startDate === calender[0]?.endDate) return alert("Please Select The Start, And End Dates To Be Able To Reserve The Hotel Rooms.");
+		const isDateNotValid = !calender?.length || new Date(calender[0]?.startDate).getTime() === new Date(calender[0]?.endDate).getTime();
+
+		if (isDateNotValid) return alert("Please Select The Start, And End Days To Be Able To Reserve The Hotel Rooms.");
 		navigate(`/hotel/${_id}`, { replace: true, preventScrollReset: false });
 	};
 
@@ -52,7 +54,13 @@ export const FilterResults = ({ widgetNo, setWidgetNo }) => {
 							<h1 className="title">{name}</h1>
 							<span className="rate">
 								{rating}
-								{rating > 8 ? <i className="fas fa-star" /> : rating <= 5 ? <i className="far fa-star" /> : <i className="fas fa-star-half-alt" />}
+								{rating > 8 ? (
+									<i className="fas fa-star" />
+								) : rating <= 5 ? (
+									<i className="far fa-star" />
+								) : (
+									<i className="fas fa-star-half-alt" />
+								)}
 							</span>
 						</div>
 						<p className="address">
@@ -80,14 +88,16 @@ export const FilterResults = ({ widgetNo, setWidgetNo }) => {
 				</div>
 			))}
 
-			<div className="next-prev">
-				<button className="fa fa-arrow-left text-black bg-white" disabled={hotels.loading} onClick={prevWidget} />
-				<div className="">
-					<span className="count">{widgetNo / 5 + 1}</span>
-					<span className="count"> / {Math.ceil(+hotels.hotelsCount / 5)}</span>
+			{+hotels.hotelsCount && (
+				<div className="next-prev">
+					<button className="fa fa-arrow-left text-black bg-white" disabled={hotels.loading} onClick={prevWidget} />
+					<div className="">
+						<span className="count">{widgetNo / 5 + 1}</span>
+						<span className="count"> / {Math.ceil(+hotels.hotelsCount / 5)}</span>
+					</div>
+					<button className="fa fa-arrow-right text-black bg-white" disabled={hotels.loading} onClick={nextWidget} />
 				</div>
-				<button className="fa fa-arrow-right text-black bg-white" disabled={hotels.loading} onClick={nextWidget} />
-			</div>
+			)}
 		</div>
 	);
 };

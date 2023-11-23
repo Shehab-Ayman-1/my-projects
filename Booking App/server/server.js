@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "100kb", parameterLimit: 10000000 }));
 
 // Middleware
+app.use("/*", (req, res, next) => setTimeout(() => next(), 1000));
 app.use("/api/users", users);
 app.use("/api/auths", auths);
 app.use("/api/hotels", hotels);
