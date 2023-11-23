@@ -34,7 +34,11 @@ export const VideoCard = ({ video: { id, snippet }, cardHeight = "100%", cardWid
 			</Link>
 			<CardContent sx={{ background: "#000", minHeight: "106px", height: "100%", display: "flex", gap: 1.5 }}>
 				<Link href={`/channel/${channelId}`}>
-					<Avatar src={thumbnails.default.url} alt="channel-img" sx={{ width: { xs: "28px", sm: "32px" }, height: { xs: "28px", sm: "32px" }, cursor: "pointer" }} />
+					<Avatar
+						src={thumbnails.default.url}
+						alt="channel-img"
+						sx={{ width: { xs: "28px", sm: "32px" }, height: { xs: "28px", sm: "32px" }, cursor: "pointer" }}
+					/>
 				</Link>
 				<Box>
 					<Link href={videoId ? `/video/${videoId}` : demoVideoUrl}>
@@ -42,7 +46,7 @@ export const VideoCard = ({ video: { id, snippet }, cardHeight = "100%", cardWid
 							{title?.slice(0, 40) || demoVideoTitle}...
 						</Typography>
 					</Link>
-					<Link href={channelId ? `chennal/${channelId}` : demoChannelUrl}>
+					<Link href={channelId ? `channel/${channelId}` : demoChannelUrl}>
 						<Typography variant="subtitle2" fontWeight="bold" color="gray" sx={{ whiteSpace: "nowrap" }}>
 							{channelTitle}
 							<CheckCircle sx={{ fontSize: 12, color: "gray", ml: "5px" }} />
