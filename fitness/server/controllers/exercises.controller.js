@@ -1,6 +1,5 @@
 import Exercises from "../models/exercises.model.js";
 import axios from "axios";
-const headers = { "X-RapidAPI-Key": process.env.RAPID_KEY, "X-RapidAPI-Host": "exercisedb.p.rapidapi.com" };
 
 export const GET_SEARCH = async (req, res) => {
 	try {
@@ -23,11 +22,14 @@ export const GET_SEARCH = async (req, res) => {
 export const GET_EXERCISES = async (req, res) => {
 	try {
 		const { limit, ...query } = req.query;
+		const headers = { "X-RapidAPI-Key": process.env.RAPID_KEY, "X-RapidAPI-Host": "exercisedb.p.rapidapi.com" };
 
 		const exercises = (await Exercises.find(query).limit(limit || 999)) || [];
-		const date = new Date(exercises[0]?.createdAt);
 
-		if (date.getDate() === new Date().getDate()) return res.status(200).json(exercises);
+		const createdAt = new Date(exercises[0]?.createdAt).getDate();
+		const now = new Date().getDate();
+
+		if (+createdAt <= +now) return res.status(200).json(exercises);
 
 		// Delete The Previous Exercises
 		await Exercises.deleteMany();
