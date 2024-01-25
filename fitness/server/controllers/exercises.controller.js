@@ -9,7 +9,9 @@ export const GET_SEARCH = async (req, res) => {
 		const keys = Object.keys(exercises[0]._doc).filter((key) => key !== "_id" && key !== "__v");
 
 		const result = exercises.filter((item) => {
-			const isExist = keys.some((key) => typeof item[key] === "string" && item[key]?.toLowerCase() === search.toLowerCase());
+			const isExist = keys.some(
+				(key) => typeof item[key] === "string" && item[key]?.toLowerCase() === search.toLowerCase()
+			);
 			return isExist;
 		});
 
@@ -28,8 +30,9 @@ export const GET_EXERCISES = async (req, res) => {
 
 		const createdAt = new Date(exercises[0]?.createdAt).getDate();
 		const now = new Date().getDate();
+		console.log("CreatedAt: ", createdAt <= now);
 
-		if (+createdAt <= +now) return res.status(200).json(exercises);
+		if (+createdAt === +now) return res.status(200).json(exercises);
 
 		// Delete The Previous Exercises
 		await Exercises.deleteMany();
