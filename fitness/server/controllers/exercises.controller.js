@@ -32,7 +32,7 @@ export const GET_EXERCISES = async (req, res) => {
 		const now = new Date().getDate();
 		console.log("CreatedAt: ", createdAt <= now);
 
-		if (+createdAt === +now) return res.status(200).json(exercises);
+		// if (+createdAt === +now) return res.status(200).json(exercises);
 
 		// Delete The Previous Exercises
 		await Exercises.deleteMany();
