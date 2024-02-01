@@ -1,0 +1,42 @@
+"use server";
+import type { Board, List } from "@prisma/client";
+import { auth } from "@clerk/nextjs";
+import { revalidatePath } from "next/cache";
+
+import { prisma } from "@/utils";
+import { InputType } from "./types";
+
+export const copyBoard = async ({ boardId }: InputType) => {
+   try {
+      const { userId, orgId } = auth();
+      if (!userId || !orgId) return { error: "Unauthorized, Please Login First" };
+
+      const board: Board = await prisma.board.findFirst({
+         where: { id: boardId, orgId },
+         include: { lists: true },
+      });
+      if (!board) return { error: "Board Not Found." };
+
+      const coppied = board.lists.map(({ title, order }: List) => ({ title, order }));
+      const copyLists = board.lists.length ? { createMany: { data: coppied } } : undefined;
+      await prisma?.board.create({
+         data: {
+            title: `${board.title}-copy-${new Date().getTime()}`,
+            orgId,
+            imageId: board.imageId,
+            imageThumbUrl: board.imageThumbUrl,
+            imageFullUrl: board.imageFullUrl,
+            imageUsername: board.imageUsername,
+            imageLinkHtml: board.imageLinkHtml,
+            lists: copyLists,
+         },
+         include: { lists: true },
+      });
+
+      revalidatePath(`/board/${boardId}`);
+      return { success: `Board "${board.title}" Copied.` };
+   } catch (error) {
+      console.log(error);
+      return { error: "Something Has An Error, The Board Wasn't Coppied" };
+   }
+};
