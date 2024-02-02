@@ -31,7 +31,7 @@ export const Sidebar = ({ storageKey = "t-sidebar-state" }: SidebarProps) => {
       (id: string) => {
          setExpended((expended) => ({ ...expended, [id]: !expended[id] }));
       },
-      [expended],
+      [setExpended],
    );
 
    if (!isLoadedOrg || !isLoadedOrgList || userMemberships.isLoading)
