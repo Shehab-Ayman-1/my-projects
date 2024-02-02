@@ -30,10 +30,7 @@ export const BoardList = async () => {
                >
                   <p>Create New Board</p>
                   <span className="text-xs text-slate-500">5 Remaining</span>
-                  <Hint
-                     sideOffset={40}
-                     description="Free Workspaces Can Have Up To 5 Open Boards. For Unlimited Boards Upgrade This Wordspace."
-                  >
+                  <Hint description="Free Workspaces Can Have Up To 5 Open Boards. For Unlimited Boards Upgrade This Wordspace.">
                      <HelpCircleIcon className="absolute bottom-2 right-2 h-4 w-4" />
                   </Hint>
                </div>
@@ -48,12 +45,12 @@ export const BoardList = async () => {
 BoardList.Skeleton = function BoardListSkeleton() {
    return (
       <div className="md:grid-cols:4 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-         <Skeleton className="aspect-video h-full w-full p-2" />
-         <Skeleton className="aspect-video h-full w-full p-2" />
-         <Skeleton className="aspect-video h-full w-full p-2" />
-         <Skeleton className="aspect-video h-full w-full p-2" />
-         <Skeleton className="aspect-video h-full w-full p-2" />
-         <Skeleton className="aspect-video h-full w-full p-2" />
+         <Skeleton className="aspect-video h-full w-full bg-neutral-400 p-2" />
+         <Skeleton className="aspect-video h-full w-full bg-neutral-400 p-2" />
+         <Skeleton className="aspect-video h-full w-full bg-neutral-400 p-2" />
+         <Skeleton className="aspect-video h-full w-full bg-neutral-400 p-2" />
+         <Skeleton className="aspect-video h-full w-full bg-neutral-400 p-2" />
+         <Skeleton className="aspect-video h-full w-full bg-neutral-400 p-2" />
       </div>
    );
 };

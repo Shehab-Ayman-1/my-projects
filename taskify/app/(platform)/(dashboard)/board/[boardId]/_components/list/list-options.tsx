@@ -30,10 +30,10 @@ export const ListOptions = ({ list }: ListOptionsProps) => {
             </PopoverClose>
 
             <AddCardForm />
-            <Separator className="bg-neutral-400" />
+            <Separator className="bg-gray-400" />
 
             <CopyListForm boardId={list.boardId} listId={list.id} />
-            <Separator className="bg-neutral-400" />
+            <Separator className="bg-gray-400" />
 
             <DeleteListForm listId={list.id} boardId={list.boardId} />
          </PopoverContent>

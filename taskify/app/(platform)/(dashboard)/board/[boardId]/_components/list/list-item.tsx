@@ -1,4 +1,5 @@
 import type { ListWithCards } from "@/types";
+import { Draggable } from "@hello-pangea/dnd";
 
 import { ListWrapper } from "./list-wrapper";
 import { ListHeader } from "./list-header";
@@ -12,14 +13,18 @@ type ListItemProps = {
 
 export const ListItem = ({ list, index }: ListItemProps) => {
    return (
-      <ListWrapper>
-         <div className="w-full rounded-md bg-white/70 shadow-md">
-            <ListHeader list={list} />
+      <Draggable draggableId={list.id} index={index}>
+         {(provided) => (
+            <ListWrapper {...provided.draggableProps} ref={provided.innerRef}>
+               <div {...provided.dragHandleProps} className="w-full rounded-md bg-white/70 shadow-md">
+                  <ListHeader list={list} />
 
-            <CardList list={list} />
+                  <CardList list={list} />
 
-            <CardForm boardId={list.boardId} listId={list.id} />
-         </div>
-      </ListWrapper>
+                  <CardForm boardId={list.boardId} listId={list.id} />
+               </div>
+            </ListWrapper>
+         )}
+      </Draggable>
    );
 };

@@ -3,12 +3,12 @@ import { PlusIcon } from "lucide-react";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 
+import { EditingTitleForm } from "@/components/form/editing-title";
 import { Button } from "@/components/ui/button";
 import { schema } from "@/utils/create-list/schema";
 import { createList } from "@/utils/create-list";
 
 import { ListWrapper } from "./list-wrapper";
-import { EditingForm } from "../edit-form";
 
 type ListFormProps = {};
 
@@ -44,7 +44,7 @@ ListForm.EditableForm = function EditableForm({ disableEditing }: { disableEditi
 
    return (
       <ListWrapper>
-         <EditingForm
+         <EditingTitleForm
             id={boardId as string}
             placeholder="Enter A List Name"
             schema={schema}

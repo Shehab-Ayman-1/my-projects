@@ -1,9 +1,11 @@
 "use server";
 
+import { ACTION, ENTITY_TYPE } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { auth } from "@clerk/nextjs";
 import { prisma } from "@/utils";
 
+import { createActivity } from "@/utils/create-activity";
 import { InputType } from "./types";
 
 export const createCard = async ({ id, title }: InputType) => {
@@ -27,8 +29,15 @@ export const createCard = async ({ id, title }: InputType) => {
          data: { title, listId, order: lastCard?.order ? lastCard.order + 1 : 1 },
       });
 
+      await createActivity({
+         entityId: card.id,
+         entityTitle: card.title,
+         entityType: ENTITY_TYPE.CARD,
+         action: ACTION.CREATE,
+      });
+
       revalidatePath(`/board/${boardId}`);
-      return { success: `Card "${card.title.slice(0, 10)}" Was Created.` };
+      return { success: `Card "${card.title}" Was Created.` };
    } catch (error) {
       console.log(error);
       return { error: "Something Has An Error, Card Wasn't Created." };

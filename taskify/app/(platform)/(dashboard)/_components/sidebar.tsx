@@ -38,23 +38,23 @@ export const Sidebar = ({ storageKey = "t-sidebar-state" }: SidebarProps) => {
       return (
          <div className="space-y-2">
             <div className="flex-between">
-               <Skeleton className="h-10 w-1/2" />
-               <Skeleton className="h-10 w-10" />
+               <Skeleton className="h-10 w-1/2 bg-neutral-400" />
+               <Skeleton className="h-10 w-10 bg-neutral-400" />
             </div>
 
             <div className="flex-between">
-               <Skeleton className="h-10 w-10 shrink-0" />
-               <Skeleton className="h-10 w-full" />
+               <Skeleton className="h-10 w-10 shrink-0 bg-neutral-400" />
+               <Skeleton className="h-10 w-full bg-neutral-400" />
             </div>
 
             <div className="flex-between">
-               <Skeleton className="h-10 w-10 shrink-0" />
-               <Skeleton className="h-10 w-full" />
+               <Skeleton className="h-10 w-10 shrink-0 bg-neutral-400" />
+               <Skeleton className="h-10 w-full bg-neutral-400" />
             </div>
 
             <div className="flex-between">
-               <Skeleton className="h-10 w-10 shrink-0" />
-               <Skeleton className="h-10 w-full" />
+               <Skeleton className="h-10 w-10 shrink-0 bg-neutral-400" />
+               <Skeleton className="h-10 w-full bg-neutral-400" />
             </div>
          </div>
       );

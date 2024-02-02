@@ -71,7 +71,7 @@
       @apply border-border;
    }
    html {
-      @apply w-screen overflow-x-hidden bg-slate-100 text-foreground;
+      @apply w-screen overflow-x-hidden bg-slate-200 text-foreground;
       ::selection {
          @apply bg-primary text-white;
          text-shadow: 0 0 10px black;

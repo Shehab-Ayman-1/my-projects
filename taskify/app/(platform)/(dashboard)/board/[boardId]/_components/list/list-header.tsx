@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 import { ListWrapper } from "./list-wrapper";
 import { ListOptions } from "./list-options";
-import { EditingForm } from "../edit-form";
+import { EditingTitleForm } from "@/components/form/editing-title";
 
 type ListHeaderProps = {
    list: List;
@@ -46,7 +46,7 @@ type EditableFormProps = {
 ListHeader.EditableForm = function EditableForm({ id, title, disable }: EditableFormProps) {
    return (
       <ListWrapper>
-         <EditingForm
+         <EditingTitleForm
             id={id}
             title={title}
             placeholder="Enter A List Name"

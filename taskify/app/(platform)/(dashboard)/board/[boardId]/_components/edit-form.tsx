@@ -8,11 +8,11 @@ import { EditIcon } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 
+import { FormErrors } from "@/components/form/form-errors";
+import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { FormErrors } from "@/components/form/form-errors";
 import { cn } from "@/utils";
-import { Textarea } from "@/components/ui/textarea";
 
 type EditingFormProps = {
    id: string;

@@ -4,17 +4,15 @@ import { usePathname } from "next/navigation";
 import { MenuIcon } from "lucide-react";
 
 import { useMobileSidebarStore } from "@/hooks/useMobileSidebar";
-import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+
 import { Sidebar } from "./sidebar";
 
 const MobileSidebar = () => {
+   const { isOpen, onOpen, onClose } = useMobileSidebarStore((state) => state);
    const [isMounted, setIsMounted] = useState(false);
    const pathname = usePathname();
-
-   const isOpen = useMobileSidebarStore((state) => state.isOpen);
-   const onOpen = useMobileSidebarStore((state) => state.onOpen);
-   const onClose = useMobileSidebarStore((state) => state.onClose);
 
    useEffect(() => {
       setIsMounted(true);

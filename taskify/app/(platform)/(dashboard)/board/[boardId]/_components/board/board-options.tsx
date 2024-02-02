@@ -4,14 +4,14 @@ import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from "@/compone
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-import { CopyBoard } from "../board/copy-board";
-import { DeleteBoard } from "../board/delete-board";
+import { CopyBoard } from "./copy-board";
+import { DeleteBoard } from "./delete-board";
 
-type NavbarOptionsProps = {
+type BoardOptionsProps = {
    boardId: string;
 };
 
-export const NavbarOptions = ({ boardId }: NavbarOptionsProps) => {
+export const BoardOptions = ({ boardId }: BoardOptionsProps) => {
    return (
       <Popover>
          <PopoverTrigger asChild>
@@ -24,15 +24,15 @@ export const NavbarOptions = ({ boardId }: NavbarOptionsProps) => {
             <div className="">
                <h3 className="pb-4 text-center text-sm font-bold text-neutral-600">Board Options!</h3>
 
-               <PopoverClose asChild className="absolute-top-right">
-                  <Button variant="ghost" size="icon" className="h-auto w-auto p-2">
+               <PopoverClose className="absolute-top-right">
+                  <Button className="h-auto w-auto p-2 text-black" size="icon" variant="secondary">
                      <XCircleIcon className="h-5 w-5" />
                   </Button>
                </PopoverClose>
             </div>
 
             <CopyBoard boardId={boardId} />
-            <Separator className="bg-neutral-400" />
+            <Separator className="bg-gray-400" />
 
             <DeleteBoard boardId={boardId} />
          </PopoverContent>

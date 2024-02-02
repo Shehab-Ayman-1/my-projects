@@ -1,8 +1,9 @@
 "use server";
-import type { Board, List } from "@prisma/client";
-import { auth } from "@clerk/nextjs";
+import { ENTITY_TYPE, ACTION } from "@prisma/client";
 import { revalidatePath } from "next/cache";
+import { auth } from "@clerk/nextjs";
 
+import { createActivity } from "@/utils/create-activity";
 import { prisma } from "@/utils";
 import { InputType } from "./types";
 
@@ -11,15 +12,16 @@ export const copyBoard = async ({ boardId }: InputType) => {
       const { userId, orgId } = auth();
       if (!userId || !orgId) return { error: "Unauthorized, Please Login First" };
 
-      const board: Board = await prisma.board.findFirst({
+      const board = await prisma.board.findFirst({
          where: { id: boardId, orgId },
          include: { lists: true },
       });
       if (!board) return { error: "Board Not Found." };
 
-      const coppied = board.lists.map(({ title, order }: List) => ({ title, order }));
+      const coppied = board.lists.map(({ title, order }) => ({ title, order }));
       const copyLists = board.lists.length ? { createMany: { data: coppied } } : undefined;
-      await prisma?.board.create({
+
+      const copiedBoard = await prisma?.board.create({
          data: {
             title: `${board.title}-copy-${new Date().getTime()}`,
             orgId,
@@ -31,6 +33,13 @@ export const copyBoard = async ({ boardId }: InputType) => {
             lists: copyLists,
          },
          include: { lists: true },
+      });
+
+      await createActivity({
+         entityId: copiedBoard.id,
+         entityTitle: copiedBoard.title,
+         entityType: ENTITY_TYPE.BOARD,
+         action: ACTION.COPY,
       });
 
       revalidatePath(`/board/${boardId}`);

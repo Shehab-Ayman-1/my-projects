@@ -5,7 +5,7 @@ import { PlusIcon, XIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { schema } from "@/utils/create-card/schema";
 import { createCard } from "@/utils/create-card";
-import { EditingForm } from "../edit-form";
+import { EditingTitleForm } from "@/components/form/editing-title";
 
 type CardFormProps = {
    boardId: string;
@@ -26,7 +26,7 @@ export const CardForm = ({ boardId, listId }: CardFormProps) => {
    return (
       <div className="p-2">
          {isEditing && (
-            <CardForm.CardEditingForm boardId={boardId} listId={listId} disableEditing={disableEditing} />
+            <CardForm.CardEditingTitleForm boardId={boardId} listId={listId} disableEditing={disableEditing} />
          )}
          {!isEditing && (
             <Button
@@ -43,15 +43,15 @@ export const CardForm = ({ boardId, listId }: CardFormProps) => {
    );
 };
 
-type CardEditingFormProps = {
+type CardEditingTitleFormProps = {
    boardId: string;
    listId: string;
    disableEditing: () => void;
 };
 
-CardForm.CardEditingForm = function CardEditingForm({ boardId, listId, disableEditing }: CardEditingFormProps) {
+CardForm.CardEditingTitleForm = function CardEditingTitleForm({ boardId, listId, disableEditing }: CardEditingTitleFormProps) {
    return (
-      <EditingForm
+      <EditingTitleForm
          id={`${boardId}|${listId}`}
          placeholder="Enter A Title For This Card..."
          schema={schema}

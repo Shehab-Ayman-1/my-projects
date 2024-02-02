@@ -1,8 +1,9 @@
 "use server";
-import type { Card } from "@prisma/client";
-import { auth } from "@clerk/nextjs";
+import { ENTITY_TYPE, ACTION } from "@prisma/client";
 import { revalidatePath } from "next/cache";
+import { auth } from "@clerk/nextjs";
 
+import { createActivity } from "@/utils/create-activity";
 import { prisma } from "@/utils";
 import { InputType } from "./types";
 
@@ -20,9 +21,10 @@ export const copyList = async ({ boardId, listId }: InputType) => {
          select: { order: true },
       });
 
-      const coppied = list.cards.map(({ title, description, order }: Card) => ({ title, description, order }));
+      const coppied = list.cards.map(({ title, description, order }) => ({ title, description, order }));
       const copyCards = list.cards.length ? { createMany: { data: coppied } } : undefined;
-      await prisma.list.create({
+
+      const copiedList = await prisma.list.create({
          data: {
             boardId,
             title: `${list.title} - Copy`,
@@ -30,6 +32,13 @@ export const copyList = async ({ boardId, listId }: InputType) => {
             cards: copyCards,
          },
          include: { cards: true },
+      });
+
+      await createActivity({
+         entityId: copiedList.id,
+         entityTitle: copiedList.title,
+         entityType: ENTITY_TYPE.LIST,
+         action: ACTION.COPY,
       });
 
       revalidatePath(`/board/${boardId}`);

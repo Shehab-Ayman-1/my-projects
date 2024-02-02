@@ -2,7 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs";
 
 import { prisma } from "@/utils";
-import { BoardNavbar } from "./_components/navbar/navbar";
+import { BoardNavbar } from "./_components/board/board-navbar";
 
 type LayoutType = {
    params: { boardId: string };

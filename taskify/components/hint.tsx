@@ -1,17 +1,18 @@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 type HintProps = {
+   className?: string;
    description: string;
    side?: "right" | "left" | "top" | "bottom";
    sideOffset?: number;
    children: React.ReactNode;
 };
 
-export const Hint = ({ description, side = "bottom", sideOffset = 0, children }: HintProps) => {
+export const Hint = ({ className, description, side = "bottom", sideOffset = 0, children }: HintProps) => {
    return (
       <TooltipProvider>
          <Tooltip delayDuration={0}>
-            <TooltipTrigger>{children}</TooltipTrigger>
+            <TooltipTrigger className={className}>{children}</TooltipTrigger>
             <TooltipContent
                side={side}
                sideOffset={sideOffset}

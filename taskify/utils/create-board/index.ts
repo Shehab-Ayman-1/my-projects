@@ -1,7 +1,9 @@
 "use server";
-import { auth } from "@clerk/nextjs";
+import { ACTION, ENTITY_TYPE } from "@prisma/client";
 import { revalidatePath } from "next/cache";
+import { auth } from "@clerk/nextjs";
 
+import { createActivity } from "@/utils/create-activity";
 import { prisma } from "@/utils";
 import { InputType } from "./types";
 
@@ -20,6 +22,13 @@ export const createBoard = async ({ title, image }: InputType) => {
 
       let board = await prisma?.board.create({
          data: { title, orgId, imageId, imageThumbUrl, imageFullUrl, imageLinkHtml, imageUsername },
+      });
+
+      await createActivity({
+         entityId: board.id,
+         entityTitle: board.title,
+         entityType: ENTITY_TYPE.BOARD,
+         action: ACTION.CREATE,
       });
 
       revalidatePath(`/board/${board?.id}`);

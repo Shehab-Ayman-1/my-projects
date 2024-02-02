@@ -1,9 +1,11 @@
 "use server";
 
+import { ACTION, ENTITY_TYPE } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { auth } from "@clerk/nextjs";
-import { prisma } from "@/utils";
 
+import { createActivity } from "@/utils/create-activity";
+import { prisma } from "@/utils";
 import { InputType } from "./types";
 
 export const createList = async ({ id: boardId, title }: InputType) => {
@@ -20,6 +22,13 @@ export const createList = async ({ id: boardId, title }: InputType) => {
 
       const order = lastList ? lastList.order + 1 : 1;
       const list = await prisma.list.create({ data: { boardId, title, order } });
+
+      await createActivity({
+         entityId: list.id,
+         entityTitle: list.title,
+         entityType: ENTITY_TYPE.LIST,
+         action: ACTION.CREATE,
+      });
 
       revalidatePath(`/board/${boardId}`);
       return { success: `List "${list.title}" Was Created.` };

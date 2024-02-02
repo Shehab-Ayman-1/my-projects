@@ -8,13 +8,13 @@ const Loading = () => {
    return (
       <div className="flex-start">
          <div className="relative h-16 w-16">
-            <Skeleton className="absolute h-full w-full" />
+            <Skeleton className="absolute h-full w-full bg-neutral-400" />
          </div>
          <div className="space-y-2">
-            <Skeleton className="h-10 w-[200px]" />
+            <Skeleton className="h-10 w-[200px] bg-neutral-400" />
             <div className="flex items-center">
-               <Skeleton className="mr-2 h-4 w-4" />
-               <Skeleton className="h-4 w-[100px]" />
+               <Skeleton className="mr-2 h-4 w-4 bg-neutral-400" />
+               <Skeleton className="h-4 w-[100px] bg-neutral-400" />
             </div>
          </div>
       </div>
