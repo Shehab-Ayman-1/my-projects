@@ -1,5 +1,4 @@
 "use client";
-import type { InputType } from "@/utils/update-order-card/types";
 import type { ListWithCards } from "@/types";
 
 import { useEffect, useState } from "react";
@@ -64,18 +63,12 @@ export const ListContainer = ({ boardId, lists }: ListContainerProps) => {
 
          // Moving The Card In The Same List
          if (source.droppableId === destination.droppableId) {
-            const reorderedCards = reorder<InputType["items"][0]>(
-               sourceList.cards,
-               source.index,
-               destination.index,
-            );
-
-            reorderedCards.forEach((card: any, index) => (card.order = index));
-            sourceList.cards = reorderedCards;
+            const reorderedCards = reorder(sourceList.cards, source.index, destination.index);
+            sourceList.cards = reorderedCards.map((card, index) => ({ ...card, order: index }));
 
             setOrderedData(newOrderedData);
-
             const { success, error } = await updateCardOrder({ boardId, items: reorderedCards });
+
             if (success) toast.success(success);
             else toast.error(error);
          } else {
