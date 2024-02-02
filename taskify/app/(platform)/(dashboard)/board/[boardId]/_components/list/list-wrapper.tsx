@@ -11,3 +11,5 @@ export const ListWrapper = forwardRef(({ children, ...rest }: ListWrapperProps, 
       </li>
    );
 });
+
+ListWrapper.displayName = "ListWrapper";
