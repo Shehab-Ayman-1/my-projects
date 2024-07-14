@@ -1,0 +1,23 @@
+.flex-around {
+	@apply flex justify-around items-center;
+}
+
+.flex-between {
+	@apply flex justify-between items-center;
+}
+
+.flex-evenly {
+	@apply flex justify-evenly items-center;
+}
+
+.flex-start {
+	@apply flex justify-start items-start;
+}
+
+.flex-center {
+	@apply flex justify-center items-center;
+}
+
+.flex-end {
+	@apply flex justify-end items-end;
+}

@@ -4,6 +4,8 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs";
 
+import { checkSubscription } from "@/utils/subscriptions/subscriptions";
+import { decAvailableCount } from "@/utils/subscriptions/org-limits";
 import { createActivity } from "@/utils/create-activity";
 import { prisma } from "@/utils";
 import { InputType } from "./types";
@@ -14,6 +16,9 @@ export async function deleteBoard({ boardId }: InputType) {
 
    try {
       const board = await prisma.board.delete({ where: { id: boardId, orgId } });
+
+      const isPremium = await checkSubscription();
+      if (!isPremium) await decAvailableCount();
 
       await createActivity({
          entityId: board.id,

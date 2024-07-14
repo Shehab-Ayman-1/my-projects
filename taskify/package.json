@@ -9,7 +9,8 @@
       "lint": "next lint",
       "postinstall": "prisma generate",
       "add": "npx shadcn-ui@latest add",
-      "studio": "npx prisma studio"
+      "studio": "npx prisma studio",
+      "deploy": "git ad && git co && git pm"
    },
    "dependencies": {
       "@clerk/nextjs": "^4.29.5",
@@ -36,7 +37,9 @@
       "react-dom": "^18",
       "react-hook-form": "^7.49.3",
       "sass": "^1.70.0",
+      "sharp": "^0.33.2",
       "sonner": "^1.4.0",
+      "stripe": "^14.14.0",
       "tailwind-merge": "^2.2.1",
       "tailwindcss-animate": "^1.0.7",
       "unsplash-js": "^7.0.19",

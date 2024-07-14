@@ -21,15 +21,16 @@ const Layout = async ({ params, children }: LayoutType) => {
    if (!board) return notFound();
 
    return (
-      <div
-         className="relative h-full w-full bg-cover bg-center bg-no-repeat"
-         style={{
-            backgroundImage: `linear-gradient(rgb(0 0 0 / 0.4), rgb(0 0 0 / 0.4)), url(${board.imageFullUrl})`,
-         }}
-      >
+      <div className="relative h-full w-full p-4">
+         <div
+            className="fixed-top-left inset-0 -z-10 h-screen w-screen bg-cover bg-center bg-no-repeat"
+            style={{
+               backgroundImage: `linear-gradient(rgb(0 0 0 / 0.4), rgb(0 0 0 / 0.4)), url(${board.imageFullUrl})`,
+            }}
+         />
          <main className="pt-14">
             <BoardNavbar {...board} />
-            <section className="mx-auto max-w-7xl">{children}</section>
+            <section className="">{children}</section>
          </main>
       </div>
    );

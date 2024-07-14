@@ -4,17 +4,20 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { usePremiumModal } from "@/hooks/usePremiumModal";
 import { FormErrors } from "@/components/form/form-errors";
 import { schema } from "@/utils/create-board/schema";
 import { createBoard } from "@/utils/create-board";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 import { FormPicker } from "./form-picker";
 
 const defaultValues = { title: "", image: "" };
 export const CreateBoard = () => {
    const router = useRouter();
+   const { onOpen } = usePremiumModal();
+
    const { register, handleSubmit, setValue, setError, reset, formState } = useForm({
       defaultValues,
       resolver: zodResolver(schema),
@@ -26,6 +29,7 @@ export const CreateBoard = () => {
 
       if (error) {
          toast.error(error, { style: { background: "red", color: "white" } });
+         if (error.includes("Reached Your Limit Of Free Boards")) onOpen();
          return setError("title", { message: error });
       }
 

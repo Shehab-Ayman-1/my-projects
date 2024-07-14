@@ -1,7 +1,7 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import NotFoundImg from "@/public/images/not-found.png";
-import React from "react";
 
 const NotFound = () => {
    return (

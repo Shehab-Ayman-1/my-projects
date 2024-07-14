@@ -4,27 +4,14 @@ import { useOrganization } from "@clerk/nextjs";
 import { CreditCardIcon } from "lucide-react";
 import Image from "next/image";
 
-const Loading = () => {
-   return (
-      <div className="flex-start">
-         <div className="relative h-16 w-16">
-            <Skeleton className="absolute h-full w-full bg-neutral-400" />
-         </div>
-         <div className="space-y-2">
-            <Skeleton className="h-10 w-[200px] bg-neutral-400" />
-            <div className="flex items-center">
-               <Skeleton className="mr-2 h-4 w-4 bg-neutral-400" />
-               <Skeleton className="h-4 w-[100px] bg-neutral-400" />
-            </div>
-         </div>
-      </div>
-   );
+type InfoProps = {
+   isPremium: boolean;
 };
 
-export const Info = () => {
+export const Info = ({ isPremium }: InfoProps) => {
    const { organization, isLoaded } = useOrganization();
 
-   if (!isLoaded) return <Loading />;
+   if (!isLoaded) return <Info.Loading />;
 
    return (
       <div className="flex-start">
@@ -36,8 +23,25 @@ export const Info = () => {
                <p className="text-xl font-semibold">{organization?.name}</p>
                <div className="flex items-center text-xs text-muted-foreground">
                   <CreditCardIcon className="mr-1 h-3 w-3" />
-                  Free
+                  {isPremium ? "Premium" : "Free"}
                </div>
+            </div>
+         </div>
+      </div>
+   );
+};
+
+Info.Loading = function Loading() {
+   return (
+      <div className="flex-start">
+         <div className="relative h-16 w-16">
+            <Skeleton className="absolute h-full w-full bg-neutral-400" />
+         </div>
+         <div className="space-y-2">
+            <Skeleton className="h-10 w-[200px] bg-neutral-400" />
+            <div className="flex items-center">
+               <Skeleton className="mr-2 h-4 w-4 bg-neutral-400" />
+               <Skeleton className="h-4 w-[100px] bg-neutral-400" />
             </div>
          </div>
       </div>

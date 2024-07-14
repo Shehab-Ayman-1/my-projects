@@ -27,11 +27,7 @@ const BoardId = async ({ params }: BoardIdProps) => {
       },
    });
 
-   return (
-      <div className="p-4">
-         <ListContainer boardId={params.boardId} lists={lists} />
-      </div>
-   );
+   return <ListContainer boardId={params.boardId} lists={lists} />;
 };
 
 export default BoardId;

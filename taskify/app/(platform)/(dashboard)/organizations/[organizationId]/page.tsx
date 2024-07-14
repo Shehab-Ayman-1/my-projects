@@ -1,16 +1,16 @@
 import { Suspense } from "react";
-import { prisma } from "@/utils";
 
+import { checkSubscription } from "@/utils/subscriptions/subscriptions";
 import { Separator } from "@/components/ui/separator";
-import { Info } from "./_components/info";
 import { BoardList } from "./_components/board-list";
+import { Info } from "./_components/info";
 
 const OrganizationId = async () => {
-   const boards = await prisma.board.findMany();
+   const isPremium = await checkSubscription();
 
    return (
       <section className="mb-20 w-full">
-         <Info />
+         <Info isPremium={isPremium} />
 
          <Separator className="my-4 bg-gray-400" />
 

@@ -98,14 +98,14 @@ export const ListContainer = ({ boardId, lists }: ListContainerProps) => {
          <Droppable droppableId="lists" type="list" direction="horizontal">
             {(provided) => (
                <ol {...provided.droppableProps} ref={provided.innerRef} className="space-y-2">
-                  <div className="flex flex-wrap items-start justify-start gap-4">
+                  <div className="flex flex-wrap items-start justify-center gap-4 lg:justify-start">
+                     <ListForm />
+
                      {orderedData.map((list, index) => (
                         <ListItem key={list.id} index={index} list={list} />
                      ))}
 
                      {provided.placeholder}
-
-                     <ListForm />
                   </div>
 
                   <div className="w-1 flex-shrink-0" />

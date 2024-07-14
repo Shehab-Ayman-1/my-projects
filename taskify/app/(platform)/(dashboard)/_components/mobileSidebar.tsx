@@ -6,6 +6,7 @@ import { MenuIcon } from "lucide-react";
 import { useMobileSidebarStore } from "@/hooks/useMobileSidebar";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/navbar";
 
 import { Sidebar } from "./sidebar";
 
@@ -26,13 +27,13 @@ const MobileSidebar = () => {
 
    return (
       <div className="block md:hidden">
-         <Button size="sm" variant="ghost" onClick={onOpen}>
+         <Button size="sm" variant="ghost" className="p-0" onClick={onOpen}>
             <MenuIcon />
          </Button>
-
          <Sheet open={isOpen} onOpenChange={onClose}>
-            <SheetContent side="left" className="z-[1001] p-2 pt-10">
-               <Sidebar storageKey="t-sidebar-mobile-state" />
+            <SheetContent side="left" className="z-[1001] h-full p-4">
+               <Logo className="mb-4" />
+               <Sidebar isPremium={true} storageKey="t-sidebar-mobile-state" />
             </SheetContent>
          </Sheet>
       </div>
