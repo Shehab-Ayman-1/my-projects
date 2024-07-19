@@ -1,9 +1,26 @@
-import { UserButton } from "@clerk/nextjs";
+import { Accounts } from "@/server/models";
 
-type HomeProps = {};
-
-const Home = ({}: HomeProps) => {
-	return <UserButton />;
+type Account = {
+    _id: string;
+    name: string;
 };
 
-export default Home;
+type DashboardProps = {};
+
+const Dashboard = async ({}: DashboardProps) => {
+    const accounts: Account[] = await Accounts.find();
+
+    return (
+        <div className="">
+            <div className="">
+                {accounts?.map((account) => (
+                    <p key={account._id.toString()}>
+                        {account._id.toString()} - {account.name}
+                    </p>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default Dashboard;

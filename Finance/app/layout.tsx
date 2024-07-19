@@ -1,13 +1,21 @@
 import { ClerkProvider } from "@clerk/nextjs";
-import "./sass/classes.scss";
-import "./sass/globals.scss";
+import { DBConnection } from "@/server/configs";
+import "@/app/sass/index.scss";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-	return (
-		<ClerkProvider>
-			<html lang="en">
-				<body>{children}</body>
-			</html>
-		</ClerkProvider>
-	);
-}
+type LayoutProps = {
+    children: React.ReactNode;
+};
+
+const Layout = async ({ children }: LayoutProps) => {
+    await DBConnection();
+
+    return (
+        <html>
+            <body>
+                <ClerkProvider>{children}</ClerkProvider>
+            </body>
+        </html>
+    );
+};
+
+export default Layout;

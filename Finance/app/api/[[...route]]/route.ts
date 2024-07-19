@@ -1,17 +1,17 @@
 import { Hono } from "hono";
 import { handle } from "hono/vercel";
-import { clerkMiddleware, getAuth } from "@hono/clerk-auth";
+
+import { accounts } from "./(accounts)";
 
 export const runtime = "edge";
-
 const app = new Hono().basePath("/api");
 
-app.get("/hello", clerkMiddleware(), (c) => {
-	const auth = getAuth(c);
-	if (!auth?.userId) return c.json("You Are UnAuthorized", 400);
+// Routes
+const routes = app.route("/accounts", accounts);
 
-	return c.json({ auth });
-});
-
+// Next Handlers
+export type AppType = typeof routes;
 export const GET = handle(app);
 export const POST = handle(app);
+export const PUT = handle(app);
+export const DELETE = handle(app);
