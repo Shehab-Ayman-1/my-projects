@@ -13,7 +13,7 @@ const createAccount = async (body: AccountsType) => {
         const options = { method: "POST", body: JSON.stringify(body) };
         const response = await fetch("/api/accounts", options);
 
-        if (!response?.ok) throw new Error("Failed To Create Account");
+        if (!response?.ok) throw new Error("Failed To Create Account.");
         const data = await response.json();
 
         return data;
