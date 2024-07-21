@@ -1,23 +1,23 @@
 .flex-around {
-	@apply flex justify-around items-center;
+    @apply flex items-center justify-around;
 }
 
 .flex-between {
-	@apply flex justify-between items-center;
+    @apply flex items-center justify-between;
 }
 
 .flex-evenly {
-	@apply flex justify-evenly items-center;
+    @apply flex items-center justify-evenly;
 }
 
 .flex-start {
-	@apply flex justify-start items-start;
+    @apply flex items-start justify-start;
 }
 
 .flex-center {
-	@apply flex justify-center items-center;
+    @apply flex items-center justify-center;
 }
 
 .flex-end {
-	@apply flex justify-end items-end;
+    @apply flex items-end justify-end;
 }

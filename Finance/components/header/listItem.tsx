@@ -1,5 +1,5 @@
 import { Button } from "@/ui/button";
-import { cn } from "@/utils/utils";
+import { cn } from "@/utils/shadcn";
 
 import Link from "next/link";
 
@@ -15,7 +15,10 @@ export const ListItem = ({ href, label, isActive, isMobile }: ListItemProps) => 
         <Button
             asChild
             variant={isMobile ? "blueGhost" : "lightGhost"}
-            className={cn(isActive ? "bg-white/10" : "bg-transparent", isMobile && "p-6 text-center text-xl font-semibold")}
+            className={cn(
+                isActive ? "bg-white/10" : "bg-transparent",
+                isMobile && "p-6 text-center text-xl font-semibold",
+            )}
         >
             <Link href={href}>{label}</Link>
         </Button>

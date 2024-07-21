@@ -1,20 +1,25 @@
 import { ClerkProvider } from "@clerk/nextjs";
-import { DBConnection } from "@/server/configs";
-import "@/app/sass/index.scss";
+
+import { QueryProvider } from "@/providers/queryProvider";
+import { SheetsProvider } from "@/providers/sheetsProvider";
+import "./sass/index.scss";
 
 type LayoutProps = {
     children: React.ReactNode;
 };
 
-const Layout = async ({ children }: LayoutProps) => {
-    await DBConnection();
-
+const Layout = ({ children }: LayoutProps) => {
     return (
-        <html>
-            <body>
-                <ClerkProvider>{children}</ClerkProvider>
-            </body>
-        </html>
+        <ClerkProvider>
+            <QueryProvider>
+                <html>
+                    <body className="">
+                        <SheetsProvider />
+                        {children}
+                    </body>
+                </html>
+            </QueryProvider>
+        </ClerkProvider>
     );
 };
 

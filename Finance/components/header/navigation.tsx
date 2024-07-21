@@ -2,7 +2,7 @@
 import { useMedia } from "react-use";
 import { MenuIcon } from "lucide-react";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/ui/sheet";
 import { Button } from "@/ui/button";
 
 import { NavList } from "./navList";
@@ -22,11 +22,16 @@ export const Navigation = ({}: NavigationProps) => {
     return (
         <Sheet modal={false}>
             <SheetTrigger>
-                <Button size="icon" variant="ghost">
-                    <MenuIcon className="" />
+                <Button asChild size="icon" variant="lightGhost">
+                    <MenuIcon className="bg-white/10 p-1.5 text-white" />
                 </Button>
             </SheetTrigger>
+
             <SheetContent side="left" className="px-2">
+                <SheetHeader>
+                    <SheetTitle className="text-4xl text-blue-500">Finance</SheetTitle>
+                    <SheetDescription>Sign In To Track Your Transactions</SheetDescription>
+                </SheetHeader>
                 <NavList isMobile={isMobile} />
             </SheetContent>
         </Sheet>

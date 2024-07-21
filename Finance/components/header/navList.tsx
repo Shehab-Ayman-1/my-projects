@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { ListItem } from "./listItem";
-import { cn } from "@/utils/utils";
+import { cn } from "@/utils/shadcn";
 
 const routes = [
     { href: "/", label: "Overview" },

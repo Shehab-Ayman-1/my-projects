@@ -6,9 +6,9 @@ const routes = ["/"];
 const isProtectedRoute = createRouteMatcher(routes);
 
 const clerk = clerkMiddleware((auth, req) => {
-	if (isProtectedRoute(req)) auth().protect();
+    if (isProtectedRoute(req)) auth().protect();
 
-	return NextResponse.next();
+    return NextResponse.next();
 });
 
 export const config = { matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"] };
