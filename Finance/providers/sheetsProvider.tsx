@@ -1,5 +1,11 @@
 import { Fragment } from "react";
 
+import { NewAccountSheet } from "@/features/accounts/components/newAccountSheet";
+
 export const SheetsProvider = () => {
-    return <Fragment></Fragment>;
+    return (
+        <Fragment>
+            <NewAccountSheet />
+        </Fragment>
+    );
 };

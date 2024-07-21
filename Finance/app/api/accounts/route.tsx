@@ -16,9 +16,8 @@ export const GET = async (req: NextRequest) => {
 
         const accounts = await Accounts.find();
         return json(accounts);
-    } catch (error) {
-        const reason = error as any;
-        return json(reason.message, 400);
+    } catch (error: any) {
+        return json(error.message, 400);
     }
 };
 
@@ -34,8 +33,7 @@ export const POST = async (req: NextRequest) => {
 
         const account = await Accounts.create({ ...data, userId, name: data.name });
         return json(account);
-    } catch (error) {
-        const reason = error as any;
-        return json(reason.message, 400);
+    } catch (error: any) {
+        return json(error.message, 400);
     }
 };

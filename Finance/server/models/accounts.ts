@@ -7,4 +7,4 @@ const schema = new Schema({
 });
 
 export const Accounts = models?.accounts || model("accounts", schema);
-export type AccountsType = InferSchemaType<typeof schema> & { _id: Types.ObjectId };
+export type AccountsType = InferSchemaType<typeof schema> & { _id?: Types.ObjectId };

@@ -2,6 +2,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 import { QueryProvider } from "@/providers/queryProvider";
 import { SheetsProvider } from "@/providers/sheetsProvider";
+import { Toaster } from "@/ui/sonner";
 import "./sass/index.scss";
 
 type LayoutProps = {
@@ -15,6 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
                 <html>
                     <body className="">
                         <SheetsProvider />
+                        <Toaster />
                         {children}
                     </body>
                 </html>
