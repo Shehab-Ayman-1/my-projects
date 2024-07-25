@@ -3,8 +3,8 @@ import { getAuth } from "@clerk/nextjs/server";
 
 import { DBConnection } from "@/server/configs";
 import { Accounts } from "@/server/models";
-import { createSchema, editSchema } from "./schema";
-import { json } from "./response";
+import { createSchema, deleteSchema, editSchema } from "./schema";
+import { json } from "../response";
 
 export const GET = async (req: NextRequest) => {
     await DBConnection();
@@ -33,7 +33,8 @@ export const POST = async (req: NextRequest) => {
         await Accounts.create({ ...data, userId, name: data.name });
         return json("The Account Was Succefully Creates");
     } catch (error: any) {
-        return json(error.message, 400);
+        const zodError = error?.issues.map((issue: any) => issue?.message).join(" | ");
+        return json(zodError || error.message, 400);
     }
 };
 
@@ -64,14 +65,15 @@ export const DELETE = async (req: NextRequest) => {
         const { userId } = getAuth(req);
         if (!userId) return json("Unauthorized", 400);
 
-        const IDs: string[] = await req.json();
-        if (!IDs.length) return json("Something Wrong Was Happened, Please Try Again Later.", 400);
+        const body = await req.json();
+        const IDs = deleteSchema.parse(body);
 
         const deleted = await Accounts.deleteMany({ _id: { $in: IDs }, userId });
         if (!deleted.deletedCount) return json("No Account Was Deleted", 400);
 
         return json("Account(s) Was Successfully Deleted.");
     } catch (error: any) {
-        return json(error.message, 400);
+        const zodError = error?.issues.map((issue: any) => issue?.message).join(" | ");
+        return json(zodError || error.message, 400);
     }
 };

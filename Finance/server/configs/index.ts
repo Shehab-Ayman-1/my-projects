@@ -7,7 +7,7 @@ export const DBConnection = async () => {
         mongoose.set("strictQuery", true);
         if (connected) return console.log("MongoDB Is Already Connected");
 
-        await mongoose.connect(process.env.DATABASE_URL!);
+        await mongoose.connect(process.env.DATABASE_URI! || process.env.DATABASE_URL!);
 
         connected = true;
         console.log("Run MongoDB");
