@@ -28,10 +28,6 @@ export const Navigation = ({}: NavigationProps) => {
             </SheetTrigger>
 
             <SheetContent side="left" className="px-2">
-                <SheetHeader>
-                    <SheetTitle className="text-4xl text-blue-500">Finance</SheetTitle>
-                    <SheetDescription>Sign In To Track Your Transactions</SheetDescription>
-                </SheetHeader>
                 <NavList isMobile={isMobile} />
             </SheetContent>
         </Sheet>

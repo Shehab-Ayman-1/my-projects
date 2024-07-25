@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 
-const getAccounts = async () => {
+const getCategories = async () => {
     try {
-        const response = await fetch("/api/accounts");
+        const response = await fetch("/api/categories");
         const data = await response.json();
 
         if (!response.ok) throw new Error(data);
@@ -13,7 +13,7 @@ const getAccounts = async () => {
     }
 };
 
-export const useGetAccounts = () => {
-    const query = useQuery({ queryKey: ["accounts"], queryFn: getAccounts });
+export const useGetCategories = () => {
+    const query = useQuery({ queryKey: ["categories"], queryFn: getCategories });
     return query;
 };

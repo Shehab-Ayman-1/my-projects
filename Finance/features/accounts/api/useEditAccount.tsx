@@ -5,9 +5,9 @@ import { toast } from "sonner";
 
 type RequestType = AccountType;
 
-const createAccount = async (body: AccountType) => {
+const editAccount = async (body: AccountType) => {
     try {
-        const options = { method: "POST", body: JSON.stringify(body) };
+        const options = { method: "PUT", body: JSON.stringify(body) };
         const response = await fetch("/api/accounts", options);
 
         const data = await response.json();
@@ -19,11 +19,11 @@ const createAccount = async (body: AccountType) => {
     }
 };
 
-export const useCreateAccount = () => {
+export const useEditAccount = () => {
     const queryClient = useQueryClient();
 
     const mutation = useMutation<string, Error, RequestType>({
-        mutationFn: createAccount,
+        mutationFn: editAccount,
         onSuccess: (message) => {
             toast.success(message);
             queryClient.invalidateQueries({ queryKey: ["accounts"] });

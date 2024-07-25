@@ -1,8 +1,4 @@
-import { ClerkProvider } from "@clerk/nextjs";
-
-import { QueryProvider } from "@/providers/queryProvider";
-import { SheetsProvider } from "@/providers/sheetsProvider";
-import { Toaster } from "@/ui/sonner";
+import { Providers } from "@/providers";
 import "./sass/index.scss";
 
 type LayoutProps = {
@@ -11,17 +7,11 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
     return (
-        <ClerkProvider>
-            <QueryProvider>
-                <html>
-                    <body className="">
-                        <SheetsProvider />
-                        <Toaster />
-                        {children}
-                    </body>
-                </html>
-            </QueryProvider>
-        </ClerkProvider>
+        <html>
+            <body>
+                <Providers>{children}</Providers>
+            </body>
+        </html>
     );
 };
 

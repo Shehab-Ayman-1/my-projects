@@ -1,14 +1,14 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { AccountType } from "@/server/models";
+import { CategoryType } from "@/server/models";
 
 import { toast } from "sonner";
 
-type RequestType = AccountType;
+type RequestType = CategoryType;
 
-const createAccount = async (body: AccountType) => {
+const createCategory = async (body: CategoryType) => {
     try {
         const options = { method: "POST", body: JSON.stringify(body) };
-        const response = await fetch("/api/accounts", options);
+        const response = await fetch("/api/categories", options);
 
         const data = await response.json();
         if (!response?.ok) throw new Error(data);
@@ -19,14 +19,14 @@ const createAccount = async (body: AccountType) => {
     }
 };
 
-export const useCreateAccount = () => {
+export const useCreateCategory = () => {
     const queryClient = useQueryClient();
 
     const mutation = useMutation<string, Error, RequestType>({
-        mutationFn: createAccount,
+        mutationFn: createCategory,
         onSuccess: (message) => {
             toast.success(message);
-            queryClient.invalidateQueries({ queryKey: ["accounts"] });
+            queryClient.invalidateQueries({ queryKey: ["categories"] });
         },
         onError: (error) => {
             toast.error(error.message);
